@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <div class="hero_area">
+        <section class="profile_page change_pass">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 ">
+                        <form method="post" action="{% url 'accounts:change_password' %}">
+                            {% csrf_token %}
+                            <h2 class="heading_2">تغییر رمز عبور</h2>
+                            <label for="old_password">رمز قبلی:
+                                <input type="password" id="old_password" name="old_password">
+                            </label>
+                            <label for="new_password1">رمز جدید:
+                                <input type="password" id="new_password1" name="new_password1">
+                            </label>
+                            <label for="new_password2">تکرار رمز جدید:
+                                <input type="password" id="new_password2" name="new_password2">
+                            </label>
+                            <div class="btn-box">
+                                <button type="submit">ذخیره</button>
+                                <a type="button" href="{% url 'accounts:profile' %}">بازگشت</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+
+
+

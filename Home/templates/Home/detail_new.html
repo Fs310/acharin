@@ -1,0 +1,282 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}{{ new.slug }}{% endblock %}
+
+{% block body %}
+    <section class="blog-detail">
+
+        <div class="container-fluid">
+
+            <nav class="blog-link" aria-label="مسیر صفحه">
+                <div class="link">
+
+                    <a href="{% url 'home:homes' %}">
+                        خانه
+                    </a>
+
+                    <a href="{% url 'home:new' %}">
+                        مقالات
+                    </a>
+
+                    <a href="{% url 'home:sub_new' new.new.id %}">
+                        {{ new.new.titer }}
+                    </a>
+
+                    <span aria-current="page">
+                    {{ new.sub_titer }}
+                </span>
+
+                </div>
+            </nav>
+
+
+            <div class="new-grid">
+
+                <!-- سایدبار -->
+                <aside class="new-sidebar">
+
+                    <!-- فهرست مقالات -->
+                    <div class="sidebar-box related-box">
+
+                        <div class="related-title">
+
+                            <i
+                                    class="bi bi-journal-text"
+                                    aria-hidden="true"
+                            ></i>
+
+                            <h2>مقالات مرتبط</h2>
+
+                        </div>
+
+                        <div class="related-list">
+
+                            {% for item in related_articles %}
+
+                                <a
+                                        href="{% url 'home:detail_new' item.slug %}"
+                                        class="related-item"
+                                >
+
+                <span class="related-item-title">
+                    {{ item.sub_titer }}
+                </span>
+
+                                    <i
+                                            class="bi bi-arrow-left"
+                                            aria-hidden="true"
+                                    ></i>
+
+                                </a>
+
+                            {% empty %}
+
+                                <p class="related-empty">
+                                    مقاله مرتبطی وجود ندارد.
+                                </p>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+                    <div class="sidebar-box">
+
+                        <h2>فهرست مقالات</h2>
+
+                        <ul class="article-list">
+
+                            {% for itm in titer_news %}
+                                <li>
+                                    <a href="{% url 'home:sub_new' itm.id %}">
+                                        {{ itm.titer }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+
+
+                </aside>
+                <!-- محتوای مقاله -->
+                <article class="new-content">
+
+                    <header class="article-header">
+
+                        <h1>
+                            {{ new.sub_titer }}
+                        </h1>
+
+                        <div class="article-meta">
+
+                        <span>
+                            <i class="bi bi-person"
+                               aria-hidden="true"></i>
+                            تیم تعمیریار
+                        </span>
+
+                            <span>
+                            <i
+                                    class="bi bi-calendar3"
+                                    aria-hidden="true"
+                            ></i>
+
+                            {{ new.sub_update_date|date:"Y/m/d" }}
+                        </span>
+
+                            <span>
+                            <i
+                                    class="bi bi-clock"
+                                    aria-hidden="true"
+                            ></i>
+
+                            {{ new.reading_time.minute }} دقیقه
+                        </span>
+
+                        </div>
+
+                    </header>
+
+
+                    <div class="article-body">
+
+                        {% if new.sub_img %}
+
+                            <figure class="article-image">
+
+                                <img
+                                        src="{{ new.sub_img.url }}"
+                                        alt="{{ new.sub_titer }}"
+                                        width="900"
+                                        height="506"
+                                        fetchpriority="high"
+                                        decoding="async"
+                                >
+
+                            </figure>
+
+                        {% endif %}
+
+
+                        {% if new.sub_summary %}
+
+                            <div class="article-alert">
+
+                                <i
+                                        class="bi bi-lightbulb"
+                                        aria-hidden="true"
+                                ></i>
+
+                                <div>
+
+                                    <h2>
+                                        نکته مهم
+                                    </h2>
+
+                                    <p>
+                                        {{ new.sub_summary }}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        {% endif %}
+
+
+                        <div class="article-text">
+
+                            {{ new.sub_description|linebreaks }}
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section
+            class="blog-cta"
+            aria-labelledby="cta-title"
+    >
+
+        <div class="cta-image">
+
+            <img
+                    src="{% static 'img/order.png' %}"
+                    alt="کارشناس تعمیریار برای ثبت درخواست تعمیر"
+                    loading="lazy"
+                    decoding="async"
+                    width="290"
+                    height="290"
+            >
+
+        </div>
+
+
+        <div class="cta-content">
+
+            <h2
+                    class="cta-title"
+                    id="cta-title"
+            >
+                خدمات مورد نظر خود را پیدا نکردید؟
+            </h2>
+
+
+            <p class="cta-text">
+                با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.
+            </p>
+
+
+            <div class="btn-box">
+
+                <a
+                        href="tel:09353593735"
+                        class="tel-btn"
+                        aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵"
+                >
+
+                    ۰۹۳۵۳۵۹۳۷۳۵
+
+                    <i
+                            class="bi bi-telephone-fill"
+                            aria-hidden="true"
+                    ></i>
+
+                </a>
+
+
+                <a
+                        class="form-btn"
+                        href="{% url 'home:homes' %}#request-form"
+                        aria-label="ثبت درخواست تعمیر"
+                >
+
+                    <i
+                            class="bi bi-chat-right-text-fill"
+                            aria-hidden="true"
+                    ></i>
+
+                    ثبت درخواست تعمیر
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+{% endblock %}
+
+

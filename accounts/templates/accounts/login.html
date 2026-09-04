@@ -1,0 +1,81 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}صفحه ورود{% endblock %}
+
+{% block body %}
+    <section class="login-section">
+
+        <div class="login-container">
+
+            <!-- فرم ورود -->
+            <div class="login-form-box">
+
+                <h1>
+                    ورود به حساب کاربری
+                </h1>
+
+                <p>
+                    خوش آمدید! لطفا وارد حساب کاربری خود شوید
+                </p>
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <input
+                                type="text"
+                                placeholder="نام کاربری / شماره موبایل"
+                                id="username"
+                                name="username"
+                                autocomplete="username"
+                                required
+                        >
+                    </div>
+
+                    <div class="form-row">
+                        <input
+                                type="password"
+                                placeholder="رمز عبور"
+                                id="password"
+                                name="password"
+                                autocomplete="current-password"
+                                required
+                        >
+                    </div>
+
+
+                    <button type="submit">
+                        ورود
+                    </button>
+
+                </form>
+
+                <div class="login-link">
+                    حساب کاربری ندارید؟
+                    <a href="{% url 'accounts:user_registration' %}">
+                        ثبت نام کنید
+                    </a>
+                </div>
+                <div class="login-link">
+                    <a href="{% url 'accounts:password_rest' %}">
+                        رمز عبور خود را فراموش کرده‌اید؟
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- تصویر -->
+            <div
+                    class="login-banner"
+                    aria-hidden="true">
+            </div>
+
+        </div>
+
+    </section>
+{% endblock %}
+
+

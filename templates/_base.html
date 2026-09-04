@@ -1,0 +1,338 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- Basic -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Site Metas -->
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.rtl.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap-icons.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap-icons.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+    <!-- responsive style -->
+    <link href='{% static "css/responsive.css" %}' rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div class="hero_area">
+    <header class="header_section">
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-expand-lg custom_nav-container w-100"
+                 aria-label="منوی اصلی سایت">
+
+                <a class="navbar-brand"
+                   href="{% url 'home:homes' %}"
+                   title="تعمیریار | صفحه اصلی"
+                   aria-label="بازگشت به صفحه اصلی">
+
+                    <img src="{% static 'img/brand.png' %}"
+                         alt="لوگوی تعمیریار">
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="باز کردن منوی سایت">
+
+                    <span class="s-1" aria-hidden="true"></span>
+                    <span class="s-2" aria-hidden="true"></span>
+                    <span class="s-3" aria-hidden="true"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse nav-coll justify-content-center"
+                     id="navbarSupportedContent">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               aria-current="page"
+                               href="{% url 'home:homes' %}">
+                                خانه
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'home:services' %}">
+                                خدمات
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'home:new' %}">
+                                مجله خبری
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'home:about' %}">
+                                درباره ما
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'home:contact' %}">
+                                تماس با ما
+                            </a>
+                        </li>
+
+                        {% if user.is_authenticated %}
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle"
+                                   href="#"
+                                   role="button"
+                                   data-bs-toggle="dropdown"
+                                   aria-expanded="false"
+                                   aria-label="منوی کاربری">
+
+                                    کاربر ({{ user.username }})
+
+                                </a>
+
+                                <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{% url 'accounts:profile' %}">
+                                            اطلاعات شخصی
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{% url 'accounts:history' %}">
+                                            تاریخچه سفارشات
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="{% url 'accounts:logout_user' %}">
+                                            خروج
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            {% if user.username == "masood" %}
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       href="{% url 'admin:index' %}"
+                                       aria-label="ورود به پنل مدیریت">
+                                        پنل مدیریت
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                        {% else %}
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="{% url 'accounts:login' %}"
+                                   aria-label="ورود یا ایجاد حساب کاربری">
+                                    ورود / ایجاد حساب کاربری
+                                </a>
+                            </li>
+
+                        {% endif %}
+
+                    </ul>
+
+                    <div class="mobile-nav-footer d-lg-none">
+
+                        <a class="btn btn-warning w-100 text-white py-3"
+                           href="{% url 'home:homes' %}"
+                           aria-label="ثبت درخواست تعمیر">
+
+                            درخواست تعمیر
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="btn-box d-none d-lg-block">
+
+                    <a href="{% url 'home:homes' %}"
+                       aria-label="ثبت درخواست تعمیر">
+
+                        درخواست تعمیر
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </div>
+    </header>
+
+</div>
+
+{% include 'messages.html' %}
+{% block body %}
+{% endblock %}
+
+<!-- footer section -->
+
+<footer class="footer_section">
+    <div class="container-fluid">
+
+        <div class="footer-grid">
+
+            <section class="footer-titer information">
+
+                <h4>اطلاعات تماس</h4>
+
+                <address class="icons">
+
+                    <div class="icon">
+                        <i class="bi bi-phone" aria-hidden="true"></i>
+                        <a href="tel:09123456789"
+                           aria-label="تماس با شماره 09123456789">
+                            09123456789
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <i class="bi bi-telephone" aria-hidden="true"></i>
+                        <a href="tel:05131234567"
+                           aria-label="تماس با شماره 05131234567">
+                            0513-1234567
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <i class="bi bi-pin-map" aria-hidden="true"></i>
+                        <a href="https://maps.google.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="نمایش آدرس روی نقشه">
+                            مشهد - بلوار جانباز
+                        </a>
+                    </div>
+
+                    <div class="icon">
+                        <i class="bi bi-envelope-paper" aria-hidden="true"></i>
+                        <a href="mailto:info@example.com"
+                           aria-label="ارسال ایمیل">
+                            info@example.com
+                        </a>
+                    </div>
+
+                </address>
+
+            </section>
+
+            <nav class="footer-titer service" aria-label="خدمات">
+
+                <h4>خدمات</h4>
+
+                <ul>
+                    <li><a href="{% url 'home:services' %}">تعمیر یخچال و فریزر</a></li>
+                    <li><a href="{% url 'home:services' %}">تعمیر لباسشویی</a></li>
+                    <li><a href="{% url 'home:services' %}">تعمیر ظرفشویی</a></li>
+                    <li><a href="{% url 'home:services' %}">تعمیر کولر گازی</a></li>
+                    <li><a href="{% url 'home:services' %}">سایر خدمات</a></li>
+                </ul>
+
+            </nav>
+
+            <nav class="footer-titer menus" aria-label="دسترسی سریع">
+
+                <h4>دسترسی سریع</h4>
+
+                <ul>
+                    <li><a href="{% url 'home:homes' %}">خانه</a></li>
+                    <li><a href="{% url 'home:services' %}">خدمات</a></li>
+                    <li><a href="{% url 'home:about' %}">درباره ما</a></li>
+                    <li><a href="{% url 'home:contact' %}">تماس با ما</a></li>
+                    <li><a href="{% url 'home:homes' %}">ثبت درخواست تعمیر</a></li>
+                </ul>
+
+            </nav>
+
+            <section class="footer-titer social">
+
+                <h4>تعمیریار</h4>
+
+                <p>
+                    ارائه خدمات تخصصی تعمیر لوازم خانگی در خراسان رضوی
+                    با اعزام سریع تعمیرکار و ضمانت خدمات.
+                </p>
+
+                <div class="social-box">
+
+                    <div class="box">
+
+                        <a href="#"
+                           aria-label="اینستاگرام تعمیریار">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#"
+                           aria-label="تلگرام تعمیریار">
+                            <i class="bi bi-telegram" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#"
+                           aria-label="واتساپ تعمیریار">
+                            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#"
+                           aria-label="گوگل">
+                            <i class="bi bi-google" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="footer-bottom">
+            <small>
+                © تمامی حقوق این وب‌سایت برای تعمیریار محفوظ است.
+            </small>
+        </div>
+
+    </div>
+</footer>
+<!-- footer section -->
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+{% block script %}
+
+{% endblock %}
+</body>
+</html>

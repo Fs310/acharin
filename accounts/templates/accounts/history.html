@@ -1,0 +1,191 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}سفارشات{% endblock %}
+{% block body %}
+    <section class="orders-page">
+
+    <div class="orders-container">
+
+        <!-- Header -->
+        <header class="orders-header">
+
+            <div>
+                <h1>
+                    لیست سفارشات
+                </h1>
+
+                <p>
+                    سفارش‌ها و فاکتورهای ثبت‌شده شما
+                </p>
+            </div>
+
+            <i
+                class="bi bi-receipt"
+                aria-hidden="true"
+            ></i>
+
+        </header>
+
+
+        <!-- Orders -->
+        <div class="orders-card">
+
+            <div class="orders-table-wrapper">
+
+                <table class="orders-table">
+
+                    <thead>
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                شماره فاکتور
+                            </th>
+
+                            <th>
+                                تاریخ ثبت درخواست
+                            </th>
+
+                            <th>
+                                مبلغ فاکتور
+                            </th>
+
+                            <th>
+                                عملیات
+                            </th>
+
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for list in list_order %}
+
+                            <tr>
+
+                                <td>
+                                    {{ forloop.counter }}
+                                </td>
+
+
+                                <td>
+                                    <span class="invoice-number">
+                                        #{{ list.id }}
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    {{ list.date_created.date }}
+                                </td>
+
+
+                                <td>
+                                    <strong>
+                                        {{ list.total_with_tax }}
+                                    </strong>
+
+                                    <span class="currency">
+                                        تومان
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <div class="order-actions">
+
+                                        <a
+                                            href="{% url 'accounts:detail_history' list.id %}"
+                                            class="order-detail"
+                                        >
+                                            <i
+                                                class="bi bi-eye"
+                                                aria-hidden="true"
+                                            ></i>
+
+                                            جزئیات فاکتور
+                                        </a>
+
+
+                                        <a
+                                            href="{% url 'accounts:submit_review' %}"
+                                            class="order-review"
+                                        >
+                                            <i
+                                                class="bi bi-star"
+                                                aria-hidden="true"
+                                            ></i>
+
+                                            ثبت نظر
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        {% empty %}
+
+                            <tr>
+
+                                <td
+                                    colspan="5"
+                                    class="orders-empty"
+                                >
+
+                                    <i
+                                        class="bi bi-inbox"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <h2>
+                                        هنوز سفارشی ثبت نشده است
+                                    </h2>
+
+                                    <p>
+                                        بعد از ثبت درخواست تعمیر، سفارش‌های شما در این بخش نمایش داده می‌شوند.
+                                    </p>
+
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Back -->
+            <div class="orders-footer">
+
+                <a
+                    href="{% url 'home:homes' %}"
+                    class="orders-back"
+                >
+                    <i
+                        class="bi bi-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+
+                    بازگشت
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

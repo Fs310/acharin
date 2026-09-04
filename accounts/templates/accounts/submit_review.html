@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}صفحه اصلی{% endblock %}
+{% block body %}
+    <section class="reviews_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="{% static 'img/order.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <form method="post" action="{% url 'accounts:submit_review' factor_id factor_id %}">
+                            {% csrf_token %}
+                            <h2 class="heading_2">ثبت نظر</h2>
+                            <label> امتیازدهی:
+                                <input type="number" name="rating" min="1" class="rating-input" value="3" />
+                            </label>
+                            <textarea type="text" name="msg" placeholder="نظرات"></textarea>
+                            <div class="btn-box">
+                                <button type="submit">ثبت</button>
+                                <a type="button" href="{% url 'accounts:history' %}">بازگشت</a>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

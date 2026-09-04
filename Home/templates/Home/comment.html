@@ -1,0 +1,414 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}نظرات{% endblock %}
+
+{% block body %}
+    <section class="client-section page">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumb -->
+            <nav class="client-breadcrumb" aria-label="مسیر صفحه">
+
+                <a href="{% url 'home:homes' %}">
+                    خانه
+                </a>
+
+                <span aria-hidden="true">‹</span>
+
+                <span aria-current="page">
+                سایر نظرات
+            </span>
+
+            </nav>
+
+
+            <div class="client-layout">
+
+
+                <!-- =========================
+                     SIDEBAR
+                ========================== -->
+
+                <aside class="client-sidebar">
+
+
+                    <!-- Popular Services -->
+
+                    <div class="client-sidebar-box">
+
+                        <h2>
+                            خدمات پربازدید
+                        </h2>
+
+                        <ul class="popular-services">
+
+                            <li>
+                                <a href="#">
+                                    تعمیر یخچال و فریزر
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    تعمیر ماشین لباسشویی
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    تعمیر ماشین ظرفشویی
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    تعمیر کولر گازی
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    تعمیر آبسردکن
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    تعمیر پکیج و آبگرمکن
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- CTA -->
+
+                    <div class="client-sidebar-box client-sidebar-cta">
+
+                        <h2>
+                            نیاز به تعمیر دارید؟
+                        </h2>
+
+                        <p>
+                            کارشناسان ما آماده‌اند تا در سریع‌ترین زمان مشکل شما را برطرف کنند.
+                        </p>
+
+                        <a
+                                href="{% url 'home:homes' %}#request-form"
+                                class="client-sidebar-btn"
+                        >
+
+                            ثبت درخواست تعمیر
+
+                            <i
+                                    class="bi bi-telephone-fill"
+                                    aria-hidden="true"
+                            ></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Average -->
+
+                    <div class="client-sidebar-box client-average">
+
+                        <h2>
+                            میانگین رضایت مشتریان
+                        </h2>
+
+                        <strong>
+                            {{ avg_rating|floatformat:1 }}
+                        </strong>
+
+                        <div class="average-stars">
+
+                            {% for i in "12345" %}
+
+                                {% if forloop.counter <= avg_rating %}
+
+                                    <i
+                                            class="bi bi-star-fill"
+                                            aria-hidden="true"
+                                    ></i>
+
+                                {% else %}
+
+                                    <i
+                                            class="bi bi-star"
+                                            aria-hidden="true"
+                                    ></i>
+
+                                {% endif %}
+
+                            {% endfor %}
+
+                        </div>
+
+                        <span>
+                        از مجموع {{ page_obj.paginator.count }} نظر ثبت شده
+                    </span>
+
+                    </div>
+
+                </aside>
+                <!-- =========================
+                     REVIEWS
+                ========================== -->
+
+                <main class="client-content">
+                    <!-- Page Header -->
+                    <header class="client-page-header">
+
+                        <h1>
+                            نظرات مشتریان
+                        </h1>
+
+                        <p>
+                            تجربه مشتریان تعمیریار در استفاده از خدمات ما
+                        </p>
+
+                        <span class="client-count">
+                {{ page_obj.paginator.count }} نظر ثبت شده
+            </span>
+
+                    </header>
+
+                    <div class="client-list">
+
+                        {% for item in page_obj %}
+
+                            <article class="client-card">
+
+                                <!-- Header -->
+
+                                <div class="client-card-top">
+
+                                    <div class="client-user">
+
+                                        <div class="client-avatar">
+
+                                            <i
+                                                    class="bi bi-person-fill"
+                                                    aria-hidden="true"
+                                            ></i>
+
+                                        </div>
+
+                                        <div class="client-user-info">
+
+                                            <h2>
+                                                {{ item.client }}
+                                            </h2>
+
+                                            <span>
+                                            مشتری تعمیریار
+                                        </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <time class="client-date">
+
+                                        {{ item.created_at|date:"Y/m/d" }}
+
+                                        <i
+                                                class="bi bi-calendar3"
+                                                aria-hidden="true"
+                                        ></i>
+
+                                    </time>
+
+                                </div>
+
+
+                                <!-- Rating -->
+
+                                <div class="client-rating">
+
+                                    {% for i in "12345" %}
+
+                                        {% if forloop.counter <= item.rating %}
+
+                                            <i
+                                                    class="bi bi-star-fill"
+                                                    aria-hidden="true"
+                                            ></i>
+
+                                        {% else %}
+
+                                            <i
+                                                    class="bi bi-star"
+                                                    aria-hidden="true"
+                                            ></i>
+
+                                        {% endif %}
+
+                                    {% endfor %}
+
+                                </div>
+
+
+                                <!-- Message -->
+
+                                <p class="client-message">
+                                    {{ item.msg }}
+                                </p>
+
+
+                                <!-- Service -->
+
+                                <span class="client-service">
+
+                                <i
+                                        class="bi bi-tools"
+                                        aria-hidden="true"
+                                ></i>
+
+                                خدمات تعمیریار
+
+                            </span>
+
+                            </article>
+
+                        {% empty %}
+
+                            <div class="client-empty">
+
+                                <i
+                                        class="bi bi-chat-square-text"
+                                        aria-hidden="true"
+                                ></i>
+
+                                <h2>
+                                    هنوز نظری ثبت نشده است
+                                </h2>
+
+                                <p>
+                                    اولین نفری باشید که تجربه خود را با ما به اشتراک می‌گذارد.
+                                </p>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <!-- =========================
+                         PAGINATION
+                    ========================== -->
+
+                    {% if page_obj.paginator.num_pages > 1 %}
+
+                        <nav
+                                class="client-pagination"
+                                aria-label="صفحه‌بندی نظرات"
+                        >
+
+                            <!-- First -->
+
+                            {% if page_obj.has_previous %}
+
+                                <a
+                                        href="?page=1"
+                                        aria-label="صفحه اول"
+                                >
+                                    «
+                                </a>
+
+                                <a
+                                        href="?page={{ page_obj.previous_page_number }}"
+                                        aria-label="صفحه قبلی"
+                                >
+                                    ‹
+                                </a>
+
+                            {% else %}
+
+                                <span class="disabled">
+                                «
+                            </span>
+
+                                <span class="disabled">
+                                ‹
+                            </span>
+
+                            {% endif %}
+
+
+                            <!-- Pages -->
+
+                            {% for page in page_obj.paginator.page_range %}
+
+                                {% if page == page_obj.number %}
+
+                                    <span
+                                            class="active"
+                                            aria-current="page"
+                                    >
+                                    {{ page }}
+                                </span>
+
+                                {% elif page > page_obj.number|add:"-2" and page < page_obj.number|add:"2" %}
+
+                                    <a href="?page={{ page }}">
+                                        {{ page }}
+                                    </a>
+
+                                {% endif %}
+
+                            {% endfor %}
+
+
+                            <!-- Next -->
+
+                            {% if page_obj.has_next %}
+
+                                <a
+                                        href="?page={{ page_obj.next_page_number }}"
+                                        aria-label="صفحه بعد"
+                                >
+                                    ›
+                                </a>
+
+                                <a
+                                        href="?page={{ page_obj.paginator.num_pages }}"
+                                        aria-label="آخرین صفحه"
+                                >
+                                    »
+                                </a>
+
+                            {% else %}
+
+                                <span class="disabled">
+                                ›
+                            </span>
+
+                                <span class="disabled">
+                                »
+                            </span>
+
+                            {% endif %}
+
+                        </nav>
+
+                    {% endif %}
+
+                </main>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}

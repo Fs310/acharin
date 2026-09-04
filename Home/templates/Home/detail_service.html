@@ -1,0 +1,182 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}توضیحات سرویس{% endblock %}
+
+{% block body %}
+
+    <section class="service-detail">
+
+        <div class="container-fluid">
+            <div class="features-row">
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-house-check" aria-hidden="true"></i>
+                    </div>
+                    <h3>تعمیر در محل</h3>
+                    <p>بدون نیاز به جابجایی دستگاه</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-person-check" aria-hidden="true"></i>
+
+                    </div>
+                    <h3>تکنسین متخصص</h3>
+                    <p>تیم آموزش دیده</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    </div>
+                    <h3>ضمانت خدمات</h3>
+                    <p>۶ ماه ضمانت کتبی</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    </div>
+                    <h3>اعزام سریع</h3>
+                    <p>کمتر از ۲ ساعت</p>
+                </div>
+
+            </div>
+
+            <nav class="service-link" aria-label="مسیر صفحه">
+
+                <div class="link">
+
+                    <a href="{% url 'home:homes' %}">
+                        خانه
+                    </a>
+
+                    <a href="{% url 'home:services' %}">
+                        خدمات
+                    </a>
+
+                    <span aria-current="page">
+                    {{ service.title }}
+                </span>
+
+                </div>
+
+            </nav>
+
+
+            <article class="service-body">
+
+                <div class="service-gallery">
+
+                    <img
+                            src="{{ service.img.url }}"
+                            class="main-image"
+                            alt="تعمیر {{ service.title }} در مشهد"
+
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async">
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h1>
+                        {{ service.title }}
+                    </h1>
+
+                    <div class="service-description">
+                        <p>
+                            {{ service.description }}
+                        </p>
+                    </div>
+
+
+                    <h2>
+                        خدمات شامل:
+                    </h2>
+
+
+                    <div class="service-meta">
+
+                        <small>
+                            آخرین بروزرسانی:
+                            {{ service.update_date.date }}
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+    <section class="service-cta" aria-labelledby="cta-title">
+
+        <div class="cta-image">
+
+            <img
+                    src="{% static 'img/order.png' %}"
+                    alt="کارشناس تعمیریار برای ثبت درخواست تعمیر"
+                    loading="lazy"
+                    decoding="async"
+                    width="250"
+                    height="250">
+
+        </div>
+
+        <div class="cta-content">
+
+            <h2 class="cta-title" id="cta-title">
+                خدمات مورد نظر خود را پیدا نکردید؟
+            </h2>
+
+            <p class="cta-text">
+                با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.
+            </p>
+
+            <div class="btn-box">
+
+                <a
+                        href="tel:09353593735"
+                        class="tel-btn"
+                        aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">
+
+                    <span>۰۹۳۵۳۵۹۳۷۳۵</span>
+
+                    <i
+                            class="bi bi-telephone-fill"
+                            aria-hidden="true">
+                    </i>
+
+                </a>
+
+                <a
+                        href="{% url 'home:homes' %}#request-form"
+                        class="form-btn"
+                        aria-label="ثبت درخواست تعمیر">
+
+                    <i
+                            class="bi bi-chat-right-text-fill"
+                            aria-hidden="true">
+                    </i>
+
+                    ثبت درخواست تعمیر
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+{% endblock %}
+
+

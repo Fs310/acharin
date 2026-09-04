@@ -1,0 +1,739 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}صفحه اصلی{% endblock %}
+{% block body %}
+
+    <!--  slider section -->
+    <section class="main slider_section" aria-labelledby="hero-title">
+
+        <img class="hero-img"
+             src="{% static 'img/hero.png' %}"
+             alt="تعمیرکار در حال تعمیر لوازم خانگی"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async">
+
+        <img class="hero2-img"
+             src="{% static 'img/hero2.png' %}"
+             alt=""
+             loading="lazy"
+             decoding="async"
+             aria-hidden="true">
+
+        <div class="container-fluid">
+
+            <div class="hero-wrapper">
+
+                <div class="hero-content">
+
+                    <div class="detail-box">
+
+                        <div class="heading_2">
+
+                        <span class="hero-badge">
+                            خدمات تخصصی تعمیرات
+                        </span>
+
+                            <h1 id="hero-title">
+                                تعمیر فوری لوازم خانگی
+                                <span>در سراسر مشهد</span>
+                            </h1>
+                            <p class="note">
+                                سریع، مطمئن و حرفه‌ای
+                            </p>
+
+                        </div>
+
+                        <div class="boxs">
+
+                            <div class="box feature-card">
+
+                                <div class="icon-i">
+                                    <i class="bi bi-clock-fill" aria-hidden="true"></i>
+                                </div>
+
+                                <h3 class="name">
+                                    اعزام تعمیرکار کمتر از ۲ ساعت
+                                </h3>
+
+                            </div>
+
+                            <div class="box">
+
+                                <div class="icon-i">
+                                    <i class="bi bi-cart-check-fill" aria-hidden="true"></i>
+                                </div>
+
+                                <h3 class="name">
+                                    بدون نیاز به پیش پرداخت
+                                </h3>
+
+                            </div>
+
+                            <div class="box">
+
+                                <div class="icon-i">
+                                    <i class="bi bi-house-fill" aria-hidden="true"></i>
+                                </div>
+
+                                <h3 class="name">
+                                    تعمیر در محل
+                                </h3>
+
+                            </div>
+
+                            <div class="box">
+
+                                <div class="icon-i">
+                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                </div>
+
+                                <h3 class="name">
+                                    بیش از ۵۰۰ تعمیر موفق در سطح شهر
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-form">
+
+                    <form method="post"
+                          action="{% url 'home:clients' %}"
+                          autocomplete="on">
+
+                        {% csrf_token %}
+
+                        <h2>
+                            ثبت درخواست تعمیر
+                        </h2>
+
+                        <p>
+                            اطلاعات خود را وارد کنید؛ کارشناسان ما در کوتاه‌ترین زمان با شما تماس می‌گیرند.
+                        </p>
+
+                        <label for="client-name">
+                            نام و نام خانوادگی
+
+                            <input id="client-name"
+                                   type="text"
+                                   name="Cname"
+                                   autocomplete="name"
+                                   value="{{ form_user.instance.first_name }} {{ form_user.instance.last_name }}"
+                                   placeholder="نام و نام خانوادگی"
+                                   required>
+
+                        </label>
+
+                        <label for="client-phone">
+                            شماره تماس
+
+                            <input id="client-phone"
+                                   type="tel"
+                                   name="tel"
+                                   autocomplete="tel"
+                                   inputmode="tel"
+                                   value="{{ form_profile.instance.tel }}"
+                                   placeholder="شماره تماس"
+                                   required>
+
+                        </label>
+
+                        <label for="device-type">
+
+                            نوع دستگاه
+
+                            <select id="device-type"
+                                    name="device_type"
+                                    required>
+
+                                <option value="">انتخاب کنید</option>
+
+                                <option value="ref and freez">یخچال و فریزر</option>
+
+                                <option value="laundry">ماشین لباسشویی</option>
+
+                                <option value="dishwasher">ماشین ظرفشویی</option>
+
+                                <option value="food procs">غذاساز</option>
+
+                                <option value="coffe maker">قهوه ساز</option>
+
+                                <option value="others">سایر</option>
+
+                            </select>
+
+                        </label>
+
+                        <label for="client-description">
+
+                            توضیح مشکل
+
+                            <textarea id="client-description"
+                                      name="information"
+                                      rows="4"
+                                      placeholder="شرح مختصر مشکل پیش آمده"></textarea>
+
+                        </label>
+
+                        <div class="btn-box">
+
+                            <button type="submit"
+                                    aria-label="ارسال درخواست تعمیر">
+
+                                <i class="bi bi-send-fill" aria-hidden="true"></i>
+
+                                ارسال درخواست
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end slider section -->
+    <!-- about section -->
+    <section class="main about_section" aria-labelledby="about-title">
+
+        <div class="container-fluid">
+
+            <div class="about-wrapper">
+
+                <div class="about-content">
+
+                    <h2 id="about-title" class="heading_2">
+                        درباره تعمیریار
+                    </h2>
+
+                    <h3 class="lead">
+                        تعمیر تخصصی لوازم خانگی در استان خراسان رضوی
+                    </h3>
+
+                    <p class="txt">
+                        تعمیریار از معتبرترین مراکز تخصصی تعمیر لوازم خانگی در مشهد و سایر شهرستان‌های استان خراسان رضوی
+                        است و خدمات تعمیر انواع لوازم خانگی را با اعزام سریع تعمیرکار، ضمانت خدمات و پشتیبانی حرفه‌ای
+                        ارائه می‌دهد.
+                    </p>
+
+                </div>
+
+                <figure class="about-img">
+
+                    <img src="{% static 'img/about.png' %}"
+                         alt="تعمیرکار تعمیریار در حال تعمیر لوازم خانگی"
+                         loading="lazy"
+                         decoding="async">
+
+                </figure>
+
+                <div class="txt_about2">
+
+                    <h3 class="visually-hidden">
+                        مزایای تعمیریار
+                    </h3>
+
+                    <ol>
+
+                        <li>بیش از ۱۰۰۰ تعمیر موفق و رضایت مشتریان</li>
+
+                        <li>اعزام تعمیرکار به تمام نقاط مشهد در کمتر از ۲ ساعت</li>
+
+                        <li>ارائه فاکتور رسمی در پنل کاربری مشتری</li>
+
+                        <li>پشتیبانی دائمی و پاسخگویی حرفه‌ای</li>
+
+                    </ol>
+
+                </div>
+
+                <div class="about-stats">
+
+                    <article class="stat-box">
+
+                        <strong class="stat-number">
+                            1000+
+                        </strong>
+
+                        <p class="stat-title">
+                            تعمیر موفق
+                        </p>
+
+                    </article>
+
+                    <article class="stat-box">
+
+                        <strong class="stat-number">
+                            95%
+                        </strong>
+
+                        <p class="stat-title">
+                            رضایت مشتری
+                        </p>
+
+                    </article>
+
+                    <article class="stat-box">
+
+                        <strong class="stat-number">
+                            4+
+                        </strong>
+
+                        <p class="stat-title">
+                            سال سابقه
+                        </p>
+
+                    </article>
+
+                    <article class="stat-box">
+
+                        <strong class="stat-number">
+                            ۶ ماه
+                        </strong>
+
+                        <p class="stat-title">
+                            ضمانت خدمات
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end about section -->
+    <!-- service section -->
+    <section class="main service_section" aria-labelledby="service-title">
+
+        <div class="container-fluid">
+
+            <div class="service-wrapper">
+
+                <div class="service-titer">
+
+                    <h2 id="service-title" class="heading_2">
+                        خدمات تخصصی ما
+                    </h2>
+
+                    <p>
+                        ما طیف گسترده‌ای از خدمات تعمیر انواع لوازم خانگی را در مشهد و استان خراسان رضوی ارائه می‌دهیم.
+                    </p>
+
+                </div>
+
+                <div class="service-content">
+
+                    {% for item in service %}
+
+                        <article class="card">
+
+                            <a href="{% url 'home:detail_service' item.id %}"
+                               aria-label="مشاهده جزئیات {{ item.title }}">
+
+                                <div class="img-box">
+
+                                    <img src="{{ item.icon.url }}"
+                                         alt="خدمات {{ item.title }} در مشهد"
+                                         loading="lazy"
+                                         decoding="async">
+
+                                </div>
+
+                                <div class="card-body">
+
+                                    <h3 class="card-title">
+                                        {{ item.title }}
+                                    </h3>
+
+                                    <p class="card-text">
+                                        {{ item.description }}
+                                    </p>
+
+                                    <span class="read-more">
+
+                                    مشاهده جزئیات
+
+                                    <i class="bi bi-arrow-left"
+                                       aria-hidden="true"></i>
+
+                                </span>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="btn-box">
+
+                    <a href="{% url 'home:services' %}"
+                       aria-label="مشاهده همه خدمات تعمیر لوازم خانگی">
+
+                        مشاهده همه خدمات
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end service section -->
+    <!-- client section -->
+    <section class="main client_section" aria-labelledby="client-title">
+
+        <div class="container-fluid">
+
+            <div class="client-wrapper">
+
+                <div class="client-title">
+
+                    <h2 id="client-title" class="heading_2">
+                        آنچه مشتریان ما می‌گویند
+                    </h2>
+
+                    <p>
+                        رضایت شما، افتخار ماست
+                    </p>
+
+                </div>
+
+                <div class="client-content">
+
+                    {% for itm in review %}
+
+                        <article class="card">
+
+                            <div class="quote-icon">
+                                <i class="bi bi-chat-quote-fill"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <div class="card-head">
+
+                                <div class="icon-client">
+                                    <i class="bi bi-patch-check-fill"
+                                       aria-hidden="true"></i>
+                                </div>
+
+                                <div class="user-info">
+
+                                    <h3>
+                                        {{ itm.client }}
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="rating"
+                                     aria-label="امتیاز {{ itm.rating }} از ۵">
+
+                                    <div class="stars">
+
+                                        {% for i in "12345" %}
+
+                                            {% if forloop.counter <= itm.rating %}
+
+                                                <i class="bi bi-star-fill"
+                                                   aria-hidden="true"></i>
+
+                                            {% else %}
+
+                                                <i class="bi bi-star"
+                                                   aria-hidden="true"></i>
+
+                                            {% endif %}
+
+                                        {% endfor %}
+
+                                    </div>
+
+                                    <span class="score">
+                                    {{ itm.rating }}/5
+                                </span>
+
+                                </div>
+
+                                <p class="card-text">
+                                    {{ itm.msg }}
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer">
+
+                                <time class="date_text"
+                                      datetime="{{ itm.created_at|date:'Y-m-d' }}">
+
+                                    {{ itm.created_at.date }}
+
+                                </time>
+
+                            </div>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="btn-box">
+
+                    <a href="{% url 'home:comments' %}"
+                       aria-label="مشاهده همه نظرات مشتریان">
+
+                        مشاهده همه نظرات
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end client section -->
+    <!-- news section -->
+    <section class="main news_section" aria-labelledby="news-title">
+
+        <div class="container-fluid">
+
+            <div class="news-wrapper">
+
+                <div class="news-titer">
+
+                    <h2 id="news-title" class="heading_2">
+                        مجله آموزشی
+                    </h2>
+
+                    <p>
+                        آخرین مقالات تعمیر، نگهداری و افزایش عمر لوازم خانگی
+                    </p>
+
+                </div>
+
+                <div class="news-content">
+
+                    {% for item in news %}
+
+                        <article class="card">
+
+                            <a href="{% url 'home:detail_new' item.id %}"
+                               aria-label="مطالعه مقاله {{ item.sub_titer }}">
+
+                                <div class="card-head">
+
+                                    <img src="{{ item.sub_img.url }}"
+                                         class="card-img-top"
+                                         alt="{{ item.sub_titer }} | مجله آموزشی تعمیریار"
+                                         loading="lazy"
+                                         decoding="async">
+
+                                </div>
+
+                                <div class="card-body">
+
+                                    <h3 class="titer-txt">
+                                        {{ item.sub_titer }}
+                                    </h3>
+
+                                    <p class="card-text">
+                                        {{ item.sub_summary }}
+                                    </p>
+
+                                </div>
+
+                                <div class="card-foot">
+
+                                    <p>
+                                        <i class="bi bi-clock"
+                                           aria-hidden="true"></i>
+
+                                        {{ item.reading_time }} دقیقه
+                                    </p>
+
+                                    <p>
+
+                                        <i class="bi bi-calendar"
+                                           aria-hidden="true"></i>
+
+                                        <time datetime="{{ item.sub_update_date|date:'Y-m-d' }}">
+                                            {{ item.sub_update_date.date }}
+                                        </time>
+
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="btn-box">
+
+                    <a href="{% url 'home:new' %}"
+                       aria-label="مشاهده آرشیو مقالات آموزشی">
+
+                        آرشیو مقالات
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end news section -->
+    <!-- order section -->
+    <section class="main order_section" aria-labelledby="order-title">
+
+        <div class="container-fluid">
+            <div class="order-wrapper">
+                <div class="heading_2">
+
+                    <h2 id="order-title">
+                        مراحل ثبت درخواست تا تعمیر
+                    </h2>
+
+                    <p>
+                        در کمتر از چند دقیقه درخواست خود را ثبت کنید تا تعمیرکار متخصص با شما تماس بگیرد.
+                    </p>
+
+                </div>
+
+                <div class="box-process">
+
+                    <ol class="box-line">
+
+                        <li class="detail-box">
+
+                            <div class="circle" aria-hidden="true">
+                                1
+                            </div>
+
+                            <h3>
+                                ثبت درخواست
+                            </h3>
+
+                        </li>
+
+                        <li class="detail-box">
+
+                            <div class="circle" aria-hidden="true">
+                                2
+                            </div>
+
+                            <h3>
+                                تماس با شما
+                            </h3>
+
+                        </li>
+
+                        <li class="detail-box">
+
+                            <div class="circle" aria-hidden="true">
+                                3
+                            </div>
+
+                            <h3>
+                                اعزام تعمیرکار
+                            </h3>
+
+                        </li>
+
+                        <li class="detail-box">
+
+                            <div class="circle" aria-hidden="true">
+                                4
+                            </div>
+
+                            <h3>
+                                تعمیر در محل
+                            </h3>
+
+                        </li>
+
+                        <li class="detail-box">
+
+                            <div class="circle" aria-hidden="true">
+                                5
+                            </div>
+
+                            <h3>
+                                تست و ضمانت
+                            </h3>
+
+                        </li>
+
+                    </ol>
+
+                </div>
+
+                <div class="btn-box">
+
+                    <p class="cta-text">
+                        همین حالا با ما تماس بگیرید یا درخواست تعمیر خود را ثبت کنید.
+                    </p>
+
+                    <div class="action-btn">
+
+                        <a href="tel:09353593735"
+                           class="tel-btn"
+                           aria-label="تماس با شماره 09353593735">
+
+                            09353593735
+
+                            <i class="bi bi-telephone-fill"
+                               aria-hidden="true"></i>
+
+                        </a>
+
+                        <a class="form-btn"
+                           href="{% url 'home:homes' %}"
+                           aria-label="ثبت درخواست تعمیر">
+
+                            <i class="bi bi-chat-right-text-fill"
+                               aria-hidden="true"></i>
+
+                            ثبت درخواست تعمیر
+
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- end order section -->
+{% endblock %}
