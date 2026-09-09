@@ -1038,9 +1038,10 @@
     }
 
     .footer_section .footer-grid {
-        grid-template-columns:1fr;
-        gap: 40px;
-        justify-items: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 45px 30px;
+        justify-items: stretch;
+        align-items: start;
     }
 
     .footer_section .footer-grid .footer-titer {
@@ -1049,7 +1050,7 @@
     }
 
     .footer_section .footer-grid .footer-titer.social {
-        max-width: 100%;
+        max-width: none;
     }
 
     .footer_section .footer-titer h4::after {
@@ -1784,6 +1785,23 @@
     .invoice-actions {
         flex-wrap: wrap;
     }
+
+    .invoices-table {
+        min-width: 0;
+    }
+
+    .invoices-table th,
+    .invoices-table td {
+        padding: 13px 10px;
+        font-size: 11px;
+    }
+
+    .invoice-detail-btn {
+        padding: 7px 9px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -2787,7 +2805,6 @@
 
 
     /* TABLE */
-
     .invoice-table th {
         padding: 11px 15px 11px 8px;
         font-size: 9px;
@@ -2838,6 +2855,557 @@
         font-size: 10px;
     }
 
+    invoices-page {
+        padding: 25px 16px 55px;
+    }
+
+    .invoices-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .invoices-page-header h1 {
+        font-size: 25px;
+    }
+
+    .invoices-page-header p {
+        font-size: 12px;
+    }
+
+    .invoices-back {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .invoices-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .invoices-summary-item {
+        padding: 14px 11px;
+        gap: 9px;
+    }
+
+    .invoices-summary-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .invoices-card-header {
+        padding: 17px 15px;
+    }
+
+    .invoices-card-header h2 {
+        font-size: 15px;
+    }
+
+    .invoices-card-header span {
+        font-size: 10px;
+    }
+
+    .invoices-table-wrapper {
+        overflow: visible;
+    }
+
+    .invoices-table {
+        width: 100%;
+        min-width: 0;
+        display: block;
+    }
+
+    .invoices-table thead {
+        display: none;
+    }
+
+    .invoices-table tbody {
+        display: block;
+    }
+
+    .invoices-table tbody tr {
+        display: block;
+        padding: 10px 14px 13px;
+        border-bottom: 1px solid #edf1f6;
+        background: #fff;
+    }
+
+    .invoices-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .invoices-table tbody tr:hover {
+        background: #fff;
+    }
+
+    .invoices-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 5px;
+        border: none;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .invoices-table td:nth-child(1) {
+        display: none;
+    }
+
+    .invoices-table td:nth-child(2)::before {
+        content: "شماره فاکتور";
+    }
+
+    .invoices-table td:nth-child(3)::before {
+        content: "تاریخ";
+    }
+
+    .invoices-table td:nth-child(4)::before {
+        content: "مبلغ";
+    }
+
+    .invoices-table td:nth-child(2)::before,
+    .invoices-table td:nth-child(3)::before,
+    .invoices-table td:nth-child(4)::before {
+        flex: 0 0 auto;
+        color: #94a3b8;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+    .invoices-table td:nth-child(2) > *,
+    .invoices-table td:nth-child(3) > *,
+    .invoices-table td:nth-child(4) > * {
+        flex-shrink: 0;
+    }
+
+    .invoices-table td:nth-child(5) {
+        justify-content: center;
+        padding-top: 12px;
+        margin-top: 5px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .invoice-number {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .invoice-price {
+        color: #2563eb;
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .invoice-detail-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 9px 12px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .invoices-empty {
+        padding: 50px 18px;
+    }
+
+    .invoices-empty h3 {
+        font-size: 16px;
+    }
+
+    .invoices-empty p {
+        font-size: 11px;
+    }
+
+    .invoices-empty-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 23px;
+    }
+
+    .invoice-summary {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .invoice-summary-item {
+        min-height: 85px;
+        padding: 12px 10px;
+    }
+
+    .invoice-table-wrapper {
+        overflow: visible;
+    }
+
+    .invoice-table {
+        width: 100%;
+        min-width: 0;
+        display: block;
+        border-collapse: separate;
+    }
+
+    .invoice-table thead {
+        display: none;
+    }
+
+    .invoice-table tbody {
+        display: block;
+    }
+
+    .invoice-service-group {
+        margin-bottom: 14px;
+        padding: 0;
+        border: 1px solid #e5ebf2;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .invoice-service-group tr {
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .invoice-service-group .service-row {
+        display: grid;
+        grid-template-columns:1fr auto;
+        gap: 8px;
+        padding: 14px;
+        background: #fffaf5;
+        border-bottom: 1px solid #edf1f6;
+    }
+
+    .invoice-service-group .service-row td {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 5px 0;
+        border: none;
+        font-size: 11px;
+        white-space: normal;
+    }
+
+    .invoice-service-group .service-row td:nth-child(1) {
+        display: none;
+    }
+
+    .invoice-service-group .service-row td:nth-child(2) {
+        grid-column: 1 / -1;
+        color: #0f172a;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .invoice-service-group .service-row td:nth-child(3)::before {
+        content: "تعداد";
+    }
+
+    .invoice-service-group .service-row td:nth-child(4)::before {
+        content: "اجرت";
+    }
+
+    .invoice-service-group .service-row td:nth-child(3)::before,
+    .invoice-service-group .service-row td:nth-child(4)::before {
+        margin-left: 7px;
+        color: #94a3b8;
+        font-size: 9px;
+    }
+
+    .invoice-service-group .service-row td:nth-child(3),
+    .invoice-service-group .service-row td:nth-child(4) {
+        justify-content: flex-start;
+    }
+
+    .invoice-service-group .service-row td:nth-child(5) {
+        display: none;
+    }
+
+    .invoice-service-group .service-row td:nth-child(6) {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        margin-top: 7px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .invoice-service-group .part-row {
+        position: relative;
+        display: grid;
+        grid-template-columns:1.4fr .6fr;
+        gap: 0;
+        padding: 11px 14px;
+        border-bottom: 1px solid #edf1f6;
+    }
+
+    .invoice-service-group .part-row td {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 5px 0;
+        border: none;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .invoice-service-group .part-row td:nth-child(1),
+    .invoice-service-group .part-row td:nth-child(6) {
+        display: none;
+    }
+
+    .invoice-service-group .part-row td:nth-child(2) {
+        grid-column: 1 / -1;
+        color: #334155;
+        font-weight: 600;
+        white-space: normal;
+    }
+
+    .invoice-service-group .part-row td:nth-child(3)::before {
+        content: "تعداد";
+    }
+
+    .invoice-service-group .part-row td:nth-child(4)::before {
+        content: "قیمت واحد";
+    }
+
+    .invoice-service-group .part-row td:nth-child(5)::before {
+        content: "مبلغ";
+    }
+
+    .invoice-service-group .part-row td:nth-child(3)::before,
+    .invoice-service-group .part-row td:nth-child(4)::before,
+    .invoice-service-group .part-row td:nth-child(5)::before {
+        margin-left: 6px;
+        color: #94a3b8;
+        font-size: 8px;
+        font-weight: 400;
+    }
+
+    .invoice-service-group .part-row td:nth-child(5) {
+        font-weight: 700;
+        color: #2563eb;
+    }
+
+    .invoice-service-group .service-total-row {
+        display: grid;
+        grid-template-columns:1fr auto;
+        padding: 12px 14px;
+        background: #f8fafc;
+    }
+
+    .invoice-service-group .service-total-row td {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+        border: none;
+        font-size: 10px;
+    }
+
+    .invoice-service-group .service-total-row td:nth-child(1),
+    .invoice-service-group .service-total-row td:nth-child(6) {
+        display: none;
+    }
+
+    .invoice-service-group .service-total-row td:nth-child(2) {
+        grid-column: 1;
+        color: #64748b;
+        font-weight: 700;
+    }
+
+    .invoice-service-group .service-total-row td:nth-child(5) {
+        grid-column: 2;
+        color: #2563eb;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .invoice-summary-group {
+        display: block;
+        margin-top: 8px;
+        border: 1px solid #e5ebf2;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .invoice-summary-group .sum-row {
+        display: grid;
+        grid-template-columns:1fr auto;
+        width: 100%;
+    }
+
+    .invoice-summary-group .sum-row td {
+        padding: 13px 12px;
+        border: none;
+        font-size: 10px;
+    }
+
+    .invoice-summary-group .sum-row td:nth-child(1) {
+        display: none;
+    }
+
+    .invoice-summary-group .sum-row td:nth-child(5) {
+        grid-column: 1;
+        color: #64748b;
+        white-space: nowrap;
+    }
+
+    .invoice-summary-group .sum-row td:nth-child(6) {
+        grid-column: 2;
+        color: #334155;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .invoice-summary-group .total-row td:nth-child(5) {
+        color: #0f172a;
+        font-weight: 800;
+    }
+
+    .invoice-summary-group .total-row td:nth-child(6) {
+        color: #2563eb;
+        font-size: 12px;
+        font-weight: 800;
+        background: #eff6ff;
+    }
+
+    .service-review-btn,
+    .review-done {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 7px 9px;
+        border-radius: 8px;
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .service-review-btn {
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+    .review-done {
+        background: #f0fdf4;
+        color: #16a34a;
+    }
+
+    .review-service-info {
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+    .review-service-info div {
+        padding: 14px 16px;
+    }
+
+    .review-service-info div + div {
+        border-right: 1px solid #edf1f6;
+    }
+
+    .profile-orders .orders-table-wrapper {
+        overflow: visible;
+    }
+
+    .profile-orders .orders-table {
+        display: block;
+        width: 100%;
+        border-collapse: separate;
+    }
+
+    .profile-orders .orders-table thead {
+        display: none;
+    }
+
+    .profile-orders .orders-table tbody {
+        display: block;
+        padding: 12px;
+    }
+
+    .profile-orders .orders-table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+        padding: 12px;
+        border: 1px solid #e5ebf2;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 3px 12px rgba(15, 23, 42, .03);
+    }
+
+    .profile-orders .orders-table tbody tr:last-child {
+        margin-bottom: 0;
+    }
+
+    .profile-orders .orders-table tbody tr:hover {
+        background: #fff;
+    }
+
+    .profile-orders .orders-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 2px;
+        border: none;
+        white-space: nowrap;
+        font-size: 10px;
+    }
+
+
+
+    .profile-orders .orders-table td:nth-child(1)::before {
+        content: "شماره فاکتور";
+    }
+
+    .profile-orders .orders-table td:nth-child(2)::before {
+        content: "تاریخ ثبت";
+    }
+
+    .profile-orders .orders-table td:nth-child(3)::before {
+        content: "مبلغ";
+    }
+
+    .profile-orders .orders-table td:nth-child(1)::before,
+    .profile-orders .orders-table td:nth-child(2)::before,
+    .profile-orders .orders-table td:nth-child(3)::before {
+        color: #94a3b8;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+    .profile-orders .orders-table td:nth-child(5) {
+        justify-content: center;
+        margin-top: 6px;
+        padding-top: 10px;
+        border-top: 1px solid #edf1f6;
+    }
+
+    .profile-orders .order-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .profile-orders .order-detail {
+        width: 100%;
+        justify-content: center;
+        min-height: 34px;
+        font-size: 10px;
+    }
+
+    .profile-orders .invoice-number {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .profile-orders .currency {
+        font-size: 8px;
+    }
 }
 
 
@@ -3721,7 +4289,6 @@
 
 
     /* TABLE */
-
     .invoice-table th {
         padding: 10px 13px 10px 7px;
         font-size: 8px;
@@ -3741,5 +4308,13 @@
         font-size: 9px;
     }
 
+    .footer_section .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .invoice-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 

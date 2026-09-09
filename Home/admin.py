@@ -31,7 +31,34 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 class FactorAdmin(admin.ModelAdmin):
-    list_display = ('client_fact', 'total_with_tax')
+    list_display = (
+        'id', 'client_fact', 'date_created', 'services_total', 'parts_total', 'total_without_tax', 'tax_amount',
+        'total_with_tax')
+    search_fields = ('client_fact__Cname', 'client_fact__tel')
+    list_filter = ('tax_percent',)
+
+
+def save_formset(request, form, formset, change):
+    instances = formset.save(commit=False)
+    for instance in instances:
+        if instance.part and not instance.unit_price:
+            instance.unit_price = instance.part.price
+        instance.save()
+    formset.save_m2m()
+
+
+class PartUsageInline(admin.TabularInline):
+    model = PartUsage
+    extra = 1
+    readonly_fields = ('unit_price',)
+    fields = ('part', 'quantity', 'unit_price')
+
+
+class FactorServiceAdmin(admin.ModelAdmin):
+    list_display = ('factor', 'service', 'price_service', 'parts_total', 'total')
+    list_filter = ('service',)
+    search_fields = ('factor__client_fact__Cname', 'service__title')
+    inlines = [PartUsageInline]
 
 
 class ThousandSeparatorInput(forms.TextInput):
@@ -66,3 +93,4 @@ admin.site.register(Client, ClientAdmin)
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(Factor, FactorAdmin)
 admin.site.register(Part, PartAdmin)
+admin.site.register(FactorService, FactorServiceAdmin)

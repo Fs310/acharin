@@ -1,635 +1,271 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}پروفایل من{% endblock %}
 
 {% block body %}
 
-    <section class="profile-section">
+<section class="profile-section">
+    <div class="profile-container">
 
-        <div class="profile-container">
+        <header class="profile-page-header">
+            <div>
+                <h1>پروفایل من</h1>
+                <p>مدیریت اطلاعات حساب کاربری و اطلاعات شخصی شما</p>
+            </div>
+        </header>
 
-            <!-- =========================================
-                 HEADER
-            ========================================== -->
+        <div class="profile-layout">
 
-            <header class="profile-page-header">
+            <aside class="profile-sidebar">
 
-                <div>
-                    <h1>
-                        پروفایل من
-                    </h1>
-
-                    <p>
-                        مدیریت اطلاعات حساب کاربری و اطلاعات شخصی شما
-                    </p>
+                <div class="profile-user-card">
+                    <div class="profile-avatar">
+                        <i class="bi bi-person-fill" aria-hidden="true"></i>
+                    </div>
+                    <h2>{{ form_user.instance.first_name }} {{ form_user.instance.last_name }}</h2>
+                    <span>عضو آچارین</span>
+                    <span class="profile-username">{{ form_user.instance.username }}</span>
                 </div>
 
-            </header>
+                <nav class="profile-menu" aria-label="منوی حساب کاربری">
 
+                    <a href="{% url 'accounts:profile' %}" class="active">
+                        <i class="bi bi-person" aria-hidden="true"></i>
+                        اطلاعات حساب کاربری
+                    </a>
 
-            <!-- =========================================
-                 MAIN LAYOUT
-            ========================================== -->
+                    <a href="{% url 'accounts:history' %}">
+                        <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+                        سفارش‌های من
+                    </a>
 
-            <div class="profile-layout">
+                    <a href="#address">
+                        <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                        آدرس من
+                    </a>
 
+                    <a href="#">
+                        <i class="bi bi-lock" aria-hidden="true"></i>
+                        تغییر رمز عبور
+                    </a>
 
-                <!-- =====================================
-                     SIDEBAR
-                ====================================== -->
+                    <a href="#" class="logout">
+                        <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+                        خروج از حساب
+                    </a>
 
-                <aside class="profile-sidebar">
+                </nav>
 
+            </aside>
 
-                    <!-- User Card -->
+            <main class="profile-content">
 
-                    <div class="profile-user-card">
+                <form method="post" action="{% url 'accounts:profile' %}" class="profile-form">
+                    {% csrf_token %}
 
-                        <div class="profile-avatar">
+                    <section class="profile-card" aria-labelledby="account-info-title">
 
-                            <i
-                                    class="bi bi-person-fill"
-                                    aria-hidden="true"
-                            ></i>
-
-                        </div>
-
-                        <h2>
-                            {{ form_user.instance.first_name }}
-                            {{ form_user.instance.last_name }}
-                        </h2>
-
-                        <span>
-                        عضو تعمیریار
-                    </span>
-
-                        <span class="profile-username">
-                        {{ form_user.instance.username }}
-                    </span>
-
-                    </div>
-
-
-                    <!-- Account Menu -->
-
-                    <nav class="profile-menu" aria-label="منوی حساب کاربری">
-
-                        <a
-                                href="{% url 'accounts:profile' %}"
-                                class="active"
-                        >
-                            <i
-                                    class="bi bi-person"
-                                    aria-hidden="true"
-                            ></i>
-
-                            اطلاعات حساب کاربری
-                        </a>
-
-
-                        <a href="{% url 'accounts:history' %}">
-                            <i
-                                    class="bi bi-clipboard-check"
-                                    aria-hidden="true"
-                            ></i>
-
-                            سفارش‌های من
-                        </a>
-
-
-                        <a href="#address">
-                            <i
-                                    class="bi bi-geo-alt"
-                                    aria-hidden="true"
-                            ></i>
-
-                            آدرس من
-                        </a>
-
-
-                        <a href="#">
-                            <i
-                                    class="bi bi-lock"
-                                    aria-hidden="true"
-                            ></i>
-
-                            تغییر رمز عبور
-                        </a>
-
-
-                        <a
-                                href="#"
-                                class="logout"
-                        >
-                            <i
-                                    class="bi bi-box-arrow-right"
-                                    aria-hidden="true"
-                            ></i>
-
-                            خروج از حساب
-                        </a>
-
-                    </nav>
-
-                </aside>
-
-
-                <!-- =====================================
-                     CONTENT
-                ====================================== -->
-
-                <main class="profile-content">
-
-                    <form
-                            method="post"
-                            action="{% url 'accounts:profile' %}"
-                            class="profile-form"
-                    >
-
-                        {% csrf_token %}
-
-
-                        <!-- =================================
-                             ACCOUNT INFORMATION
-                        ================================== -->
-
-                        <section
-                                class="profile-card"
-                                aria-labelledby="account-info-title"
-                        >
-
-                            <header class="profile-card-header">
-
-                                <div>
-
-                                    <h2 id="account-info-title">
-                                        اطلاعات حساب کاربری
-                                    </h2>
-
-                                    <p>
-                                        اطلاعات شخصی خود را مدیریت کنید.
-                                    </p>
-
-                                </div>
-
-                                <i
-                                        class="bi bi-person"
-                                        aria-hidden="true"
-                                ></i>
-
-                            </header>
-
-
-                            <div class="profile-fields">
-
-
-                                <!-- Username -->
-
-                                <div class="profile-field">
-
-                                    <label for="username">
-                                        نام کاربری
-                                    </label>
-
-                                    <input
-                                            readonly
-                                            type="text"
-                                            id="username"
-                                            name="username"
-                                            value="{{ form_user.instance.username }}"
-                                    >
-
-                                    {% if form.username.errors %}
-                                        <small class="field-error">
-                                            {{ form.username.errors.0 }}
-                                        </small>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- First name -->
-
-                                <div class="profile-field">
-
-                                    <label for="firstname">
-                                        نام
-                                    </label>
-
-                                    <input
-                                            type="text"
-                                            id="firstname"
-                                            name="first_name"
-                                            value="{{ form_user.instance.first_name }}"
-                                    >
-
-                                </div>
-
-
-                                <!-- Last name -->
-
-                                <div class="profile-field">
-
-                                    <label for="lastname">
-                                        نام خانوادگی
-                                    </label>
-
-                                    <input
-                                            type="text"
-                                            id="lastname"
-                                            name="last_name"
-                                            value="{{ form_user.instance.last_name }}"
-                                    >
-
-                                </div>
-
-
-                                <!-- Phone -->
-
-                                <div class="profile-field">
-
-                                    <label for="tel">
-                                        شماره تماس
-                                    </label>
-
-                                    <input
-                                            type="tel"
-                                            id="tel"
-                                            name="tel"
-                                            value="{{ form_profile.instance.tel }}"
-                                    >
-
-                                    {% for error in form_profile.instance.tel.errors %}
-                                        <small class="field-error">
-                                            {{ error }}
-                                        </small>
-                                    {% endfor %}
-
-                                </div>
-
-
-                                <!-- Email -->
-
-                                <div class="profile-field">
-
-                                    <label for="email">
-                                        ایمیل
-                                    </label>
-
-                                    <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value="{{ form_user.instance.email }}"
-                                    >
-
-                                    {% if form.email.errors %}
-                                        <small class="field-error">
-                                            {{ form.email.errors.0 }}
-                                        </small>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Birthday -->
-
-                                <div class="profile-field">
-
-                                    <label for="date_birthday">
-                                        تاریخ تولد
-                                    </label>
-
-                                    {% if profiles.date_birthday %}
-
-                                        <input
-                                                type="text"
-                                                id="date_birthday"
-                                                name="date_birthday"
-                                                value="{{ profiles.date_birthday.date }}"
-                                        >
-
-                                    {% else %}
-
-                                        <input
-                                                type="date"
-                                                id="date_birthday"
-                                                name="date_birthday"
-                                                value=""
-                                        >
-
-                                    {% endif %}
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-
-                        <!-- =================================
-                             ADDRESS
-                        ================================== -->
-
-                        <section
-                                class="profile-card"
-                                id="address"
-                                aria-labelledby="address-title"
-                        >
-
-                            <header class="profile-card-header">
-
-                                <div>
-
-                                    <h2 id="address-title">
-                                        اطلاعات آدرس
-                                    </h2>
-
-                                    <p>
-                                        آدرس محل دریافت خدمات را وارد کنید.
-                                    </p>
-
-                                </div>
-
-                                <i
-                                        class="bi bi-geo-alt"
-                                        aria-hidden="true"
-                                ></i>
-
-                            </header>
-
-
-                            <div class="profile-fields address-fields">
-
-                                <!-- Province -->
-                                <div class="profile-field">
-
-                                    <label for="province">
-                                        استان
-                                    </label>
-
-                                    <select
-                                            id="province"
-                                            name="province"
-                                    >
-                                        <option value="">انتخاب استان</option>
-
-                                        <option
-                                                value="خراسان رضوی"
-                                                selected
-                                        >
-                                            خراسان رضوی
-                                        </option>
-
-                                    </select>
-
-                                </div>
-
-
-                                <!-- City -->
-                                <div class="profile-field">
-
-                                    <label for="city">
-                                        شهر
-                                    </label>
-
-                                    <select
-                                            id="city"
-                                            name="city"
-                                    >
-                                        <option value="">انتخاب شهر</option>
-
-                                        <option
-                                                value="مشهد"
-                                                selected
-                                        >
-                                            مشهد
-                                        </option>
-
-                                        <option value="نیشابور">
-                                            نیشابور
-                                        </option>
-
-                                        <option value="سبزوار">
-                                            سبزوار
-                                        </option>
-                                    </select>
-
-                                </div>
-
-
-                                <!-- Address -->
-
-                                <div class="profile-field full-width">
-
-                                    <label for="address-input">
-                                        آدرس
-                                    </label>
-
-                                    <textarea
-                                            id="address-input"
-                                            name="address"
-                                            rows="5"
-                                            placeholder="آدرس خود را وارد کنید..."
-                                    >{{ form_profile.instance.address }}</textarea>
-
-                                    {% for error in form_profile.address.errors %}
-                                        <small class="field-error">
-                                            {{ error }}
-                                        </small>
-                                    {% endfor %}
-
-                                </div>
-
-                            </div>
-
-                            <div class="profile-actions">
-
-                                <button type="submit">
-
-                                    <i
-                                            class="bi bi-check2"
-                                            aria-hidden="true"
-                                    ></i>
-
-                                    ذخیره تغییرات
-
-                                </button>
-
-                            </div>
-
-                        </section>
-
-                    </form>
-
-
-                    <!-- =====================================
-                         EMPTY ORDERS SECTION
-                         فقط وقتی داده سفارش‌ها اضافه شود نمایش بده
-                    ====================================== -->
-                    <section class="profile-card profile-orders"
-                            id="orders"
-                            aria-labelledby="orders-title">
                         <header class="profile-card-header">
-
                             <div>
-
-                                <h2 id="orders-title">
-                                    سفارش‌های اخیر
-                                </h2>
-
-                                <p>
-                                    آخرین درخواست‌های ثبت‌شده شما
-                                </p>
-
+                                <h2 id="account-info-title">اطلاعات حساب کاربری</h2>
+                                <p>اطلاعات شخصی خود را مدیریت کنید.</p>
                             </div>
-
-                            <i
-                                    class="bi bi-receipt"
-                                    aria-hidden="true"
-                            ></i>
-
+                            <i class="bi bi-person" aria-hidden="true"></i>
                         </header>
 
+                        <div class="profile-fields">
 
-                        <div class="orders-table-wrapper">
-
-                            <table class="orders-table">
-
-                                <thead>
-                                <tr>
-
-                                    <th>
-                                        شماره فاکتور
-                                    </th>
-
-                                    <th>
-                                        تاریخ ثبت
-                                    </th>
-
-                                    <th>
-                                        مبلغ
-                                    </th>
-
-                                    <th>
-                                        عملیات
-                                    </th>
-
-                                </tr>
-                                </thead>
-
-
-                                <tbody>
-
-                                {% for list in list_order|slice:":3" %}
-
-                                    <tr>
-
-                                        <td>
-                            <span class="invoice-number">
-                                #{{ list.id }}
-                            </span>
-                                        </td>
-
-
-                                        <td>
-                                            {{ list.date_created.date }}
-                                        </td>
-
-
-                                        <td>
-                                            {{ list.total_with_tax }}
-                                            <span class="currency">
-                                تومان
-                            </span>
-                                        </td>
-
-
-                                        <td>
-
-                                            <div class="order-actions">
-
-                                                <a
-                                                        href="{% url 'accounts:detail_history' list.id %}"
-                                                        class="order-detail"
-                                                >
-                                                    جزئیات
-                                                </a>
-
-                                                <a
-                                                        href="{% url 'accounts:submit_review' list.id list.id %}"
-                                                        class="order-review"
-                                                >
-                                                    ثبت نظر
-                                                </a>
-
-                                            </div>
-
-                                        </td>
-
-                                    </tr>
-
-                                {% empty %}
-
-                                    <tr>
-
-                                        <td
-                                                colspan="4"
-                                                class="orders-empty"
-                                        >
-
-                                            <i
-                                                    class="bi bi-inbox"
-                                                    aria-hidden="true"
-                                            ></i>
-
-                                            <span>
-                                هنوز سفارشی ثبت نکرده‌اید.
-                            </span>
-
-                                        </td>
-
-                                    </tr>
-
-                                {% endfor %}
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
-
-
-                        {% if list_order|length > 3 %}
-
-                            <div class="orders-footer">
-
-                                <a
-                                        href="{% url 'accounts:history' %}"
-                                        class="orders-more"
-                                >
-                                    مشاهده همه سفارش‌ها
-
-                                    <i
-                                            class="bi bi-arrow-left"
-                                            aria-hidden="true"
-                                    ></i>
-
-                                </a>
-
+                            <div class="profile-field">
+                                <label for="username">نام کاربری</label>
+                                <input readonly type="text" id="username" name="username" value="{{ form_user.instance.username }}">
+                                {% if form.username.errors %}
+                                    <small class="field-error">{{ form.username.errors.0 }}</small>
+                                {% endif %}
                             </div>
 
-                        {% endif %}
+                            <div class="profile-field">
+                                <label for="firstname">نام</label>
+                                <input type="text" id="firstname" name="first_name" value="{{ form_user.instance.first_name }}">
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="lastname">نام خانوادگی</label>
+                                <input type="text" id="lastname" name="last_name" value="{{ form_user.instance.last_name }}">
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="tel">شماره تماس</label>
+                                <input type="tel" id="tel" name="tel" value="{{ form_profile.instance.tel }}">
+                                {% for error in form_profile.instance.tel.errors %}
+                                    <small class="field-error">{{ error }}</small>
+                                {% endfor %}
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="email">ایمیل</label>
+                                <input type="email" id="email" name="email" value="{{ form_user.instance.email }}">
+                                {% if form.email.errors %}
+                                    <small class="field-error">{{ form.email.errors.0 }}</small>
+                                {% endif %}
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="date_birthday">تاریخ تولد</label>
+                                {% if profiles.date_birthday %}
+                                    <input type="text" id="date_birthday" name="date_birthday" value="{{ profiles.date_birthday.date }}">
+                                {% else %}
+                                    <input type="date" id="date_birthday" name="date_birthday" value="">
+                                {% endif %}
+                            </div>
+
+                        </div>
 
                     </section>
 
-                </main>
+                    <section class="profile-card" id="address" aria-labelledby="address-title">
 
-            </div>
+                        <header class="profile-card-header">
+                            <div>
+                                <h2 id="address-title">اطلاعات آدرس</h2>
+                                <p>آدرس محل دریافت خدمات را وارد کنید.</p>
+                            </div>
+                            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                        </header>
+
+                        <div class="profile-fields address-fields">
+
+                            <div class="profile-field">
+                                <label for="province">استان</label>
+                                <select id="province" name="province">
+                                    <option value="">انتخاب استان</option>
+                                    <option value="خراسان رضوی" selected>خراسان رضوی</option>
+                                </select>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="city">شهر</label>
+                                <select id="city" name="city">
+                                    <option value="">انتخاب شهر</option>
+                                    <option value="مشهد" selected>مشهد</option>
+                                    <option value="نیشابور">نیشابور</option>
+                                    <option value="سبزوار">سبزوار</option>
+                                </select>
+                            </div>
+
+                            <div class="profile-field full-width">
+                                <label for="address-input">آدرس</label>
+                                <textarea id="address-input" name="address" rows="5" placeholder="آدرس خود را وارد کنید...">{{ form_profile.instance.address }}</textarea>
+                                {% for error in form_profile.address.errors %}
+                                    <small class="field-error">{{ error }}</small>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+
+                        <div class="profile-actions">
+                            <button type="submit">
+                                <i class="bi bi-check2" aria-hidden="true"></i>
+                                ذخیره تغییرات
+                            </button>
+                        </div>
+
+                    </section>
+
+                </form>
+
+                <section class="profile-card profile-orders" id="orders" aria-labelledby="orders-title">
+
+                    <header class="profile-card-header">
+                        <div>
+                            <h2 id="orders-title">سفارش‌های اخیر</h2>
+                            <p>آخرین درخواست‌های ثبت‌شده شما</p>
+                        </div>
+                        <i class="bi bi-receipt" aria-hidden="true"></i>
+                    </header>
+
+                    <div class="orders-table-wrapper">
+
+                        <table class="orders-table">
+
+                            <thead>
+                            <tr>
+                                <th>شماره فاکتور</th>
+                                <th>تاریخ ثبت</th>
+                                <th>مبلغ</th>
+                                <th>عملیات</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            {% for list in list_order|slice:":3" %}
+
+                                <tr>
+
+                                    <td>
+                                        <span class="invoice-number">#{{ list.id }}</span>
+                                    </td>
+
+                                    <td>
+                                        {{ list.date_created.date }}
+                                    </td>
+
+                                    <td>
+                                        {{ list.total_with_tax|intcomma }}
+                                       تومان
+                                    </td>
+
+                                    <td>
+
+                                        <div class="order-actions">
+
+                                            <a href="{% url 'accounts:detail_history' list.id %}" class="order-detail">
+                                                جزئیات
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            {% empty %}
+
+                                <tr>
+                                    <td colspan="4" class="orders-empty">
+                                        <i class="bi bi-inbox" aria-hidden="true"></i>
+                                        <span>هنوز سفارشی ثبت نکرده‌اید.</span>
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    {% if list_order|length > 3 %}
+
+                        <div class="orders-footer">
+                            <a href="{% url 'accounts:history' %}" class="orders-more">
+                                مشاهده همه سفارش‌ها
+                                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    {% endif %}
+
+                </section>
+
+            </main>
 
         </div>
 
-    </section>
+    </div>
+</section>
 
 {% endblock %}

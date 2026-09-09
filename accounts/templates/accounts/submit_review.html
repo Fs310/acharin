@@ -1,33 +1,154 @@
 {% extends '_base.html' %}
-{% load static %}
-{% block title %}صفحه اصلی{% endblock %}
-{% block body %}
-    <section class="reviews_section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="img-box">
-                        <img src="{% static 'img/order.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="detail-box">
-                        <form method="post" action="{% url 'accounts:submit_review' factor_id factor_id %}">
-                            {% csrf_token %}
-                            <h2 class="heading_2">ثبت نظر</h2>
-                            <label> امتیازدهی:
-                                <input type="number" name="rating" min="1" class="rating-input" value="3" />
-                            </label>
-                            <textarea type="text" name="msg" placeholder="نظرات"></textarea>
-                            <div class="btn-box">
-                                <button type="submit">ثبت</button>
-                                <a type="button" href="{% url 'accounts:history' %}">بازگشت</a>
 
-                            </div>
-                        </form>
-                    </div>
+{% load static %}
+
+{% block title %}ثبت نظر{% endblock %}
+
+{% block body %}
+
+    <section class="review-page">
+
+        <div class="review-container">
+
+            <nav class="review-breadcrumb" aria-label="مسیر صفحه">
+                <a href="{% url 'home:homes' %}">خانه</a>
+                <span aria-hidden="true">‹</span>
+                <a href="{% url 'accounts:history' %}">سفارش‌های من</a>
+                <span aria-hidden="true">‹</span>
+                <a href="{% url 'accounts:detail_history' factor.id %}">جزئیات فاکتور</a>
+                <span aria-hidden="true">‹</span>
+                <span aria-current="page">ثبت نظر</span>
+            </nav>
+
+            <div class="review-page-header">
+
+                <div>
+                    <h1>ثبت نظر</h1>
+                    <p>تجربه خود از دریافت این خدمت را با ما به اشتراک بگذارید.</p>
                 </div>
+
+                <a href="{% url 'accounts:detail_history' factor.id %}" class="review-back">
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    بازگشت به فاکتور
+                </a>
+
             </div>
+
+            <div class="review-layout">
+
+                <section class="review-card">
+
+                    <div class="review-card-header">
+                        <div class="review-service-icon">
+                            <i class="bi bi-tools" aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <span>خدمت دریافت‌شده</span>
+                            <h2>{{ service.title }}</h2>
+                        </div>
+                    </div>
+
+                    <div class="review-service-info">
+
+                        <div>
+                            <span>شماره فاکتور</span>
+                            <strong>#{{ factor.id }}</strong>
+                        </div>
+
+                        <div>
+                            <span>اجرت خدمت</span>
+                            <strong>{{ factor_service.price_service|floatformat:0 }} ریال</strong>
+                        </div>
+
+                    </div>
+
+                    <form method="post" class="review-form">
+
+                        {% csrf_token %}
+
+                        <div class="review-form-group">
+                            <label>امتیاز شما</label>
+
+                            <div class="review-rating">
+                                {% for radio in form.rating %}
+                                    {{ radio.tag }}
+                                    <label for="{{ radio.id_for_label }}">
+                                        {{ radio.choice_label }}
+                                    </label>
+                                {% endfor %}
+                            </div>
+
+                            {% if form.rating.errors %}
+                                <div class="review-error">
+                                    {{ form.rating.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="review-form-group">
+
+                            <label for="{{ form.msg.id_for_label }}">
+                                نظر شما
+                            </label>
+
+                            {{ form.msg }}
+
+                            {% if form.msg.errors %}
+                                <div class="review-error">
+                                    {{ form.msg.errors }}
+                                </div>
+                            {% endif %}
+
+                            <small>
+                                حداکثر ۶۰۰ کاراکتر
+                            </small>
+
+                        </div>
+
+                        <div class="review-form-actions">
+
+                            <a href="{% url 'accounts:detail_history' factor.id %}" class="review-cancel">
+                                انصراف
+                            </a>
+
+                            <button type="submit" class="review-submit">
+                                <i class="bi bi-send" aria-hidden="true"></i>
+                                ثبت نظر
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+                <aside class="review-side-card">
+
+                    <div class="review-side-icon">
+                        <i class="bi bi-chat-heart" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>نظر شما برای ما مهم است</h3>
+
+                    <p>
+                        تجربه شما به ما کمک می‌کند کیفیت خدمات آچارین را بهتر کنیم
+                        و خدمات مناسب‌تری به مشتریان ارائه دهیم.
+                    </p>
+
+                    <div class="review-side-item">
+                        <i class="bi bi-check-circle" aria-hidden="true"></i>
+                        <span>تجربه دریافت خدمت را بیان کنید</span>
+                    </div>
+
+
+                </aside>
+
+            </div>
+
         </div>
+
     </section>
+
+
 {% endblock %}

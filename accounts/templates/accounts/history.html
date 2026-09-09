@@ -1,70 +1,104 @@
 {% extends '_base.html' %}
+
 {% load static %}
+{% load humanize %}
 
-{% block title %}سفارشات{% endblock %}
+{% block title %}فاکتورهای من{% endblock %}
+
 {% block body %}
-    <section class="orders-page">
 
-    <div class="orders-container">
+<section class="invoices-page">
 
-        <!-- Header -->
-        <header class="orders-header">
+    <div class="invoices-container">
+
+        <nav class="invoices-breadcrumb" aria-label="مسیر صفحه">
+            <a href="{% url 'home:homes' %}">خانه</a>
+            <span aria-hidden="true">‹</span>
+            <a href="{% url 'accounts:profile' %}">حساب کاربری</a>
+            <span aria-hidden="true">‹</span>
+            <span aria-current="page">فاکتورهای من</span>
+        </nav>
+
+        <header class="invoices-page-header">
 
             <div>
-                <h1>
-                    لیست سفارشات
-                </h1>
-
-                <p>
-                    سفارش‌ها و فاکتورهای ثبت‌شده شما
-                </p>
+                <h1>فاکتورهای من</h1>
+                <p>لیست فاکتورها و سوابق خدمات دریافت‌شده</p>
             </div>
 
-            <i
-                class="bi bi-receipt"
-                aria-hidden="true"
-            ></i>
+            <a href="{% url 'accounts:profile' %}" class="invoices-back">
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                بازگشت به حساب کاربری
+            </a>
 
         </header>
 
+        <section class="invoices-summary">
 
-        <!-- Orders -->
-        <div class="orders-card">
+            <div class="invoices-summary-item">
 
-            <div class="orders-table-wrapper">
+                <div class="invoices-summary-icon">
+                    <i class="bi bi-receipt" aria-hidden="true"></i>
+                </div>
 
-                <table class="orders-table">
+                <div>
+                    <span>تعداد فاکتورها</span>
+                    <strong>{{ invoices|length }}</strong>
+                </div>
 
-                    <thead>
+            </div>
+
+            <div class="invoices-summary-item">
+
+                <div class="invoices-summary-icon invoices-summary-icon-blue">
+                    <i class="bi bi-person-check" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <span>مشتری</span>
+                    <strong>{{ request.user.client.Cname }}</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="invoices-card">
+
+            <header class="invoices-card-header">
+
+                <div>
+                    <h2>
+                        <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+                        سوابق فاکتورها
+                    </h2>
+
+                    <span>فاکتورهای ثبت‌شده برای شما</span>
+                </div>
+
+            </header>
+
+            {% if invoices %}
+
+                <div class="invoices-table-wrapper">
+
+                    <table class="invoices-table">
+
+                        <thead>
+
                         <tr>
-
-                            <th>
-                                #
-                            </th>
-
-                            <th>
-                                شماره فاکتور
-                            </th>
-
-                            <th>
-                                تاریخ ثبت درخواست
-                            </th>
-
-                            <th>
-                                مبلغ فاکتور
-                            </th>
-
-                            <th>
-                                عملیات
-                            </th>
-
+                            <th>ردیف</th>
+                            <th>شماره فاکتور</th>
+                            <th>تاریخ</th>
+                            <th>مبلغ</th>
+                            <th>عملیات</th>
                         </tr>
-                    </thead>
 
+                        </thead>
 
-                    <tbody>
+                        <tbody>
 
-                        {% for list in list_order %}
+                        {% for invoice in invoices %}
 
                             <tr>
 
@@ -72,86 +106,33 @@
                                     {{ forloop.counter }}
                                 </td>
 
-
                                 <td>
                                     <span class="invoice-number">
-                                        #{{ list.id }}
+                                        #{{ invoice.id }}
                                     </span>
                                 </td>
 
-
                                 <td>
-                                    {{ list.date_created.date }}
+                                    {{ invoice.date_created.date }}
                                 </td>
 
-
                                 <td>
-                                    <strong>
-                                        {{ list.total_with_tax }}
+                                    <strong class="invoice-price">
+                                        {{ invoice.total_with_tax|floatformat:0|intcomma }} ریال
                                     </strong>
-
-                                    <span class="currency">
-                                        تومان
-                                    </span>
                                 </td>
 
 
                                 <td>
 
-                                    <div class="order-actions">
+                                    <a href="{% url 'accounts:detail_history' invoice.id %}"
+                                       class="invoice-detail-btn">
 
-                                        <a
-                                            href="{% url 'accounts:detail_history' list.id %}"
-                                            class="order-detail"
-                                        >
-                                            <i
-                                                class="bi bi-eye"
-                                                aria-hidden="true"
-                                            ></i>
+                                        مشاهده فاکتور
 
-                                            جزئیات فاکتور
-                                        </a>
+                                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
 
-
-                                        <a
-                                            href="{% url 'accounts:submit_review' %}"
-                                            class="order-review"
-                                        >
-                                            <i
-                                                class="bi bi-star"
-                                                aria-hidden="true"
-                                            ></i>
-
-                                            ثبت نظر
-                                        </a>
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
-
-                        {% empty %}
-
-                            <tr>
-
-                                <td
-                                    colspan="5"
-                                    class="orders-empty"
-                                >
-
-                                    <i
-                                        class="bi bi-inbox"
-                                        aria-hidden="true"
-                                    ></i>
-
-                                    <h2>
-                                        هنوز سفارشی ثبت نشده است
-                                    </h2>
-
-                                    <p>
-                                        بعد از ثبت درخواست تعمیر، سفارش‌های شما در این بخش نمایش داده می‌شوند.
-                                    </p>
+                                    </a>
 
                                 </td>
 
@@ -159,33 +140,39 @@
 
                         {% endfor %}
 
-                    </tbody>
+                        </tbody>
 
-                </table>
+                    </table>
 
-            </div>
+                </div>
 
+            {% else %}
 
-            <!-- Back -->
-            <div class="orders-footer">
+                <div class="invoices-empty">
 
-                <a
-                    href="{% url 'home:homes' %}"
-                    class="orders-back"
-                >
-                    <i
-                        class="bi bi-arrow-right"
-                        aria-hidden="true"
-                    ></i>
+                    <div class="invoices-empty-icon">
+                        <i class="bi bi-receipt" aria-hidden="true"></i>
+                    </div>
 
-                    بازگشت
-                </a>
+                    <h3>هنوز فاکتوری ثبت نشده است</h3>
 
-            </div>
+                    <p>
+                        پس از دریافت خدمات از آچارین، فاکتورهای شما در این قسمت نمایش داده می‌شوند.
+                    </p>
 
-        </div>
+                    <a href="{% url 'home:homes' %}" class="invoices-home-btn">
+                        <i class="bi bi-house" aria-hidden="true"></i>
+                        بازگشت به صفحه اصلی
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </section>
 
     </div>
 
 </section>
+
 {% endblock %}

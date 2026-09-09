@@ -39,16 +39,33 @@ class ServiceRequestForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
-    RATING_CHOICES = [(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5')]
+
+    RATING_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    ]
 
     rating = forms.ChoiceField(
         choices=RATING_CHOICES,
-        widget=forms.RadioSelect
+        widget=forms.RadioSelect,
+        label='امتیاز شما'
     )
 
     class Meta:
         model = Review
         fields = ['msg', 'rating']
+        labels = {
+            'msg': 'نظر شما',
+        }
+        widgets = {
+            'msg': forms.Textarea(attrs={
+                'rows': 6,
+                'placeholder': 'تجربه خود از دریافت این خدمت را برای ما بنویسید...',
+            }),
+        }
 
 # class TrackingCodeForm(forms.Form):
 #     code = forms.CharField(label='کدپیگیری')

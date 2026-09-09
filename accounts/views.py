@@ -14,6 +14,7 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings
 from six import text_type
+from django.db.models import Exists, OuterRef
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 
@@ -186,30 +187,48 @@ def password_reset_confirm(request, uidb64, token, password=None):
 
 
 def history(request):
-    list_order = Factor.objects.filter(client_fact__user=request.user).order_by('-date_created')
-    return render(request, 'accounts/history.html', {'list_order': list_order})
+    invoices = Factor.objects.filter(client_fact__user=request.user).order_by('-date_created')
+    return render(request, 'accounts/history.html', {'invoices': invoices})
 
 
 def detail_history(request, id):
-    history_detail = get_object_or_404(Factor.objects.prefetch_related('services', 'parts'), id=id,
-                                       client_fact__user=request.user)
-    return render(request, 'accounts/detail_history.html', {'history_detail': history_detail})
+    history_detail = get_object_or_404(Factor, id=id, client_fact__user=request.user)
+    factor_services = history_detail.factor_services.select_related('service').prefetch_related('part_usages__part')
+    reviews = history_detail.reviews.values_list('service_id', flat=True)
+    for factor_service in factor_services:
+        factor_service.has_review = factor_service.service_id in reviews
+    return render(request, 'accounts/detail_history.html', {'history_detail': history_detail, 'factor_services': factor_services})
 
 
 def submit_review(request, factor_id, service_id):
     factor = get_object_or_404(Factor, id=factor_id, client_fact__user=request.user)
-    service = get_object_or_404(Services, id=service_id, factors=factor)
+    factor_service = get_object_or_404(FactorService, factor=factor, service_id=service_id)
+    service = factor_service.service
     existing_review = Review.objects.filter(factor=factor, service=service).first()
+
     if existing_review:
         return redirect('accounts:detail_history', factor.id)
+
     if request.method == 'POST':
         form = ReviewForm(request.POST)
+
         if form.is_valid():
             review = form.save(commit=False)
             review.factor = factor
             review.service = service
             review.save()
             return redirect('accounts:detail_history', factor.id)
+
     else:
         form = ReviewForm()
-    return render(request, 'accounts/submit_review.html', {'form': form, 'factor': factor, 'service': service})
+
+    return render(
+        request,
+        'accounts/submit_review.html',
+        {
+            'form': form,
+            'factor': factor,
+            'service': service,
+            'factor_service': factor_service,
+        }
+    )

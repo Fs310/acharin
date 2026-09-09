@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.urls import reverse
 from taggit.managers import TaggableManager
@@ -128,19 +129,20 @@ class Part(models.Model):
 
 class Factor(models.Model):
     client_fact = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='مشتری')
-    services = models.ManyToManyField(Services, blank=True, related_name='factors', verbose_name='خدمات')
-    parts = models.ManyToManyField(Part, blank=True, related_name='factors', verbose_name='قطعات')
-    price_service = models.PositiveIntegerField(default=0, verbose_name='اجرت کل خدمات')
     tax_percent = models.PositiveIntegerField(default=9, verbose_name='درصد مالیات')
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
 
     @property
+    def services_total(self):
+        return sum(item.price_service for item in self.factor_services.all())
+
+    @property
     def parts_total(self):
-        return sum(part.price for part in self.parts.all())
+        return sum(item.parts_total for item in self.factor_services.all())
 
     @property
     def total_without_tax(self):
-        return self.price_service + self.parts_total
+        return self.services_total + self.parts_total
 
     @property
     def tax_amount(self):
@@ -156,6 +158,50 @@ class Factor(models.Model):
 
     def __str__(self):
         return f'فاکتور {self.id}'
+
+
+class FactorService(models.Model):
+    factor = models.ForeignKey(Factor, on_delete=models.CASCADE, related_name='factor_services', verbose_name='فاکتور')
+    service = models.ForeignKey(Services, on_delete=models.CASCADE, verbose_name='خدمت')
+    price_service = models.PositiveIntegerField(default=0, verbose_name='اجرت خدمت')
+
+    @property
+    def parts_total(self):
+        return sum(item.total for item in self.part_usages.all())
+
+    @property
+    def total(self):
+        return self.price_service + self.parts_total
+
+    class Meta:
+        verbose_name = 'اقلام فاکتور'
+        verbose_name_plural = 'اقلام فاکتورها'
+
+    def __str__(self):
+        return f'{self.factor} - {self.service}'
+
+
+class PartUsage(models.Model):
+    factor_service = models.ForeignKey(FactorService, on_delete=models.CASCADE, related_name='part_usages', verbose_name='خدمت فاکتور')
+    part = models.ForeignKey(Part, on_delete=models.CASCADE, verbose_name='قطعه')
+    quantity = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)], verbose_name='تعداد')
+    unit_price = models.PositiveIntegerField(default=0, verbose_name='قیمت واحد')
+
+    @property
+    def total(self):
+        return self.quantity * self.unit_price
+
+    def save(self, *args, **kwargs):
+        if self.part:
+            self.unit_price = self.part.price
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = 'تعداد قطعه'
+        verbose_name_plural = 'تعداد قطعات'
+
+    def __str__(self):
+        return f'{self.part} - {self.quantity}'
 
 
 class Review(models.Model):

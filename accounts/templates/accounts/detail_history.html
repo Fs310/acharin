@@ -4,274 +4,221 @@
 {% load l10n %}
 {% load humanize %}
 
-
 {% block title %}جزییات فاکتور{% endblock %}
 
 {% block body %}
+
     <section class="invoice-page">
 
         <div class="invoice-container">
 
-
-            <!-- =================================================
-                 HEADER
-            ================================================== -->
-
             <nav class="invoice-breadcrumb" aria-label="مسیر صفحه">
-
-                <a href="{% url 'home:homes' %}">
-                    خانه
-                </a>
-
+                <a href="{% url 'home:homes' %}">خانه</a>
                 <span aria-hidden="true">‹</span>
-
-                <a href="{% url 'accounts:history' %}">
-                    سفارش‌های من
-                </a>
-
+                <a href="{% url 'accounts:history' %}">سفارش‌های من</a>
                 <span aria-hidden="true">‹</span>
-
-                <span aria-current="page">
-                جزئیات فاکتور
-            </span>
-
+                <span aria-current="page">جزئیات فاکتور</span>
             </nav>
-
 
             <header class="invoice-page-header">
 
                 <div>
-
-                    <h1>
-                        جزئیات فاکتور
-                    </h1>
-
-                    <p>
-                        اطلاعات کامل فاکتور و هزینه خدمات
-                    </p>
-
+                    <h1>جزئیات فاکتور</h1>
+                    <p>اطلاعات کامل فاکتور و هزینه خدمات</p>
                 </div>
 
-
-                <a
-                        href="{% url 'accounts:history' %}"
-                        class="invoice-back"
-                >
-                    <i
-                            class="bi bi-arrow-right"
-                            aria-hidden="true"
-                    ></i>
-
+                <a href="{% url 'accounts:history' %}" class="invoice-back">
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
                     بازگشت به سفارش‌ها
                 </a>
 
             </header>
 
-
-            <!-- =================================================
-                 INVOICE SUMMARY
-            ================================================== -->
-
             <section class="invoice-summary">
 
                 <div class="invoice-summary-item">
-
-                <span class="invoice-summary-label">
-                    شماره فاکتور
-                </span>
-
-                    <strong>
-                        #{{ history_detail.id }}
-                    </strong>
-
+                    <span class="invoice-summary-label">شماره فاکتور</span>
+                    <strong>#{{ history_detail.id }}</strong>
                 </div>
-
 
                 <div class="invoice-summary-item">
-
-                <span class="invoice-summary-label">
-                    تاریخ فاکتور
-                </span>
-
-                    <strong>
-                        {{ history_detail.date_created.date }}
-                    </strong>
-
+                    <span class="invoice-summary-label">تاریخ فاکتور</span>
+                    <strong>{{ history_detail.date_created.date }}</strong>
                 </div>
-
 
                 <div class="invoice-summary-item">
-
-                <span class="invoice-summary-label">
-                    فاکتور به نام
-                </span>
-
-                    <strong>
-                        {{ history_detail.client_fact }}
-                    </strong>
-
+                    <span class="invoice-summary-label">فاکتور به نام</span>
+                    <strong>{{ history_detail.client_fact }}</strong>
                 </div>
-
 
                 <div class="invoice-summary-item invoice-summary-total">
-
-                <span class="invoice-summary-label">
-                    مبلغ نهایی
-                </span>
-
-                    <strong>
-                        {{ history_detail.total_with_tax|intcomma }}
-                        ریال
-                    </strong>
-
+                    <span class="invoice-summary-label">مبلغ نهایی</span>
+                    <strong>{{ history_detail.total_with_tax|floatformat:0|intcomma }} ریال</strong>
                 </div>
 
             </section>
 
-            <!-- =================================================
-                 ITEMS TABLE
-            ================================================== -->
-
             <section class="invoice-card invoice-items-card">
 
                 <header class="invoice-card-header">
-
                     <h2>
-                        <i
-                                class="bi bi-box-seam"
-                                aria-hidden="true"
-                        ></i>
-
+                        <i class="bi bi-box-seam" aria-hidden="true"></i>
                         اقلام فاکتور
                     </h2>
-
                 </header>
 
                 <div class="invoice-table-wrapper">
 
                     <table class="invoice-table">
 
-                        <thead>
-                        <tr>
-                            <th>ردیف</th>
-                            <th>شرح کالا / خدمت</th>
-                            <th>تعداد</th>
-                            <th>قیمت واحد</th>
-                            <th>مبلغ کل</th>
-                        </tr>
-                        </thead>
+    <thead>
+    <tr>
+        <th>ردیف</th>
+        <th>شرح کالا / خدمت</th>
+        <th>تعداد</th>
+        <th>قیمت واحد</th>
+        <th>مبلغ کل</th>
+        <th>عملیات</th>
+    </tr>
+    </thead>
 
-                        <tbody>
+    {% for factor_service in factor_services %}
 
-                        {% for item in parts %}
-                            <tr>
-                                <td>{{ forloop.counter }}</td>
+        <tbody class="invoice-service-group">
 
-                                <td>
-                                    {{ item.name }}
-                                </td>
+        <tr class="service-row">
 
-                                <td>1</td>
+            <td>{{ forloop.counter }}</td>
 
-                                <td>
-                                    {{ item.price|intcomma }} ریال
-                                </td>
+            <td>
+                {{ factor_service.service.title }}
+            </td>
 
-                                <td>
-                                    {{ item.price|intcomma }} ریال
-                                </td>
-                            </tr>
-                        {% endfor %}
+            <td>1</td>
 
-                        <!-- اجرت -->
-                        <tr class="service-row">
+            <td>
+                {{ factor_service.price_service|intcomma }} ریال
+            </td>
 
-                            <td>−</td>
+            <td>
+                {{ factor_service.price_service|intcomma }} ریال
+            </td>
 
-                            <td>
-                                اجرت خدمات
-                            </td>
+            <td>
+                {% if factor_service.has_review %}
 
-                            <td>1</td>
+                    <span class="review-done">
+                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                        نظر ثبت شد
+                    </span>
 
-                            <td>
-                                {{ history_detail.price|intcomma }} ریال
-                            </td>
+                {% else %}
 
-                            <td>
-                                {{ history_detail.price_service|intcomma }} ریال
-                            </td>
+                    <a href="{% url 'accounts:submit_review' history_detail.id factor_service.service.id %}"
+                       class="service-review-btn">
+                        <i class="bi bi-star" aria-hidden="true"></i>
+                        ثبت نظر
+                    </a>
 
-                        </tr>
+                {% endif %}
+            </td>
 
-                        <!-- جمع فاکتور -->
+        </tr>
 
-                        <tr class="sum-row">
-                            <td colspan="3"></td>
+        {% for usage in factor_service.part_usages.all %}
 
-                            <td>
-                                جمع کل فاکتور
-                            </td>
+            <tr class="part-row">
 
-                            <td>
-                                {{ history_detail.total_without_tax|intcomma }} ریال
-                            </td>
-                        </tr>
-                        <tr class="sum-row">
-                            <td colspan="3"></td>
+                <td></td>
 
-                            <td>
-                                مالیات ۹٪
-                            </td>
+                <td>
+                    {{ usage.part.name }}
+                </td>
 
-                            <td>
-                                {{ history_detail.tax_amount|intcomma }} ریال
-                            </td>
-                        </tr>
-                        <tr class="sum-row total-row">
-                            <td colspan="3"></td>
+                <td>
+                    {{ usage.quantity }}
+                </td>
 
-                            <td>
-                                مبلغ قابل پرداخت
-                            </td>
+                <td>
+                    {{ usage.unit_price|intcomma }} ریال
+                </td>
 
-                            <td>
-                                {{ history_detail.total_with_tax|intcomma }} ریال
-                            </td>
-                        </tr>
-                        </tbody>
+                <td>
+                    {{ usage.total|intcomma }} ریال
+                </td>
 
-                    </table>
+                <td>—</td>
+
+            </tr>
+
+        {% endfor %}
+
+        <tr class="service-total-row">
+
+            <td></td>
+
+            <td colspan="3">
+                جمع {{ factor_service.service.title }}
+            </td>
+
+            <td>
+                {{ factor_service.total|intcomma }} ریال
+            </td>
+
+            <td></td>
+
+        </tr>
+
+        </tbody>
+
+    {% empty %}
+
+        <tbody>
+        <tr>
+            <td colspan="6">
+                خدمتی برای این فاکتور ثبت نشده است.
+            </td>
+        </tr>
+        </tbody>
+
+    {% endfor %}
+
+    <tbody class="invoice-summary-group">
+
+    <tr class="sum-row">
+        <td colspan="4"></td>
+        <td>جمع کل فاکتور</td>
+        <td>
+            {{ history_detail.total_without_tax|floatformat:0|intcomma }} ریال
+        </td>
+    </tr>
+
+    <tr class="sum-row">
+        <td colspan="4"></td>
+        <td>مالیات {{ history_detail.tax_percent }}٪</td>
+        <td>
+            {{ history_detail.tax_amount|floatformat:0|intcomma }} ریال
+        </td>
+    </tr>
+
+    <tr class="sum-row total-row">
+        <td colspan="4"></td>
+        <td>مبلغ قابل پرداخت</td>
+        <td>
+            {{ history_detail.total_with_tax|floatformat:0|intcomma }} ریال
+        </td>
+    </tr>
+
+    </tbody>
+
+</table>
 
                 </div>
 
             </section>
 
-
-            <!-- =================================================
-                 ACTIONS
-            ================================================== -->
-
-            <div class="invoice-actions">
-
-                <a
-                        href="{% url 'accounts:submit_review' factor_id factor_idgitgit status %}"
-                        class="invoice-review-btn"
-                >
-
-                    <i
-                            class="bi bi-star"
-                            aria-hidden="true"
-                    ></i>
-
-                    ثبت نظر درباره خدمات
-
-                </a>
-
-
-            </div>
-
         </div>
 
     </section>
+
 {% endblock %}
