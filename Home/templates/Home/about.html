@@ -1,290 +1,65 @@
 {% extends '_base.html' %}
 {% load static %}
-
-{% block title %}درباره ما{% endblock %}
-
+{% block title %}درباره آچارین{% endblock %}
 {% block body %}
-    <nav class="about-link" aria-label="مسیر صفحه">
+<nav class="about-link" aria-label="مسیر صفحه">
+    <a href="{% url 'home:homes' %}">خانه</a>
+    <span aria-current="page">درباره ما</span>
+</nav>
 
-        <a href="{% url 'home:homes' %}">
-            خانه
-        </a>
+<section class="about-features" aria-label="مزایای خدمات آچارین">
+    <div class="features-row">
+        <div class="feature-box"><div class="feature-icon"><i class="bi bi-house-check" aria-hidden="true"></i></div><h3>تعمیر در محل</h3><p>بدون نیاز به جابجایی دستگاه</p></div>
+        <div class="feature-box"><div class="feature-icon"><i class="bi bi-person-check" aria-hidden="true"></i></div><h3>تکنسین متخصص</h3><p>تیم آموزش دیده</p></div>
+        <div class="feature-box"><div class="feature-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div><h3>ضمانت خدمات</h3><p>۶ ماه ضمانت کتبی</p></div>
+        <div class="feature-box"><div class="feature-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></div><h3>اعزام سریع</h3><p>کمتر از ۲ ساعت در مشهد</p></div>
+    </div>
+</section>
 
-        <span aria-current="page">
-        درباره ما
-    </span>
-
-    </nav>
-
-
-    <!-- =====================================================
-         QUICK FEATURES
-    ===================================================== -->
-
-    <section class="about-features" aria-label="مزایای خدمات تعمیریار">
-        <div class="features-row">
-            <div class="feature-box">
-                <div class="feature-icon">
-                    <i class="bi bi-house-check" aria-hidden="true"></i>
+<section class="about-page" aria-labelledby="about-title">
+    <div class="about-container">
+        <div class="about-main">
+            <figure class="about-image">
+                <img src="{% static 'img/about.png' %}" alt="تکنسین آچارین در حال تعمیر ماشین لباسشویی در محل مشتری" width="900" height="600" loading="eager" fetchpriority="high" decoding="async">
+            </figure>
+            <div class="about-content">
+                <header class="about-header">
+                    <h1 id="about-title">درباره آچارین</h1>
+                    <p>آچارین مرکز تخصصی تعمیر لوازم خانگی در استان خراسان رضوی است که با بهره‌گیری از تکنسین‌های مجرب، خدمات تعمیر انواع لوازم خانگی را در محل مشتری ارائه می‌دهد.</p>
+                    <p>ما با تمرکز بر کیفیت خدمات، سرعت اعزام و پشتیبانی مسئولانه تلاش می‌کنیم آرامش و اطمینان را به خانه‌های شما بازگردانیم.</p>
+                </header>
+                <div class="about-benefits">
+                    <h2 class="visually-hidden">مزایای خدمات آچارین</h2>
+                    <ol>
+                        <li>بیش از ۱۰۰۰ تعمیر موفق در سطح استان</li>
+                        <li>اعزام تعمیرکار به سراسر استان خراسان کمتر از ۲۴ ساعت</li>
+                        <li>اعزام تعمیرکار در مشهد کمتر از ۲ ساعت</li>
+                        <li>ارائه فاکتور رسمی در پنل کاربری مشتری</li>
+                        <li>پشتیبانی دائمی و پاسخگویی حرفه‌ای</li>
+                        <li>بیش از ۱۰ تعمیرکار متخصص</li>
+                        <li>ارائه ضمانت‌نامه کتبی ۶ ماهه</li>
+                    </ol>
                 </div>
-                <h3>تعمیر در محل</h3>
-                <p>بدون نیاز به جابجایی دستگاه</p>
             </div>
-
-            <div class="feature-box">
-                <div class="feature-icon">
-                    <i class="bi bi-person-check" aria-hidden="true"></i>
-
-                </div>
-                <h3>تکنسین متخصص</h3>
-                <p>تیم آموزش دیده</p>
-            </div>
-
-            <div class="feature-box">
-                <div class="feature-icon">
-                    <i class="bi bi-shield-check" aria-hidden="true"></i>
-                </div>
-                <h3>ضمانت خدمات</h3>
-                <p>۶ ماه ضمانت کتبی</p>
-            </div>
-
-            <div class="feature-box">
-                <div class="feature-icon">
-                    <i class="bi bi-clock-history" aria-hidden="true"></i>
-                </div>
-                <h3>اعزام سریع</h3>
-                <p>کمتر از ۲ ساعت در مشهد</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =====================================================
-         ABOUT INTRO
-    ===================================================== -->
-
-    <section class="about-page" aria-labelledby="about-title">
-
-        <div class="about-container">
-
-            <div class="about-main">
-                <!-- IMAGE -->
-                <figure class="about-image">
-
-                    <img
-                            src="{% static 'img/about.png' %}"
-                            alt="تکنسین تعمیریار در حال تعمیر ماشین لباسشویی در محل مشتری"
-                            width="900"
-                            height="600"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                    >
-
-                </figure>
-                <!-- TEXT -->
-                <div class="about-content">
-
-                    <header class="about-header">
-
-                        <h1 id="about-title">
-                            درباره تعمیریار
-                        </h1>
-
-                        <p>
-                            تعمیریار مرکز تخصصی تعمیر لوازم خانگی در استان خراسان رضوی است
-                            که با بهره‌گیری از تکنسین‌های مجرب، خدمات تعمیر انواع یخچال،
-                            لباسشویی، ماشین ظرفشویی، کولر گازی، ماکروفر و سایر لوازم خانگی
-                            را در محل مشتری ارائه می‌دهد.
-                        </p>
-
-                        <p>
-                            ما با تمرکز بر کیفیت خدمات، سرعت اعزام و پشتیبانی مسئولانه تلاش
-                            می‌کنیم آرامش و اطمینان را به خانه‌های شما بازگردانیم.
-                        </p>
-
-                    </header>
-
-
-                    <!-- BENEFITS LIST -->
-
-                    <div class="about-benefits">
-
-                        <h2 class="visually-hidden">
-                            مزایای خدمات تعمیریار
-                        </h2>
-
-                        <ol>
-
-                            <li>
-                                بیش از ۱۰۰۰ تعمیر موفق در سطح استان
-                            </li>
-
-                            <li>
-                                سرعت در اعزام تعمیرکار به سراسر استان خراسان کمتر از ۲۴ ساعت
-
-                            </li>
-                            <li>
-                                سرعت در اعزام تعمیرکار در مشهد کمتر از ۲ ساعت
-                            </li>
-                            <li>
-                                ارائه فاکتور رسمی در پنل کاربری مشتری
-                            </li>
-
-                            <li>
-                                پشتیبانی دائمی به‌صورت ۲۴ ساعته و پاسخگویی حرفه‌ای
-                            </li>
-
-                            <li>
-                                بیش از ۱۰ تعمیرکار متخصص
-                            </li>
-
-                            <li>
-                                ارائه ضمانت‌نامه کتبی ۶ ماهه
-                            </li>
-
-                        </ol>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 TRUST CARDS
-            ================================================== -->
-
-            <section class="about-trust" aria-label="ویژگی‌های تعمیریار">
-
-                <article class="trust-card">
-
-                    <div class="trust-icon">
-                        <i class="bi bi-shield-check" aria-hidden="true"></i>
-                    </div>
-
-                    <div>
-                        <h2>
-                            اعتماد و امنیت
-                        </h2>
-
-                        <p>
-                            بیشتر از ۴ سال است که در کنار شما هستیم.
-                        </p>
-                    </div>
-
-                </article>
-
-
-                <article class="trust-card">
-
-                    <div class="trust-icon">
-                        <i class="bi bi-headset" aria-hidden="true"></i>
-                    </div>
-
-                    <div>
-                        <h2>
-                            پشتیبانی ۲۴ ساعته
-                        </h2>
-
-                        <p>
-                            در هر زمان با ما در ارتباط باشید؛
-                            همیشه پاسخگو هستیم.
-                        </p>
-                    </div>
-
-                </article>
-
-
-                <article class="trust-card">
-
-                    <div class="trust-icon">
-                        <i class="bi bi-receipt" aria-hidden="true"></i>
-                    </div>
-
-                    <div>
-                        <h2>
-                            قیمت شفاف
-                        </h2>
-
-                        <p>
-                            قبل از انجام کار، هزینه را به‌صورت شفاف اعلام می‌کنیم.
-                        </p>
-                    </div>
-
-                </article>
-
-            </section>
-
         </div>
 
-    </section>
+        <section class="about-trust" aria-label="ویژگی‌های آچارین">
+            <article class="trust-card"><div class="trust-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div><div><h2>اعتماد و امنیت</h2><p>بیشتر از ۴ سال است که در کنار شما هستیم.</p></div></article>
+            <article class="trust-card"><div class="trust-icon"><i class="bi bi-headset" aria-hidden="true"></i></div><div><h2>پشتیبانی ۲۴ ساعته</h2><p>در هر زمان با ما در ارتباط باشید؛ همیشه پاسخگو هستیم.</p></div></article>
+            <article class="trust-card"><div class="trust-icon"><i class="bi bi-receipt" aria-hidden="true"></i></div><div><h2>قیمت شفاف</h2><p>قبل از انجام کار، هزینه را به‌صورت شفاف اعلام می‌کنیم.</p></div></article>
+        </section>
+    </div>
+</section>
 
-    <!-- =====================================================
-         CTA
-    ===================================================== -->
-
-    <section class="service-cta" aria-labelledby="cta-title">
-
-        <div class="cta-image">
-
-            <img
-                    src="{% static 'img/order.png' %}"
-                    alt="کارشناس تعمیریار برای ثبت درخواست تعمیر"
-                    loading="lazy"
-                    decoding="async"
-                    width="290"
-                    height="290"
-            >
-
+<section class="service-cta" aria-labelledby="cta-title">
+    <div class="cta-image"><img src="{% static 'img/order.png' %}" alt="کارشناس آچارین برای ثبت درخواست تعمیر" loading="lazy" decoding="async" width="290" height="290"></div>
+    <div class="cta-content">
+        <h2 class="cta-title" id="cta-title">خدمات مورد نظر خود را پیدا نکردید؟</h2>
+        <p class="cta-text">با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.</p>
+        <div class="btn-box">
+            <a href="tel:09353593735" class="tel-btn" aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">۰۹۳۵۳۵۹۳۷۳۵ <i class="bi bi-telephone-fill" aria-hidden="true"></i></a>
+            <a href="{% url 'home:homes' %}#request-form" class="form-btn" aria-label="ثبت درخواست تعمیر"><i class="bi bi-chat-right-text-fill" aria-hidden="true"></i> ثبت درخواست تعمیر</a>
         </div>
-
-
-        <div class="cta-content">
-
-            <h2 class="cta-title" id="cta-title">
-                خدمات مورد نظر خود را پیدا نکردید؟
-            </h2>
-
-            <p class="cta-text">
-                با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.
-            </p>
-
-
-            <div class="btn-box">
-
-                <a
-                        href="tel:09353593735"
-                        class="tel-btn"
-                        aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵"
-                >
-                    ۰۹۳۵۳۵۹۳۷۳۵
-
-                    <i
-                            class="bi bi-telephone-fill"
-                            aria-hidden="true"
-                    ></i>
-                </a>
-
-
-                <a
-                        href="{% url 'home:homes' %}#request-form"
-                        class="form-btn"
-                        aria-label="ثبت درخواست تعمیر"
-                >
-                    <i
-                            class="bi bi-chat-right-text-fill"
-                            aria-hidden="true"
-                    ></i>
-
-                    ثبت درخواست تعمیر
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
+</section>
 {% endblock %}
