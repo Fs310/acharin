@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap-icons.min.css" %}'>
     <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
     <link href='{% static "css/responsive.css" %}' rel="stylesheet">
+    <link href='{% static "css/overrides.css" %}' rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>{% block title %}آچارین | تعمیر لوازم خانگی در مشهد{% endblock %}</title>
 </head>
@@ -22,25 +23,14 @@
     <header class="header_section">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg custom_nav-container w-100" aria-label="منوی اصلی سایت">
-                <a class="navbar-brand"
-                   href="{% url 'home:homes' %}"
-                   title="آچارین | صفحه اصلی"
-                   aria-label="بازگشت به صفحه اصلی">
+                <a class="navbar-brand" href="{% url 'home:homes' %}" title="آچارین | صفحه اصلی" aria-label="بازگشت به صفحه اصلی">
                     <img src="{% static 'img/brand.png' %}" alt="لوگوی آچارین">
                 </a>
-
-                <button class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="باز کردن منوی سایت">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="باز کردن منوی سایت">
                     <span class="s-1" aria-hidden="true"></span>
                     <span class="s-2" aria-hidden="true"></span>
                     <span class="s-3" aria-hidden="true"></span>
                 </button>
-
                 <div class="collapse navbar-collapse nav-coll justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home:homes' %}">خانه</a></li>
@@ -48,12 +38,9 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'home:new' %}">مجله خبری</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'home:about' %}">درباره ما</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'home:contact' %}">تماس با ما</a></li>
-
                         {% if user.is_authenticated %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="منوی کاربری">
-                                    کاربر ({{ user.username }})
-                                </a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="منوی کاربری">کاربر ({{ user.username }})</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">اطلاعات شخصی</a></li>
                                     <li><a class="dropdown-item" href="{% url 'accounts:history' %}">تاریخچه فاکتورها</a></li>
@@ -61,20 +48,16 @@
                                 </ul>
                             </li>
                             {% if user.is_staff %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'admin:index' %}" aria-label="ورود به پنل مدیریت">پنل مدیریت</a>
-                                </li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}" aria-label="ورود به پنل مدیریت">پنل مدیریت</a></li>
                             {% endif %}
                         {% else %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}" aria-label="ورود یا ایجاد حساب کاربری">ورود / ایجاد حساب کاربری</a></li>
                         {% endif %}
                     </ul>
-
                     <div class="mobile-nav-footer d-lg-none">
                         <a class="btn btn-warning w-100 text-white py-3" href="{% url 'home:homes' %}#request-form" aria-label="ثبت درخواست تعمیر">درخواست تعمیر</a>
                     </div>
                 </div>
-
                 <div class="btn-box d-none d-lg-block">
                     <a href="{% url 'home:homes' %}#request-form" aria-label="ثبت درخواست تعمیر">درخواست تعمیر</a>
                 </div>
@@ -98,7 +81,6 @@
                     <div class="icon"><i class="bi bi-envelope-paper" aria-hidden="true"></i><a href="mailto:info@example.com" aria-label="ارسال ایمیل">info@example.com</a></div>
                 </address>
             </section>
-
             <nav class="footer-titer service" aria-label="خدمات">
                 <h4>خدمات</h4>
                 <ul>
@@ -109,7 +91,6 @@
                     <li><a href="{% url 'home:services' %}">سایر خدمات</a></li>
                 </ul>
             </nav>
-
             <nav class="footer-titer menus" aria-label="دسترسی سریع">
                 <h4>دسترسی سریع</h4>
                 <ul>
@@ -120,24 +101,18 @@
                     <li><a href="{% url 'home:homes' %}#request-form">ثبت درخواست تعمیر</a></li>
                 </ul>
             </nav>
-
             <section class="footer-titer social">
                 <h4>آچارین</h4>
                 <p>ارائه خدمات تخصصی تعمیر لوازم خانگی در خراسان رضوی با اعزام سریع تعمیرکار و ضمانت خدمات.</p>
-                <div class="social-box">
-                    <div class="box">
-                        <a href="#" aria-label="اینستاگرام آچارین"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="تلگرام آچارین"><i class="bi bi-telegram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="واتساپ آچارین"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="گوگل"><i class="bi bi-google" aria-hidden="true"></i></a>
-                    </div>
-                </div>
+                <div class="social-box"><div class="box">
+                    <a href="#" aria-label="اینستاگرام آچارین"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="تلگرام آچارین"><i class="bi bi-telegram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="واتساپ آچارین"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="گوگل"><i class="bi bi-google" aria-hidden="true"></i></a>
+                </div></div>
             </section>
         </div>
-
-        <div class="footer-bottom">
-            <small>© تمامی حقوق این وب‌سایت برای آچارین محفوظ است.</small>
-        </div>
+        <div class="footer-bottom"><small>© تمامی حقوق این وب‌سایت برای آچارین محفوظ است.</small></div>
     </div>
 </footer>
 
