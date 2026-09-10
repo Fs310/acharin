@@ -1,138 +1,58 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}خدمات ما{% endblock %}
-
+{% block title %}خدمات آچارین{% endblock %}
 {% block body %}
-    <header class="service-hero">
-
-        <img class="hero-img"
-             src="{% static 'img/service-banner.png' %}"
-             alt="بنر خدمات تعمیرات تخصصی لوازم خانگی تعمیریار در مشهد"
-             loading="eager"
-             fetchpriority="high"
-             decoding="async">
-
-        <div class="container-fluid">
-
-            <div class="service-hero-content">
-
-                <div class="service-hero-text">
-
-                    <h1>تعمیرات لوازم خانگی در مشهد</h1>
-
-                    <p>
-                        تعمیر تخصصی انواع لوازم خانگی با ضمانت خدمات
-                    </p>
-
-                </div>
-
+<header class="service-hero">
+    <img class="hero-img" src="{% static 'img/service-banner.png' %}"
+         alt="بنر خدمات تعمیرات تخصصی لوازم خانگی آچارین در مشهد"
+         loading="eager" fetchpriority="high" decoding="async">
+    <div class="container-fluid">
+        <div class="service-hero-content">
+            <div class="service-hero-text">
+                <h1>تعمیرات لوازم خانگی در مشهد</h1>
+                <p>تعمیر تخصصی انواع لوازم خانگی با ضمانت خدمات</p>
             </div>
-
         </div>
+    </div>
+</header>
 
-    </header>
-    <nav class="service-link" aria-label="مسیر صفحه">
+<nav class="service-link" aria-label="مسیر صفحه">
+    <div class="link">
+        <a href="{% url 'home:homes' %}">خانه</a>
+        <span aria-current="page">خدمات</span>
+    </div>
+</nav>
 
-        <div class="link">
-
-            <a href="{% url 'home:homes' %}">
-                خانه
-            </a>
-            <span aria-current="page">خدمات</span>
+<section class="services-grid-section" id="services" aria-labelledby="services-title">
+    <div class="section-title">
+        <h2 id="services-title">خدمات ما</h2>
+        <p>برای مشاهده جزئیات هر خدمت روی آن کلیک کنید.</p>
+    </div>
+    <div class="services-grid" id="services-container">
+        {% include "Home/partials/service_cards.html" %}
+    </div>
+    {% if page_obj.has_next %}
+        <div class="load-more-box">
+            <button type="button" id="load-more-btn" data-page="{{ page_obj.next_page_number }}">نمایش خدمات بیشتر</button>
         </div>
+    {% endif %}
+</section>
 
-    </nav>
-    <section class="services-grid-section" id="services" aria-labelledby="services-title">
-
-        <div class="section-title">
-
-            <h2 id="services-title">
-                خدمات ما
-            </h2>
-
-            <p>
-                برای مشاهده جزئیات هر خدمت روی آن کلیک کنید.
-            </p>
-
+<section class="service-cta" aria-labelledby="cta-title">
+    <div class="cta-image">
+        <img src="{% static 'img/order.png' %}" alt="کارشناس آچارین برای ثبت درخواست تعمیر" loading="lazy" decoding="async" width="250" height="250">
+    </div>
+    <div class="cta-content">
+        <h2 class="cta-title" id="cta-title">خدمات مورد نظر خود را پیدا نکردید؟</h2>
+        <p class="cta-text">با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.</p>
+        <div class="btn-box">
+            <a href="tel:09353593735" class="tel-btn" aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">۰۹۳۵۳۵۹۳۷۳۵ <i class="bi bi-telephone-fill" aria-hidden="true"></i></a>
+            <a class="form-btn" href="{% url 'home:homes' %}#request-form" aria-label="ثبت درخواست تعمیر"><i class="bi bi-chat-right-text-fill" aria-hidden="true"></i> ثبت درخواست تعمیر</a>
         </div>
-
-        <div class="services-grid" id="services-container">
-
-            {% include "Home/partials/service_cards.html" %}
-
-        </div>
-        {% if page_obj.has_next %}
-
-            <div class="load-more-box">
-
-                <button
-                        id="load-more-btn"
-                        data-page="2">
-
-                    نمایش خدمات بیشتر
-
-                </button>
-
-            </div>
-
-        {% endif %}
-    </section>
-    <section class="service-cta" aria-labelledby="cta-title">
-
-        <div class="cta-image">
-
-            <img src="{% static 'img/order.png' %}"
-                 alt="کارشناس تعمیریار برای ثبت درخواست تعمیر"
-                 loading="lazy"
-                 decoding="async"
-                 width="250"
-                 height="250">
-
-        </div>
-
-        <div class="cta-content">
-
-            <h2 class="cta-title" id="cta-title">
-                خدمات مورد نظر خود را پیدا نکردید؟
-            </h2>
-
-            <p class="cta-text">
-                با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.
-            </p>
-
-            <div class="btn-box">
-
-
-                   <a href="tel:09353593735"
-                       class="tel-btn"
-                       aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">
-
-                        09353593735
-
-                        <i class="bi bi-telephone-fill"
-                           aria-hidden="true"></i>
-
-                    </a>
-
-                    <a class="form-btn"
-                       href="{% url 'home:homes' %}#request-form"
-                       aria-label="ثبت درخواست تعمیر">
-
-                        <i class="bi bi-chat-right-text-fill"
-                           aria-hidden="true"></i>
-
-                        ثبت درخواست تعمیر
-
-                    </a>
-            </div>
-
-        </div>
-
-    </section>
+    </div>
+</section>
 {% endblock %}
 {% block script %}
-
-    <script src="{% static 'js/load-more.js' %}"></script>
-
+<script src="{% static 'js/load-more.js' %}"></script>
 {% endblock %}
