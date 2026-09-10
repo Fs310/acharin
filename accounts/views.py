@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import update_session_auth_hash
@@ -40,11 +41,10 @@ def user_registration(request):
             profile, _ = Profile.objects.get_or_create(user=user)
             profile.tel = tel
             profile.save(update_fields=['tel'])
-            domain = get_current_site(request).domain
             uidb64 = urlsafe_base64_encode(force_bytes(user.id))
             token = default_token_generator.make_token(user)
-            activation_link = f'https://{domain}/activate/{uidb64}/{token}'
-            EmailMessage('فعال‌سازی حساب آچارین', activation_link, to=[email]).send()
+            activation_link = request.build_absolute_uri(reverse('accounts:activate', args=[uidb64, token]))
+            EmailMessage('فعال‌سازی حساب آچارین', activation_link, settings.DEFAULT_FROM_EMAIL, [email]).send()
             messages.success(request, 'لینک فعال‌سازی حساب برای شما ارسال شد.')
             return redirect('accounts:login')
     else:
