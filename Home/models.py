@@ -123,6 +123,7 @@ class Part(models.Model):
 class Factor(models.Model):
     client_fact = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='مشتری')
     tax_percent = models.PositiveIntegerField(default=9, verbose_name='درصد مالیات')
+    is_issued = models.BooleanField(default=False, verbose_name='فاکتور صادر شده')
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
 
     @property
@@ -149,6 +150,13 @@ class Factor(models.Model):
         verbose_name = 'فاکتور'
         verbose_name_plural = 'فاکتورها'
 
+    def save(self, *args, **kwargs):
+        if self.pk:
+            old = Factor.objects.get(pk=self.pk)
+            if old.is_issued:
+                self.is_issued = True
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return f'فاکتور {self.id}'
 
@@ -170,6 +178,19 @@ class FactorService(models.Model):
         verbose_name = 'اقلام فاکتور'
         verbose_name_plural = 'اقلام فاکتورها'
 
+    def save(self, *args, **kwargs):
+        if self.pk and self.factor.is_issued:
+            old = FactorService.objects.get(pk=self.pk)
+            self.service_id = old.service_id
+            self.price_service = old.price_service
+            self.factor_id = old.factor_id
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        if self.factor.is_issued:
+            return
+        super().delete(*args, **kwargs)
+
     def __str__(self):
         return f'{self.factor} - {self.service}'
 
@@ -185,9 +206,21 @@ class PartUsage(models.Model):
         return self.quantity * self.unit_price
 
     def save(self, *args, **kwargs):
-        if self.part_id:
+        if self.pk:
+            old = PartUsage.objects.get(pk=self.pk)
+            if old.factor_service.factor.is_issued:
+                self.factor_service_id = old.factor_service_id
+                self.part_id = old.part_id
+                self.quantity = old.quantity
+                self.unit_price = old.unit_price
+        elif self.unit_price == 0 and self.part_id:
             self.unit_price = self.part.price
         super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        if self.factor_service.factor.is_issued:
+            return
+        super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = 'تعداد قطعه'
