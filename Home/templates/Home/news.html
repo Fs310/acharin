@@ -1,302 +1,84 @@
 {% extends '_base.html' %}
 {% load static %}
-{% block title %}مجله خبری{% endblock %}
+{% block title %}مجله آچارین{% endblock %}
 {% block body %}
 
-    <header class="blog-hero">
-
-        <img
-                class="hero-img"
-                src="{% static 'img/service-banner.png' %}"
-                alt="مجله تعمیریار؛ آموزش تعمیر و نگهداری لوازم خانگی"
-                width="1920"
-                height="320"
-                fetchpriority="high"
-                decoding="async"
-        >
-
-        <div class="container-fluid">
-
-            <div class="blog-hero-content">
-
-                <div class="blog-hero-text">
-
-                    <h1>مجله تعمیریار</h1>
-
-                    <p>
-                        آموزش تعمیر، نگهداری و افزایش عمر لوازم خانگی
-                    </p>
-
-                </div>
-
+<header class="blog-hero">
+    <img class="hero-img" src="{% static 'img/service-banner.png' %}"
+         alt="مجله آچارین؛ آموزش تعمیر و نگهداری لوازم خانگی"
+         width="1920" height="320" fetchpriority="high" decoding="async">
+    <div class="container-fluid">
+        <div class="blog-hero-content">
+            <div class="blog-hero-text">
+                <h1>مجله آچارین</h1>
+                <p>آموزش تعمیر، نگهداری و افزایش عمر لوازم خانگی</p>
             </div>
-
-            <nav class="blog-filter" aria-label="دسته‌بندی مقالات">
-
-                <a href="{% url 'home:new' %}"
-                   class="active"
-                        {% if not request.resolver_match.kwargs.id %}
-                   aria-current="page"
-                        {% endif %}>
-                    همه
+        </div>
+        <nav class="blog-filter" aria-label="دسته‌بندی مقالات">
+            <a href="{% url 'home:new' %}" {% if not request.resolver_match.kwargs.id %}class="active" aria-current="page"{% endif %}>همه</a>
+            {% for item in titer_news %}
+                <a href="{% url 'home:sub_new' item.id %}"
+                   {% if request.resolver_match.kwargs.id|stringformat:"s" == item.id|stringformat:"s" %}class="active" aria-current="page"{% endif %}>
+                    {{ item.titer }}
                 </a>
+            {% endfor %}
+        </nav>
+    </div>
+</header>
 
-                {% for item in titer_news %}
+<nav class="blog-link" aria-label="مسیر صفحه">
+    <div class="link">
+        <a href="{% url 'home:homes' %}">خانه</a>
+        <span aria-current="page">مقالات</span>
+    </div>
+</nav>
 
-                    <a href="{% url 'home:sub_new' item.id %}"
-                            {% if request.resolver_match.kwargs.id|stringformat:"s" == item.id|stringformat:"s" %}
-                       aria-current="page"
-                            {% endif %}
-                    >
-                        {{ item.titer }}
-                    </a>
-
-                {% endfor %}
-
-            </nav>
-
+<main>
+    <section class="blog-grid-section" aria-labelledby="articles-title">
+        <div class="blog-section-heading">
+            <h2 id="articles-title">آخرین مقالات آچارین</h2>
+            <p>راهنمای تعمیر، نگهداری و استفاده بهتر از لوازم خانگی</p>
         </div>
 
-    </header>
-
-
-    <nav class="blog-link" aria-label="مسیر صفحه">
-
-        <div class="link">
-
-            <a href="{% url 'home:homes' %}">
-                خانه
-            </a>
-
-            <span aria-current="page">
-            مقالات
-        </span>
-
-        </div>
-
-    </nav>
-
-
-    <main>
-
-        <section
-                class="blog-grid-section"
-                aria-labelledby="articles-title"
-        >
-
-            <div class="blog-section-heading">
-
-                <h2 id="articles-title">
-                    آخرین مقالات تعمیریار
-                </h2>
-
-                <p>
-                    راهنمای تعمیر، نگهداری و استفاده بهتر از لوازم خانگی
-                </p>
-
-            </div>
-
-
-            <div
-                    class="blog-grid"
-                    id="articles-container"
-            >
-
-                {% for items in sub_news %}
-
-                    <article class="blog-card">
-
-
-                        <a href="{% url 'home:detail_new' items.slug %}" class="blog-card-image"
-                           aria-label="مطالعه مقاله {{ items.sub_titer }}">
-
-                            <img
-                                    src="{{ items.sub_img.url }}"
-                                    alt="{{ items.sub_titer }}"
-                                    width="640"
-                                    height="360"
-                                    loading="lazy"
-                                    decoding="async">
-
-                        </a>
-
-
-                        <div class="blog-content">
-                            <a href="{% url 'home:detail_new' items.slug %}">
-                                <h3>
-
-                                    {{ items.sub_titer }}
-
-                                </h3>
-
-
-                                <p class="blog-summary">
-                                    {{ items.sub_summary }}
-                                </p>
-
-
-                                <span>
-                                مطالعه مقاله
-                            </span>
-
-                                <i class="bi bi-arrow-left"
-                                   aria-hidden="true"></i>
-
-
-                                <div class="blog-meta">
-
-                            <span>
-                                <i
-                                        class="bi bi-clock"
-                                        aria-hidden="true"
-                                ></i>
-
-                                {{ items.reading_time }}
-                            </span>
-
-
-                                    <span>
-                                <i
-                                        class="bi bi-calendar3"
-                                        aria-hidden="true"
-                                ></i>
-
-                                {{ items.sub_update_date|date:"Y/m/d" }}
-                            </span>
-
-                                </div>
-                            </a>
-                        </div>
-
-                    </article>
-
-                {% empty %}
-
-                    <div class="blog-empty">
-
-                        <i
-                                class="bi bi-journal-x"
-                                aria-hidden="true"
-                        ></i>
-
-                        <h2>
-                            هنوز مقاله‌ای منتشر نشده است.
-                        </h2>
-
-                        <p>
-                            به‌زودی مطالب آموزشی جدیدی منتشر خواهیم کرد.
-                        </p>
-
-                    </div>
-
-                {% endfor %}
-
-            </div>
-
-
-            {% if page_obj.has_next %}
-
-                <div class="load-more-box">
-
-                    <button
-                            type="button"
-                            id="load-more-btn"
-                            data-page="{{ page_obj.next_page_number }}"
-                            aria-label="نمایش مقالات بیشتر"
-                    >
-
-                    <span>
-                        نمایش مقالات بیشتر
-                    </span>
-
-                        <i
-                                class="bi bi-chevron-down"
-                                aria-hidden="true"
-                        ></i>
-
-                    </button>
-
+        <div class="blog-grid" id="articles-container">
+            {% include "Home/partials/news_cards.html" %}
+            {% if not sub_news %}
+                <div class="blog-empty">
+                    <i class="bi bi-journal-x" aria-hidden="true"></i>
+                    <h2>هنوز مقاله‌ای منتشر نشده است.</h2>
+                    <p>به‌زودی مطالب آموزشی جدیدی منتشر خواهیم کرد.</p>
                 </div>
-
             {% endif %}
+        </div>
 
-        </section>
-
-
-        <section
-                class="blog-cta"
-                aria-labelledby="cta-title"
-        >
-
-            <div class="cta-image">
-
-                <img
-                        src="{% static 'img/order.png' %}"
-                        alt="کارشناس تعمیریار برای ثبت درخواست تعمیر"
-                        loading="lazy"
-                        decoding="async"
-                        width="290"
-                        height="290"
-                >
-
+        {% if page_obj.has_next %}
+            <div class="load-more-box">
+                <button type="button" id="load-more-btn"
+                        data-page="{{ page_obj.next_page_number }}"
+                        aria-label="نمایش مقالات بیشتر">
+                    <span>نمایش مقالات بیشتر</span>
+                    <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </button>
             </div>
+        {% endif %}
+    </section>
 
-
-            <div class="cta-content">
-
-                <h2
-                        class="cta-title"
-                        id="cta-title"
-                >
-                    خدمات مورد نظر خود را پیدا نکردید؟
-                </h2>
-
-
-                <p class="cta-text">
-                    با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.
-                </p>
-
-
-                <div class="btn-box">
-
-                    <a
-                            href="tel:09353593735"
-                            class="tel-btn"
-                            aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵"
-                    >
-
-                        ۰۹۳۵۳۵۹۳۷۳۵
-
-                        <i
-                                class="bi bi-telephone-fill"
-                                aria-hidden="true"
-                        ></i>
-
-                    </a>
-
-
-                    <a
-                            class="form-btn"
-                            href="{% url 'home:homes' %}#request-form"
-                            aria-label="ثبت درخواست تعمیر"
-                    >
-
-                        <i
-                                class="bi bi-chat-right-text-fill"
-                                aria-hidden="true"
-                        ></i>
-
-                        ثبت درخواست تعمیر
-
-                    </a>
-
-                </div>
-
+    <section class="blog-cta" aria-labelledby="cta-title">
+        <div class="cta-image">
+            <img src="{% static 'img/order.png' %}" alt="کارشناس آچارین برای ثبت درخواست تعمیر"
+                 loading="lazy" decoding="async" width="290" height="290">
+        </div>
+        <div class="cta-content">
+            <h2 class="cta-title" id="cta-title">خدمات مورد نظر خود را پیدا نکردید؟</h2>
+            <p class="cta-text">با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.</p>
+            <div class="btn-box">
+                <a href="tel:09353593735" class="tel-btn" aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">۰۹۳۵۳۵۹۳۷۳۵ <i class="bi bi-telephone-fill" aria-hidden="true"></i></a>
+                <a class="form-btn" href="{% url 'home:homes' %}#request-form" aria-label="ثبت درخواست تعمیر"><i class="bi bi-chat-right-text-fill" aria-hidden="true"></i> ثبت درخواست تعمیر</a>
             </div>
-
-        </section>
-
-    </main>
-
+        </div>
+    </section>
+</main>
 {% endblock %}
-
+{% block script %}
+<script src="{% static 'js/load-more.js' %}"></script>
+{% endblock %}
