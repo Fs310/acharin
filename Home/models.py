@@ -8,39 +8,36 @@ from django.forms import ModelForm
 from django.db.models import Avg
 
 
-# Create your models here.
-
-
 class Services(models.Model):
     title = models.CharField(max_length=50, verbose_name='عنوان')
     description = models.TextField(blank=True, null=True, verbose_name='توضیحات')
-    icon = models.ImageField(upload_to='services', null=True, blank=True, verbose_name='ایکون سرویس')
+    icon = models.ImageField(upload_to='services', null=True, blank=True, verbose_name='آیکون سرویس')
     img = models.ImageField(upload_to='services', null=True, blank=True, verbose_name='تصویر سرویس')
     create_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name='تاریخ ایجاد')
     update_date = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name='تاریخ ویرایش')
 
     class Meta:
         verbose_name = 'خدمت'
-        verbose_name_plural = " خدمات"
+        verbose_name_plural = 'خدمات'
 
     def __str__(self):
         return self.title
 
 
 class News(models.Model):
-    titer = models.CharField(max_length=50, verbose_name='تیتر خبر ')
+    titer = models.CharField(max_length=50, verbose_name='تیتر خبر')
     slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
     create_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name='تاریخ ایجاد')
     update_date = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name='تاریخ ویرایش')
 
     class Meta:
         verbose_name = 'عنوان خبر'
-        verbose_name_plural = " عنوان اخبار"
+        verbose_name_plural = 'عنوان اخبار'
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.titer, allow_unicode=True)
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.titer
@@ -61,22 +58,19 @@ class Sub_news(models.Model):
 
     class Meta:
         verbose_name = 'دسته بندی خبر'
-        verbose_name_plural = " دسته بندی اخبار"
+        verbose_name_plural = 'دسته بندی اخبار'
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.sub_titer, allow_unicode=True)
+            self.slug = slugify(self.sub_titer or '', allow_unicode=True)
         super().save(*args, **kwargs)
 
-    from django.utils.text import slugify
-
     def __str__(self):
-        return self.sub_titer
+        return self.sub_titer or ''
 
 
 class Client(models.Model):
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='client',
-                                verbose_name='کاربر')
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='client', verbose_name='کاربر')
     Cname = models.CharField(max_length=100, verbose_name='نام و نام خانوادگی مشتری')
     tel = models.CharField(max_length=11, unique=True, verbose_name='شماره تماس')
 
@@ -97,7 +91,6 @@ class ServiceRequest(models.Model):
         ('coffe maker', 'قهوه ساز'),
         ('others', 'سایر'),
     ]
-
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='requests', verbose_name='مشتری')
     device_type = models.CharField(max_length=20, choices=DEVICE_TYPE, verbose_name='نوع دستگاه')
     information = models.CharField(max_length=200, verbose_name='اطلاعات')
@@ -112,7 +105,7 @@ class ServiceRequest(models.Model):
         ]
 
     def __str__(self):
-        return f"{self.client} - {self.request_date}"
+        return f'{self.client} - {self.request_date}'
 
 
 class Part(models.Model):
@@ -192,7 +185,7 @@ class PartUsage(models.Model):
         return self.quantity * self.unit_price
 
     def save(self, *args, **kwargs):
-        if self.part:
+        if self.part_id:
             self.unit_price = self.part.price
         super().save(*args, **kwargs)
 
