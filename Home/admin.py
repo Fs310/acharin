@@ -1,9 +1,5 @@
 from django.contrib import admin
 from .models import *
-from django import forms
-
-
-# Register your models here.
 
 
 class ServicesAdmin(admin.ModelAdmin):
@@ -20,31 +16,19 @@ class NewsAdmin(admin.ModelAdmin):
 
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('user', 'Cname', 'tel')
+    search_fields = ('Cname', 'tel', 'user__username')
 
 
 class ServiceRequestAdmin(admin.ModelAdmin):
     list_display = ('client', 'device_type', 'request_date')
+    list_filter = ('device_type', 'request_date')
+    search_fields = ('client__Cname', 'client__tel')
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('service', 'factor', 'msg', 'rating', 'created_at', 'is_approved')
-
-
-class FactorAdmin(admin.ModelAdmin):
-    list_display = (
-        'id', 'client_fact', 'date_created', 'services_total', 'parts_total', 'total_without_tax', 'tax_amount',
-        'total_with_tax')
-    search_fields = ('client_fact__Cname', 'client_fact__tel')
-    list_filter = ('tax_percent',)
-
-
-def save_formset(request, form, formset, change):
-    instances = formset.save(commit=False)
-    for instance in instances:
-        if instance.part and not instance.unit_price:
-            instance.unit_price = instance.part.price
-        instance.save()
-    formset.save_m2m()
+    list_display = ('service', 'factor', 'rating', 'created_at', 'is_approved')
+    list_filter = ('rating', 'is_approved', 'created_at')
+    search_fields = ('service__title', 'factor__client_fact__Cname', 'msg')
 
 
 class PartUsageInline(admin.TabularInline):
@@ -57,32 +41,23 @@ class PartUsageInline(admin.TabularInline):
 class FactorServiceAdmin(admin.ModelAdmin):
     list_display = ('factor', 'service', 'price_service', 'parts_total', 'total')
     list_filter = ('service',)
-    search_fields = ('factor__client_fact__Cname', 'service__title')
+    search_fields = ('factor__client_fact__Cname', 'factor__client_fact__tel', 'service__title')
     inlines = [PartUsageInline]
 
 
-class ThousandSeparatorInput(forms.TextInput):
-    def format_value(self, value):
-        if value is None:
-            return ""
-        try:
-            value = int(value)
-            return f"{value:,}"
-        except:
-            return value
-
-
-class FactorFormAdmin(forms.ModelForm):
-    class Meta:
-        model = Factor
-        fields = "__all__"
-        widgets = {
-            "price": ThousandSeparatorInput()
-        }
+class FactorAdmin(admin.ModelAdmin):
+    list_display = (
+        'id', 'client_fact', 'date_created', 'services_total',
+        'parts_total', 'total_without_tax', 'tax_amount', 'total_with_tax'
+    )
+    search_fields = ('client_fact__Cname', 'client_fact__tel')
+    list_filter = ('tax_percent', 'date_created')
+    readonly_fields = ('services_total', 'parts_total', 'total_without_tax', 'tax_amount', 'total_with_tax')
 
 
 class PartAdmin(admin.ModelAdmin):
     list_display = ('name', 'price')
+    search_fields = ('name',)
 
 
 admin.site.register(Services, ServicesAdmin)
