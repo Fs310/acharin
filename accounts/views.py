@@ -33,6 +33,7 @@ def user_registration(request):
             firstname = form.cleaned_data['firstname']
             lastname = form.cleaned_data['lastname']
             email = form.cleaned_data['email']
+            tel = form.cleaned_data['tel']
             password2 = form.cleaned_data['password2']
             user = User.objects.create_user(
                 username=username,
@@ -43,6 +44,9 @@ def user_registration(request):
             )
             user.is_active = False
             user.save()
+            profile, _ = Profile.objects.get_or_create(user=user)
+            profile.tel = tel
+            profile.save(update_fields=['tel'])
             domain = get_current_site(request).domain
             uidb64 = urlsafe_base64_encode(force_bytes(user.id))
             token = default_token_generator.make_token(user)
