@@ -1,34 +1,38 @@
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
+from django.core.paginator import Paginator
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+from django.db.models import Avg
 
 from .models import *
 from .form import *
 from accounts.models import *
-from django.core.paginator import Paginator, EmptyPage
-from django.db.models import Count
-from django.template.loader import render_to_string
-from django.http import JsonResponse
 
-
-# Create your views here.
 
 def home(request):
     user = request.user
-    if user.id:
-        profiles = Profile.objects.get(user=user)
+
+    if user.is_authenticated:
+        profiles, _ = Profile.objects.get_or_create(user=user)
         form_profile = FormProfile(instance=profiles)
         form_user = FormUser(instance=user)
     else:
         form_profile = None
         form_user = None
+
     service = Services.objects.all()[:5]
     news = Sub_news.objects.all()[:4]
-    review = Review.objects.filter(is_approved=True)[:6]
-    return render(request, 'Home/home.html',
-                  {'service': service, 'form_user': form_user, 'form_profile': form_profile, 'news': news,
-                   'review': review})
+    review = Review.objects.filter(is_approved=True).select_related('factor__client_fact', 'service')[:6]
+
+    return render(request, 'Home/home.html', {
+        'service': service,
+        'form_user': form_user,
+        'form_profile': form_profile,
+        'news': news,
+        'review': review,
+    })
 
 
 def service(request):
@@ -45,21 +49,19 @@ def service(request):
         per_page = 4
 
     paginator = Paginator(services, per_page)
-    page_num = request.GET.get('page')
-    page_obj = paginator.get_page(page_num)
+    page_obj = paginator.get_page(request.GET.get('page'))
+
     if request.headers.get("x-requested-with") == "XMLHttpRequest":
         html = render_to_string(
             "Home/partials/service_cards.html",
-            {
-                "page_obj": page_obj
-            },
+            {'page_obj': page_obj},
             request=request
         )
-
         return JsonResponse({
             "html": html,
             "has_next": page_obj.has_next()
         })
+
     return render(request, 'Home/service.html', {'page_obj': page_obj})
 
 
@@ -70,7 +72,11 @@ def detail_service(request, id):
 
 def new(request, id=None):
     titer_news = News.objects.all()
-    sub_news = Sub_news.objects.all()
+    sub_news = Sub_news.objects.all().select_related('new')
+
+    if id:
+        get_object_or_404(News, id=id)
+        sub_news = sub_news.filter(new_id=id)
 
     width = int(request.GET.get("width", 1920))
 
@@ -82,47 +88,41 @@ def new(request, id=None):
         per_page = 4
     else:
         per_page = 4
-    paginator = Paginator(titer_news, per_page)
-    page_num = request.GET.get('page')
-    titer_news = paginator.get_page(page_num)
 
-    if id:
-        all_new = News.objects.get(id=id)
-        sub_news = Sub_news.objects.filter(new=all_new)
+    paginator = Paginator(sub_news, per_page)
+    page_obj = paginator.get_page(request.GET.get('page'))
 
     if request.headers.get("x-requested-with") == "XMLHttpRequest":
         html = render_to_string(
-            "Home/partials/service_cards.html",
-            {
-                "titer_news": titer_news
-            },
+            "Home/partials/news_cards.html",
+            {'page_obj': page_obj},
             request=request
         )
-
         return JsonResponse({
             "html": html,
-            "has_next": titer_news.has_next()
+            "has_next": page_obj.has_next()
         })
-    return render(request, 'Home/news.html', {"titer_news": titer_news, 'sub_news': sub_news})
+
+    return render(request, 'Home/news.html', {
+        'titer_news': titer_news,
+        'sub_news': page_obj,
+        'page_obj': page_obj,
+    })
 
 
 def detail_new(request, slug):
-    new_detail = get_object_or_404(Sub_news, slug=slug)
+    new_detail = get_object_or_404(Sub_news.objects.select_related('new'), slug=slug)
     titer_news = News.objects.all()
-    return render(request, 'Home/detail_new.html', {"titer_news": titer_news, 'new': new_detail})
+    related_articles = Sub_news.objects.filter(new=new_detail.new).exclude(pk=new_detail.pk)[:5]
+
+    return render(request, 'Home/detail_new.html', {
+        'titer_news': titer_news,
+        'new': new_detail,
+        'related_articles': related_articles,
+    })
 
 
 def search_results(request):
-    # product = Sub_Category.objects.all()
-    # if request.method == 'POST':
-    #     form = SearchForm(request.POST)
-    #     if form.is_valid():
-    #         data = form.cleaned_data['search']
-    #         if data is not None:
-    #             product = Sub_Category.objects.filter(name__icontains=data)
-    # else:
-    #     form = SearchForm()
-    # return render(request, 'Home/home.html', {'form': form, 'all': product})
     return None
 
 
@@ -163,28 +163,21 @@ def clients(request):
         client_form = ClientForm()
         request_form = ServiceRequestForm()
 
-    return render(request, 'Home/home.html', {'client_form': client_form, 'request_form': request_form})
+    return render(request, 'Home/home.html', {
+        'client_form': client_form,
+        'request_form': request_form,
+    })
 
 
-# def tracking_code(request):
-#     form = TrackingCodeForm()
-#     if request.method == 'POST':
-#         form = TrackingCodeForm(request.POST)
-#         if form.is_valid():
-#             code = form.cleaned_data['code']
-#             try:
-#                 client = Client.objects.get(tracking_code=code)
-#                 return redirect('add_review_guest', client_id=client.id)
-#             except Client.DoesNotExist:
-#                 messages.error(request, 'کد پیگیری معتبر نیست')
-#     return render(request, 'home/enter_code.html', {'form': form})
 def comments(request):
-    comment = Review.objects.filter(is_approved=True).order_by('-created_at')
+    comment = Review.objects.filter(is_approved=True).select_related('factor__client_fact', 'service').order_by('-created_at')
     avg_rating = comment.aggregate(average=Avg('rating'))['average']
     paginator = Paginator(comment, 6)
-    page_num = request.GET.get('page')
-    page_obj = paginator.get_page(page_num)
-    return render(request, 'Home/comment.html', {'page_obj': page_obj, 'avg_rating': avg_rating, })
+    page_obj = paginator.get_page(request.GET.get('page'))
+    return render(request, 'Home/comment.html', {
+        'page_obj': page_obj,
+        'avg_rating': avg_rating,
+    })
 
 
 def about(request):
