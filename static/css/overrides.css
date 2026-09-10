@@ -3,7 +3,41 @@
    این فایل فقط اصلاحات تکمیلی است و CSS اصلی را دستکاری نمی‌کند.
 ========================================================= */
 
-/* اسکرول افقی کارت‌های خدمات در موبایل */
+/* ===================== پایه و دسکتاپ ===================== */
+
+/* فقط سکشن هیرو باید حداقل ارتفاع صفحه را داشته باشد.
+   بقیه سکشن‌های .main نباید هرکدام یک صفحه کامل ارتفاع بگیرند. */
+.main:not(.slider_section) {
+    min-height: auto;
+}
+
+/* تصویر هیرو در دسکتاپ کشیده نشود. */
+.slider_section .hero-img {
+    object-fit: cover;
+}
+
+/* جلوگیری از اثر ناخواسته قانون عمومی a در style.css روی هدر */
+.header_section .nav-link,
+.header_section .navbar-brand {
+    display: block;
+}
+
+/* ===================== فوتر ===================== */
+
+/* قوانین عمومی style.css برای a باید فقط روی خود فوتر اعمال شوند. */
+.footer_section p,
+.footer_section a {
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.footer_section .icon a,
+.footer_section li a {
+    position: relative;
+}
+
+/* ===================== اسکرول افقی کارت‌ها ===================== */
+
 .service_section .service-content::-webkit-scrollbar,
 .client_section .client-content::-webkit-scrollbar,
 .news_section .news-content::-webkit-scrollbar {
@@ -16,7 +50,8 @@
     -webkit-overflow-scrolling: touch;
 }
 
-/* اطلاعات صفحه ثبت نظر: شماره فاکتور و اجرت در یک ردیف */
+/* ===================== اطلاعات صفحه ثبت نظر ===================== */
+
 @media (max-width: 576px) {
     .review-service-info {
         grid-template-columns: repeat(2, minmax(0, 1fr));
