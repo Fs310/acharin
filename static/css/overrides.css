@@ -1,0 +1,163 @@
+/* =========================================================
+   آچارین — Safe Responsive Overrides
+   این فایل فقط اصلاحات تکمیلی است و CSS اصلی را دستکاری نمی‌کند.
+========================================================= */
+
+/* اسکرول افقی کارت‌های خدمات در موبایل */
+.service_section .service-content::-webkit-scrollbar,
+.client_section .client-content::-webkit-scrollbar,
+.news_section .news-content::-webkit-scrollbar {
+    display: none;
+}
+
+.service_section .service-content,
+.client_section .client-content,
+.news_section .news-content {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* اطلاعات صفحه ثبت نظر: شماره فاکتور و اجرت در یک ردیف */
+@media (max-width: 576px) {
+    .review-service-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .review-service-info div + div {
+        border-right: 1px solid #edf1f6;
+        border-top: none;
+    }
+
+    .review-service-info div {
+        padding: 13px 14px;
+    }
+
+    /* خلاصه فاکتور: دو در دو در موبایل */
+    .invoice-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .invoice-summary-item,
+    .invoice-summary-item:nth-child(2),
+    .invoice-summary-item:nth-child(3) {
+        border-left: 1px solid #edf1f6;
+        border-bottom: 1px solid #edf1f6;
+    }
+
+    .invoice-summary-item:nth-child(2n) {
+        border-left: none;
+    }
+
+    .invoice-summary-item:nth-child(3),
+    .invoice-summary-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .invoice-summary-item {
+        min-height: 78px;
+        padding: 12px 13px;
+    }
+
+    .invoice-summary-label {
+        font-size: 9px;
+    }
+
+    .invoice-summary-item strong {
+        font-size: 11px;
+    }
+
+    .invoice-summary-total strong {
+        font-size: 13px;
+    }
+
+    /* جدول‌ها روی موبایل از کادر بیرون نمی‌زنند */
+    .invoices-table-wrapper,
+    .invoice-table-wrapper,
+    .orders-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .invoices-table,
+    .invoice-table,
+    .orders-table {
+        min-width: 650px;
+    }
+
+    /* فاصله‌های افقی صفحات */
+    .service-detail,
+    .blog-detail,
+    .client-section {
+        padding-inline: 14px;
+    }
+
+    .service-body,
+    .service-detail .service-link {
+        margin-inline: 0;
+    }
+
+    .service-body .service-content {
+        padding: 24px 18px;
+    }
+
+    .service-body .service-content h1 {
+        font-size: 24px;
+    }
+
+    .service-body .service-content .service-description p {
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .article-text {
+        padding: 22px 18px 30px;
+        font-size: 14px;
+    }
+
+    .article-header h1 {
+        font-size: 25px;
+    }
+
+    .blog-grid-section {
+        padding-inline: 14px;
+    }
+
+    .blog-grid {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 390px) {
+    .review-service-info div {
+        padding: 12px 10px;
+    }
+
+    .review-service-info span {
+        font-size: 10px;
+    }
+
+    .review-service-info strong {
+        font-size: 11px;
+    }
+
+    .invoice-summary-item {
+        min-height: 72px;
+        padding: 10px 9px;
+    }
+
+    .invoice-summary-item strong {
+        font-size: 10px;
+    }
+
+    .invoice-summary-total strong {
+        font-size: 12px;
+    }
+
+    .review-rating {
+        gap: 5px;
+    }
+
+    .review-rating label {
+        width: 34px;
+        height: 34px;
+    }
+}
