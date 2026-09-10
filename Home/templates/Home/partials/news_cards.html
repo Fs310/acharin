@@ -1,0 +1,39 @@
+{% for item in page_obj %}
+
+    <article class="blog-card">
+
+        {% if item.sub_img %}
+            <a href="{% url 'home:detail_new' item.slug %}"
+               class="blog-card-image"
+               aria-label="مطالعه مقاله {{ item.sub_titer }}">
+                <img src="{{ item.sub_img.url }}"
+                     alt="{{ item.sub_titer }}"
+                     width="640"
+                     height="360"
+                     loading="lazy"
+                     decoding="async">
+            </a>
+        {% endif %}
+
+        <div class="blog-content">
+            <a href="{% url 'home:detail_new' item.slug %}">
+                <h3>{{ item.sub_titer }}</h3>
+                <p class="blog-summary">{{ item.sub_summary }}</p>
+                <span>مطالعه مقاله</span>
+                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                <div class="blog-meta">
+                    <span>
+                        <i class="bi bi-clock" aria-hidden="true"></i>
+                        {{ item.reading_time }} دقیقه
+                    </span>
+                    <span>
+                        <i class="bi bi-calendar3" aria-hidden="true"></i>
+                        {{ item.sub_update_date|date:"Y/m/d" }}
+                    </span>
+                </div>
+            </a>
+        </div>
+
+    </article>
+
+{% endfor %}
