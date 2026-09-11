@@ -123,11 +123,61 @@
 
 /* ===================== صفحه اصلی — کارت‌ها ===================== */
 
-
+.service_section .service-content,
+.client_section .client-content,
+.news_section .news-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    min-height: 0;
+    height: auto;
+    overflow: visible;
+}
 
 .service_section .service-content .card {
     flex: 0 1 300px;
     max-width: 340px;
+}
+
+.client_section .client-content > .card,
+.news_section .news-content > .card {
+    flex: 0 1 360px;
+    max-width: 420px;
+}
+
+.main.service_section,
+.main.client_section,
+.main.news_section,
+.service_section .service-wrapper,
+.client_section .client-wrapper,
+.news_section .news-wrapper {
+    min-height: 0;
+    height: auto;
+}
+
+/* ===================== فاصله و ارتفاع سکشن‌های Home در دسکتاپ ===================== */
+
+@media (min-width: 1201px) {
+    .main.service_section,
+    .main.client_section,
+    .main.news_section {
+        padding-top: 60px;
+        padding-bottom: 45px;
+    }
+
+    .service_section .service-titer,
+    .client_section .client-title,
+    .news_section .news-titer {
+        margin-bottom: 30px;
+    }
+
+    .service_section .service-content,
+    .client_section .client-content,
+    .news_section .news-content {
+        margin-bottom: 28px;
+    }
 }
 
 /* ===================== CTA مشترک سایت ===================== */
