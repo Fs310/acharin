@@ -21,7 +21,9 @@
 /* ===================== Breadcrumb مشترک سایت ===================== */
 
 .site-breadcrumb,
-.client-breadcrumb {
+.client-breadcrumb,
+.invoices-breadcrumb,
+.invoice-breadcrumb {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -35,7 +37,9 @@
 }
 
 .site-breadcrumb > *,
-.client-breadcrumb > * {
+.client-breadcrumb > *,
+.invoices-breadcrumb > *,
+.invoice-breadcrumb > * {
     display: inline-flex;
     align-items: center;
     margin: 0;
@@ -43,7 +47,9 @@
 }
 
 .site-breadcrumb > * + *::before,
-.client-breadcrumb > * + *::before {
+.client-breadcrumb > * + *::before,
+.invoices-breadcrumb > * + *::before,
+.invoice-breadcrumb > * + *::before {
     content: "‹";
     display: inline-flex;
     align-items: center;
@@ -54,12 +60,16 @@
     line-height: 1;
 }
 
-.client-breadcrumb > span[aria-hidden="true"] {
+.client-breadcrumb > span[aria-hidden="true"],
+.invoices-breadcrumb > span[aria-hidden="true"],
+.invoice-breadcrumb > span[aria-hidden="true"] {
     display: none;
 }
 
 .site-breadcrumb a,
-.client-breadcrumb a {
+.client-breadcrumb a,
+.invoices-breadcrumb a,
+.invoice-breadcrumb a {
     color: #64748b;
     text-decoration: none;
     transition: color .2s ease;
@@ -68,12 +78,18 @@
 .site-breadcrumb a:hover,
 .site-breadcrumb a:focus-visible,
 .client-breadcrumb a:hover,
-.client-breadcrumb a:focus-visible {
+.client-breadcrumb a:focus-visible,
+.invoices-breadcrumb a:hover,
+.invoices-breadcrumb a:focus-visible,
+.invoice-breadcrumb a:hover,
+.invoice-breadcrumb a:focus-visible {
     color: #f97316;
 }
 
 .site-breadcrumb span[aria-current="page"],
-.client-breadcrumb span[aria-current="page"] {
+.client-breadcrumb span[aria-current="page"],
+.invoices-breadcrumb span[aria-current="page"],
+.invoice-breadcrumb span[aria-current="page"] {
     color: #0f172a;
     font-weight: 600;
 }
@@ -204,7 +220,9 @@
 
 @media (max-width: 576px) {
     .site-breadcrumb,
-    .client-breadcrumb {
+    .client-breadcrumb,
+    .invoices-breadcrumb,
+    .invoice-breadcrumb {
         padding: 12px 14px;
         font-size: 12px;
         overflow-x: auto;
@@ -212,7 +230,9 @@
     }
 
     .site-breadcrumb > * + *::before,
-    .client-breadcrumb > * + *::before {
+    .client-breadcrumb > * + *::before,
+    .invoices-breadcrumb > * + *::before,
+    .invoice-breadcrumb > * + *::before {
         margin: 0 8px;
         font-size: 16px;
     }
