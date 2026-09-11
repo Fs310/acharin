@@ -21,6 +21,10 @@
 /* ===================== Breadcrumb مشترک سایت ===================== */
 
 .site-breadcrumb,
+.about-link,
+.service-link .link,
+.blog-link .link,
+.contact-link,
 .client-breadcrumb,
 .invoices-breadcrumb,
 .invoice-breadcrumb {
@@ -28,15 +32,15 @@
     align-items: center;
     justify-content: flex-start;
     gap: 0;
-    width: 100%;
-    margin: 0;
-    padding: 16px 0;
     direction: rtl;
     text-align: right;
-    font-size: 14px;
 }
 
 .site-breadcrumb > *,
+.about-link > *,
+.service-link .link > *,
+.blog-link .link > *,
+.contact-link > *,
 .client-breadcrumb > *,
 .invoices-breadcrumb > *,
 .invoice-breadcrumb > * {
@@ -46,27 +50,38 @@
     line-height: 1.8;
 }
 
-.site-breadcrumb > * + *::before,
-.client-breadcrumb > * + *::before,
-.invoices-breadcrumb > * + *::before,
-.invoice-breadcrumb > * + *::before {
+/* فلش فقط با pseudo-element می‌آید؛ هیچ span جداگانه‌ای لازم نیست. */
+.site-breadcrumb a + a::before,
+.site-breadcrumb a + span[aria-current="page"]::before,
+.about-link a + a::before,
+.about-link a + span[aria-current="page"]::before,
+.service-link .link a + a::before,
+.service-link .link a + span[aria-current="page"]::before,
+.blog-link .link a + a::before,
+.blog-link .link a + span[aria-current="page"]::before,
+.contact-link a + a::before,
+.contact-link a + span[aria-current="page"]::before,
+.client-breadcrumb a + a::before,
+.client-breadcrumb a + span[aria-current="page"]::before,
+.invoices-breadcrumb a + a::before,
+.invoices-breadcrumb a + span[aria-current="page"]::before,
+.invoice-breadcrumb a + a::before,
+.invoice-breadcrumb a + span[aria-current="page"]::before {
     content: "‹";
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 0 12px;
-    color: #94a3b8;
+    color: #f97316;
     font-size: 18px;
     line-height: 1;
 }
 
-.client-breadcrumb > span[aria-hidden="true"],
-.invoices-breadcrumb > span[aria-hidden="true"],
-.invoice-breadcrumb > span[aria-hidden="true"] {
-    display: none;
-}
-
 .site-breadcrumb a,
+.about-link a,
+.service-link .link a,
+.blog-link .link a,
+.contact-link a,
 .client-breadcrumb a,
 .invoices-breadcrumb a,
 .invoice-breadcrumb a {
@@ -77,6 +92,14 @@
 
 .site-breadcrumb a:hover,
 .site-breadcrumb a:focus-visible,
+.about-link a:hover,
+.about-link a:focus-visible,
+.service-link .link a:hover,
+.service-link .link a:focus-visible,
+.blog-link .link a:hover,
+.blog-link .link a:focus-visible,
+.contact-link a:hover,
+.contact-link a:focus-visible,
 .client-breadcrumb a:hover,
 .client-breadcrumb a:focus-visible,
 .invoices-breadcrumb a:hover,
@@ -87,6 +110,10 @@
 }
 
 .site-breadcrumb span[aria-current="page"],
+.about-link span[aria-current="page"],
+.service-link .link span[aria-current="page"],
+.blog-link .link span[aria-current="page"],
+.contact-link span[aria-current="page"],
 .client-breadcrumb span[aria-current="page"],
 .invoices-breadcrumb span[aria-current="page"],
 .invoice-breadcrumb span[aria-current="page"] {
@@ -220,6 +247,10 @@
 
 @media (max-width: 576px) {
     .site-breadcrumb,
+    .about-link,
+    .service-link .link,
+    .blog-link .link,
+    .contact-link,
     .client-breadcrumb,
     .invoices-breadcrumb,
     .invoice-breadcrumb {
@@ -229,10 +260,22 @@
         white-space: nowrap;
     }
 
-    .site-breadcrumb > * + *::before,
-    .client-breadcrumb > * + *::before,
-    .invoices-breadcrumb > * + *::before,
-    .invoice-breadcrumb > * + *::before {
+    .site-breadcrumb a + a::before,
+    .site-breadcrumb a + span[aria-current="page"]::before,
+    .about-link a + a::before,
+    .about-link a + span[aria-current="page"]::before,
+    .service-link .link a + a::before,
+    .service-link .link a + span[aria-current="page"]::before,
+    .blog-link .link a + a::before,
+    .blog-link .link a + span[aria-current="page"]::before,
+    .contact-link a + a::before,
+    .contact-link a + span[aria-current="page"]::before,
+    .client-breadcrumb a + a::before,
+    .client-breadcrumb a + span[aria-current="page"]::before,
+    .invoices-breadcrumb a + a::before,
+    .invoices-breadcrumb a + span[aria-current="page"]::before,
+    .invoice-breadcrumb a + a::before,
+    .invoice-breadcrumb a + span[aria-current="page"]::before {
         margin: 0 8px;
         font-size: 16px;
     }
