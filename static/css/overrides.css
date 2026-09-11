@@ -34,6 +34,7 @@
     gap: 0;
     direction: rtl;
     text-align: right;
+    padding: 14px 30px 8px;
 }
 
 .site-breadcrumb > *,
@@ -48,6 +49,7 @@
     align-items: center;
     margin: 0;
     line-height: 1.8;
+
 }
 
 /* فلش فقط با pseudo-element می‌آید؛ هیچ span جداگانه‌ای لازم نیست. */
@@ -209,11 +211,6 @@
         margin-top: 24px;
     }
 
-    .site-breadcrumb {
-        width: min(1140px, calc(100% - 60px));
-        margin-inline: auto;
-        padding: 14px 0 8px;
-    }
 }
 
 /* ===================== صفحه مجله — چیدمان دسکتاپ ===================== */
