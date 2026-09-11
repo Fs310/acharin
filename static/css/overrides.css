@@ -244,6 +244,21 @@
     }
 }
 
+/* ===================== صفحه درباره ما — فاصله‌بندی دسکتاپ ===================== */
+@media (min-width: 577px) {
+    .about-features .features-row {
+        margin-top: 15px;
+    }
+
+    .about-features {
+        margin-bottom: 25px;
+    }
+
+    .about-page {
+        padding-top: 25px;
+    }
+}
+
 /* ===================== CTA مشترک سایت ===================== */
 .service-cta .cta-content .btn-box,
 .blog-cta .cta-content .btn-box,
