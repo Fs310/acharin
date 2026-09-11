@@ -4,6 +4,32 @@
 {% block title %}تماس با ما{% endblock %}
 
 {% block body %}
+    <style>
+        @media (min-width: 577px) {
+            .contact-hero + .site-breadcrumb {
+                width: min(1140px, calc(100% - 60px));
+                margin: 10px auto 12px;
+                padding: 0;
+            }
+
+            .contact-hero + .site-breadcrumb + .contact-page {
+                padding-top: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero + .site-breadcrumb {
+                width: calc(100% - 28px);
+                margin: 8px auto 10px;
+                padding: 0;
+            }
+
+            .contact-hero + .site-breadcrumb + .contact-page {
+                padding-top: 8px;
+            }
+        }
+    </style>
+
     <section class="contact-hero">
         <div class="container-fluid">
             <div class="contact-hero-content">
