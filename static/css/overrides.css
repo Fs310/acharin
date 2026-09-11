@@ -18,6 +18,55 @@
     display: block;
 }
 
+/* ===================== Breadcrumb مشترک سایت ===================== */
+
+.site-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 16px 0;
+    direction: rtl;
+    text-align: right;
+    font-size: 14px;
+}
+
+.site-breadcrumb > * {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.site-breadcrumb > * + *::before {
+    content: "‹";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 12px;
+    color: #94a3b8;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.site-breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.site-breadcrumb a:hover,
+.site-breadcrumb a:focus-visible {
+    color: #f97316;
+}
+
+.site-breadcrumb span[aria-current="page"] {
+    color: #0f172a;
+    font-weight: 600;
+}
+
 /* ===================== صفحه اصلی — کارت‌ها ===================== */
 
 .service_section .service-content,
@@ -144,6 +193,18 @@
 }
 
 @media (max-width: 576px) {
+    .site-breadcrumb {
+        padding: 12px 14px;
+        font-size: 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .site-breadcrumb > * + *::before {
+        margin: 0 8px;
+        font-size: 16px;
+    }
+
     .review-service-info {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
