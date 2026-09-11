@@ -180,6 +180,45 @@
     }
 }
 
+/* ===================== صفحه خدمات — چیدمان دسکتاپ ===================== */
+
+@media (min-width: 577px) {
+    .services-grid-section {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    .services-grid-section .section-title {
+        margin-bottom: 24px;
+    }
+
+    .services-grid-section .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+        justify-content: center;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .services-grid-section .services-grid > * {
+        width: 100%;
+        max-width: 300px;
+        min-width: 0;
+    }
+
+    .services-grid-section .load-more-box {
+        margin-top: 24px;
+    }
+
+    .site-breadcrumb {
+        width: min(1140px, calc(100% - 60px));
+        margin-inline: auto;
+        padding: 14px 0 8px;
+    }
+}
+
 /* ===================== CTA مشترک سایت ===================== */
 
 .service-cta .cta-content .btn-box,
