@@ -6,13 +6,11 @@
 {% block body %}
 <section class="blog-detail">
     <div class="container-fluid">
-        <nav class="blog-link" aria-label="مسیر صفحه">
-            <div class="link">
-                <a href="{% url 'home:homes' %}">خانه</a>
-                <a href="{% url 'home:new' %}">مقالات</a>
-                <a href="{% url 'home:sub_new' new.new.id %}">{{ new.new.titer }}</a>
-                <span aria-current="page">{{ new.sub_titer }}</span>
-            </div>
+        <nav class="site-breadcrumb" aria-label="مسیر صفحه">
+            <a href="{% url 'home:homes' %}">خانه</a>
+            <a href="{% url 'home:new' %}">مقالات</a>
+            <a href="{% url 'home:sub_new' new.new.id %}">{{ new.new.titer }}</a>
+            <span aria-current="page">{{ new.sub_titer }}</span>
         </nav>
 
         <div class="new-grid">
