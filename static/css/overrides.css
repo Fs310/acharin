@@ -123,11 +123,7 @@
 
 /* ===================== صفحه اصلی — کارت‌ها ===================== */
 
-.service_section .service-content,
-.client_section .client-content,
-.news_section .news-content {
-    justify-content: center;
-}
+
 
 .service_section .service-content .card {
     flex: 0 1 300px;
