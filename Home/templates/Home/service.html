@@ -17,11 +17,9 @@
     </div>
 </header>
 
-<nav class="service-link" aria-label="مسیر صفحه">
-    <div class="link">
-        <a href="{% url 'home:homes' %}">خانه</a>
-        <span aria-current="page">خدمات</span>
-    </div>
+<nav class="site-breadcrumb" aria-label="مسیر صفحه">
+    <a href="{% url 'home:homes' %}">خانه</a>
+    <span aria-current="page">خدمات</span>
 </nav>
 
 <section class="services-grid-section" id="services" aria-labelledby="services-title">
