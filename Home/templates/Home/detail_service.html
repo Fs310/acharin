@@ -11,12 +11,10 @@
             <div class="feature-box"><div class="feature-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></div><h3>اعزام سریع</h3><p>کمتر از ۲ ساعت</p></div>
         </div>
 
-        <nav class="service-link" aria-label="مسیر صفحه">
-            <div class="link">
-                <a href="{% url 'home:homes' %}">خانه</a>
-                <a href="{% url 'home:services' %}">خدمات</a>
-                <span aria-current="page">{{ service.title }}</span>
-            </div>
+        <nav class="site-breadcrumb" aria-label="مسیر صفحه">
+            <a href="{% url 'home:homes' %}">خانه</a>
+            <a href="{% url 'home:services' %}">خدمات</a>
+            <span aria-current="page">{{ service.title }}</span>
         </nav>
 
         <article class="service-body">
