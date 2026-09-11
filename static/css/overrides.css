@@ -122,7 +122,6 @@
 }
 
 /* ===================== صفحه اصلی — کارت‌ها ===================== */
-
 .service_section .service-content,
 .client_section .client-content,
 .news_section .news-content {
@@ -158,7 +157,6 @@
 }
 
 /* ===================== فاصله و ارتفاع سکشن‌های Home در دسکتاپ ===================== */
-
 @media (min-width: 1201px) {
     .main.service_section,
     .main.client_section,
@@ -181,7 +179,6 @@
 }
 
 /* ===================== صفحه خدمات — چیدمان دسکتاپ ===================== */
-
 @media (min-width: 577px) {
     .services-grid-section {
         padding-top: 45px;
@@ -219,8 +216,38 @@
     }
 }
 
-/* ===================== CTA مشترک سایت ===================== */
+/* ===================== صفحه مجله — چیدمان دسکتاپ ===================== */
+@media (min-width: 993px) {
+    .blog-hero + .site-breadcrumb {
+        width: min(1140px, calc(100% - 60px));
+        margin: 14px auto 0;
+        padding: 0;
+    }
 
+    .blog-grid-section {
+        padding-top: 12px;
+        padding-bottom: 42px;
+    }
+
+    .blog-section-heading {
+        margin-bottom: 24px;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+        justify-content: center;
+        gap: 24px;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .blog-grid > .blog-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ===================== CTA مشترک سایت ===================== */
 .service-cta .cta-content .btn-box,
 .blog-cta .cta-content .btn-box,
 .order_section .action-btn {
@@ -290,7 +317,6 @@
 }
 
 /* ===================== فوتر ===================== */
-
 .footer_section p,
 .footer_section a {
     line-height: 1.9;
@@ -303,7 +329,6 @@
 }
 
 /* ===================== اسکرول افقی کارت‌ها ===================== */
-
 .service_section .service-content::-webkit-scrollbar,
 .client_section .client-content::-webkit-scrollbar,
 .news_section .news-content::-webkit-scrollbar {
@@ -317,7 +342,6 @@
 }
 
 /* ===================== اطلاعات صفحه ثبت نظر ===================== */
-
 @media (max-width: 992px) {
     .order_section .action-btn {
         gap: 10px;
