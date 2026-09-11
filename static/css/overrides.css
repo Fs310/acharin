@@ -5,18 +5,14 @@
 
 /* ===================== پایه و دسکتاپ ===================== */
 
-/* فقط سکشن هیرو باید حداقل ارتفاع صفحه را داشته باشد.
-   بقیه سکشن‌های .main نباید هرکدام یک صفحه کامل ارتفاع بگیرند. */
 .main:not(.slider_section) {
     min-height: auto;
 }
 
-/* تصویر هیرو در دسکتاپ کشیده نشود. */
 .slider_section .hero-img {
     object-fit: cover;
 }
 
-/* جلوگیری از اثر ناخواسته قانون عمومی a در style.css روی هدر */
 .header_section .nav-link,
 .header_section .navbar-brand {
     display: block;
@@ -24,8 +20,6 @@
 
 /* ===================== صفحه اصلی — کارت‌ها ===================== */
 
-/* وقتی تعداد کارت‌ها کمتر از ظرفیت ردیف است، کارت‌ها وسط‌چین بمانند
-   و به‌صورت غیرضروری تمام عرض صفحه را نگیرند. */
 .service_section .service-content,
 .client_section .client-content,
 .news_section .news-content {
@@ -37,9 +31,66 @@
     max-width: 340px;
 }
 
+/* ===================== CTA مشترک سایت ===================== */
+
+/* CTA پایین Home دقیقاً از همان زبان بصری CTA صفحات خدمات و مجله استفاده می‌کند. */
+.service-cta .cta-content .btn-box,
+.blog-cta .cta-content .btn-box,
+.order_section .action-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.service-cta .btn-box .form-btn,
+.service-cta .btn-box .tel-btn,
+.blog-cta .btn-box .form-btn,
+.blog-cta .btn-box .tel-btn,
+.order_section .action-btn .form-btn,
+.order_section .action-btn .tel-btn {
+    width: 205px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.service-cta .btn-box .form-btn,
+.blog-cta .btn-box .form-btn,
+.order_section .action-btn .form-btn {
+    background: #f97316;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, .15);
+}
+
+.service-cta .btn-box .tel-btn,
+.blog-cta .btn-box .tel-btn,
+.order_section .action-btn .tel-btn {
+    background: #fff;
+    color: #f97316;
+    border: 1.5px solid #f97316;
+    box-shadow: none;
+}
+
+.service-cta .btn-box .form-btn:hover,
+.service-cta .btn-box .tel-btn:hover,
+.blog-cta .btn-box .form-btn:hover,
+.blog-cta .btn-box .tel-btn:hover,
+.order_section .action-btn .form-btn:hover,
+.order_section .action-btn .tel-btn:hover {
+    transform: translateY(-2px);
+}
+
 /* ===================== فوتر ===================== */
 
-/* قوانین عمومی style.css برای a باید فقط روی خود فوتر اعمال شوند. */
 .footer_section p,
 .footer_section a {
     line-height: 1.9;
@@ -67,6 +118,18 @@
 
 /* ===================== اطلاعات صفحه ثبت نظر ===================== */
 
+@media (max-width: 992px) {
+    .order_section .action-btn {
+        gap: 10px;
+    }
+
+    .order_section .action-btn .form-btn,
+    .order_section .action-btn .tel-btn {
+        width: 185px;
+        height: 50px;
+    }
+}
+
 @media (max-width: 576px) {
     .review-service-info {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -81,7 +144,6 @@
         padding: 13px 14px;
     }
 
-    /* خلاصه فاکتور: دو در دو در موبایل */
     .invoice-summary {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -119,7 +181,6 @@
         font-size: 13px;
     }
 
-    /* جدول‌ها روی موبایل از کادر بیرون نمی‌زنند */
     .invoices-table-wrapper,
     .invoice-table-wrapper,
     .orders-table-wrapper {
@@ -133,7 +194,6 @@
         min-width: 650px;
     }
 
-    /* فاصله‌های افقی صفحات */
     .service-detail,
     .blog-detail,
     .client-section {
@@ -173,6 +233,19 @@
 
     .blog-grid {
         gap: 14px;
+    }
+
+    /* Home: CTA پایانی در موبایل همان الگوی مشترک صفحات دیگر را حفظ می‌کند. */
+    .order_section .action-btn {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .order_section .action-btn .form-btn,
+    .order_section .action-btn .tel-btn {
+        width: min(100%, 205px);
+        height: 48px;
     }
 }
 
