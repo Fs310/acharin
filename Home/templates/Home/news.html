@@ -26,11 +26,9 @@
     </div>
 </header>
 
-<nav class="blog-link" aria-label="مسیر صفحه">
-    <div class="link">
-        <a href="{% url 'home:homes' %}">خانه</a>
-        <span aria-current="page">مقالات</span>
-    </div>
+<nav class="site-breadcrumb" aria-label="مسیر صفحه">
+    <a href="{% url 'home:homes' %}">خانه</a>
+    <span aria-current="page">مقالات</span>
 </nav>
 
 <main>
