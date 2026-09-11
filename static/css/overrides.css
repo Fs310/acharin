@@ -215,12 +215,6 @@
 
 /* ===================== صفحه مجله — چیدمان دسکتاپ ===================== */
 @media (min-width: 993px) {
-    .blog-hero + .site-breadcrumb {
-        width: min(1140px, calc(100% - 60px));
-        margin: 14px auto 0;
-        padding: 0;
-    }
-
     .blog-grid-section {
         padding-top: 12px;
         padding-bottom: 42px;
