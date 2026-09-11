@@ -20,7 +20,8 @@
 
 /* ===================== Breadcrumb مشترک سایت ===================== */
 
-.site-breadcrumb {
+.site-breadcrumb,
+.client-breadcrumb {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -33,14 +34,16 @@
     font-size: 14px;
 }
 
-.site-breadcrumb > * {
+.site-breadcrumb > *,
+.client-breadcrumb > * {
     display: inline-flex;
     align-items: center;
     margin: 0;
     line-height: 1.8;
 }
 
-.site-breadcrumb > * + *::before {
+.site-breadcrumb > * + *::before,
+.client-breadcrumb > * + *::before {
     content: "‹";
     display: inline-flex;
     align-items: center;
@@ -51,18 +54,26 @@
     line-height: 1;
 }
 
-.site-breadcrumb a {
+.client-breadcrumb > span[aria-hidden="true"] {
+    display: none;
+}
+
+.site-breadcrumb a,
+.client-breadcrumb a {
     color: #64748b;
     text-decoration: none;
     transition: color .2s ease;
 }
 
 .site-breadcrumb a:hover,
-.site-breadcrumb a:focus-visible {
+.site-breadcrumb a:focus-visible,
+.client-breadcrumb a:hover,
+.client-breadcrumb a:focus-visible {
     color: #f97316;
 }
 
-.site-breadcrumb span[aria-current="page"] {
+.site-breadcrumb span[aria-current="page"],
+.client-breadcrumb span[aria-current="page"] {
     color: #0f172a;
     font-weight: 600;
 }
@@ -137,7 +148,6 @@
     transform: translateY(-2px);
 }
 
-/* دکمه‌های انتهای سکشن‌های Home هم همان ابعاد CTA استاندارد را دارند. */
 .service_section > .container-fluid .btn-box a,
 .client_section > .container-fluid .btn-box a,
 .news_section > .container-fluid .btn-box a {
@@ -193,14 +203,16 @@
 }
 
 @media (max-width: 576px) {
-    .site-breadcrumb {
+    .site-breadcrumb,
+    .client-breadcrumb {
         padding: 12px 14px;
         font-size: 12px;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    .site-breadcrumb > * + *::before {
+    .site-breadcrumb > * + *::before,
+    .client-breadcrumb > * + *::before {
         margin: 0 8px;
         font-size: 16px;
     }
@@ -309,7 +321,6 @@
         gap: 14px;
     }
 
-    /* Home: CTA پایانی در موبایل همان الگوی مشترک صفحات دیگر را حفظ می‌کند. */
     .order_section .action-btn {
         flex-direction: column;
         width: 100%;
@@ -322,7 +333,6 @@
         height: 48px;
     }
 
-    /* دکمه‌های «مشاهده همه...» در Home روی موبایل جمع‌وجور و یکدست باشند. */
     .service_section > .container-fluid .btn-box a,
     .client_section > .container-fluid .btn-box a,
     .news_section > .container-fluid .btn-box a {
