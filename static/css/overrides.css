@@ -22,6 +22,21 @@
     display: block;
 }
 
+/* ===================== صفحه اصلی — کارت‌ها ===================== */
+
+/* وقتی تعداد کارت‌ها کمتر از ظرفیت ردیف است، کارت‌ها وسط‌چین بمانند
+   و به‌صورت غیرضروری تمام عرض صفحه را نگیرند. */
+.service_section .service-content,
+.client_section .client-content,
+.news_section .news-content {
+    justify-content: center;
+}
+
+.service_section .service-content .card {
+    flex: 0 1 300px;
+    max-width: 340px;
+}
+
 /* ===================== فوتر ===================== */
 
 /* قوانین عمومی style.css برای a باید فقط روی خود فوتر اعمال شوند. */
