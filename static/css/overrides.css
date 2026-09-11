@@ -33,7 +33,6 @@
 
 /* ===================== CTA مشترک سایت ===================== */
 
-/* CTA پایین Home دقیقاً از همان زبان بصری CTA صفحات خدمات و مجله استفاده می‌کند. */
 .service-cta .cta-content .btn-box,
 .blog-cta .cta-content .btn-box,
 .order_section .action-btn {
@@ -87,6 +86,20 @@
 .order_section .action-btn .form-btn:hover,
 .order_section .action-btn .tel-btn:hover {
     transform: translateY(-2px);
+}
+
+/* دکمه‌های انتهای سکشن‌های Home هم همان ابعاد CTA استاندارد را دارند. */
+.service_section > .container-fluid .btn-box a,
+.client_section > .container-fluid .btn-box a,
+.news_section > .container-fluid .btn-box a {
+    width: 205px;
+    height: 50px;
+    padding: 0 16px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 /* ===================== فوتر ===================== */
@@ -246,6 +259,16 @@
     .order_section .action-btn .tel-btn {
         width: min(100%, 205px);
         height: 48px;
+    }
+
+    /* دکمه‌های «مشاهده همه...» در Home روی موبایل جمع‌وجور و یکدست باشند. */
+    .service_section > .container-fluid .btn-box a,
+    .client_section > .container-fluid .btn-box a,
+    .news_section > .container-fluid .btn-box a {
+        width: 205px;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 11px;
     }
 }
 
