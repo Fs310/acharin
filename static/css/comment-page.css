@@ -1,0 +1,22 @@
+/* ===================== صفحه نظرات مشتریان ===================== */
+
+@media (min-width: 577px) {
+    .client-section.page {
+        min-height: 0;
+        padding-bottom: 32px;
+    }
+
+    /* فقط فاصله عمودی؛ فاصله افقی/سمت راست دست‌نخورده می‌ماند. */
+    .client-section.page .client-breadcrumb {
+        margin-top: 14px;
+        margin-bottom: 16px;
+    }
+
+    .client-section.page .client-page-header {
+        margin-bottom: 15px;
+    }
+
+    .client-section.page .client-card {
+        min-height: 190px;
+    }
+}
