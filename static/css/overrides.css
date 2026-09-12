@@ -578,7 +578,6 @@
     }
 }
 
-@media (min-width: 993px) {
     .service-detail .site-breadcrumb {
         margin-bottom: 20px;
     }
@@ -595,4 +594,3 @@
     .invoice-page .invoice-summary-group .sum-row td:nth-child(6) {
         white-space: nowrap;
     }
-}
