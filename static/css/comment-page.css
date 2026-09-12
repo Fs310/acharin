@@ -28,17 +28,4 @@
         margin-bottom: 20px;
     }
 
-    .service-detail .service-body {
-        align-items: start;
-    }
-
-    .service-detail .service-body .service-content {
-        align-self: start;
-        height: auto;
-    }
-
-    .service-detail .service-body .service-meta {
-        margin-top: 24px;
-        padding-top: 0;
-    }
 }
