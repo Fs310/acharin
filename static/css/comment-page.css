@@ -1,5 +1,3 @@
-@import url("./service-detail.css");
-
 /* ===================== صفحه نظرات مشتریان ===================== */
 
 @media (min-width: 577px) {
@@ -20,5 +18,27 @@
 
     .client-section.page .client-card {
         min-height: 190px;
+    }
+}
+
+/* ===================== جزئیات خدمت — دسکتاپ ===================== */
+
+@media (min-width: 993px) {
+    .service-detail .site-breadcrumb {
+        margin-bottom: 20px;
+    }
+
+    .service-detail .service-body {
+        align-items: start;
+    }
+
+    .service-detail .service-body .service-content {
+        align-self: start;
+        height: auto;
+    }
+
+    .service-detail .service-body .service-meta {
+        margin-top: 24px;
+        padding-top: 0;
     }
 }
