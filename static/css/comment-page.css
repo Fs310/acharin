@@ -34,4 +34,10 @@
         font-size: 18px;
         font-weight: 900;
     }
+
+    /* جلوگیری از شکستن عنوان‌های جمع‌بندی به دو خط */
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(5),
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(6) {
+        white-space: nowrap;
+    }
 }
