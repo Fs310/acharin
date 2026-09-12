@@ -97,8 +97,8 @@
 
                             <div class="profile-field">
                                 <label for="tel">شماره تماس</label>
-                                <input type="tel" id="tel" name="tel" value="{{ form_profile.instance.tel }}">
-                                {% for error in form_profile.instance.tel.errors %}
+                                <input type="tel" id="tel" name="tel" value="{{ form_profile.instance.tel|default_if_none:'' }}">
+                                {% for error in form_profile.tel.errors %}
                                     <small class="field-error">{{ error }}</small>
                                 {% endfor %}
                             </div>
@@ -137,26 +137,44 @@
                         <div class="profile-fields address-fields">
 
                             <div class="profile-field">
-                                <label for="province">استان</label>
-                                <select id="province" name="province">
-                                    <option value="">انتخاب استان</option>
-                                    <option value="خراسان رضوی" selected>خراسان رضوی</option>
-                                </select>
+                                <label for="city">شهر</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    value="{{ form_profile.instance.city|default_if_none:'' }}"
+                                    placeholder="مثلاً مشهد"
+                                    autocomplete="address-level2"
+                                >
+                                {% for error in form_profile.city.errors %}
+                                    <small class="field-error">{{ error }}</small>
+                                {% endfor %}
                             </div>
 
                             <div class="profile-field">
-                                <label for="city">شهر</label>
-                                <select id="city" name="city">
-                                    <option value="">انتخاب شهر</option>
-                                    <option value="مشهد" selected>مشهد</option>
-                                    <option value="نیشابور">نیشابور</option>
-                                    <option value="سبزوار">سبزوار</option>
-                                </select>
+                                <label for="village">روستا <span class="optional-field">(اختیاری)</span></label>
+                                <input
+                                    type="text"
+                                    id="village"
+                                    name="village"
+                                    value="{{ form_profile.instance.village|default_if_none:'' }}"
+                                    placeholder="در صورت سکونت در روستا"
+                                    autocomplete="address-line2"
+                                >
+                                {% for error in form_profile.village.errors %}
+                                    <small class="field-error">{{ error }}</small>
+                                {% endfor %}
                             </div>
 
                             <div class="profile-field full-width">
-                                <label for="address-input">آدرس</label>
-                                <textarea id="address-input" name="address" rows="5" placeholder="آدرس خود را وارد کنید...">{{ form_profile.instance.address }}</textarea>
+                                <label for="address-input">آدرس کامل محل خدمت</label>
+                                <textarea
+                                    id="address-input"
+                                    name="address"
+                                    rows="5"
+                                    placeholder="خیابان، کوچه، پلاک، واحد و سایر جزئیات..."
+                                    autocomplete="street-address"
+                                >{{ form_profile.instance.address|default_if_none:'' }}</textarea>
                                 {% for error in form_profile.address.errors %}
                                     <small class="field-error">{{ error }}</small>
                                 {% endfor %}
