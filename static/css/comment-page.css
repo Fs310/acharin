@@ -28,4 +28,41 @@
         margin-bottom: 20px;
     }
 
+    /* ===================== جمع‌بندی فاکتور — فقط دسکتاپ ===================== */
+    .invoice-page .invoice-summary-group .sum-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        width: 100%;
+        min-height: 48px;
+        padding: 0 22px;
+        box-sizing: border-box;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row td[colspan="4"] {
+        display: none;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(5) {
+        grid-column: 1;
+        padding: 9px 0;
+        border-bottom: none;
+        text-align: right;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(6) {
+        grid-column: 2;
+        padding: 9px 0;
+        border-bottom: none;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row:not(:last-child) {
+        border-bottom: 1px solid #edf1f6;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row.total-row {
+        background: #eff6ff;
+    }
 }
