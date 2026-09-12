@@ -33,8 +33,10 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         align-items: center;
-        width: 100%;
+        width: 52%;
         min-height: 48px;
+        margin-right: auto;
+        margin-left: 0;
         padding: 0 22px;
         box-sizing: border-box;
     }
@@ -63,6 +65,18 @@
     }
 
     .invoice-page .invoice-summary-group .sum-row.total-row {
+        min-height: 58px;
         background: #eff6ff;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row.total-row td:nth-child(5) {
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row.total-row td:nth-child(6) {
+        color: #2563eb;
+        font-size: 18px;
+        font-weight: 900;
     }
 }
