@@ -578,13 +578,40 @@
     }
 }
 
+@media (min-width: 993px) {
     .service-detail .site-breadcrumb {
         margin-bottom: 20px;
     }
 
-    .invoice-page .invoice-summary-group .total-row > td:last-child {
-    color: #2563eb !important;
-    font-size: 18px !important;
-    font-weight: 900 !important;
-    white-space: nowrap;
+    .invoice-page .invoice-summary-group .sum-row.total-row > td:nth-child(6) {
+        color: #2563eb !important;
+        font-size: 18px !important;
+        font-weight: 900 !important;
+        line-height: 1.3;
+        white-space: nowrap;
+    }
+
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(5),
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(6) {
+        white-space: nowrap;
+    }
+}
+
+/* ===================== صفحه ورود — دسکتاپ ===================== */
+@media (min-width: 993px) {
+    .login-container {
+        min-height: 460px;
+    }
+
+    .login-form-box {
+        padding: 42px;
+    }
+}
+
+/* جلوگیری از آبی شدن فیلدهای ورود توسط autofill مرورگر */
+.login-form-box input:-webkit-autofill,
+.login-form-box input:-webkit-autofill:hover,
+.login-form-box input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #334155 !important;
 }
