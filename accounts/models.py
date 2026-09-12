@@ -7,7 +7,9 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='کاربر')
-    address = models.TextField(blank=True, null=True, verbose_name='ادرس')
+    city = models.CharField(max_length=100, blank=True, null=True, verbose_name='شهر')
+    village = models.CharField(max_length=100, blank=True, null=True, verbose_name='روستا')
+    address = models.TextField(blank=True, null=True, verbose_name='آدرس کامل محل خدمت')
     tel = models.CharField(max_length=11, blank=True, null=True, verbose_name='تلفن')
     date_birthday = models.DateTimeField(blank=True, null=True, verbose_name='تاریخ تولد')
     img_profile = models.ImageField(upload_to='profile', default='professional-img.png', verbose_name='عکس کاربر')
@@ -27,9 +29,11 @@ def save_profile_user(sender, instance, created, **kwargs):
 
 
 class FormProfile(ModelForm):
+    city = models.CharField
+
     class Meta:
         model = Profile
-        fields = ['address', 'tel', 'img_profile', 'date_birthday']
+        fields = ['city', 'village', 'address', 'tel', 'img_profile', 'date_birthday']
 
 
 class FormUser(ModelForm):
