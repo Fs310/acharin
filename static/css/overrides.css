@@ -556,30 +556,3 @@
         height: 34px;
     }
 }
-
-/* ===================== صفحه نظرات — دسکتاپ ===================== */
-@media (min-width: 993px) {
-    .client-section.page {
-        padding-bottom: 0;
-    }
-
-    .client-section.page .client-breadcrumb {
-        margin-top: 16px;
-        margin-bottom: 4px;
-    }
-
-    .client-section.page .client-page-header {
-        margin-bottom: 14px;
-    }
-
-    .client-section.page .client-card {
-        padding: 12px 16px 9px;
-    }
-
-    /* با جابه‌جایی بصری، فاصله خالی زیر محتوا کم می‌شود
-       بدون تغییر ساختار HTML یا موقعیت ظاهری سایدبار. */
-    .client-section.page .client-sidebar {
-        padding-top: 0;
-        transform: translateY(132px);
-    }
-}
