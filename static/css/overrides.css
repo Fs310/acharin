@@ -615,3 +615,114 @@
     -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
     -webkit-text-fill-color: #334155 !important;
 }
+
+/* ===================== صفحه عضویت — دسکتاپ ===================== */
+@media (min-width: 993px) {
+    /* فضای سفید اطراف کارت را کمتر و متعادل می‌کنیم، بدون تغییر موبایل. */
+    .register-section {
+        padding: 32px 24px 42px;
+    }
+
+    /* کارت کلی کمی جمع‌وجورتر و یکدست‌تر */
+    .register-container {
+        width: 100%;
+        max-width: 1040px;
+        min-height: 540px;
+        border-radius: 18px;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, .09);
+    }
+
+    /* پنل آبی سهم کمتری از عرض داشته باشد */
+    .register-banner {
+        width: 46%;
+        min-height: 540px;
+        background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
+    }
+
+    /* تصویر داخل پنل، بدون کشیدگی و بدون cover */
+    .register-banner-image {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 70px 35px 155px;
+        box-sizing: border-box;
+    }
+
+    .register-banner-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        max-width: 440px;
+    }
+
+    /* متن روی پنل، کمی بالاتر و خواناتر */
+    .register-banner .banner-top {
+        z-index: 2;
+        top: 0;
+        margin: 28px 0 0;
+        padding: 0 30px;
+    }
+
+    .register-banner h2 {
+        margin-bottom: 8px;
+        font-size: 24px;
+    }
+
+    .register-banner p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    /* آمار پایین پنل کوچک‌تر و تمیزتر */
+    .register-banner .about-stats {
+        z-index: 3;
+        bottom: 18px;
+        right: 5%;
+        width: 90%;
+        grid-template-columns: repeat(4, 1fr);
+        border-radius: 10px;
+    }
+
+    .register-banner .stat-box {
+        padding: 9px 6px;
+    }
+
+    .register-banner .stat-number {
+        font-size: 21px;
+    }
+
+    .register-banner .stat-title {
+        margin-top: 3px;
+        font-size: 10px;
+    }
+
+    /* فرم فضای بیشتری بگیرد */
+    .register-form-box {
+        width: 54%;
+        padding: 36px 48px;
+    }
+
+    .register-form-box h2 {
+        margin-bottom: 8px;
+        font-size: 27px;
+    }
+
+    .register-form-box p {
+        margin-bottom: 16px;
+    }
+
+    .register-form-box input {
+        height: 44px;
+        margin-bottom: 10px;
+    }
+
+    .register-form-box button {
+        height: 48px;
+        margin-top: 4px;
+    }
+}
