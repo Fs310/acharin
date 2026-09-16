@@ -390,14 +390,14 @@
     .register-container {
         width: 100%;
         max-width: 1020px;
-        min-height: 600px;
+        min-height: 560px;
         border-radius: 18px;
         box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
     }
 
     .register-banner {
         width: 48%;
-        min-height: 600px;
+        min-height: 560px;
         background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
         overflow: hidden;
     }
