@@ -32,26 +32,25 @@
 
             <div class="register-banner">
                 <div class="register-banner-image">
+                    <div class="register-stats">
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div>
+                            <span class="stat-title">ثبت سریع<br>درخواست تعمیر</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-receipt-cutoff" aria-hidden="true"></i></div>
+                            <span class="stat-title">دسترسی به<br>تاریخچه سفارش‌ها</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-lightbulb-fill" aria-hidden="true"></i></div>
+                            <span class="stat-title">دریافت پیشنهادها</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-gift" aria-hidden="true"></i></div>
+                            <span class="stat-title">تخفیفات ویژه</span>
+                        </div>
+                    </div>
                     <img src="{% static 'img/ban1.png' %}" alt="خدمات آچارین">
-                </div>
-
-                <div class="register-stats">
-                    <div class="stat-box">
-                        <div class="register-icon"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div>
-                        <span class="stat-title">ثبت سریع<br>درخواست تعمیر</span>
-                    </div>
-                    <div class="stat-box">
-                        <div class="register-icon"><i class="bi bi-receipt-cutoff" aria-hidden="true"></i></div>
-                        <span class="stat-title">دسترسی به<br>تاریخچه سفارش‌ها</span>
-                    </div>
-                    <div class="stat-box">
-                        <div class="register-icon"><i class="bi bi-lightbulb-fill" aria-hidden="true"></i></div>
-                        <span class="stat-title">دریافت پیشنهادها</span>
-                    </div>
-                    <div class="stat-box">
-                        <div class="register-icon"><i class="bi bi-gift" aria-hidden="true"></i></div>
-                        <span class="stat-title">تخفیفات ویژه</span>
-                    </div>
                 </div>
 
                 <div class="banner-top">
@@ -72,4 +71,87 @@
             </div>
         </div>
     </section>
+
+    <style>
+        @media (min-width: 993px) {
+            .register-banner-image {
+                top: 175px;
+                bottom: 105px;
+                height: auto;
+                padding: 0 22px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                box-sizing: border-box;
+            }
+
+            .register-banner-image img {
+                width: 52%;
+                max-width: 305px;
+                height: auto;
+                flex: 0 0 52%;
+                object-fit: contain;
+                object-position: center;
+                transform: none;
+            }
+
+            .register-banner-image .register-stats {
+                width: 40%;
+                padding: 0;
+                flex: 0 0 40%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .register-banner-image .register-stats .stat-box {
+                padding: 8px 9px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-align: right;
+                border-radius: 10px;
+                box-sizing: border-box;
+                background: rgba(255, 255, 255, .10);
+                border: 1px solid rgba(255, 255, 255, .08);
+            }
+
+            .register-banner-image .register-stats .register-icon {
+                width: 40px;
+                height: 40px;
+                flex: 0 0 40px;
+                font-size: 20px;
+            }
+
+            .register-banner-image .register-stats .stat-title {
+                font-size: 12px;
+                line-height: 1.6;
+                font-weight: 600;
+                color: #fff;
+            }
+
+            .register-banner .banner-top {
+                z-index: 4;
+                margin-top: 22px;
+                padding: 0 30px;
+            }
+
+            .register-banner .banner-top h2 {
+                margin: 3px 0;
+                font-size: 23px;
+                line-height: 1.55;
+            }
+
+            .register-banner .banner-top .register-highlight {
+                color: #f97316;
+            }
+
+            .register-banner .banner-top p {
+                margin: 2px 0;
+                font-size: 11px;
+                line-height: 1.8;
+            }
+        }
+    </style>
 {% endblock %}
