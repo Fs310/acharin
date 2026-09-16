@@ -396,9 +396,14 @@
     }
 
     .register-banner {
+<<<<<<< Updated upstream
         width: 48%;
         min-height: 620px;
         background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
+=======
+        width: 57%;
+        min-height: 700px;
+>>>>>>> Stashed changes
         overflow: hidden;
     }
 
@@ -419,9 +424,15 @@
 
     .register-banner-image img {
         display: block;
+<<<<<<< Updated upstream
         width: 100%;
         height: 100%;
         max-width: 390px;
+=======
+        width: 138%;
+        height: 148%;
+        max-width: none;
+>>>>>>> Stashed changes
         object-fit: contain;
         object-position: center;
         transform: none;
