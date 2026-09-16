@@ -32,20 +32,21 @@ def user_registration(request):
             username = form.cleaned_data['username']
             firstname = form.cleaned_data['firstname']
             lastname = form.cleaned_data['lastname']
-            email = form.cleaned_data['email']
             tel = form.cleaned_data['tel']
             password2 = form.cleaned_data['password2']
-            user = User.objects.create_user(username=username, first_name=firstname, last_name=lastname, email=email, password=password2)
-            user.is_active = False
-            user.save()
+            user = User.objects.create_user(
+                username=username,
+                first_name=firstname,
+                last_name=lastname,
+                email='',
+                password=password2,
+            )
+            user.is_active = True
+            user.save(update_fields=['is_active'])
             profile, _ = Profile.objects.get_or_create(user=user)
             profile.tel = tel
             profile.save(update_fields=['tel'])
-            uidb64 = urlsafe_base64_encode(force_bytes(user.id))
-            token = default_token_generator.make_token(user)
-            activation_link = request.build_absolute_uri(reverse('accounts:activate', args=[uidb64, token]))
-            EmailMessage('فعال‌سازی حساب آچارین', activation_link, settings.DEFAULT_FROM_EMAIL, [email]).send()
-            messages.success(request, 'لینک فعال‌سازی حساب برای شما ارسال شد.')
+            messages.success(request, 'حساب کاربری شما با موفقیت ایجاد شد.')
             return redirect('accounts:login')
     else:
         form = UserRegisterForm()
