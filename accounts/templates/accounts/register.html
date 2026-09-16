@@ -4,47 +4,70 @@
 {% block title %}عضویت | آچارین{% endblock %}
 
 {% block body %}
-<section class="register-section">
-    <div class="register-container">
-        <div class="register-form-box">
-            <h2>ثبت عضویت</h2>
-            <p>لطفاً اطلاعات خود را وارد کنید</p>
+    <section class="register-section">
+        <div class="register-container">
+            <div class="register-form-box">
+                <h2>ثبت عضویت</h2>
+                <p>لطفاً اطلاعات خود را وارد کنید</p>
 
-            <form method="post" novalidate>
-                {% csrf_token %}
+                <form method="post" novalidate>
+                    {% csrf_token %}
 
-                {% if form.non_field_errors %}<p class="form-error">{{ form.non_field_errors.0 }}</p>{% endif %}
+                    {% if form.non_field_errors %}<p class="form-error">{{ form.non_field_errors.0 }}</p>{% endif %}
 
-                {% for field in form %}
-                    {% if field.errors %}<p class="form-error">{{ field.errors.0 }}</p>{% endif %}
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field }}
-                {% endfor %}
+                    {% for field in form %}
+                        {% if field.errors %}<p class="form-error">{{ field.errors.0 }}</p>{% endif %}
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                    {% endfor %}
 
-                <button type="submit">ایجاد حساب کاربری</button>
-            </form>
+                    <button type="submit">ایجاد حساب کاربری</button>
+                </form>
 
-            <div class="login-link">
-                قبلاً ثبت‌نام کرده‌اید؟
-                <a href="{% url 'accounts:login' %}">ورود به حساب کاربری</a>
+                <div class="login-link">
+                    قبلاً ثبت‌نام کرده‌اید؟
+                    <a href="{% url 'accounts:login' %}">ورود به حساب کاربری</a>
+                </div>
+            </div>
+
+            <div class="register-banner">
+                <div class="register-banner-image">
+                    <div class="register-stats">
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div>
+                            <span class="stat-title">ثبت سریع <br>درخواست تعمیر</span></div>
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-receipt-cutoff" aria-hidden="true"></i></div>
+                            <span class="stat-title">دسترسی به<br> تاریخچه سفارش ها</span></div>
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-lightbulb-fill" aria-hidden="true"></i></div>
+                            <span class="stat-title">دریافت پیشنهادها</span></div>
+                        <div class="stat-box">
+                            <div class="register-icon"><i class="bi bi-gift" aria-hidden="true"></i></div>
+                            <span class="stat-title">تخفیفات ویژه</span></div>
+                    </div>
+                    <img src="{% static 'img/ban1.png' %}" alt="خدمات آچارین">
+
+                </div>
+                <div class="banner-top">
+                    <span class="hero-badge">آچارین همیشه در کنار شما</span>
+                    <h2>با عضویت در سایت،</h2><br>
+                    <span>تجربه ای بهتر</span>
+                    <h2>داشته باشید</h2>
+                    <p>با ایجاد حساب کاربری در آچارین، درخواست‌های تعمیر خود را مدیریت کنید.</p>
+                    <p>و از خدمات و امکانات ویژه بهره مند شوید.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box"><span class="stat-number">1000+</span><span
+                            class="stat-title">تعمیر موفق</span></div>
+                    <div class="stat-box"><span class="stat-number">95%</span><span
+                            class="stat-title">رضایت مشتری</span></div>
+                    <div class="stat-box"><span class="stat-number">4+</span><span class="stat-title">سال سابقه</span>
+                    </div>
+                    <div class="stat-box"><span class="stat-number">۶ ماه</span><span
+                            class="stat-title">ضمانت خدمات</span></div>
+                </div>
             </div>
         </div>
-
-        <div class="register-banner">
-            <div class="register-banner-image">
-                <img src="{% static 'img/ban1.png' %}" alt="خدمات آچارین">
-            </div>
-            <div class="banner-top">
-                <h2>به آچارین خوش آمدید!</h2>
-                <p>با ثبت‌نام در آچارین، درخواست‌های تعمیر خود را مدیریت و پیگیری کنید.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-box"><span class="stat-number">1000+</span><span class="stat-title">تعمیر موفق</span></div>
-                <div class="stat-box"><span class="stat-number">95%</span><span class="stat-title">رضایت مشتری</span></div>
-                <div class="stat-box"><span class="stat-number">4+</span><span class="stat-title">سال سابقه</span></div>
-                <div class="stat-box"><span class="stat-number">۶ ماه</span><span class="stat-title">ضمانت خدمات</span></div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

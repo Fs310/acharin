@@ -396,14 +396,9 @@
     }
 
     .register-banner {
-<<<<<<< Updated upstream
         width: 48%;
         min-height: 620px;
         background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
-=======
-        width: 57%;
-        min-height: 700px;
->>>>>>> Stashed changes
         overflow: hidden;
     }
 
@@ -411,58 +406,26 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 108px;
-        bottom: 108px;
         height: auto;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 24px;
         box-sizing: border-box;
     }
 
     .register-banner-image img {
         display: block;
-<<<<<<< Updated upstream
-        width: 100%;
-        height: 100%;
-        max-width: 390px;
-=======
-        width: 138%;
-        height: 148%;
-        max-width: none;
->>>>>>> Stashed changes
         object-fit: contain;
         object-position: center;
         transform: none;
     }
 
-    .register-banner .banner-top {
-        z-index: 2;
-        top: 0;
-        margin: 22px 0 0;
-        padding: 0 28px;
-    }
 
     .register-banner h2 {
         margin-bottom: 7px;
+        margin-top: 7px;
         font-size: 24px;
-    }
-
-    .register-banner p {
-        margin: 0;
-        font-size: 12px;
-        line-height: 1.9;
-    }
-
-    .register-banner .about-stats {
-        z-index: 3;
-        bottom: 20px;
-        right: 4%;
-        width: 92%;
-        grid-template-columns: repeat(4, 1fr);
-        border-radius: 12px;
     }
 
     .register-banner .stat-box { padding: 9px 6px; }
@@ -471,15 +434,13 @@
 
     .register-form-box {
         width: 52%;
-        padding: 36px 50px 30px;
+        padding: 32px 50px 25px;
     }
 
     .register-form-box h2 {
         margin-bottom: 6px;
         font-size: 27px;
     }
-
-    .register-form-box p { margin-bottom: 13px; }
 
     .register-form-box form label {
         display: block;

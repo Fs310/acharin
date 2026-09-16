@@ -1,0 +1,5 @@
+ accounts/templates/accounts/register.html |  91 [32m+++++++++++++++[m[31m----------[m
+ static/css/overrides.css                  |  43 [32m+[m[31m-----------[m
+ static/css/style.css                      | 107 [32m+++++++++++++++++++++++[m[31m-------[m
+ static/img/ban1.png                       | Bin [31m276356[m -> [32m100879[m bytes
+ 4 files changed, 141 insertions(+), 100 deletions(-)
