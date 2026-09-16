@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 class UserRegisterForm(forms.Form):
     username = forms.CharField(max_length=50, label='نام کاربری')
-    email = forms.EmailField(label='ایمیل')
     firstname = forms.CharField(max_length=50, label='نام')
     lastname = forms.CharField(max_length=50, label='نام خانوادگی')
     tel = forms.CharField(max_length=11, min_length=11, label='شماره تماس')
@@ -16,12 +15,6 @@ class UserRegisterForm(forms.Form):
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError('این نام کاربری قبلاً ثبت شده است.')
         return username
-
-    def clean_email(self):
-        email = self.cleaned_data['email'].strip().lower()
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError('این ایمیل قبلاً ثبت شده است.')
-        return email
 
     def clean_tel(self):
         tel = self.cleaned_data['tel'].strip().translate(str.maketrans('۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩', '01234567890123456789'))
