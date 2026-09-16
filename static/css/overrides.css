@@ -402,56 +402,66 @@
         overflow: hidden;
     }
 
+    /* ناحیه تصویر و مزایا دو ستون مستقل دارد تا روی هم نیفتند. */
     .register-banner-image {
         position: absolute;
-        top: 202px;
+        top: 198px;
         left: 0;
         right: 0;
         bottom: 105px;
         overflow: hidden;
         display: flex;
-        align-items: flex-end;
+        flex-direction: row-reverse;
+        align-items: center;
         justify-content: center;
         padding: 0 24px;
         box-sizing: border-box;
+        gap: 10px;
     }
 
     .register-banner-image img {
         display: block;
-        width: 74%;
-        max-width: 315px;
+        flex: 0 0 55%;
+        width: 55%;
+        max-width: 300px;
         height: auto;
         object-fit: contain;
-        object-position: center bottom;
-        transform: translateY(3px);
+        object-position: center;
+        transform: none;
     }
 
-    /* چهار قابلیت بالا؛ خوانا و مستقل از تصویر */
-    .register-stats {
-        position: absolute;
-        top: 0;
-        left: 24px;
-        right: 24px;
-        z-index: 3;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px;
+    .register-banner-image .register-stats {
+        position: static;
+        flex: 0 0 43%;
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
         direction: rtl;
     }
 
-    .register-stats .stat-box {
+    .register-banner-image .register-stats .stat-box {
+        width: 100%;
         min-width: 0;
-        padding: 7px 4px 6px;
-        text-align: center;
+        padding: 7px 8px;
+        box-sizing: border-box;
         border-radius: 10px;
         background: rgba(255, 255, 255, .10);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        text-align: right;
         backdrop-filter: blur(3px);
     }
 
-    .register-stats .register-icon {
+    .register-banner-image .register-stats .register-icon {
+        flex: 0 0 34px;
         width: 34px;
         height: 34px;
-        margin: 0 auto 6px;
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -461,13 +471,14 @@
         font-size: 16px;
     }
 
-    .register-stats .stat-title {
+    .register-banner-image .register-stats .stat-title {
         display: block;
-        min-height: 32px;
+        min-height: 0;
         color: #fff;
         font-size: 10px;
-        line-height: 1.7;
+        line-height: 1.65;
         font-weight: 600;
+        margin: 0;
     }
 
     .register-banner .banner-top {
