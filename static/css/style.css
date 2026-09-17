@@ -6363,76 +6363,67 @@ minmax(0, 3fr);
 
 
 .login-form-box {
-    width: 50%;
+    width: 53%;
     background: #ffffff;
     padding: 40px 46px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
 }
+
+.login-form-box .feature-icon {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    font-size: 32px;
+    border-radius: 50%;
+    transform: rotate(60deg);
+}
+
 
 .login-form-box h1 {
     margin: 0 0 8px;
-
     color: #0f172a;
-
     text-align: center;
-
-    font-size: 27px;
-
+    font-size: 28px;
     line-height: 1.6;
-
     font-weight: 800;
 }
 
 .login-form-box p {
-    margin: 0 0 30px;
-
+    margin: 0 0 20px;
     color: #64748b;
-
     text-align: center;
-
     font-size: 12px;
-
     line-height: 1.9;
 }
 
-
-/* =========================================================
-   FORM ROW
-========================================================= */
-
-.form-row {
-    display: flex;
-
-    gap: 15px;
+.login-form-box form {
+    width: 100%;
 }
 
-
-/* =========================================================
-   INPUT
-========================================================= */
+.login-form-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: right;
+}
 
 .login-form-box input {
     width: 100%;
     height: 45px;
-
     padding: 0 15px;
-
     margin-bottom: 15px;
-
     border: 1px solid #dbe4ee;
-
     border-radius: 10px;
-
     color: #334155;
-
     font-family: inherit;
-
     font-size: 13px;
     background: #f8fafc;
     outline: none;
-
     transition: border-color .2s ease,
     box-shadow .2s ease;
 }
@@ -6443,37 +6434,23 @@ minmax(0, 3fr);
 
 .login-form-box input:focus {
     border-color: #93c5fd;
-
     box-shadow: 0 0 0 3px rgba(37, 99, 235, .08);
 }
 
-
-/* =========================================================
-   BUTTON
-========================================================= */
 
 .login-form-box button {
 
     text-align-last: center;
     width: 100%;
     height: 47px;
-
     border: none;
-
     border-radius: 10px;
-
     background: #f7941d;
-
     color: #ffffff;
-
     font-family: inherit;
-
     font-size: 15px;
-
     font-weight: 700;
-
     cursor: pointer;
-
     transition: background-color .2s ease,
     transform .2s ease,
     box-shadow .2s ease;
@@ -6481,28 +6458,18 @@ minmax(0, 3fr);
 
 .login-form-box button:hover {
     background: #ea7b0c;
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 18px rgba(247, 148, 29, .18);
 }
 
-
-/* =========================================================
-   LINKS
-========================================================= */
-
 .login-form-box .login-link {
     color: #64748b;
-
     font-size: 11px;
-
     line-height: 1.8;
 }
 
 .login-form-box form .login-link {
     text-align: right;
-
     margin: 0 0 20px;
 }
 
@@ -6512,17 +6479,13 @@ minmax(0, 3fr);
 
 .login-form-box > .login-link {
     text-align: center;
-
     margin-top: 20px;
 }
 
 .login-form-box .login-link a {
     color: #2563eb;
-
     text-decoration: none;
-
     font-weight: 700;
-
     transition: color .2s ease;
     display: inline;
 }
@@ -6532,140 +6495,269 @@ minmax(0, 3fr);
 }
 
 
-/* =========================================================
-   BANNER
-========================================================= */
-
 .login-banner {
-    width: 50%;
+    width: 47%;
     min-height: 450px;
-
     background-image: url("../img/ban2.png");
-
     background-repeat: no-repeat;
-
     background-position: center;
-
     background-size: cover;
-
     background-color: #f8fafc;
 }
 
+
 /*----------------------------------------------------*/
-.pass-banner {
-    width: 50%;
-    background: url("../img/pass.png");
+.repass-section {
+    padding: 70px 30px;
+    background: #FFFFFF;
 }
 
-.repass-banner {
-    width: 100%;
-    background: url("../img/repass.png");
-    padding: 50px 0 50px 50px;
+.repass-container {
+    max-width: 900px;
+    width: min(820px, 100%);
+    min-height: 420px;
+    margin: 0 auto;
+
+    display: flex;
+
+    background: #ffffff;
+
+    border: 1px solid #edf1f6;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
 }
 
-.repass-banner .repass-txt {
-    width: 80%;
-    padding-right: 50px;
+
+.repass-form-box {
+    width: 53%;
+    background: #ffffff;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.repass-form-box .feature-icon {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    font-size: 32px;
+    border-radius: 50%;
+    transform: rotate(60deg);
+}
+
+
+.repass-form-box h1 {
+    margin: 0 0 8px;
+    color: #0f172a;
     text-align: center;
-    justify-items: center;
-}
-
-.repass-banner .repass-txt h2 {
+    font-size: 28px;
+    line-height: 1.6;
     font-weight: 800;
 }
 
-.repass-banner .repass-txt p {
-    margin-bottom: 30px;
+.repass-form-box p {
+    margin: 0 0 20px;
+    color: #64748b;
+    text-align: center;
     font-size: 12px;
-    display: block;
+    line-height: 1.9;
 }
 
-.repass-banner .login-link {
-    width: 30%;
-    height: 52px;
-    border-radius: 6px;
-    border: 1px solid #969da4;
-    background: #FFFFFF;
-    font-size: 16px;
+.repass-form-box form {
+    width: 100%;
+}
+
+.repass-form-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.repass-form-box input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    border: 1px solid #dbe4ee;
+    border-radius: 10px;
+    color: #334155;
+    font-family: inherit;
+    font-size: 13px;
+    background: #f8fafc;
+    outline: none;
+    transition: border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.repass-form-box input::placeholder {
+    color: #94a3b8;
+}
+
+.repass-form-box input:focus {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .08);
+}
+
+
+.repass-form-box button {
+
+    text-align-last: center;
+    width: 100%;
+    height: 47px;
+    border: none;
+    border-radius: 10px;
+    background: #f7941d;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    text-align-last: center;
-    align-content: center;
-
-
+    transition: background-color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
 }
 
-.repass-banner .login-link a {
-    color: #1c4168;
+.repass-form-box button:hover {
+    background: #ea7b0c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(247, 148, 29, .18);
 }
 
+.repass-form-box .repass-link {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.8;
+}
 
-/*.login_page {*/
-/*    text-align: right;*/
-/*    position: relative;*/
-/*    background: linear-gradient(180deg, #f0f4ff 0%, rgba(209, 227, 255, 0.5) 100%);*/
-/*}*/
+.repass-form-box form .repass-link {
+    text-align: right;
+    margin: 0 0 20px;
+}
 
-/*.login_page form {*/
-/*    position: relative;*/
-/*    margin: 50px auto;*/
-/*    height: auto;*/
-/*    width: 30%;*/
-/*    background: rgba(255, 255, 255, 0.7);*/
-/*    border-radius: 10px;*/
-/*    backdrop-filter: blur(10px);*/
-/*    border: 2px solid rgba(255, 255, 255, 0.1);*/
-/*    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);*/
-/*    padding: 50px 35px;*/
-/*    text-align: center;*/
-/*}*/
+.repass-form-box form .repass-link a {
+    font-size: 11px;
+}
 
-/*.login_page form * {*/
-/*    outline: none;*/
-/*    border: none;*/
-/*}*/
+.repass-form-box > .repass-link {
+    text-align: center;
+    margin-top: 20px;
+}
 
-/*.login_page input {*/
-/*    display: block;*/
-/*    height: 40px;*/
-/*    background-color: rgba(47, 46, 70, 0.07);*/
-/*    border-radius: 3px;*/
-/*    padding: 0 10px;*/
-/*    margin-bottom: 10px;*/
-/*    justify-self: center;*/
-/*    width: 305px;*/
-/*}*/
+.repass-form-box .repass-link a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color .2s ease;
+    display: inline;
+}
 
-/*.login_page label {*/
-/*    font-size: 12px;*/
-/*    margin-top: 10px;*/
-/*}*/
+.repass-form-box .repass-link a:hover {
+    color: #1d4ed8;
+}
 
-/*.login_page .btn-box {*/
-/*    margin-top: 0;*/
-/*    flex-direction: column;*/
-/*    padding: 0 45px*/
-/*}*/
+.repass-banner {
+    width: 48%;
+    min-height: 560px;
+    background: linear-gradient(195deg, #032a7b 0%, #549bfd 100%);
+    overflow: hidden;
+    position: relative;
+}
 
-/*.login_page .btn-box button {*/
-/*    padding: 5px 20px;*/
-/*    color: #ffffff;*/
-/*    border-radius: 3px;*/
-/*    width: 305px;*/
-/*}*/
+.repass-banner .banner-top {
+    z-index: 4;
+    top: 0;
+    margin: 24px 0 0;
+    padding: 0 34px;
+}
 
-/*.login_page .links {*/
-/*    text-align: center;*/
-/*}*/
+.repass-banner h2 {
+    margin: 0 0 5px;
+    font-size: 24px;
+    line-height: 1.55;
+    font-weight: 800;
+    color: #FFFFFF;
+}
 
-/*.login_page .links {*/
-/*    font-size: x-small;*/
-/*    display: inline;*/
-/*}*/
+.repass-banner p {
+    margin: 0 0 2px;
+    color: rgba(255, 255, 255, .92);
+    font-size: 11px;
+    line-height: 1.8;
+}
 
-/*.login_page .links a:hover {*/
-/*    color: #273f98;*/
-/*}*/
+.repass-banner-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.repass-banner-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+}
+
+.repass-stats {
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+    direction: ltr;
+}
+
+.repass-stats .stat-box {
+    text-align: left;
+    gap: 5px;
+    width: 100%;
+    min-width: 0;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.repass-stats .repass-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    color: #eaebef;
+}
+
+.repass-stats .stat-title {
+    font-size: 12px;
+    color: #eaebef;
+    display: block;
+    min-height: 0;
+    line-height: 1.65;
+    margin: 0;
+}
+
 
 /*---------*/
 .profile_page {
