@@ -3,10 +3,18 @@
    این فایل فقط اصلاحات تکمیلی است و CSS اصلی را دستکاری نمی‌کند.
 ========================================================= */
 
-.main:not(.slider_section) { min-height: auto; }
-.slider_section .hero-img { object-fit: cover; }
+.main:not(.slider_section) {
+    min-height: auto;
+}
+
+.slider_section .hero-img {
+    object-fit: cover;
+}
+
 .header_section .nav-link,
-.header_section .navbar-brand { display: block; }
+.header_section .navbar-brand {
+    display: block;
+}
 
 .site-breadcrumb,
 .about-link,
@@ -15,7 +23,8 @@
 .contact-link,
 .client-breadcrumb,
 .invoices-breadcrumb,
-.invoice-breadcrumb {
+.invoice-breadcrumb,
+.change_pass-breadcrumb {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -32,7 +41,8 @@
 .contact-link > *,
 .client-breadcrumb > *,
 .invoices-breadcrumb > *,
-.invoice-breadcrumb > * {
+.invoice-breadcrumb > *,
+.change_pass-breadcrumb > * {
     display: inline-flex;
     align-items: center;
     margin: 0;
@@ -54,13 +64,15 @@
 .invoices-breadcrumb a + a::before,
 .invoices-breadcrumb a + span[aria-current="page"]::before,
 .invoice-breadcrumb a + a::before,
-.invoice-breadcrumb a + span[aria-current="page"]::before {
+.invoice-breadcrumb a + span[aria-current="page"]::before,
+.change_pass-breadcrumb a + a::before,
+.change_pass-breadcrumb a + span[aria-current="page"]::before {
     content: "‹";
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 0 12px;
-    color: var(--brand-orange);
+    color: #f97316;
     font-size: 18px;
     line-height: 1;
 }
@@ -72,7 +84,8 @@
 .contact-link a,
 .client-breadcrumb a,
 .invoices-breadcrumb a,
-.invoice-breadcrumb a {
+.invoice-breadcrumb a,
+.change_pass-breadcrumb a {
     color: #64748b;
     text-decoration: none;
     transition: color .2s ease;
@@ -93,7 +106,11 @@
 .invoices-breadcrumb a:hover,
 .invoices-breadcrumb a:focus-visible,
 .invoice-breadcrumb a:hover,
-.invoice-breadcrumb a:focus-visible { color: var(--brand-orange); }
+.invoice-breadcrumb a:focus-visible,
+.change_pass-breadcrumb a:hover,
+.change_pass-breadcrumb a:focus-visible {
+    color: #f97316;
+}
 
 .site-breadcrumb span[aria-current="page"],
 .about-link span[aria-current="page"],
@@ -102,7 +119,8 @@
 .contact-link span[aria-current="page"],
 .client-breadcrumb span[aria-current="page"],
 .invoices-breadcrumb span[aria-current="page"],
-.invoice-breadcrumb span[aria-current="page"] {
+.invoice-breadcrumb span[aria-current="page"],
+.change_pass-breadcrumb span[aria-current="page"] {
     color: #0f172a;
     font-weight: 600;
 }
@@ -120,9 +138,16 @@
     overflow: visible;
 }
 
-.service_section .service-content .card { flex: 0 1 300px; max-width: 340px; }
+.service_section .service-content .card {
+    flex: 0 1 300px;
+    max-width: 340px;
+}
+
 .client_section .client-content > .card,
-.news_section .news-content > .card { flex: 0 1 360px; max-width: 420px; }
+.news_section .news-content > .card {
+    flex: 0 1 360px;
+    max-width: 420px;
+}
 
 .main.service_section,
 .main.client_section,
@@ -137,18 +162,34 @@
 @media (min-width: 1201px) {
     .main.service_section,
     .main.client_section,
-    .main.news_section { padding-top: 60px; padding-bottom: 45px; }
+    .main.news_section {
+        padding-top: 60px;
+        padding-bottom: 45px;
+    }
+
     .service_section .service-titer,
     .client_section .client-title,
-    .news_section .news-titer { margin-bottom: 30px; }
+    .news_section .news-titer {
+        margin-bottom: 30px;
+    }
+
     .service_section .service-content,
     .client_section .client-content,
-    .news_section .news-content { margin-bottom: 28px; }
+    .news_section .news-content {
+        margin-bottom: 28px;
+    }
 }
 
 @media (min-width: 577px) {
-    .services-grid-section { padding-top: 45px; padding-bottom: 50px; }
-    .services-grid-section .section-title { margin-bottom: 24px; }
+    .services-grid-section {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    .services-grid-section .section-title {
+        margin-bottom: 24px;
+    }
+
     .services-grid-section .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
@@ -158,13 +199,28 @@
         width: 100%;
         margin-bottom: 24px;
     }
-    .services-grid-section .services-grid > * { width: 100%; max-width: 300px; min-width: 0; }
-    .services-grid-section .load-more-box { margin-top: 24px; }
+
+    .services-grid-section .services-grid > * {
+        width: 100%;
+        max-width: 300px;
+        min-width: 0;
+    }
+
+    .services-grid-section .load-more-box {
+        margin-top: 24px;
+    }
 }
 
 @media (min-width: 993px) {
-    .blog-grid-section { padding-top: 12px; padding-bottom: 42px; }
-    .blog-section-heading { margin-bottom: 24px; }
+    .blog-grid-section {
+        padding-top: 12px;
+        padding-bottom: 42px;
+    }
+
+    .blog-section-heading {
+        margin-bottom: 24px;
+    }
+
     .blog-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
         justify-content: center;
@@ -172,13 +228,25 @@
         max-width: 1140px;
         margin: 0 auto;
     }
-    .blog-grid > .blog-card { width: 100%; max-width: 320px; }
+
+    .blog-grid > .blog-card {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 @media (min-width: 577px) {
-    .about-features .features-row { margin-top: 15px; }
-    .about-features { margin-bottom: 25px; }
-    .about-page { padding-top: 25px; }
+    .about-features .features-row {
+        margin-top: 15px;
+    }
+
+    .about-features {
+        margin-bottom: 25px;
+    }
+
+    .about-page {
+        padding-top: 25px;
+    }
 }
 
 .service-cta .cta-content .btn-box,
@@ -213,17 +281,17 @@
 .service-cta .btn-box .form-btn,
 .blog-cta .btn-box .form-btn,
 .order_section .action-btn .form-btn {
-    background: var(--brand-orange);
-    color: var(--brand-white);
-    box-shadow: 0 8px 20px rgba(239, 100, 27, .15);
+    background: #f97316;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, .15);
 }
 
 .service-cta .btn-box .tel-btn,
 .blog-cta .btn-box .tel-btn,
 .order_section .action-btn .tel-btn {
-    background: var(--brand-white);
-    color: var(--brand-orange);
-    border: 1.5px solid var(--brand-orange);
+    background: #fff;
+    color: #f97316;
+    border: 1.5px solid #f97316;
     box-shadow: none;
 }
 
@@ -232,7 +300,9 @@
 .blog-cta .btn-box .form-btn:hover,
 .blog-cta .btn-box .tel-btn:hover,
 .order_section .action-btn .form-btn:hover,
-.order_section .action-btn .tel-btn:hover { transform: translateY(-2px); }
+.order_section .action-btn .tel-btn:hover {
+    transform: translateY(-2px);
+}
 
 .service_section > .container-fluid .btn-box a,
 .client_section > .container-fluid .btn-box a,
@@ -248,21 +318,38 @@
 }
 
 .footer_section p,
-.footer_section a { line-height: 1.9; font-size: 14px; }
+.footer_section a {
+    line-height: 1.9;
+    font-size: 14px;
+}
+
 .footer_section .icon a,
-.footer_section li a { position: relative; }
+.footer_section li a {
+    position: relative;
+}
 
 .service_section .service-content::-webkit-scrollbar,
 .client_section .client-content::-webkit-scrollbar,
-.news_section .news-content::-webkit-scrollbar { display: none; }
+.news_section .news-content::-webkit-scrollbar {
+    display: none;
+}
+
 .service_section .service-content,
 .client_section .client-content,
-.news_section .news-content { -webkit-overflow-scrolling: touch; }
+.news_section .news-content {
+    -webkit-overflow-scrolling: touch;
+}
 
 @media (max-width: 992px) {
-    .order_section .action-btn { gap: 10px; }
+    .order_section .action-btn {
+        gap: 10px;
+    }
+
     .order_section .action-btn .form-btn,
-    .order_section .action-btn .tel-btn { width: 185px; height: 50px; }
+    .order_section .action-btn .tel-btn {
+        width: 185px;
+        height: 50px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -273,12 +360,15 @@
     .contact-link,
     .client-breadcrumb,
     .invoices-breadcrumb,
-    .invoice-breadcrumb {
+    .invoice-breadcrumb,
+    .change_pass-breadcrumb,
+    span[aria-current="page"] {
         padding: 12px 14px;
         font-size: 12px;
         overflow-x: auto;
         white-space: nowrap;
     }
+
     .site-breadcrumb a + a::before,
     .site-breadcrumb a + span[aria-current="page"]::before,
     .about-link a + a::before,
@@ -294,90 +384,228 @@
     .invoices-breadcrumb a + a::before,
     .invoices-breadcrumb a + span[aria-current="page"]::before,
     .invoice-breadcrumb a + a::before,
-    .invoice-breadcrumb a + span[aria-current="page"]::before {
+    .invoice-breadcrumb a + span[aria-current="page"]::before,
+    .change_pass-breadcrumb a + a::before,
+    .change_pass-breadcrumb a + span[aria-current="page"]::before {
         margin: 0 8px;
         font-size: 16px;
     }
-    .review-service-info { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .review-service-info div + div { border-right: 1px solid #edf1f6; border-top: none; }
-    .review-service-info div { padding: 13px 14px; }
-    .invoice-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .review-service-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .review-service-info div + div {
+        border-right: 1px solid #edf1f6;
+        border-top: none;
+    }
+
+    .review-service-info div {
+        padding: 13px 14px;
+    }
+
+    .invoice-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .invoice-summary-item,
     .invoice-summary-item:nth-child(2),
-    .invoice-summary-item:nth-child(3) { border-left: 1px solid #edf1f6; border-bottom: 1px solid #edf1f6; }
-    .invoice-summary-item:nth-child(2n) { border-left: none; }
+    .invoice-summary-item:nth-child(3) {
+        border-left: 1px solid #edf1f6;
+        border-bottom: 1px solid #edf1f6;
+    }
+
+    .invoice-summary-item:nth-child(2n) {
+        border-left: none;
+    }
+
     .invoice-summary-item:nth-child(3),
-    .invoice-summary-item:nth-child(4) { border-bottom: none; }
-    .invoice-summary-item { min-height: 78px; padding: 12px 13px; }
-    .invoice-summary-label { font-size: 9px; }
-    .invoice-summary-item strong { font-size: 11px; }
-    .invoice-summary-total strong { font-size: 13px; }
+    .invoice-summary-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .invoice-summary-item {
+        min-height: 78px;
+        padding: 12px 13px;
+    }
+
+    .invoice-summary-label {
+        font-size: 9px;
+    }
+
+    .invoice-summary-item strong {
+        font-size: 11px;
+    }
+
+    .invoice-summary-total strong {
+        font-size: 13px;
+    }
+
     .invoices-table-wrapper,
     .invoice-table-wrapper,
-    .orders-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .orders-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .invoices-table,
     .invoice-table,
-    .orders-table { min-width: 650px; }
+    .orders-table {
+        min-width: 650px;
+    }
+
     .service-detail,
     .blog-detail,
-    .client-section { padding-inline: 14px; }
+    .client-section {
+        padding-inline: 14px;
+    }
+
     .service-body,
-    .service-detail .service-link { margin-inline: 0; }
-    .service-body .service-content { padding: 24px 18px; }
-    .service-body .service-content h1 { font-size: 24px; }
-    .service-body .service-content .service-description p { font-size: 13px; line-height: 2; }
-    .article-text { padding: 22px 18px 30px; font-size: 14px; }
-    .article-header h1 { font-size: 25px; }
-    .blog-grid-section { padding-inline: 14px; }
-    .blog-grid { gap: 14px; }
-    .order_section .action-btn { flex-direction: column; width: 100%; gap: 10px; }
+    .service-detail .service-link {
+        margin-inline: 0;
+    }
+
+    .service-body .service-content {
+        padding: 24px 18px;
+    }
+
+    .service-body .service-content h1 {
+        font-size: 24px;
+    }
+
+    .service-body .service-content .service-description p {
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .article-text {
+        padding: 22px 18px 30px;
+        font-size: 14px;
+    }
+
+    .article-header h1 {
+        font-size: 25px;
+    }
+
+    .blog-grid-section {
+        padding-inline: 14px;
+    }
+
+    .blog-grid {
+        gap: 14px;
+    }
+
+    .order_section .action-btn {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
     .order_section .action-btn .form-btn,
-    .order_section .action-btn .tel-btn { width: min(100%, 205px); height: 48px; }
+    .order_section .action-btn .tel-btn {
+        width: min(100%, 205px);
+        height: 48px;
+    }
+
     .service_section > .container-fluid .btn-box a,
     .client_section > .container-fluid .btn-box a,
-    .news_section > .container-fluid .btn-box a { width: 205px; height: 48px; font-size: 14px; border-radius: 11px; }
+    .news_section > .container-fluid .btn-box a {
+        width: 205px;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 11px;
+    }
 }
 
 @media (max-width: 390px) {
-    .review-service-info div { padding: 12px 10px; }
-    .review-service-info span { font-size: 10px; }
-    .review-service-info strong { font-size: 11px; }
-    .invoice-summary-item { min-height: 72px; padding: 10px 9px; }
-    .invoice-summary-item strong { font-size: 10px; }
-    .invoice-summary-total strong { font-size: 12px; }
-    .review-rating { gap: 5px; }
-    .review-rating label { width: 34px; height: 34px; }
+    .review-service-info div {
+        padding: 12px 10px;
+    }
+
+    .review-service-info span {
+        font-size: 10px;
+    }
+
+    .review-service-info strong {
+        font-size: 11px;
+    }
+
+    .invoice-summary-item {
+        min-height: 72px;
+        padding: 10px 9px;
+    }
+
+    .invoice-summary-item strong {
+        font-size: 10px;
+    }
+
+    .invoice-summary-total strong {
+        font-size: 12px;
+    }
+
+    .review-rating {
+        gap: 5px;
+    }
+
+    .review-rating label {
+        width: 34px;
+        height: 34px;
+    }
 }
 
 @media (min-width: 577px) {
-    .client-section.page { min-height: 0; padding-bottom: 32px; }
-    .client-section.page .client-breadcrumb { margin-top: 14px; margin-bottom: 16px; }
-    .client-section.page .client-page-header { margin-bottom: 15px; }
-    .client-section.page .client-card { min-height: 190px; }
+    .client-section.page {
+        min-height: 0;
+        padding-bottom: 32px;
+    }
+
+    .client-section.page .client-breadcrumb {
+        margin-top: 14px;
+        margin-bottom: 16px;
+    }
+
+    .client-section.page .client-page-header {
+        margin-bottom: 15px;
+    }
+
+    .client-section.page .client-card {
+        min-height: 190px;
+    }
 }
 
 @media (min-width: 993px) {
-    .service-detail .site-breadcrumb { margin-bottom: 20px; }
+    .service-detail .site-breadcrumb {
+        margin-bottom: 20px;
+    }
+
     .invoice-page .invoice-summary-group .sum-row.total-row > td:nth-child(6) {
-        color: var(--brand-navy) !important;
+        color: #2563eb !important;
         font-size: 18px !important;
         font-weight: 900 !important;
         line-height: 1.3;
         white-space: nowrap;
     }
+
     .invoice-page .invoice-summary-group .sum-row td:nth-child(5),
-    .invoice-page .invoice-summary-group .sum-row td:nth-child(6) { white-space: nowrap; }
+    .invoice-page .invoice-summary-group .sum-row td:nth-child(6) {
+        white-space: nowrap;
+    }
 }
 
 @media (min-width: 993px) {
-    .login-container { min-height: 460px; }
-    .login-form-box { padding: 40px 42px 35px; }
+    .login-container {
+        min-height: 460px;
+    }
+
+    .login-form-box {
+        padding: 40px 42px 35px;
+    }
 }
 
 .login-form-box input:-webkit-autofill,
 .login-form-box input:-webkit-autofill:hover,
 .login-form-box input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 1000px var(--brand-white) inset !important;
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
     -webkit-text-fill-color: #334155 !important;
 }
 
@@ -398,7 +626,7 @@
     .register-banner {
         width: 48%;
         min-height: 560px;
-        background: linear-gradient(195deg, var(--brand-navy) 0%, var(--brand-navy) 100%);
+        background: linear-gradient(195deg, #032a7b 0%, #549bfd 100%);
         overflow: hidden;
     }
 
@@ -467,14 +695,14 @@
         justify-content: center;
         border-radius: 50%;
         background: rgba(255, 255, 255, .15);
-        color: var(--brand-white);
+        color: #fff;
         font-size: 16px;
     }
 
     .register-banner-image .register-stats .stat-title {
         display: block;
         min-height: 0;
-        color: var(--brand-white);
+        color: #fff;
         font-size: 10px;
         line-height: 1.65;
         font-weight: 600;
@@ -492,10 +720,10 @@
         display: inline-block;
         margin-bottom: 10px;
         padding: 5px 12px;
-        border: 1px solid rgba(255,255,255,.30);
+        border: 1px solid rgba(255, 255, 255, .30);
         border-radius: 999px;
-        background: rgba(255,255,255,.10);
-        color: var(--brand-white);
+        background: rgba(255, 255, 255, .10);
+        color: #fff;
         font-size: 11px;
         line-height: 1.5;
     }
@@ -509,7 +737,7 @@
     .register-banner .banner-top > span:not(.hero-badge) {
         display: block;
         margin: 0 0 2px;
-        color: var(--brand-white);
+        color: #fff;
         font-size: 23px;
         line-height: 1.35;
         font-weight: 800;
@@ -517,7 +745,7 @@
 
     .register-banner p {
         margin: 0 0 2px;
-        color: rgba(255,255,255,.92);
+        color: rgba(255, 255, 255, .92);
         font-size: 11px;
         line-height: 1.8;
     }
@@ -531,9 +759,18 @@
         border-radius: 12px;
     }
 
-    .register-banner .stat-box { padding: 8px 5px; }
-    .register-banner .stat-number { font-size: 19px; }
-    .register-banner .stat-title { margin-top: 2px; font-size: 9px; }
+    .register-banner .stat-box {
+        padding: 8px 5px;
+    }
+
+    .register-banner .stat-number {
+        font-size: 19px;
+    }
+
+    .register-banner .stat-title {
+        margin-top: 2px;
+        font-size: 9px;
+    }
 
     .register-form-box {
         width: 52%;
@@ -578,5 +815,7 @@
         font-size: 12px;
     }
 
-    .register-form-box .login-link a { font-size: 12px; }
+    .register-form-box .login-link a {
+        font-size: 12px;
+    }
 }

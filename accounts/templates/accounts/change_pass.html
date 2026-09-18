@@ -4,103 +4,109 @@
 {% block title %}تغییر رمز عبور{% endblock %}
 
 {% block body %}
-<section class="repass-section change-password-page">
-    <div class="repass-container">
+    <section class="chang-pass-section change-password-page">
+        <nav class="change_pass-breadcrumb" aria-label="مسیر صفحه">
+            <a href="/">خانه</a>
+            <a href="/accounts/profile/">حساب کاربری</a>
+            <span aria-current="page">تغییر رمز عبور</span>
+        </nav>
+        <div class="chang-pass-container">
 
-        <div class="repass-form-box">
-            <div class="feature-icon" aria-hidden="true">
-                <i class="bi bi-shield-lock-fill"></i>
+            <div class="chang-pass-form-box">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="bi bi-shield-lock-fill"></i>
+                </div>
+
+                <h1>تغییر رمز عبور</h1>
+                <p>برای حفظ امنیت حساب کاربری، رمز جدید خود را وارد کنید.</p>
+
+                <form method="post" action="{% url 'accounts:change_password' %}" novalidate>
+                    {% csrf_token %}
+
+                    <label for="old_password">رمز عبور فعلی</label>
+                    <input
+                            type="password"
+                            id="old_password"
+                            name="old_password"
+                            autocomplete="current-password"
+                            required
+                    >
+                    {% for error in form.old_password.errors %}
+                        <small class="field-error">{{ error }}</small>
+                    {% endfor %}
+
+                    <label for="new_password1">رمز عبور جدید</label>
+                    <input
+                            type="password"
+                            id="new_password1"
+                            name="new_password1"
+                            autocomplete="new-password"
+                            required
+                    >
+                    {% for error in form.new_password1.errors %}
+                        <small class="field-error">{{ error }}</small>
+                    {% endfor %}
+
+                    <label for="new_password2">تکرار رمز عبور جدید</label>
+                    <input
+                            type="password"
+                            id="new_password2"
+                            name="new_password2"
+                            autocomplete="new-password"
+                            required
+                    >
+                    {% for error in form.new_password2.errors %}
+                        <small class="field-error">{{ error }}</small>
+                    {% endfor %}
+
+                    {% for error in form.non_field_errors %}
+                        <small class="field-error">{{ error }}</small>
+                    {% endfor %}
+
+                    <button type="submit">تغییر رمز عبور</button>
+                </form>
+
+                <div class="chang-pass-link">
+                    <a href="{% url 'accounts:profile' %}">بازگشت به حساب کاربری</a>
+                </div>
             </div>
 
-            <h1>تغییر رمز عبور</h1>
-            <p>برای حفظ امنیت حساب کاربری، رمز جدید خود را وارد کنید.</p>
+            <div class="chang-pass-banner">
+                <div class="chang-pass-banner-image">
+                    <img src="{% static 'img/repass2.jpg' %}" alt="امنیت حساب کاربری آچارین">
+                </div>
 
-            <form method="post" action="{% url 'accounts:change_password' %}" novalidate>
-                {% csrf_token %}
+                <div class="chang-pass-stats">
+                    <div class="stat-box">
+                        <div class="chang-pass-icon">
+                            <i class="bi bi-shield-check" aria-hidden="true"></i>
+                        </div>
+                        <span class="stat-title">امنیت بیشتر برای حساب کاربری</span>
+                    </div>
 
-                <label for="old_password">رمز عبور فعلی</label>
-                <input
-                    type="password"
-                    id="old_password"
-                    name="old_password"
-                    autocomplete="current-password"
-                    required
-                >
-                {% for error in form.old_password.errors %}
-                    <small class="field-error">{{ error }}</small>
-                {% endfor %}
+                    <div class="stat-box">
+                        <div class="chang-pass-icon">
+                            <i class="bi bi-key" aria-hidden="true"></i>
+                        </div>
+                        <span class="stat-title">انتخاب رمز عبور منحصربه‌فرد</span>
+                    </div>
 
-                <label for="new_password1">رمز عبور جدید</label>
-                <input
-                    type="password"
-                    id="new_password1"
-                    name="new_password1"
-                    autocomplete="new-password"
-                    required
-                >
-                {% for error in form.new_password1.errors %}
-                    <small class="field-error">{{ error }}</small>
-                {% endfor %}
+                    <div class="stat-box">
+                        <div class="chang-pass-icon">
+                            <i class="bi bi-lock" aria-hidden="true"></i>
+                        </div>
+                        <span class="stat-title">محافظت از اطلاعات حساب</span>
+                    </div>
+                </div>
 
-                <label for="new_password2">تکرار رمز عبور جدید</label>
-                <input
-                    type="password"
-                    id="new_password2"
-                    name="new_password2"
-                    autocomplete="new-password"
-                    required
-                >
-                {% for error in form.new_password2.errors %}
-                    <small class="field-error">{{ error }}</small>
-                {% endfor %}
-
-                {% for error in form.non_field_errors %}
-                    <small class="field-error">{{ error }}</small>
-                {% endfor %}
-
-                <button type="submit">تغییر رمز عبور</button>
-            </form>
-
-            <div class="repass-link">
-                <a href="{% url 'accounts:profile' %}">بازگشت به حساب کاربری</a>
+                <div class="banner-top">
+                    <h2>حساب کاربری خود را</h2>
+                    <h2>امن نگه دارید</h2>
+                    <p>یک رمز عبور قوی و منحصربه‌فرد برای حساب خود انتخاب کنید.</p>
+                </div>
             </div>
+
         </div>
-
-        <div class="repass-banner">
-            <div class="repass-banner-image">
-                <img src="{% static 'img/pass.png' %}" alt="امنیت حساب کاربری آچارین">
-            </div>
-
-            <div class="repass-stats">
-                <div class="stat-box">
-                    <div class="repass-icon">
-                        <i class="bi bi-shield-check" aria-hidden="true"></i>
-                    </div>
-                    <span class="stat-title">امنیت بیشتر برای حساب کاربری</span>
-                </div>
-
-                <div class="stat-box">
-                    <div class="repass-icon">
-                        <i class="bi bi-key" aria-hidden="true"></i>
-                    </div>
-                    <span class="stat-title">انتخاب رمز عبور منحصربه‌فرد</span>
-                </div>
-
-                <div class="stat-box">
-                    <div class="repass-icon">
-                        <i class="bi bi-lock" aria-hidden="true"></i>
-                    </div>
-                    <span class="stat-title">محافظت از اطلاعات حساب</span>
-                </div>
-            </div>
-
-            <div class="banner-top">
-                <h2>حساب کاربری خود را</h2>
-                <h2>امن نگه دارید</h2>
-                <p>یک رمز عبور قوی و منحصربه‌فرد برای حساب خود انتخاب کنید.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
+    </section>
 {% endblock %}
+
