@@ -1,3 +1,9 @@
+:root {
+    --brand-navy: #0E2E65;
+    --brand-orange: #EF641B;
+    --brand-white: #EFF1F5;
+}
+
 body {
     direction: rtl;
     text-align: right;
