@@ -226,8 +226,8 @@
     }
 
     .navbar-nav .nav-link:hover {
-        background: #eef5ff;
-        color: #2563eb;
+        background: rgba(14, 46, 101, .06);
+        color: var(--brand-navy);
     }
 
     .header_section .btn-box {
@@ -1960,7 +1960,7 @@
         bottom: 20px;
         right: 38px;
         width: 3px;
-        background: #dbeafe;
+        background: rgba(14, 46, 101, .14);
         border-radius: 10px;
     }
 
@@ -2929,7 +2929,7 @@
         display: block;
         padding: 10px 14px 13px;
         border-bottom: 1px solid #edf1f6;
-        background: #fff;
+        background: var(--brand-white);
     }
 
     .invoices-table tbody tr:last-child {
@@ -2937,7 +2937,7 @@
     }
 
     .invoices-table tbody tr:hover {
-        background: #fff;
+        background: var(--brand-white);
     }
 
     .invoices-table td {
@@ -2997,7 +2997,7 @@
     }
 
     .invoice-price {
-        color: #2563eb;
+        color: var(--brand-navy);
         font-size: 11px;
         font-weight: 700;
         white-space: nowrap;
@@ -3063,7 +3063,7 @@
         border: 1px solid #e5ebf2;
         border-radius: 14px;
         overflow: hidden;
-        background: #fff;
+        background: var(--brand-white);
     }
 
     .invoice-service-group tr {
@@ -3189,7 +3189,7 @@
 
     .invoice-service-group .part-row td:nth-child(5) {
         font-weight: 700;
-        color: #2563eb;
+        color: var(--brand-navy);
     }
 
     .invoice-service-group .service-total-row {
@@ -3220,7 +3220,7 @@
 
     .invoice-service-group .service-total-row td:nth-child(5) {
         grid-column: 2;
-        color: #2563eb;
+        color: var(--brand-navy);
         font-weight: 800;
         white-space: nowrap;
     }
@@ -3268,10 +3268,10 @@
     }
 
     .invoice-summary-group .total-row td:nth-child(6) {
-        color: #2563eb;
+        color: var(--brand-navy);
         font-size: 12px;
         font-weight: 800;
-        background: #eff6ff;
+        background: rgba(14, 46, 101, .06);
     }
 
     .service-review-btn,
@@ -3286,8 +3286,8 @@
     }
 
     .service-review-btn {
-        background: #eff6ff;
-        color: #2563eb;
+        background: rgba(14, 46, 101, .06);
+        color: var(--brand-navy);
     }
 
     .review-done {
@@ -3332,7 +3332,7 @@
         padding: 12px;
         border: 1px solid #e5ebf2;
         border-radius: 12px;
-        background: #fff;
+        background: var(--brand-white);
         box-shadow: 0 3px 12px rgba(15, 23, 42, .03);
     }
 
@@ -3341,7 +3341,7 @@
     }
 
     .profile-orders .orders-table tbody tr:hover {
-        background: #fff;
+        background: var(--brand-white);
     }
 
     .profile-orders .orders-table td {
