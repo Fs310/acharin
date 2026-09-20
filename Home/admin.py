@@ -7,7 +7,9 @@ class ServicesAdmin(admin.ModelAdmin):
 
 
 class Sub_newAdmin(admin.ModelAdmin):
-    list_display = ('sub_titer', 'sub_summary', 'reading_time')
+    list_display = ('sub_titer', 'new', 'is_published', 'reading_time', 'sub_create_date')
+    list_filter = ('is_published', 'new', 'reading_time')
+    search_fields = ('sub_titer', 'sub_summary', 'sub_description')
 
 
 class NewsAdmin(admin.ModelAdmin):
