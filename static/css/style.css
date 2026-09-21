@@ -1732,6 +1732,54 @@ a, a:hover, a:focus {
     color: #0f172a;
 }
 
+/* خدمات شامل سرویس */
+.service-body .service-content h2 + li,
+.service-body .service-content h2 ~ li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    margin: 0 0 10px;
+    padding: 10px 48px 10px 16px;
+    box-sizing: border-box;
+    list-style: none;
+    background: #f8fafc;
+    border: 1px solid #e8edf3;
+    border-radius: 12px;
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.8;
+    transition: .25s ease;
+}
+
+.service-body .service-content h2 + li::before,
+.service-body .service-content h2 ~ li::before {
+    content: "✓";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(239, 100, 27, .1);
+    color: var(--brand-orange);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.service-body .service-content h2 + li:hover,
+.service-body .service-content h2 ~ li:hover {
+    border-color: rgba(14, 46, 101, .18);
+    background: #fff;
+    transform: translateX(-3px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, .05);
+}
+
+
 .service-body .service-meta {
     margin-top: auto;
     padding-top: 30px;
