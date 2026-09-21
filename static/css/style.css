@@ -1059,15 +1059,28 @@ a, a:hover, a:focus {
     background: var(--brand-navy);
 }
 
-.service_section .card .img-box img {
-    width: 58px;
-    height: 58px;
+.service_section .card .img-box .icon-normal {
+    width: 72px;
+    height: 72px;
     object-fit: contain;
     transition: .3s;
+    display: block;
 }
 
-.service_section .card:hover img {
-    transform: scale(1.08);
+.service_section .card:hover .icon-normal {
+    display: none;
+}
+
+.service_section .card .img-box .icon-hover {
+    display: none;
+}
+
+.service_section .card:hover .icon-hover {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    transition: .3s;
+    display: block;
 }
 
 .service_section .card .card-body {
@@ -1325,20 +1338,32 @@ a, a:hover, a:focus {
     transition: .3s;
 }
 
-
 .services-grid-section .service-card:hover .img-box {
     background: var(--brand-navy);
 }
 
-.services-grid-section .img-box img {
+.services-grid-section .img-box .icon-normal {
     width: 70px;
     height: 70px;
     object-fit: contain;
     transition: .3s;
+    display: block;
 }
 
-.services-grid-section .service-card:hover img {
-    transform: scale(1.08);
+.services-grid-section .service-card:hover .icon-normal {
+    display: none
+}
+
+.services-grid-section .img-box .icon-hover {
+    display: none;
+}
+
+.services-grid-section .service-card:hover .icon-hover {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    transition: .3s;
+    display: block;
 }
 
 .services-grid-section .service-card .card-body {
@@ -5513,7 +5538,7 @@ minmax(0, 3fr);
     border-radius: 50px;
     color: rgba(14, 46, 101, .06);
     background: rgb(234 243 255 / 18%);
-    border: 1px solid rgba(14, 46, 101, .06)45;
+    border: 1px solid rgba(14, 46, 101, .06) 45;
     font-size: 12px;
     width: fit-content;
     font-weight: 700;
@@ -6763,6 +6788,7 @@ minmax(0, 3fr);
     line-height: 1.65;
     margin: 0;
 }
+
 /*---------*/
 .chang-pass-section {
     padding: 35px 30px 70px;

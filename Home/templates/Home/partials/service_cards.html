@@ -11,7 +11,13 @@
                     <img src="{{ service.icon.url }}"
                          alt="تعمیر {{ service.title }} در مشهد"
                          loading="lazy"
-                         decoding="async">
+                         decoding="async" class="icon-normal">
+                {% endif %}
+                {% if service.icon_hover %}
+                    <img src="{{ service.icon_hover.url }}"
+                         alt="تعمیر {{ service.title }} در مشهد"
+                         loading="lazy"
+                         decoding="async" class="icon-hover">
                 {% endif %}
 
             </div>

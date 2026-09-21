@@ -2,8 +2,19 @@ from django.contrib import admin
 from .models import *
 
 
+class ServiceItemInline(admin.TabularInline):
+    model = ServiceItem
+    extra = 3
+    fields = ('title',)
+
+
 class ServicesAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
+    inlines = [ServiceItemInline]
+
+
+class ServiceItemAdmin(admin.ModelAdmin):
+    list_display = ('title', 'service')
 
 
 class Sub_newAdmin(admin.ModelAdmin):
@@ -103,3 +114,4 @@ admin.site.register(Review, ReviewAdmin)
 admin.site.register(Factor, FactorAdmin)
 admin.site.register(Part, PartAdmin)
 admin.site.register(FactorService, FactorServiceAdmin)
+admin.site.register(ServiceItem, ServiceItemAdmin)

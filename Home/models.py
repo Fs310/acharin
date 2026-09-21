@@ -12,6 +12,7 @@ class Services(models.Model):
     title = models.CharField(max_length=50, verbose_name='عنوان')
     description = models.TextField(blank=True, null=True, verbose_name='توضیحات')
     icon = models.ImageField(upload_to='services', null=True, blank=True, verbose_name='آیکون سرویس')
+    icon_hover = models.ImageField(upload_to='services', null=True, blank=True, verbose_name='آیکون هاور سرویس')
     img = models.ImageField(upload_to='services', null=True, blank=True, verbose_name='تصویر سرویس')
     create_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name='تاریخ ایجاد')
     update_date = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name='تاریخ ویرایش')
@@ -19,6 +20,18 @@ class Services(models.Model):
     class Meta:
         verbose_name = 'خدمت'
         verbose_name_plural = 'خدمات'
+
+    def __str__(self):
+        return self.title
+
+
+class ServiceItem(models.Model):
+    service = models.ForeignKey(Services,on_delete=models.CASCADE,related_name='service_items',verbose_name='سرویس')
+    title = models.CharField(max_length=100,verbose_name='عنوان خدمت')
+
+    class Meta:
+        verbose_name = 'مورد خدمت'
+        verbose_name_plural = 'موارد خدمات'
 
     def __str__(self):
         return self.title
@@ -70,7 +83,8 @@ class Sub_news(models.Model):
 
 
 class Client(models.Model):
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='client', verbose_name='کاربر')
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='client',
+                                verbose_name='کاربر')
     Cname = models.CharField(max_length=100, verbose_name='نام و نام خانوادگی مشتری')
     tel = models.CharField(max_length=11, unique=True, verbose_name='شماره تماس')
 
@@ -196,7 +210,8 @@ class FactorService(models.Model):
 
 
 class PartUsage(models.Model):
-    factor_service = models.ForeignKey(FactorService, on_delete=models.CASCADE, related_name='part_usages', verbose_name='خدمت فاکتور')
+    factor_service = models.ForeignKey(FactorService, on_delete=models.CASCADE, related_name='part_usages',
+                                       verbose_name='خدمت فاکتور')
     part = models.ForeignKey(Part, on_delete=models.CASCADE, verbose_name='قطعه')
     quantity = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)], verbose_name='تعداد')
     unit_price = models.PositiveIntegerField(default=0, verbose_name='قیمت واحد')
