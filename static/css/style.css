@@ -3572,19 +3572,22 @@ minmax(0, 3fr);
     margin: 0;
 
     width: 100%;
+    aspect-ratio: 16 / 9;
 
     overflow: hidden;
+    background: #f1f5f9;
 }
 
 .article-image img {
     display: block;
 
     width: 100%;
-    height: auto;
-
-    aspect-ratio: 16 / 9;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 
     object-fit: cover;
+    object-position: center;
 }
 
 
