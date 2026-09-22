@@ -55,7 +55,7 @@
                 <div class="article-body">
                     {% if new.sub_img %}
                         <figure class="article-image">
-                            <img src="{% if new.sub_img.name|slice:":4" == "http" %}{{ new.sub_img.name }}{% else %}{{ new.sub_img.url }}{% endif %}" alt="{{ new.sub_titer }}" width="900" height="506" fetchpriority="high" decoding="async">
+                            <img src="{% if new.sub_img_thumb %}{{ new.sub_img_thumb.url }}{% elif new.sub_img.name|slice:":4" == "http" %}{{ new.sub_img.name }}{% else %}{{ new.sub_img.url }}{% endif %}" alt="{{ new.sub_titer }}" fetchpriority="high" decoding="async">
                         </figure>
                     {% endif %}
 
