@@ -68,6 +68,42 @@ class Sub_news(models.Model):
     reading_time = models.PositiveSmallIntegerField(default=5, verbose_name='زمان مطالعه (دقیقه)')
     views = models.CharField(null=True, blank=True, verbose_name='تعداد مشاهده')
     sub_img = models.ImageField(upload_to='blog', null=True, blank=True, verbose_name='تصویر سرویس')
+    sub_img_thumb = models.ImageField(upload_to='blog/thumbs', null=True, blank=True, editable=False,
+                                      verbose_name='تصویر 16:9')
+
+    def save(self, *args, **kwargs):
+        if self.sub_img and self.sub_img.name and not self.sub_img.name.startswith(('http://', 'https://')):
+            from io import BytesIO
+            from PIL import Image
+            from django.core.files.base import ContentFile
+            from pathlib import Path
+
+            try:
+                self.sub_img.open('rb')
+                image = Image.open(self.sub_img)
+                image = image.convert('RGB')
+                width, height = image.size
+                target_ratio = 16 / 9
+                current_ratio = width / height
+
+                if current_ratio > target_ratio:
+                    crop_width = int(height * target_ratio)
+                    left = (width - crop_width) // 2
+                    image = image.crop((left, 0, left + crop_width, height))
+                elif current_ratio < target_ratio:
+                    crop_height = int(width / target_ratio)
+                    top = (height - crop_height) // 2
+                    image = image.crop((0, top, width, top + crop_height))
+
+                image.thumbnail((1200, 675), Image.Resampling.LANCZOS)
+                output = BytesIO()
+                image.save(output, format='JPEG', quality=88, optimize=True)
+                thumb_name = f"{Path(self.sub_img.name).stem}_16x9.jpg"
+                self.sub_img_thumb.save(thumb_name, ContentFile(output.getvalue()), save=False)
+            except (OSError, ValueError):
+                pass
+
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'دسته بندی خبر'
