@@ -43,7 +43,7 @@ def staff_required(view):
 @staff_required
 def management_dashboard(request):
     counts = {
-        key: model.objects.count()
+        key.replace('-', '_'): model.objects.count()
         for key, (_, model, _) in MANAGEMENT_MODELS.items()
     }
     return render(request, 'Home/management/dashboard.html', {'counts': counts})
