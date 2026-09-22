@@ -1,4 +1,4 @@
-from django.db import migrations, models
+from django.db import migrations
 
 
 class Migration(migrations.Migration):
@@ -11,14 +11,14 @@ class Migration(migrations.Migration):
             model_name='sub_news',
             name='new',
         ),
-        migrations.DeleteModel(
-            name='News',
-        ),
         migrations.AlterModelOptions(
             name='sub_news',
             options={
                 'verbose_name': 'مقاله',
                 'verbose_name_plural': 'مقالات',
             },
+        ),
+        migrations.DeleteModel(
+            name='News',
         ),
     ]
