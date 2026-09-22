@@ -64,32 +64,6 @@ class Sub_news(models.Model):
         return self.sub_titer or ''
 
 
-    sub_titer = models.CharField(max_length=50, null=True, blank=True, verbose_name='عنوان')
-    slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
-    sub_summary = models.TextField(max_length=20, blank=True, null=True, verbose_name='شرح مختصر')
-    sub_description = models.TextField(blank=True, null=True, verbose_name='توضیحات')
-    sub_create_date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
-    sub_update_date = models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش')
-    is_published = models.BooleanField(default=False)
-    reading_time = models.PositiveSmallIntegerField(default=5, verbose_name='زمان مطالعه (دقیقه)')
-    views = models.CharField(null=True, blank=True, verbose_name='تعداد مشاهده')
-    sub_img = models.ImageField(upload_to='blog', null=True, blank=True, verbose_name='تصویر سرویس')
-    sub_img_thumb = models.ImageField(upload_to='blog/thumbs', null=True, blank=True, editable=False,
-                                      verbose_name='تصویر 16:9')
-
-    class Meta:
-        verbose_name = 'مقاله'
-        verbose_name_plural = 'مقالات'
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.sub_titer or '', allow_unicode=True)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.sub_titer or ''
-
-
 class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='client',
                                 verbose_name='کاربر')
