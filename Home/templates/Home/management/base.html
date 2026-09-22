@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}مدیریت آچارین{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/management.css' %}">
+</head>
+<body class="management-body">
+<header class="management-header">
+    <div>
+        <span class="management-kicker">ACHARIN</span>
+        <h1>پنل مدیریت آچارین</h1>
+    </div>
+    <div class="management-user">
+        <span>{{ request.user.username }}</span>
+        <a href="{% url 'home:homes' %}">مشاهده سایت</a>
+        <a href="{% url 'accounts:logout_user' %}">خروج</a>
+    </div>
+</header>
+
+{% if messages %}
+    <div class="management-messages">
+        {% for message in messages %}
+            <div class="management-message">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<main class="management-main">
+    {% block body %}{% endblock %}
+</main>
+</body>
+</html>
