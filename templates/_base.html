@@ -47,27 +47,44 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                    aria-expanded="false" aria-label="منوی ادمین">کاربر (ادمین)</a>
                                 <ul class="dropdown-menu">
+
                                     <li class="admin-menu-item">
-                                        <button type="button" class="dropdown-item admin-menu-toggle" aria-expanded="false">مدیریت سایت <i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+                                        <button type="button" class="dropdown-item admin-menu-toggle"
+                                                aria-expanded="false">مدیریت سایت <i class="bi bi-chevron-left"
+                                                                                     aria-hidden="true"></i></button>
                                         <ul class="admin-submenu">
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'services' %}">خدمات</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'service-items' %}">موارد خدمات</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'news' %}">مقالات</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'articles' %}">محتوای مقالات</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'reviews' %}">نظرات</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'service-requests' %}">درخواست‌های تعمیر</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'clients' %}">مشتریان</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'factors' %}">فاکتورها</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'parts' %}">قطعات</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'factor-services' %}">خدمات فاکتورها</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'admin:index' %}">پنل کامل مدیریت</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'services' %}">خدمات</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'service-items' %}">موارد
+                                                خدمات</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'news' %}">مقالات</a>
+                                            </li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'articles' %}">محتوای مقالات</a>
+                                            </li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'reviews' %}">نظرات</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'service-requests' %}">درخواست‌های
+                                                تعمیر</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'clients' %}">مشتریان</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'factors' %}">فاکتورها</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'parts' %}">قطعات</a></li>
+                                            <li><a class="dropdown-item"
+                                                   href="{% url 'home:management_list' 'factor-services' %}">خدمات
+                                                فاکتورها</a></li>
+
                                         </ul>
                                     </li>
+                                    <li><a class="dropdown-item" href="{% url 'admin:index' %}">پنل
+                                        مدیریت</a></li>
                                     <li><a class="dropdown-item" href="{% url 'accounts:logout_user' %}">خروج</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}"
-                                                    aria-label="ورود به پنل مدیریت">پنل مدیریت</a></li>
                         {% elif user.is_authenticated %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -167,26 +184,26 @@
 {% block script %}{% endblock %}
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".admin-menu-toggle").forEach((toggle) => {
-        toggle.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const item = toggle.closest(".admin-menu-item");
-            const isOpen = item.classList.toggle("is-open");
-            toggle.setAttribute("aria-expanded", String(isOpen));
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".admin-menu-toggle").forEach((toggle) => {
+            toggle.addEventListener("click", (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                const item = toggle.closest(".admin-menu-item");
+                const isOpen = item.classList.toggle("is-open");
+                toggle.setAttribute("aria-expanded", String(isOpen));
+            });
+        });
+        document.addEventListener("click", (event) => {
+            document.querySelectorAll(".admin-menu-item.is-open").forEach((item) => {
+                if (!item.contains(event.target)) {
+                    item.classList.remove("is-open");
+                    const toggle = item.querySelector(".admin-menu-toggle");
+                    if (toggle) toggle.setAttribute("aria-expanded", "false");
+                }
+            });
         });
     });
-    document.addEventListener("click", (event) => {
-        document.querySelectorAll(".admin-menu-item.is-open").forEach((item) => {
-            if (!item.contains(event.target)) {
-                item.classList.remove("is-open");
-                const toggle = item.querySelector(".admin-menu-toggle");
-                if (toggle) toggle.setAttribute("aria-expanded", "false");
-            }
-        });
-    });
-});
 </script>
 </body>
 </html>
