@@ -1,0 +1,16 @@
+{% extends "Home/management/base.html" %}
+{% block title %}حذف {{ title }} | آچارین{% endblock %}
+{% block body %}
+<div class="form-card delete-card">
+    <a class="back-link" href="{% url 'home:management_list' section %}">← بازگشت</a>
+    <h2>حذف {{ title }}</h2>
+    <p>آیا از حذف «{{ instance }}» مطمئن هستید؟</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-actions">
+            <a class="secondary-button" href="{% url 'home:management_list' section %}">انصراف</a>
+            <button class="danger-button" type="submit">حذف</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
