@@ -1,0 +1,26 @@
+{% extends "Home/management/base.html" %}
+{% block title %}{% if instance %}ویرایش{% else %}افزودن{% endif %} {{ title }} | آچارین{% endblock %}
+{% block body %}
+<div class="management-form-page">
+    <a class="back-link" href="{% url 'home:management_list' section %}">← بازگشت</a>
+    <div class="form-card">
+        <h2>{% if instance %}ویرایش{% else %}افزودن{% endif %} {{ title }}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                <div class="field">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            <div class="form-actions">
+                <a class="secondary-button" href="{% url 'home:management_list' section %}">انصراف</a>
+                <button class="primary-button" type="submit">ذخیره</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
