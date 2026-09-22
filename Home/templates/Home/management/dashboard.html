@@ -1,0 +1,52 @@
+{% extends "Home/management/base.html" %}
+{% block title %}داشبورد مدیریت آچارین{% endblock %}
+{% block body %}
+<section class="management-intro">
+    <div>
+        <span class="eyebrow">داشبورد</span>
+        <h2>مدیریت محتوای آچارین</h2>
+        <p>بخش موردنظر را انتخاب کنید. تغییرات مستقیماً در اطلاعات سایت ذخیره می‌شوند.</p>
+    </div>
+</section>
+
+<div class="management-grid">
+    {% for key, item in counts.items %}
+        {% for section_key, section_data in view_sections.items %}
+        {% endfor %}
+    {% endfor %}
+
+    <a class="management-card" href="{% url 'home:management_list' 'services' %}">
+        <strong>خدمات</strong><span>{{ counts.services }}</span><small>ایجاد، ویرایش و حذف خدمات</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'service-items' %}">
+        <strong>موارد خدمات</strong><span>{{ counts.service-items }}</span><small>مدیریت موارد هر خدمت</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'news' %}">
+        <strong>دسته‌بندی مقالات</strong><span>{{ counts.news }}</span><small>مدیریت دسته‌بندی‌ها</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'articles' %}">
+        <strong>مقالات</strong><span>{{ counts.articles }}</span><small>ایجاد مقاله و مدیریت تصویر</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'clients' %}">
+        <strong>مشتری‌ها</strong><span>{{ counts.clients }}</span><small>مشاهده و ویرایش اطلاعات مشتری</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'service-requests' %}">
+        <strong>درخواست‌های سرویس</strong><span>{{ counts.service-requests }}</span><small>مدیریت درخواست‌ها</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'reviews' %}">
+        <strong>نظرات</strong><span>{{ counts.reviews }}</span><small>تأیید و مدیریت نظرات</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'parts' %}">
+        <strong>قطعات</strong><span>{{ counts.parts }}</span><small>مدیریت قطعات و قیمت‌ها</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'factors' %}">
+        <strong>فاکتورها</strong><span>{{ counts.factors }}</span><small>مدیریت اطلاعات فاکتورها</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'factor-services' %}">
+        <strong>اقلام فاکتور</strong><span>{{ counts.factor-services }}</span><small>مدیریت خدمات فاکتورها</small>
+    </a>
+    <a class="management-card" href="{% url 'home:management_list' 'part-usages' %}">
+        <strong>تعداد قطعات</strong><span>{{ counts.part-usages }}</span><small>مدیریت قطعات مصرفی فاکتورها</small>
+    </a>
+</div>
+{% endblock %}
