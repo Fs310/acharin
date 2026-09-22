@@ -4,4 +4,7 @@ from django.apps import AppConfig
 class HomeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'Home'
-    verbose_name='صفحه اصلی'
+    verbose_name = 'صفحه اصلی'
+
+    def ready(self):
+        from . import signals  # noqa: F401
