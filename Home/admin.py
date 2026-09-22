@@ -17,17 +17,7 @@ class ServiceItemAdmin(admin.ModelAdmin):
     list_display = ('title', 'service')
 
 
-class Sub_newAdmin(admin.ModelAdmin):
-    list_display = ('sub_titer', 'new', 'is_published', 'reading_time', 'sub_create_date')
-    list_filter = ('is_published', 'new', 'reading_time')
-    search_fields = ('sub_titer', 'sub_summary', 'sub_description')
 
-
-class NewsAdmin(admin.ModelAdmin):
-    list_display = ('titer', 'create_date')
-
-
-class ClientAdmin(admin.ModelAdmin):
     list_display = ('user', 'Cname', 'tel')
     search_fields = ('Cname', 'tel', 'user__username')
 
@@ -108,7 +98,6 @@ class PartAdmin(admin.ModelAdmin):
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(ServiceRequest, ServiceRequestAdmin)
 admin.site.register(Sub_news, Sub_newAdmin)
-admin.site.register(News, NewsAdmin)
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(Factor, FactorAdmin)
