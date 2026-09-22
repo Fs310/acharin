@@ -19,7 +19,7 @@
         <strong>خدمات</strong><span>{{ counts.services }}</span><small>ایجاد، ویرایش و حذف خدمات</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'service-items' %}">
-        <strong>موارد خدمات</strong><span>{{ counts.service-items }}</span><small>مدیریت موارد هر خدمت</small>
+        <strong>موارد خدمات</strong><span>{{ counts.service_items }}</span><small>مدیریت موارد هر خدمت</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'news' %}">
         <strong>دسته‌بندی مقالات</strong><span>{{ counts.news }}</span><small>مدیریت دسته‌بندی‌ها</small>
@@ -31,7 +31,7 @@
         <strong>مشتری‌ها</strong><span>{{ counts.clients }}</span><small>مشاهده و ویرایش اطلاعات مشتری</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'service-requests' %}">
-        <strong>درخواست‌های سرویس</strong><span>{{ counts.service-requests }}</span><small>مدیریت درخواست‌ها</small>
+        <strong>درخواست‌های سرویس</strong><span>{{ counts.service_requests }}</span><small>مدیریت درخواست‌ها</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'reviews' %}">
         <strong>نظرات</strong><span>{{ counts.reviews }}</span><small>تأیید و مدیریت نظرات</small>
@@ -43,10 +43,10 @@
         <strong>فاکتورها</strong><span>{{ counts.factors }}</span><small>مدیریت اطلاعات فاکتورها</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'factor-services' %}">
-        <strong>اقلام فاکتور</strong><span>{{ counts.factor-services }}</span><small>مدیریت خدمات فاکتورها</small>
+        <strong>اقلام فاکتور</strong><span>{{ counts.factor_services }}</span><small>مدیریت خدمات فاکتورها</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'part-usages' %}">
-        <strong>تعداد قطعات</strong><span>{{ counts.part-usages }}</span><small>مدیریت قطعات مصرفی فاکتورها</small>
+        <strong>تعداد قطعات</strong><span>{{ counts.part_usages }}</span><small>مدیریت قطعات مصرفی فاکتورها</small>
     </a>
 </div>
 {% endblock %}
