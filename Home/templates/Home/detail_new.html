@@ -9,7 +9,6 @@
         <nav class="site-breadcrumb" aria-label="مسیر صفحه">
             <a href="{% url 'home:homes' %}">خانه</a>
             <a href="{% url 'home:new' %}">مقالات</a>
-            <a href="{% url 'home:sub_new' new.new.id %}">{{ new.new.titer }}</a>
             <span aria-current="page">{{ new.sub_titer }}</span>
         </nav>
 
@@ -35,8 +34,8 @@
                 <div class="sidebar-box">
                     <h2>فهرست مقالات</h2>
                     <ul class="article-list">
-                        {% for itm in titer_news %}
-                            <li><a href="{% url 'home:sub_new' itm.id %}">{{ itm.titer }}</a></li>
+                        {% for itm in all_articles %}
+                            <li><a href="{% url 'home:detail_new' itm.slug %}">{{ itm.sub_titer }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
