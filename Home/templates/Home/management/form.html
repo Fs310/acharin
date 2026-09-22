@@ -3,7 +3,7 @@
 {% block body %}
 <div class="management-form-page">
     <a class="back-link" href="{% url 'home:management_list' section %}">← بازگشت</a>
-    <div class="form-card{% if section == 'services' %} service-form-card{% endif %}">
+    <div class="form-card{% if section == 'services' %} service-form-card{% elif section == 'factors' %} factor-form-card{% endif %}">
         <h2>{% if instance %}ویرایش{% else %}افزودن{% endif %} {{ title }}</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -61,6 +61,187 @@
                     {% endwith %}
                 </section>
             {% endif %}
+            {% if section == 'factors' and factor_service_formset %}
+                <section class="factor-services-card">
+                    <div class="factor-services-header">
+                        <div>
+                            <h3>اقلام فاکتور</h3>
+                            <p>خدمت، اجرت و قطعات مصرفی هر خدمت را در همین فاکتور ثبت کنید.</p>
+                        </div>
+                        <button class="secondary-button" type="button" id="add-factor-service">+ افزودن خدمت</button>
+                    </div>
+                    {{ factor_service_formset.management_form }}
+                    <div id="factor-services-list">
+                        {% for row in factor_service_rows %}
+                            <article class="factor-service-row">
+                                {{ row.form.id }}
+                                {{ row.form.DELETE }}
+                                <div class="factor-service-header">
+                                    <div>
+                                        <h4>خدمت {{ forloop.counter }}</h4>
+                                        {% if row.form.non_field_errors %}{{ row.form.non_field_errors }}{% endif %}
+                                    </div>
+                                    <button class="factor-service-remove danger-button" type="button">حذف خدمت</button>
+                                </div>
+                                <div class="factor-service-fields">
+                                    <div class="inline-field">
+                                        {{ row.form.service.label_tag }}
+                                        {{ row.form.service }}
+                                        {{ row.form.service.errors }}
+                                    </div>
+                                    <div class="inline-field">
+                                        {{ row.form.price_service.label_tag }}
+                                        {{ row.form.price_service }}
+                                        {{ row.form.price_service.errors }}
+                                    </div>
+                                </div>
+                                <section class="factor-parts-card">
+                                    <div class="factor-parts-header">
+                                        <div>
+                                            <h5>قطعات مصرفی این خدمت</h5>
+                                            <span>قطعه و تعداد استفاده‌شده را ثبت کنید.</span>
+                                        </div>
+                                        <button class="secondary-button add-factor-part" type="button"
+                                                data-prefix="{{ row.part_formset.prefix }}">+ افزودن قطعه</button>
+                                    </div>
+                                    {{ row.part_formset.management_form }}
+                                    <div class="factor-parts-list">
+                                        {% for part_form in row.part_formset %}
+                                            <div class="factor-part-row">
+                                                {{ part_form.id }}
+                                                {{ part_form.DELETE }}
+                                                <div class="inline-field">
+                                                    {{ part_form.part.label_tag }}
+                                                    {{ part_form.part }}
+                                                    {{ part_form.part.errors }}
+                                                </div>
+                                                <div class="inline-field quantity-field">
+                                                    {{ part_form.quantity.label_tag }}
+                                                    {{ part_form.quantity }}
+                                                    {{ part_form.quantity.errors }}
+                                                </div>
+                                                <div class="inline-field">
+                                                    {{ part_form.unit_price.label_tag }}
+                                                    {{ part_form.unit_price }}
+                                                    {{ part_form.unit_price.errors }}
+                                                </div>
+                                                <button class="factor-part-remove danger-button" type="button">حذف</button>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    {% with empty_part_form=row.part_formset.empty_form %}
+                                        <template class="factor-part-empty-form">
+                                            <div class="factor-part-row">
+                                                {{ empty_part_form.id }}
+                                                {{ empty_part_form.DELETE }}
+                                                <div class="inline-field">
+                                                    {{ empty_part_form.part.label_tag }}
+                                                    {{ empty_part_form.part }}
+                                                    {{ empty_part_form.part.errors }}
+                                                </div>
+                                                <div class="inline-field quantity-field">
+                                                    {{ empty_part_form.quantity.label_tag }}
+                                                    {{ empty_part_form.quantity }}
+                                                    {{ empty_part_form.quantity.errors }}
+                                                </div>
+                                                <div class="inline-field">
+                                                    {{ empty_part_form.unit_price.label_tag }}
+                                                    {{ empty_part_form.unit_price }}
+                                                    {{ empty_part_form.unit_price.errors }}
+                                                </div>
+                                                <button class="factor-part-remove danger-button" type="button">حذف</button>
+                                            </div>
+                                        </template>
+                                    {% endwith %}
+                                </section>
+                            </article>
+                        {% endfor %}
+                    </div>
+                    {% with empty_service_form=factor_service_formset.empty_form %}
+                        <template id="factor-service-empty-form">
+                            <article class="factor-service-row">
+                                {{ empty_service_form.id }}
+                                {{ empty_service_form.DELETE }}
+                                <div class="factor-service-header">
+                                    <div>
+                                        <h4>خدمت جدید</h4>
+                                    </div>
+                                    <button class="factor-service-remove danger-button" type="button">حذف خدمت</button>
+                                </div>
+                                <div class="factor-service-fields">
+                                    <div class="inline-field">
+                                        {{ empty_service_form.service.label_tag }}
+                                        {{ empty_service_form.service }}
+                                        {{ empty_service_form.service.errors }}
+                                    </div>
+                                    <div class="inline-field">
+                                        {{ empty_service_form.price_service.label_tag }}
+                                        {{ empty_service_form.price_service }}
+                                        {{ empty_service_form.price_service.errors }}
+                                    </div>
+                                </div>
+                                <section class="factor-parts-card">
+                                    <div class="factor-parts-header">
+                                        <div>
+                                            <h5>قطعات مصرفی این خدمت</h5>
+                                            <span>قطعه و تعداد استفاده‌شده را ثبت کنید.</span>
+                                        </div>
+                                        <button class="secondary-button add-factor-part" type="button"
+                                                data-prefix="parts-__service__">+ افزودن قطعه</button>
+                                    </div>
+                                    {% with empty_part_form=empty_part_formset.empty_form %}
+                                        {{ empty_part_formset.management_form }}
+                                        <div class="factor-parts-list">
+                                            <div class="factor-part-row">
+                                                {{ empty_part_form.id }}
+                                                {{ empty_part_form.DELETE }}
+                                                <div class="inline-field">
+                                                    {{ empty_part_form.part.label_tag }}
+                                                    {{ empty_part_form.part }}
+                                                    {{ empty_part_form.part.errors }}
+                                                </div>
+                                                <div class="inline-field quantity-field">
+                                                    {{ empty_part_form.quantity.label_tag }}
+                                                    {{ empty_part_form.quantity }}
+                                                    {{ empty_part_form.quantity.errors }}
+                                                </div>
+                                                <div class="inline-field">
+                                                    {{ empty_part_form.unit_price.label_tag }}
+                                                    {{ empty_part_form.unit_price }}
+                                                    {{ empty_part_form.unit_price.errors }}
+                                                </div>
+                                                <button class="factor-part-remove danger-button" type="button">حذف</button>
+                                            </div>
+                                        </div>
+                                        <template class="factor-part-empty-form">
+                                            <div class="factor-part-row">
+                                                {{ empty_part_form.id }}
+                                                {{ empty_part_form.DELETE }}
+                                                <div class="inline-field">
+                                                    {{ empty_part_form.part.label_tag }}
+                                                    {{ empty_part_form.part }}
+                                                    {{ empty_part_form.part.errors }}
+                                                </div>
+                                                <div class="inline-field quantity-field">
+                                                    {{ empty_part_form.quantity.label_tag }}
+                                                    {{ empty_part_form.quantity }}
+                                                    {{ empty_part_form.quantity.errors }}
+                                                </div>
+                                                <div class="inline-field">
+                                                    {{ empty_part_form.unit_price.label_tag }}
+                                                    {{ empty_part_form.unit_price }}
+                                                    {{ empty_part_form.unit_price.errors }}
+                                                </div>
+                                                <button class="factor-part-remove danger-button" type="button">حذف</button>
+                                            </div>
+                                        </template>
+                                    {% endwith %}
+                                </section>
+                            </article>
+                        </template>
+                    {% endwith %}
+                </section>
+            {% endif %}
             <div class="form-actions">
                 <a class="secondary-button" href="{% url 'home:management_list' section %}">انصراف</a>
                 <button class="primary-button" type="submit">ذخیره</button>
@@ -88,6 +269,72 @@
         list.addEventListener("click", (event) => {
             const button = event.target.closest(".service-item-remove");
             if (button) button.closest(".service-item-row").remove();
+        });
+    });
+</script>
+{% endif %}
+{% if section == 'factors' %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const serviceList = document.getElementById("factor-services-list");
+        const serviceTemplate = document.getElementById("factor-service-empty-form");
+        const serviceAdd = document.getElementById("add-factor-service");
+        const serviceTotal = document.getElementById("id_{{ factor_service_formset.prefix }}-TOTAL_FORMS");
+        if (!serviceList || !serviceTemplate || !serviceAdd || !serviceTotal) return;
+
+        const bindPartButtons = (serviceRow) => {
+            const addButton = serviceRow.querySelector(".add-factor-part");
+            const partsList = serviceRow.querySelector(".factor-parts-list");
+            const partTemplate = serviceRow.querySelector(".factor-part-empty-form");
+            if (!addButton || !partsList || !partTemplate) return;
+            const prefix = addButton.dataset.prefix;
+            const totalForms = serviceRow.querySelector("#id_" + prefix + "-TOTAL_FORMS");
+            if (!totalForms) return;
+            addButton.addEventListener("click", () => {
+                const index = Number(totalForms.value);
+                const wrapper = document.createElement("div");
+                wrapper.innerHTML = partTemplate.innerHTML.replaceAll("__prefix__", index);
+                partsList.appendChild(wrapper.firstElementChild);
+                totalForms.value = index + 1;
+            });
+        };
+
+        const markDeleted = (row, selector) => {
+            const input = row.querySelector(selector);
+            if (!input) return;
+            input.checked = true;
+            row.classList.add("is-deleted");
+        };
+
+        serviceList.querySelectorAll(".factor-service-row").forEach((row) => {
+            bindPartButtons(row);
+            row.querySelector(".factor-service-remove")?.addEventListener("click", () => {
+                markDeleted(row, 'input[name$="-DELETE"]');
+            });
+            row.querySelector(".factor-parts-list")?.addEventListener("click", (event) => {
+                const button = event.target.closest(".factor-part-remove");
+                if (!button) return;
+                markDeleted(button.closest(".factor-part-row"), 'input[name$="-DELETE"]');
+            });
+        });
+
+        serviceAdd.addEventListener("click", () => {
+            const index = Number(serviceTotal.value);
+            const html = serviceTemplate.innerHTML.replaceAll("__service__", index);
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = html;
+            const row = wrapper.firstElementChild;
+            serviceList.appendChild(row);
+            serviceTotal.value = index + 1;
+            bindPartButtons(row);
+            row.querySelector(".factor-service-remove")?.addEventListener("click", () => {
+                markDeleted(row, 'input[name$="-DELETE"]');
+            });
+            row.querySelector(".factor-parts-list")?.addEventListener("click", (event) => {
+                const button = event.target.closest(".factor-part-remove");
+                if (!button) return;
+                markDeleted(button.closest(".factor-part-row"), 'input[name$="-DELETE"]');
+            });
         });
     });
 </script>
