@@ -17,7 +17,13 @@ class ServiceItemAdmin(admin.ModelAdmin):
     list_display = ('title', 'service')
 
 
+class Sub_newAdmin(admin.ModelAdmin):
+    list_display = ('sub_titer', 'is_published', 'reading_time', 'sub_create_date')
+    list_filter = ('is_published', 'reading_time')
+    search_fields = ('sub_titer', 'sub_summary', 'sub_description')
 
+
+class ClientAdmin(admin.ModelAdmin):
     list_display = ('user', 'Cname', 'tel')
     search_fields = ('Cname', 'tel', 'user__username')
 
