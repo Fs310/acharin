@@ -70,13 +70,8 @@ def detail_service(request, id):
     return render(request, 'Home/detail_service.html', {'service': service_detail})
 
 
-def new(request, id=None):
-    titer_news = News.objects.all()
-    sub_news = Sub_news.objects.all().select_related('new')
-
-    if id:
-        get_object_or_404(News, id=id)
-        sub_news = sub_news.filter(new_id=id)
+def new(request):
+    sub_news = Sub_news.objects.all()
 
     width = int(request.GET.get("width", 1920))
 
@@ -104,21 +99,20 @@ def new(request, id=None):
         })
 
     return render(request, 'Home/news.html', {
-        'titer_news': titer_news,
         'sub_news': page_obj,
         'page_obj': page_obj,
     })
 
 
 def detail_new(request, slug):
-    new_detail = get_object_or_404(Sub_news.objects.select_related('new'), slug=slug)
-    titer_news = News.objects.all()
-    related_articles = Sub_news.objects.filter(new=new_detail.new).exclude(pk=new_detail.pk)[:5]
+    new_detail = get_object_or_404(Sub_news, slug=slug)
+    related_articles = Sub_news.objects.exclude(pk=new_detail.pk)[:5]
+    all_articles = Sub_news.objects.exclude(pk=new_detail.pk)[:10]
 
     return render(request, 'Home/detail_new.html', {
-        'titer_news': titer_news,
         'new': new_detail,
         'related_articles': related_articles,
+        'all_articles': all_articles,
     })
 
 
