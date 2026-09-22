@@ -320,7 +320,9 @@
 
         serviceAdd.addEventListener("click", () => {
             const index = Number(serviceTotal.value);
-            const html = serviceTemplate.innerHTML.replaceAll("__service__", index);
+            const html = serviceTemplate.innerHTML
+                .replaceAll("services-__prefix__-", "services-__service__-")
+                .replaceAll("__service__", index);
             const wrapper = document.createElement("div");
             wrapper.innerHTML = html;
             const row = wrapper.firstElementChild;
