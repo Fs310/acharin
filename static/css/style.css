@@ -3768,9 +3768,9 @@ minmax(0, 3fr);
     border-radius: 10px;
 
     min-width: 0;
-    flex: 0 0 340px;
-    width: 340px;
-    flex-shrink: 0;
+    flex: 1 1 0;
+    width: auto;
+    flex-shrink: 1;
 
 }
 
@@ -7578,27 +7578,4 @@ input, textarea, select, button {
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-}
-
-
-
-/* مجله: یکسان‌سازی دقیق کادر تصاویر */
-.blog-card-image {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-    overflow: hidden !important;
-    position: relative;
-}
-
-.blog-card-image img {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    object-fit: cover !important;
-    object-position: center !important;
 }
