@@ -3,7 +3,7 @@
 {% block body %}
 <div class="management-form-page">
     <a class="back-link" href="{% url 'home:management_list' section %}">← بازگشت</a>
-    <div class="form-card">
+    <div class="form-card{% if section == 'services' %} service-form-card{% endif %}">
         <h2>{% if instance %}ویرایش{% else %}افزودن{% endif %} {{ title }}</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -16,6 +16,51 @@
                     {{ field.errors }}
                 </div>
             {% endfor %}
+            {% if section == 'services' and service_item_formset %}
+                <section class="service-items-card">
+                    <div class="service-items-header">
+                        <div>
+                            <h3>موارد خدمات</h3>
+                            <p>موارد مربوط به این خدمت را همین‌جا اضافه یا حذف کنید.</p>
+                        </div>
+                        <button class="secondary-button" type="button" id="add-service-item">+ افزودن مورد</button>
+                    </div>
+                    {{ service_item_formset.management_form }}
+                    <div id="service-items-list">
+                        {% for item_form in service_item_formset %}
+                            <div class="service-item-row">
+                                {{ item_form.id }}
+                                <div class="service-item-field">
+                                    {{ item_form.title.label_tag }}
+                                    {{ item_form.title }}
+                                    {{ item_form.title.errors }}
+                                </div>
+                                {% if item_form.instance.pk %}
+                                    <label class="service-item-delete">
+                                        {{ item_form.DELETE }}
+                                        <span>حذف</span>
+                                    </label>
+                                {% else %}
+                                    <button class="service-item-remove" type="button">حذف</button>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% with empty_form=service_item_formset.empty_form %}
+                        <template id="service-item-empty-form">
+                            <div class="service-item-row">
+                                {{ empty_form.id }}
+                                <div class="service-item-field">
+                                    {{ empty_form.title.label_tag }}
+                                    {{ empty_form.title }}
+                                    {{ empty_form.title.errors }}
+                                </div>
+                                <button class="service-item-remove" type="button">حذف</button>
+                            </div>
+                        </template>
+                    {% endwith %}
+                </section>
+            {% endif %}
             <div class="form-actions">
                 <a class="secondary-button" href="{% url 'home:management_list' section %}">انصراف</a>
                 <button class="primary-button" type="submit">ذخیره</button>
@@ -23,4 +68,28 @@
         </form>
     </div>
 </div>
+{% endblock %}
+{% block script %}
+{% if section == 'services' %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const list = document.getElementById("service-items-list");
+        const template = document.getElementById("service-item-empty-form");
+        const addButton = document.getElementById("add-service-item");
+        const totalForms = document.getElementById("id_{{ service_item_formset.prefix }}-TOTAL_FORMS");
+        if (!list || !template || !addButton || !totalForms) return;
+        addButton.addEventListener("click", () => {
+            const index = Number(totalForms.value);
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = template.innerHTML.replaceAll("__prefix__", index);
+            list.appendChild(wrapper.firstElementChild);
+            totalForms.value = index + 1;
+        });
+        list.addEventListener("click", (event) => {
+            const button = event.target.closest(".service-item-remove");
+            if (button) button.closest(".service-item-row").remove();
+        });
+    });
+</script>
+{% endif %}
 {% endblock %}
