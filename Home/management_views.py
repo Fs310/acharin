@@ -7,15 +7,14 @@ from django.forms import inlineformset_factory, modelform_factory
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import (
-    Services, ServiceItem, News, Sub_news, Client, ServiceRequest,
+    Services, ServiceItem, Sub_news, Client, ServiceRequest,
     Review, Factor, FactorService, PartUsage, Part,
 )
 
 MANAGEMENT_MODELS = {
     'services': ('خدمات', Services, ['title', 'description', 'icon', 'icon_hover', 'img']),
-    'news': ('دسته‌بندی مقالات', News, ['titer']),
     'articles': ('مقالات', Sub_news, [
-        'new', 'sub_titer', 'sub_summary', 'sub_description', 'is_published',
+        'sub_titer', 'sub_summary', 'sub_description', 'is_published',
         'reading_time', 'views', 'sub_img',
     ]),
     'clients': ('مشتری‌ها', Client, ['user', 'Cname', 'tel']),
