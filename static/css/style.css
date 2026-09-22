@@ -2569,3 +2569,16 @@ input, textarea, select, button{direction: rtl !important;text-align: right !imp
 .login-form-box input:-webkit-autofill,
 .login-form-box input:-webkit-autofill:hover,
 .login-form-box input:-webkit-autofill:focus{-webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;-webkit-text-fill-color: #334155 !important;}
+
+.admin-menu-item{position:relative}
+.admin-menu-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:right;cursor:pointer;font-family:inherit}
+.admin-menu-toggle i{transition:transform .2s ease}
+.admin-submenu{display:none;position:absolute;right:100%;top:-6px;z-index:100001;min-width:190px;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid #edf2f7;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.admin-menu-item:hover>.admin-submenu,.admin-menu-item.is-open>.admin-submenu{display:block}
+.admin-menu-item:hover>.admin-menu-toggle i,.admin-menu-item.is-open>.admin-menu-toggle i{transform:rotate(-90deg)}
+.admin-submenu .dropdown-item{white-space:nowrap}
+@media (max-width:991px){
+.admin-submenu{position:static;min-width:0;padding:6px 0 0;background:transparent;border:0;border-top:1px solid #edf2f7;border-radius:0;box-shadow:none}
+.admin-menu-toggle{padding-inline:14px}
+.admin-submenu .dropdown-item{padding-inline:28px}
+}
