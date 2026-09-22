@@ -37,27 +37,7 @@ class ServiceItem(models.Model):
         return self.title
 
 
-class News(models.Model):
-    titer = models.CharField(max_length=50, verbose_name='تیتر خبر')
-    slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
-    create_date = models.DateTimeField(auto_now_add=True, blank=True, null=True, verbose_name='تاریخ ایجاد')
-    update_date = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name='تاریخ ویرایش')
 
-    class Meta:
-        verbose_name = 'عنوان خبر'
-        verbose_name_plural = 'عنوان اخبار'
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.titer, allow_unicode=True)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.titer
-
-
-class Sub_news(models.Model):
-    new = models.ForeignKey(News, on_delete=models.CASCADE, related_name='services', verbose_name='دسته بندی اخبار')
     sub_titer = models.CharField(max_length=50, null=True, blank=True, verbose_name='عنوان')
     slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
     sub_summary = models.TextField(max_length=20, blank=True, null=True, verbose_name='شرح مختصر')
@@ -72,8 +52,8 @@ class Sub_news(models.Model):
                                       verbose_name='تصویر 16:9')
 
     class Meta:
-        verbose_name = 'دسته بندی خبر'
-        verbose_name_plural = 'دسته بندی اخبار'
+        verbose_name = 'مقاله'
+        verbose_name_plural = 'مقالات'
 
     def save(self, *args, **kwargs):
         if not self.slug:
