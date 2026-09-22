@@ -22,8 +22,6 @@ MANAGEMENT_MODELS = {
     'reviews': ('نظرات', Review, ['factor', 'service', 'msg', 'rating', 'is_approved']),
     'parts': ('قطعات', Part, ['name', 'price']),
     'factors': ('فاکتورها', Factor, ['client_fact', 'tax_percent', 'is_issued']),
-    'factor-services': ('اقلام فاکتور', FactorService, ['factor', 'service', 'price_service']),
-    'part-usages': ('تعداد قطعات', PartUsage, ['factor_service', 'part', 'quantity', 'unit_price']),
 }
 
 def staff_required(view):
@@ -61,36 +59,96 @@ def management_list(request, section):
 def management_form(request, section, pk=None):
     if section not in MANAGEMENT_MODELS:
         return redirect('home:management_dashboard')
+
     title, model, fields = MANAGEMENT_MODELS[section]
     instance = get_object_or_404(model, pk=pk) if pk else None
     Form = modelform_factory(model, fields=fields)
     service_item_formset = None
+    factor_service_formset = None
+    factor_service_rows = []
+    empty_part_formset = None
+
     if section == 'services':
         ServiceItemFormSet = inlineformset_factory(
             Services, ServiceItem, fields=['title'], extra=1, can_delete=True
         )
-        service_item_formset = ServiceItemFormSet(
-            request.POST or None,
-            instance=instance
+        service_item_formset = ServiceItemFormSet(request.POST or None, instance=instance)
+
+    if section == 'factors':
+        FactorServiceFormSet = inlineformset_factory(
+            Factor, FactorService, fields=['service', 'price_service'], extra=1, can_delete=True
         )
+        PartUsageFormSet = inlineformset_factory(
+            FactorService, PartUsage, fields=['part', 'quantity', 'unit_price'], extra=1, can_delete=True
+        )
+        factor_instance = instance or Factor()
+        factor_service_formset = FactorServiceFormSet(
+            request.POST or None,
+            instance=factor_instance,
+            prefix='services'
+        )
+        for index, service_form in enumerate(factor_service_formset.forms):
+            part_formset = PartUsageFormSet(
+                request.POST or None,
+                instance=service_form.instance,
+                prefix=f'parts-{index}'
+            )
+            factor_service_rows.append({
+                'index': index,
+                'form': service_form,
+                'part_formset': part_formset,
+            })
+        empty_part_formset = PartUsageFormSet(prefix='parts-__service__')
+
     if request.method == 'POST':
         form = Form(request.POST, request.FILES, instance=instance)
-        if form.is_valid() and (service_item_formset is None or service_item_formset.is_valid()):
+        formsets_valid = True
+
+        if factor_service_formset is not None:
+            formsets_valid = factor_service_formset.is_valid()
+            if formsets_valid:
+                for row in factor_service_rows:
+                    if not row['form'].cleaned_data.get('DELETE'):
+                        formsets_valid = row['part_formset'].is_valid() and formsets_valid
+
+        if form.is_valid() and (service_item_formset is None or service_item_formset.is_valid()) and formsets_valid:
             with transaction.atomic():
                 saved_instance = form.save()
+
                 if service_item_formset is not None:
                     service_item_formset.instance = saved_instance
                     service_item_formset.save()
+
+                if factor_service_formset is not None:
+                    factor_service_formset.instance = saved_instance
+                    for index, service_form in enumerate(factor_service_formset.forms):
+                        if service_form.cleaned_data.get('DELETE'):
+                            if service_form.instance.pk:
+                                service_form.instance.delete()
+                            continue
+
+                        service_instance = service_form.save(commit=False)
+                        service_instance.factor = saved_instance
+                        service_instance.save()
+
+                        row = factor_service_rows[index]
+                        row['part_formset'].instance = service_instance
+                        row['part_formset'].save()
+
             messages.success(request, f'{title} با موفقیت ذخیره شد.')
             return redirect('home:management_list', section=section)
     else:
         form = Form(instance=instance)
+
     return render(request, 'Home/management/form.html', {
         'section': section,
         'title': title,
         'form': form,
         'instance': instance,
         'service_item_formset': service_item_formset,
+        'factor_service_formset': factor_service_formset,
+        'factor_service_rows': factor_service_rows,
+        'empty_part_formset': empty_part_formset,
     })
 
 @staff_required
