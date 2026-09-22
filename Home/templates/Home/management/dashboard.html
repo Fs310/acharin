@@ -8,18 +8,9 @@
         <p>بخش موردنظر را انتخاب کنید. تغییرات مستقیماً در اطلاعات سایت ذخیره می‌شوند.</p>
     </div>
 </section>
-
 <div class="management-grid">
-    {% for key, item in counts.items %}
-        {% for section_key, section_data in view_sections.items %}
-        {% endfor %}
-    {% endfor %}
-
     <a class="management-card" href="{% url 'home:management_list' 'services' %}">
-        <strong>خدمات</strong><span>{{ counts.services }}</span><small>ایجاد، ویرایش و حذف خدمات</small>
-    </a>
-    <a class="management-card" href="{% url 'home:management_list' 'service-items' %}">
-        <strong>موارد خدمات</strong><span>{{ counts.service_items }}</span><small>مدیریت موارد هر خدمت</small>
+        <strong>خدمات</strong><span>{{ counts.services }}</span><small>ایجاد، ویرایش و حذف خدمات و موارد هر خدمت</small>
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'news' %}">
         <strong>دسته‌بندی مقالات</strong><span>{{ counts.news }}</span><small>مدیریت دسته‌بندی‌ها</small>
