@@ -6,7 +6,7 @@
             <a href="{% url 'home:detail_new' item.slug %}"
                class="blog-card-image"
                aria-label="مطالعه مقاله {{ item.sub_titer }}">
-                <img src="{% if item.sub_img.name|slice:":4" == "http" %}{{ item.sub_img.name }}{% else %}{{ item.sub_img.url }}{% endif %}"
+                <img src="{% if item.sub_img_thumb %}{{ item.sub_img_thumb.url }}{% elif item.sub_img.name|slice:":4" == "http" %}{{ item.sub_img.name }}{% else %}{{ item.sub_img.url }}{% endif %}"
                      alt="{{ item.sub_titer }}"
                      loading="lazy"
                      decoding="async">
