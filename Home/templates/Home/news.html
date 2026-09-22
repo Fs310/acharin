@@ -14,16 +14,7 @@
                 <p>آموزش تعمیر، نگهداری و افزایش عمر لوازم خانگی</p>
             </div>
         </div>
-        <nav class="blog-filter" aria-label="دسته‌بندی مقالات">
-            <a href="{% url 'home:new' %}" {% if not request.resolver_match.kwargs.id %}class="active" aria-current="page"{% endif %}>همه</a>
-            {% for item in titer_news %}
-                <a href="{% url 'home:sub_new' item.id %}"
-                   {% if request.resolver_match.kwargs.id|stringformat:"s" == item.id|stringformat:"s" %}class="active" aria-current="page"{% endif %}>
-                    {{ item.titer }}
-                </a>
-            {% endfor %}
-        </nav>
-    </div>
+   </div>
 </header>
 
 <nav class="site-breadcrumb" aria-label="مسیر صفحه">
