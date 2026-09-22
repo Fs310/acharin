@@ -12,9 +12,6 @@
     <a class="management-card" href="{% url 'home:management_list' 'services' %}">
         <strong>خدمات</strong><span>{{ counts.services }}</span><small>ایجاد، ویرایش و حذف خدمات و موارد هر خدمت</small>
     </a>
-    <a class="management-card" href="{% url 'home:management_list' 'news' %}">
-        <strong>دسته‌بندی مقالات</strong><span>{{ counts.news }}</span><small>مدیریت دسته‌بندی‌ها</small>
-    </a>
     <a class="management-card" href="{% url 'home:management_list' 'articles' %}">
         <strong>مقالات</strong><span>{{ counts.articles }}</span><small>ایجاد مقاله و مدیریت تصویر</small>
     </a>
@@ -32,12 +29,6 @@
     </a>
     <a class="management-card" href="{% url 'home:management_list' 'factors' %}">
         <strong>فاکتورها</strong><span>{{ counts.factors }}</span><small>مدیریت اطلاعات فاکتورها</small>
-    </a>
-    <a class="management-card" href="{% url 'home:management_list' 'factor-services' %}">
-        <strong>اقلام فاکتور</strong><span>{{ counts.factor_services }}</span><small>مدیریت خدمات فاکتورها</small>
-    </a>
-    <a class="management-card" href="{% url 'home:management_list' 'part-usages' %}">
-        <strong>تعداد قطعات</strong><span>{{ counts.part_usages }}</span><small>مدیریت قطعات مصرفی فاکتورها</small>
     </a>
 </div>
 {% endblock %}
