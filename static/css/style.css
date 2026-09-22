@@ -7580,3 +7580,25 @@ input, textarea, select, button {
     font-display: swap;
 }
 
+
+
+/* مجله: یکسان‌سازی دقیق کادر تصاویر */
+.blog-card-image {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    position: relative;
+}
+
+.blog-card-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
