@@ -24,26 +24,6 @@ gap: 16px;
 flex: 0 0 340px;
 }
 
-.about_section .about-wrapper .about-content {
-margin: 35px 28px 0;
-}
-
-.about_section .about-img {
-margin: 35px 24px 0;
-}
-
-.about_section .about-content .lead {
-font-size: 21px;
-}
-
-.about_section .about-content .txt {
-line-height: 2.1;
-}
-
-.about_section .about-stats {
-margin: 20px 24px 40px;
-}
-
 .service_section .service-titer {
 text-align: center;
         margin-bottom: 35px;
@@ -297,49 +277,6 @@ grid-template-columns: repeat(2, 1fr);
 width: 100%;
         max-width: 510px;
         margin: 0 auto 20px;
-}
-
-.about_section .about-wrapper {
-row-gap: 8px;
-        padding: 22px;
-        align-items: start;
-}
-
-.about_section .about-wrapper .about-content {
-margin: 28px 16px 0 0;
-}
-
-.about_section .about-content .heading_2 {
-font-size: 34px;
-}
-
-.about_section .about-content .txt {
-text-align: justify;
-}
-
-.about_section ol {
-padding-right: 15px;
-}
-
-.about_section .about-wrapper .about-img {
-margin: 30px 10px 0 16px;
-}
-
-.about_section .about-content .lead {
-font-size: 19px;
-}
-
-.about_section .txt_about2 {
-margin-right: 0;
-}
-
-.about_section ol li {
-margin: 10px 0;
-}
-
-.about_section .about-stats {
-margin-top: 15px;
-        gap: 10px;
 }
 
 .service_section .service-titer .heading_2 {
@@ -892,53 +829,6 @@ margin: 20px auto;
 .slider_section .detail-box .boxs {
 gap: 12px;
         width: 100%;
-}
-
-.main.about_section {
-padding: 40px;
-}
-
-.about_section .about-wrapper {
-grid-template-columns: 1fr;
-        grid-template-areas: "content" "image" "about" "state";
-        gap: 20px;
-        padding: 24px 20px;
-}
-
-.about_section .about-wrapper .about-content {
-margin: 24px 20px 0;
-        text-align: center;
-}
-
-.about_section .about-content .heading_2 {
-font-size: 32px;
-        text-align: center;
-}
-
-.about_section .about-content .lead {
-text-align: center;
-        font-size: 18px;
-}
-
-.about_section .about-content .txt {
-text-align: justify;
-}
-
-.about_section .about-wrapper .about-img {
-margin: 10px auto 0;
-        width: 100%;
-        max-width: 480px;
-}
-
-.about_section .txt_about2 {
-padding-inline: 12px;
-        margin-top: 8px;
-}
-
-.about_section .about-stats {
-grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        margin-top: 0;
 }
 
 .main.service_section {
@@ -1766,9 +1656,6 @@ padding: 7px 9px;
 }
 
 @media (max-width: 576px) {
-.main.about_section {
-padding: 40px 20px;
-}
 
 .slider_section .detail-box .heading_2 h1 {
 font-size: 2.1rem;
@@ -1781,50 +1668,6 @@ margin-top: 16px;
 
 .slider_section .hero-form {
 margin: 10px auto auto;
-}
-
-.about_section .about-content .heading_2 {
-font-size: 29px;
-}
-
-.about_section .txt_about2 {
-margin: 0;
-        padding-inline: 0;
-}
-
-.about_section .about-content .lead {
-font-size: 16px;
-}
-
-.about_section .about-content .txt {
-font-size: 15px;
-        line-height: 2;
-}
-
-.about_section ol {
-font-size: 14px;
-        padding-right: 20px;
-}
-
-.about_section ol li {
-margin: 12px 0;
-}
-
-.about_section .about-stats {
-gap: 12px;
-}
-
-.about_section .about-stats .stat-box {
-padding: 16px 12px;
-        min-height: 110px;
-}
-
-.about_section .about-stats .stat-number {
-font-size: 24px;
-}
-
-.about_section .about-stats .stat-title {
-font-size: 13px;
 }
 
 .service_section .service-titer .heading_2 {
@@ -3472,22 +3315,6 @@ padding: 18px 14px;
 font-size: 13px;
 }
 
-.about_section .about-content .lead {
-line-height: 1.8;
-}
-
-.about_section ol {
-padding-right: 10px;
-}
-
-.about_section ol li {
-font-size: 14px;
-}
-
-.about_section .about-stats {
-margin: auto 0 20px;
-}
-
 .service_section .service-titer p {
 font-size: 13px;
         padding-right: 9px;
@@ -4670,4 +4497,47 @@ gap: 5px;
 width: 34px;
         height: 34px;
 }
+}
+
+
+@media (max-width:1200px){
+    .about_section .about-wrapper{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 20px;padding:30px 24px 26px}
+    .about_section .about-wrapper .about-content{margin:4px 16px 0 0}
+    .about_section .about-content .heading_2{font-size:29px}
+    .about_section .about-content .lead{font-size:18px}
+    .about_section .about-content .txt{font-size:15px;line-height:1.9}
+    .about_section .txt_about2{margin-right:16px}
+    .about_section ol li{font-size:14px;margin:8px 0}
+    .about_section .about-wrapper .about-img{margin:10px 4px 0 0}
+    .about_section .about-img img{max-height:500px}
+    .about_section .about-stats{gap:10px;margin:6px 4px 0}
+    .about_section .stat-box{min-height:100px;padding:14px 10px}
+    .about_section .stat-number{font-size:26px}
+}
+
+@media (max-width:991px){
+    .main.about_section{padding:32px 20px}
+    .about_section .about-wrapper{grid-template-columns:1fr;grid-template-areas:"image" "content" "about" "state";gap:20px;padding:24px 20px}
+    .about_section .about-wrapper .about-img{margin:0 auto;width:100%;max-width:700px}
+    .about_section .about-img img{height:auto;max-height:none;aspect-ratio:3 / 2}
+    .about_section .about-wrapper .about-content{margin:0;max-width:none}
+    .about_section .about-content .heading_2,.about_section .about-content .lead{text-align:center}
+    .about_section .about-content .heading_2{font-size:29px}
+    .about_section .about-content .lead{font-size:18px}
+    .about_section .about-content .txt{text-align:justify}
+    .about_section .txt_about2{margin:0}
+    .about_section .about-stats{grid-template-columns:repeat(2,1fr);margin:0;gap:12px}
+}
+
+@media (max-width:576px){
+    .main.about_section{padding:24px 14px}
+    .about_section .about-wrapper{padding:20px 16px;gap:18px;border-radius:14px}
+    .about_section .about-content .heading_2{font-size:25px}
+    .about_section .about-content .lead{font-size:17px}
+    .about_section .about-content .txt{font-size:15px}
+    .about_section ol li{font-size:14px;padding-right:34px}
+    .about_section ol li:before{width:23px;height:23px;font-size:13px}
+    .about_section .about-stats{grid-template-columns:1fr 1fr;gap:10px}
+    .about_section .stat-box{min-height:95px;padding:12px 8px}
+    .about_section .stat-number{font-size:24px}
 }
