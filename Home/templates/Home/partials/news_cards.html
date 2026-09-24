@@ -1,3 +1,4 @@
+{% load jalali_tags %}
 {% for item in page_obj %}
 
     <article class="blog-card">
@@ -26,7 +27,7 @@
                     </span>
                     <span>
                         <i class="bi bi-calendar3" aria-hidden="true"></i>
-                        {{ item.sub_update_date|date:"Y/m/d" }}
+                        {{ item.sub_update_date|to_jalali:"%Y/%m/%d" }}
                     </span>
                 </div>
             </a>
