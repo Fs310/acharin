@@ -90,7 +90,7 @@ a, a:hover, a:focus{text-decoration: none;}
 
 .slider_section .heading_2 h1 .h1_titer2{color:var(--brand-navy);display:block}
 
-.slider_section .heading_2 .hero-badge{display:inline-flex;align-items:center;padding:7px 16px;border-radius:50px;background:rgba(14,46,101,.07);color:var(--brand-navy);font-size:13px;font-weight:700}
+.slider_section .heading_2 .hero-badge{display:inline-flex;align-items:center;padding:7px 16px;border-radius:50px;background:rgb(115 134 167 / 43%);color:var(--brand-navy);font-size:13px;font-weight:700}
 
 .slider_section .heading_2 .note{margin-top:18px;font-size:17px;color:#2d3642;line-height:1.8}
 
