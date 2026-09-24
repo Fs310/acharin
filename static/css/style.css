@@ -135,7 +135,7 @@ a, a:hover, a:focus{text-decoration: none;}
 .slider_section .hero-form .btn-box button:hover{background:#0b2553;transform:translateY(-2px)}
 
 /* about section */
-.main.about_section{min-height:0;display:block;padding:56px 30px;background:#f8fafc}
+.main.about_section{min-height:0;display:block;padding:56px 30px;background:#fff}
 .about_section .about-wrapper{display:grid;grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr);grid-template-areas:"image content" "image about" "state state";gap:0 42px;width:100%;max-width:1320px;margin:0 auto;padding:38px 42px 34px;background:#fff;border:1px solid #e7edf5;border-radius:22px;box-shadow:0 16px 40px rgba(14,46,101,.08);box-sizing:border-box;direction:ltr}
 .about_section .about-wrapper .about-content{grid-area:content;margin:0;padding:6px 0 0;max-width:680px;align-self:start;direction:rtl}
 .about_section .about-content .heading_2{margin:0 0 8px;font-size:34px;line-height:1.4;text-align:right;color:var(--brand-navy)}
