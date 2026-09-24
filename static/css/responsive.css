@@ -4498,3 +4498,30 @@ width: 34px;
         height: 34px;
 }
 }
+
+
+@media (max-width:991px){
+.main.about_section{padding:45px 20px}
+.about_section .about-wrapper{grid-template-columns:1fr;grid-template-areas:"content" "image" "about" "state";gap:24px;padding:30px}
+.about_section .about-wrapper .about-content{max-width:none;padding:0}
+.about_section .about-wrapper .about-img{min-height:360px}
+.about_section .about-img img{height:360px;min-height:0}
+.about_section .about-stats{margin-top:0}
+}
+
+@media (max-width:575px){
+.main.about_section{padding:30px 14px}
+.about_section .about-wrapper{gap:20px;padding:22px 18px 20px;border-radius:18px}
+.about_section .about-content .heading_2{font-size:27px}
+.about_section .about-content .lead{font-size:17px;padding-right:10px}
+.about_section .about-content .txt{font-size:13px;line-height:2}
+.about_section .txt_about2{margin-top:2px;padding-top:14px}
+.about_section ol li{font-size:12px;padding-right:34px;margin:8px 0}
+.about_section ol li:before{width:23px;height:23px;font-size:11px}
+.about_section .about-wrapper .about-img{min-height:250px;border-radius:14px}
+.about_section .about-img img{height:250px;min-height:0;border-radius:14px}
+.about_section .about-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.about_section .stat-box{min-height:88px;padding:12px 8px;border-radius:12px}
+.about_section .stat-number{font-size:23px}
+.about_section .stat-title{font-size:11px}
+}
