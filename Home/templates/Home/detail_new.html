@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load jalali_tags %}
 
 {% block title %}{{ new.sub_titer }} | آچارین{% endblock %}
 
@@ -46,7 +47,7 @@
                     <h1>{{ new.sub_titer }}</h1>
                     <div class="article-meta">
                         <span><i class="bi bi-person" aria-hidden="true"></i> تیم آچارین</span>
-                        <span><i class="bi bi-calendar3" aria-hidden="true"></i> {{ new.sub_update_date|date:"Y/m/d" }}</span>
+                        <span><i class="bi bi-calendar3" aria-hidden="true"></i> {{ new.sub_update_date|to_jalali:"%Y/%m/%d" }}</span>
                         <span><i class="bi bi-clock" aria-hidden="true"></i> {{ new.reading_time }} دقیقه</span>
                     </div>
                 </header>
