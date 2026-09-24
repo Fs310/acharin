@@ -140,7 +140,7 @@ a, a:hover, a:focus{text-decoration: none;}
 .about_section .about-wrapper .about-content{grid-area:content;margin:0;padding:6px 0 0;max-width:680px;align-self:start;direction:rtl}
 .about_section .about-content .heading_2{margin:0 0 8px;font-size:34px;line-height:1.4;text-align:right;color:var(--brand-navy)}
 .about_section .about-content .lead{margin:0 0 10px;padding-right:12px;border-right:3px solid var(--brand-orange);font-size:19px;font-weight:700;color:var(--brand-navy);line-height:1.8;text-align:right}
-.about_section .about-content .txt{margin:0;padding:0;color:#475569;font-size:15px;font-weight:500;line-height:2.05;text-align:right}
+.about_section .about-content .txt{margin:0;padding:0 30px 0 0;color:#475569;font-size:15px;font-weight:500;line-height:2.05;text-align:right}
 .about_section .txt_about2{grid-area:about;margin:8px 0 0;padding:8px 0 0;border-top:1px solid #e7edf5;align-self:start;direction:rtl}
 .about_section ol{counter-reset:item;list-style:none;margin:0;padding:0}
 .about_section ol li{counter-increment:item;position:relative;margin:10px 0;padding-right:38px;color:#334155;font-size:14px;font-weight:500;line-height:1.9}
