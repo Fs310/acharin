@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load jalali_tags %}
 {% block title %}آچارین | تعمیر لوازم خانگی در مشهد{% endblock %}
 {% block body %}
 
@@ -204,7 +205,7 @@
                                 <div class="card-foot"><p><i class="bi bi-clock"
                                                              aria-hidden="true"></i> {{ item.reading_time }} دقیقه</p>
                                     <p><i class="bi bi-calendar" aria-hidden="true"></i>
-                                        <time datetime="{{ item.sub_update_date|date:'Y-m-d' }}">{{ item.sub_update_date.date }}</time>
+                                        <time datetime="{{ item.sub_update_date|date:'Y-m-d' }}">{{ item.sub_update_date|to_jalali:"%Y/%m/%d" }}</time>
                                     </p>
                                 </div>
                             </a>
