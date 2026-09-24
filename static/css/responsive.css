@@ -46,9 +46,25 @@ flex:none;
 margin-bottom: 35px;
 }
 
+.client_section .client-content {
+display:flex;
+gap:16px;
+overflow-x:auto;
+overflow-y:hidden;
+padding:10px 0 12px;
+margin-left:0;
+scrollbar-width:none;
+}
+
+.client_section .client-content::-webkit-scrollbar {
+display:none;
+}
+
 .client_section .card {
-flex: 0 0 calc((100% - 60px) / 4.2);
-        flex-shrink: 0;
+flex:0 0 calc((100% - 48px) / 4.2);
+width:auto;
+min-width:0;
+min-height:320px;
 }
 
 .news_section .news-titer {
