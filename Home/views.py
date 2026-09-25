@@ -166,7 +166,7 @@ def clients(request):
 def comments(request):
     comment = Review.objects.filter(is_approved=True).select_related('factor__client_fact', 'service').order_by('-created_at')
     avg_rating = comment.aggregate(average=Avg('rating'))['average']
-    paginator = Paginator(comment, 6)
+    paginator = Paginator(comment, 5)
     page_obj = paginator.get_page(request.GET.get('page'))
     return render(request, 'Home/comment.html', {
         'page_obj': page_obj,
