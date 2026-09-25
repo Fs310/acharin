@@ -496,7 +496,7 @@ a, a:hover, a:focus{text-decoration: none;}
 
 .client_section .client-title p{color: #64748b;font-size: 15px;margin: 0;}
 
-.client_section .client-content{display:grid;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;gap:20px;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-top:10px;margin-left:10px;scrollbar-width:none;grid-template-columns:repeat(6, minmax(0, 1fr));min-height:0;height:auto;overflow:visible;}
+.client_section .client-content{display:grid;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;gap:20px;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-top:10px;margin-left:10px;scrollbar-width:none;grid-template-columns:repeat(5, minmax(0, 1fr));min-height:0;height:auto;overflow:visible;}
 
 .client_section::-webkit-scrollbar{display: none;}
 
