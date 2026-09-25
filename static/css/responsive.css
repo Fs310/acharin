@@ -1,4 +1,4 @@
-@media (min-width:993px) and (max-width:1200px){
+@media (min-width:1024px) and (max-width:1200px){
 .header_section .container-fluid{padding-inline:20px}
 
 .slider_section .hero-wrapper{gap:24px}
@@ -70,7 +70,7 @@
 .footer_section .footer-grid{grid-template-columns:repeat(4,1fr);gap:24px}
 }
 
-@media (min-width:992px) and (max-width:1024px){
+@media (min-width:992px) and (max-width:1023px){
 .header_section .navbar-toggler{display:none}
 .header_section .navbar-collapse{display:flex!important;flex-basis:auto}
 .header_section .nav-coll{gap:6px}
