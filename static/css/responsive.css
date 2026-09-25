@@ -70,3 +70,62 @@
 .footer_section .footer-grid{grid-template-columns:repeat(4,1fr);gap:24px}
 }
 
+/* 1023px and below: keep the 1200px desktop layout intact.
+   Do not compress cards/slider; allow horizontal scrolling instead. */
+@media (max-width:1023px){
+    html,
+    body{
+        min-width:1200px;
+        overflow-x:auto;
+    }
+
+    body{
+        width:1200px;
+    }
+
+    .header_section,
+    .slider_section,
+    .main.about_section,
+    .main.service_section,
+    .main.client_section,
+    .main.news_section,
+    .order_section,
+    .footer_section{
+        min-width:1200px;
+    }
+
+    /* Keep the same 1200px card layouts below the breakpoint. */
+    .service_section .service-content{
+        grid-template-columns:repeat(5,minmax(0,1fr));
+        gap:14px;
+    }
+
+    .service_section .service-content .card{
+        width:100%;
+        min-width:0;
+    }
+
+    .client_section .client-content{
+        display:grid;
+        grid-template-columns:repeat(6,minmax(0,1fr));
+        gap:14px;
+        overflow:visible;
+    }
+
+    .client_section .client-content > .card{
+        width:100%;
+        min-width:0;
+    }
+
+    .news_section .news-content{
+        display:grid;
+        grid-template-columns:repeat(4,minmax(0,1fr));
+        gap:16px;
+        overflow:visible;
+    }
+
+    .news_section .news-content > .card{
+        width:100%;
+        min-width:0;
+    }
+}
