@@ -69,3 +69,86 @@
 .footer_section{padding:50px 20px 20px}
 .footer_section .footer-grid{grid-template-columns:repeat(4,1fr);gap:24px}
 }
+
+@media (min-width:992px) and (max-width:1024px){
+.header_section .navbar-toggler{display:none}
+.header_section .navbar-collapse{display:flex!important;flex-basis:auto}
+.header_section .nav-coll{gap:6px}
+.header_section .nav-link{padding:8px 10px;font-size:12px}
+.header_section .navbar-brand{width:125px}
+
+.main.slider_section{padding:28px 18px 24px}
+.slider_section .hero-wrapper{gap:18px}
+.slider_section .hero-wrapper .hero-content{padding-bottom:0}
+.slider_section .hero-content .detail-box{max-width:500px;gap:13px}
+.slider_section .heading_2 h1{font-size:2.55rem;line-height:1.45}
+.slider_section .heading_2 .hero-badge{font-size:11px;padding:6px 12px}
+.slider_section .heading_2 .note{margin-top:10px;font-size:14px;line-height:1.7}
+.slider_section .detail-box .boxs{gap:10px;margin-top:0}
+.slider_section .boxs .box{min-height:92px;padding:12px 7px;border-radius:12px}
+.slider_section .boxs .box i{font-size:22px}
+.slider_section .boxs .box .icon-i{margin-bottom:5px}
+.slider_section .boxs .box .name{font-size:11px;line-height:1.65}
+.slider_section .hero-form{flex:0 0 315px;max-width:315px;padding:16px;border-radius:15px}
+.slider_section .hero-form h2{font-size:19px}
+.slider_section .hero-form p{font-size:11px;margin:7px 0 13px;line-height:1.5}
+.slider_section .hero-form label{font-size:11px;gap:4px;margin-bottom:8px}
+.slider_section .hero-form input,
+.slider_section .hero-form select{height:35px;padding:0 11px}
+.slider_section .hero-form textarea{min-height:78px;padding:10px}
+.slider_section .hero-form .btn-box{margin-top:6px}
+.slider_section .hero-form .btn-box button{height:39px;font-size:12px}
+
+.main.about_section{padding:42px 18px}
+.about_section .about-wrapper{max-width:990px;gap:0 24px;padding:26px 28px 24px}
+.about_section .about-wrapper .about-img{min-height:350px}
+.about_section .about-img img{min-height:350px}
+.about_section .about-content .heading_2{font-size:29px}
+.about_section .about-content .lead{font-size:17px}
+.about_section .about-content .txt{font-size:13px}
+.about_section ol li{font-size:12px}
+.about_section .about-stats{gap:8px;margin-top:20px}
+.about_section .stat-box{min-height:82px;padding:10px 8px}
+.about_section .stat-number{font-size:22px}
+.about_section .stat-title{font-size:10px}
+
+.main.service_section,.main.client_section,.main.news_section{padding:48px 18px 36px}
+.service_section .service-titer,.client_section .client-title,.news_section .news-titer{margin-bottom:25px}
+.service_section .service-titer .heading_2,.client_section .client-title .heading_2,.news_section .news-titer .heading_2{font-size:29px}
+.service_section .service-titer p,.client_section .client-title p,.news_section .news-titer p{font-size:12px}
+.service_section .service-content{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.service_section .service-content .card{min-height:285px;padding:18px 10px}
+.service_section .card .img-box{width:66px;height:66px}
+.service_section .card .img-box .icon-normal,.service_section .card .img-box .icon-hover{width:52px;height:52px}
+.service_section .card .card-title{font-size:14px;margin-top:13px}
+.service_section .card .card-body .card-text{font-size:11px;line-height:1.8;margin:9px 0 13px}
+.service_section .card .card-body .read-more{font-size:11px}
+
+.client_section .client-content{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;overflow:visible;padding-top:5px;margin:0}
+.client_section .client-content > .card{width:100%;max-width:none;min-width:0;min-height:260px;padding:14px 12px}
+.client_section .card .card-head{gap:8px;margin-bottom:8px}
+.client_section .icon-client{width:34px;height:34px;font-size:15px}
+.client_section .user-info h3{font-size:13px}
+.client_section .rating{gap:6px;margin-bottom:9px}
+.client_section .rating .stars{gap:2px}
+.client_section .rating .stars i{font-size:13px}
+.client_section .rating .score{font-size:11px}
+.client_section .card-text{font-size:11px;line-height:1.85;margin:7px 0 10px;-webkit-line-clamp:4}
+.client_section .card-footer{padding-top:10px}
+.client_section .card-footer .date_text{font-size:9px}
+.client_section .quote-icon{right:12px;top:42px;font-size:21px}
+
+.news_section .news-content{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.news_section .news-content > .card{min-height:340px}
+
+.order_section{padding:52px 18px 40px}
+.order_section .heading_2 h2{font-size:29px}
+.order_section .heading_2 p{font-size:12px}
+.order_section .box-process{padding:42px 0 35px}
+.order_section .circle{width:58px;height:58px;font-size:20px}
+.order_section .detail-box h3{font-size:13px}
+.order_section .box-process:before{top:72px}
+
+.footer_section{padding:45px 18px 18px}
+.footer_section .footer-grid{gap:20px}
+}
