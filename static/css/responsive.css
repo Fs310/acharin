@@ -1,0 +1,108 @@
+/* =========================================================
+   XL — Bootstrap 1200px breakpoint
+   Home hero/header only — 1200–1399.98px
+   ========================================================= */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .header_section .container-fluid {
+        padding-inline: 20px;
+    }
+
+    .header_section .nav-coll {
+        gap: 8px;
+    }
+
+    .header_section .nav-link {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .header_section .btn-box a {
+        padding-inline: 26px;
+    }
+
+    .slider_section {
+        padding-inline: 20px;
+    }
+
+    .slider_section .hero-wrapper {
+        gap: 24px;
+    }
+
+    .slider_section .hero-wrapper .hero-content {
+        padding-bottom: 12px;
+    }
+
+    .slider_section .hero-content .detail-box {
+        max-width: 560px;
+        gap: 16px;
+    }
+
+    .slider_section .heading_2 h1 {
+        max-width: 560px;
+        font-size: 2.8rem;
+        line-height: 1.45;
+    }
+
+    .slider_section .heading_2 .hero-badge {
+        font-size: 13px;
+        padding: 7px 15px;
+    }
+
+    .slider_section .heading_2 .note {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .slider_section .detail-box .boxs {
+        gap: 14px;
+        margin-top: 4px;
+        max-width: 560px;
+    }
+
+    .slider_section .boxs .box {
+        min-height: 108px;
+        padding: 15px 8px;
+        border-radius: 14px;
+    }
+
+    .slider_section .boxs .box .icon-i {
+        margin-bottom: 7px;
+    }
+
+    .slider_section .boxs .box i {
+        font-size: 26px;
+    }
+
+    .slider_section .boxs .box .name {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .slider_section .hero-form {
+        flex: 0 0 360px;
+        max-width: 360px;
+        padding: 20px;
+    }
+
+    .slider_section .hero-form h2 {
+        font-size: 21px;
+    }
+
+    .slider_section .hero-form p {
+        margin: 8px 0 17px;
+    }
+
+    .slider_section .hero-form input,
+    .slider_section .hero-form select {
+        height: 38px;
+    }
+
+    .slider_section .hero-form textarea {
+        min-height: 92px;
+    }
+
+    .slider_section .hero-form label {
+        margin-bottom: 10px;
+    }
+}
