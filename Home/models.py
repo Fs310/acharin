@@ -40,7 +40,7 @@ class ServiceItem(models.Model):
 class Sub_news(models.Model):
     sub_titer = models.CharField(max_length=50, null=True, blank=True, verbose_name='عنوان')
     slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
-    sub_summary = models.TextField(max_length=20, blank=True, null=True, verbose_name='شرح مختصر')
+    sub_summary = models.TextField(max_length=50, blank=True, null=True, verbose_name='شرح مختصر')
     sub_description = models.TextField(blank=True, null=True, verbose_name='توضیحات')
     sub_create_date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
     sub_update_date = models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش')
