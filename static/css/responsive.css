@@ -138,6 +138,74 @@
     .about_section .stat-number {
         font-size: 25px;
     }
+
+    /* Services section — XL */
+    .main.service_section {
+        padding: 58px 24px 46px;
+    }
+
+    .service_section .service-titer {
+        margin-bottom: 44px;
+    }
+
+    .service_section .service-titer .heading_2 {
+        font-size: 35px;
+        margin-bottom: 14px;
+    }
+
+    .service_section .service-titer p {
+        font-size: 15px;
+    }
+
+    .service_section .service-content {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 18px;
+        padding-top: 8px;
+    }
+
+    .service_section .service-content .card {
+        width: 100%;
+        min-width: 0;
+        min-height: 340px;
+        padding: 26px 17px;
+    }
+
+    .service_section .card .img-box {
+        width: 84px;
+        height: 84px;
+    }
+
+    .service_section .card .img-box .icon-normal,
+    .service_section .card .img-box .icon-hover {
+        width: 68px;
+        height: 68px;
+    }
+
+    .service_section .card .card-body {
+        padding-top: 13px;
+        height: 215px;
+    }
+
+    .service_section .card .card-title {
+        margin-top: 19px;
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .service_section .card .card-body .card-text {
+        margin: 13px 0 21px;
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .service_section .card .card-body .read-more {
+        font-size: 14px;
+        gap: 7px;
+    }
+
+    .service_section .btn-box {
+        margin-top: 36px;
+    }
 }
 
 /* =========================================================
