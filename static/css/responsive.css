@@ -60,10 +60,11 @@ scrollbar-width:none;
 display:none;
 }
 
-.client_section .card {
-flex:0 0 calc((100% - 48px) / 4.2);
-width:auto;
-min-width:0;
+.client_section .client-content > .card {
+flex:0 0 260px;
+width:260px;
+max-width:260px;
+min-width:260px;
 min-height:320px;
 }
 
