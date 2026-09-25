@@ -106,3 +106,74 @@
         margin-bottom: 10px;
     }
 }
+
+/* =========================================================
+   About section — Bootstrap XL 1200–1399.98px
+   ========================================================= */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .main.about_section {
+        padding: 50px 20px;
+    }
+
+    .about_section .about-wrapper {
+        max-width: 1140px;
+        gap: 0 34px;
+        padding: 32px 34px 30px;
+        border-radius: 20px;
+    }
+
+    .about_section .about-wrapper .about-img,
+    .about_section .about-img img {
+        height: 400px;
+        min-height: 400px;
+    }
+
+    .about_section .about-content {
+        padding-top: 4px;
+    }
+
+    .about_section .about-content .heading_2 {
+        font-size: 32px;
+    }
+
+    .about_section .about-content .lead {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .about_section .about-content .txt {
+        padding-inline: 20px;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .about_section ol li {
+        margin: 8px 0;
+        padding-right: 36px;
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .about_section ol li::before {
+        width: 24px;
+        height: 24px;
+    }
+
+    .about_section .about-stats {
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .about_section .stat-box {
+        min-height: 94px;
+        padding: 12px 10px;
+    }
+
+    .about_section .stat-number {
+        font-size: 25px;
+    }
+
+    .about_section .stat-title {
+        font-size: 12px;
+    }
+}
