@@ -211,7 +211,7 @@
     }
 
     .slider_section .hero-content .detail-box {
-        max-width: 560px;
+        max-width: 540px;
         gap: 14px;
     }
 
@@ -222,8 +222,13 @@
     }
 
     .slider_section .heading_2 .hero-badge {
+        position: relative;
+        z-index: 3;
         font-size: 12px;
         padding: 7px 14px;
+        background: rgba(255, 255, 255, 0.74);
+        color: var(--brand-navy);
+        box-shadow: 0 4px 14px rgba(14, 46, 101, 0.08);
     }
 
     .slider_section .heading_2 .note {
@@ -235,7 +240,7 @@
     .slider_section .detail-box .boxs {
         gap: 12px;
         margin-top: 4px;
-        max-width: 550px;
+        max-width: 540px;
     }
 
     .slider_section .boxs .box {
@@ -258,9 +263,9 @@
     }
 
     .slider_section .hero-form {
-        flex: 0 0 360px;
-        max-width: 360px;
-        padding: 18px;
+        flex: 0 0 330px;
+        max-width: 330px;
+        padding: 17px;
     }
 
     .slider_section .hero-form h2 {
