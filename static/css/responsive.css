@@ -850,16 +850,20 @@
     }
 
     .slider_section .hero-form label {
-        gap: 0;
+        gap: 0 !important;
         margin-bottom: 6px;
-        font-size: 0;
-        line-height: 0;
+        padding: 0 !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+        color: transparent !important;
     }
 
     .slider_section .hero-form label input,
     .slider_section .hero-form label select,
     .slider_section .hero-form label textarea {
         font-size: 13px;
+        line-height: 1.5;
+        color: #334155;
     }
 
     .slider_section .hero-form .btn-box {
