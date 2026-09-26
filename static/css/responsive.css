@@ -1044,4 +1044,103 @@
     .service_section .btn-box {
         margin-top: 32px;
     }
+
+    .main.client_section {
+        padding: 50px 16px 44px;
+    }
+
+    .client_section .client-title {
+        margin-bottom: 34px;
+    }
+
+    .client_section .client-title .heading_2 {
+        font-size: 32px;
+        margin-bottom: 11px;
+    }
+
+    .client_section .client-title p {
+        font-size: 14px;
+    }
+
+    .client_section .client-content {
+        grid-template-columns: repeat(6, minmax(210px, 1fr));
+        gap: 14px;
+        padding-top: 6px;
+        margin-left: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .client_section .client-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .client_section .card {
+        min-width: 210px;
+        min-height: 300px;
+        padding: 17px 13px;
+        border-radius: 16px;
+        scroll-snap-align: start;
+    }
+
+    .client_section .quote-icon {
+        right: 13px;
+        top: 45px;
+        font-size: 23px;
+    }
+
+    .client_section .card .card-head {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .client_section .icon-client {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .client_section .user-info h3 {
+        font-size: 15px;
+    }
+
+    .client_section .rating {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .client_section .rating .stars {
+        gap: 2px;
+    }
+
+    .client_section .rating .stars i {
+        font-size: 15px;
+    }
+
+    .client_section .rating .score {
+        font-size: 11px;
+    }
+
+    .client_section .card-text {
+        margin-top: 9px;
+        margin-bottom: 13px;
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .client_section .card-footer {
+        padding-top: 11px;
+    }
+
+    .client_section .card-footer .date_text {
+        font-size: 10px;
+    }
+
+    .client_section .btn-box {
+        margin-top: 32px;
+    }
+
 }
