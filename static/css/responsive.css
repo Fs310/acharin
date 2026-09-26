@@ -728,7 +728,7 @@
     .slider_section .hero-img {
         width: 100%;
         height: 100%;
-        object-position: center top;
+        object-position: 72% top;
         object-fit: cover;
     }
 
@@ -767,6 +767,7 @@
         margin-inline: auto;
         font-size: 2.35rem;
         line-height: 1.45;
+        text-shadow: 1px 1px 1px #FFFFFFB7;
     }
 
     .slider_section .heading_2 h1 .h1_titer2 {
@@ -785,7 +786,6 @@
     }
 
     .slider_section .heading_2 .note {
-        margin-top: 12px;
         font-size: 15px;
         line-height: 1.8;
     }
@@ -897,6 +897,7 @@
         height: 390px;
         min-height: 390px;
         border-radius: 16px;
+        width: initial;
     }
 
     .about_section .about-wrapper .about-content {
