@@ -173,3 +173,119 @@
     }
 
 }
+
+/* =========================================================
+   LG — Bootstrap 992px breakpoint
+   Home hero/header only — 992–1199.98px
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .header_section .container-fluid {
+        padding-inline: 16px;
+    }
+
+    .header_section .nav-coll {
+        gap: 4px;
+    }
+
+    .header_section .nav-link {
+        padding: 10px 11px;
+        font-size: 14px;
+    }
+
+    .header_section .btn-box a {
+        padding-inline: 22px;
+    }
+
+    .slider_section {
+        padding-inline: 16px;
+        min-height: 660px;
+    }
+
+    .slider_section .hero-wrapper {
+        gap: 20px;
+        min-height: 600px;
+    }
+
+    .slider_section .hero-wrapper .hero-content {
+        padding-bottom: 8px;
+    }
+
+    .slider_section .hero-content .detail-box {
+        max-width: 560px;
+        gap: 14px;
+    }
+
+    .slider_section .heading_2 h1 {
+        max-width: 550px;
+        font-size: 2.55rem;
+        line-height: 1.45;
+    }
+
+    .slider_section .heading_2 .hero-badge {
+        font-size: 12px;
+        padding: 7px 14px;
+    }
+
+    .slider_section .heading_2 .note {
+        margin-top: 14px;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .slider_section .detail-box .boxs {
+        gap: 12px;
+        margin-top: 4px;
+        max-width: 550px;
+    }
+
+    .slider_section .boxs .box {
+        min-height: 100px;
+        padding: 14px 8px;
+        border-radius: 14px;
+    }
+
+    .slider_section .boxs .box .icon-i {
+        margin-bottom: 6px;
+    }
+
+    .slider_section .boxs .box i {
+        font-size: 25px;
+    }
+
+    .slider_section .boxs .box .name {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .slider_section .hero-form {
+        flex: 0 0 360px;
+        max-width: 360px;
+        padding: 18px;
+    }
+
+    .slider_section .hero-form h2 {
+        font-size: 20px;
+    }
+
+    .slider_section .hero-form p {
+        margin: 7px 0 15px;
+        font-size: 12px;
+    }
+
+    .slider_section .hero-form input,
+    .slider_section .hero-form select {
+        height: 38px;
+    }
+
+    .slider_section .hero-form textarea {
+        min-height: 88px;
+    }
+
+    .slider_section .hero-form label {
+        margin-bottom: 9px;
+    }
+
+    .slider_section .hero-form .btn-box {
+        margin-top: 7px;
+    }
+}
