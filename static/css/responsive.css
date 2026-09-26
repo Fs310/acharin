@@ -984,18 +984,27 @@
     }
 
     .service_section .service-content {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(210px, 1fr));
         gap: 16px;
         padding-top: 4px;
         margin-inline: auto;
-        overflow: visible;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .service_section .service-content::-webkit-scrollbar {
+        display: none;
     }
 
     .service_section .service-content .card {
-        min-width: 0;
+        min-width: 210px;
         min-height: 320px;
         padding: 22px 14px 18px;
         border-radius: 16px;
+        scroll-snap-align: start;
     }
 
     .service_section .card .img-box {
