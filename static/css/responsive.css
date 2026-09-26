@@ -707,3 +707,137 @@
         gap: 14px;
     }
 }
+
+/* =========================================================
+   MD — Bootstrap 768px breakpoint
+   Home hero/header only — 768–991.98px
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header_section .container-fluid {
+        padding-inline: 18px;
+    }
+
+    .navbar-brand {
+        width: 132px;
+    }
+
+    .navbar-toggler {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider_section {
+        padding: 24px 14px 20px;
+        min-height: 650px;
+    }
+
+    .slider_section .hero-img {
+        object-position: 58% center;
+    }
+
+    .slider_section .hero-wrapper {
+        gap: 16px;
+        min-height: 605px;
+        align-items: center;
+    }
+
+    .slider_section .hero-wrapper .hero-content {
+        padding-bottom: 4px;
+    }
+
+    .slider_section .hero-content .detail-box {
+        max-width: 420px;
+        gap: 12px;
+    }
+
+    .slider_section .heading_2 h1 {
+        max-width: 420px;
+        font-size: 2.15rem;
+        line-height: 1.4;
+    }
+
+    .slider_section .heading_2 .hero-badge {
+        position: relative;
+        z-index: 3;
+        padding: 6px 12px;
+        font-size: 11px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--brand-navy);
+        box-shadow: 0 4px 12px rgba(14, 46, 101, 0.08);
+    }
+
+    .slider_section .heading_2 .note {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .slider_section .detail-box .boxs {
+        gap: 9px;
+        margin-top: 2px;
+        max-width: 420px;
+    }
+
+    .slider_section .boxs .box {
+        min-height: 82px;
+        padding: 9px 6px;
+        border-radius: 12px;
+    }
+
+    .slider_section .boxs .box .icon-i {
+        margin-bottom: 4px;
+    }
+
+    .slider_section .boxs .box i {
+        font-size: 21px;
+    }
+
+    .slider_section .boxs .box .name {
+        font-size: 10px;
+        line-height: 1.55;
+    }
+
+    .slider_section .hero-form {
+        flex: 0 0 300px;
+        max-width: 300px;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .slider_section .hero-form h2 {
+        font-size: 18px;
+    }
+
+    .slider_section .hero-form p {
+        margin: 6px 0 12px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .slider_section .hero-form input,
+    .slider_section .hero-form select {
+        height: 35px;
+        padding-inline: 11px;
+    }
+
+    .slider_section .hero-form textarea {
+        min-height: 78px;
+        padding: 10px 11px;
+    }
+
+    .slider_section .hero-form label {
+        gap: 4px;
+        margin-bottom: 7px;
+        font-size: 12px;
+    }
+
+    .slider_section .hero-form .btn-box {
+        margin-top: 5px;
+    }
+
+    .slider_section .hero-form .btn-box button {
+        height: 38px;
+        padding-inline: 12px;
+        font-size: 13px;
+    }
+}
