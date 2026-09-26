@@ -1213,4 +1213,75 @@
         margin-top: 32px;
     }
 
+
+    .main.order_section {
+        padding: 52px 16px 44px;
+    }
+
+    .order_section .heading_2 {
+        margin-bottom: 8px;
+    }
+
+    .order_section .heading_2 h2 {
+        margin-bottom: 10px;
+        font-size: 32px;
+        line-height: 1.45;
+    }
+
+    .order_section .heading_2 p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .order_section .box-process {
+        padding: 46px 0 38px;
+    }
+
+    .order_section .box-process::before {
+        top: 77px;
+        left: 8%;
+        width: 84%;
+        height: 3px;
+    }
+
+    .order_section .box-line {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .order_section .circle {
+        width: 66px;
+        height: 66px;
+        margin-bottom: 13px;
+        font-size: 22px;
+    }
+
+    .order_section .detail-box h3 {
+        font-size: 14px;
+        line-height: 1.7;
+        white-space: nowrap;
+    }
+
+    .order_section .btn-box {
+        gap: 16px;
+        margin-top: 14px;
+    }
+
+    .order_section .cta-text {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .order_section .action-btn {
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+
+    .order_section .form-btn,
+    .order_section .tel-btn {
+        width: 205px;
+        height: 50px;
+        font-size: 14px;
+    }
+
 }
