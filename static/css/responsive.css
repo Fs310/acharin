@@ -238,28 +238,28 @@
     }
 
     .slider_section .detail-box .boxs {
-        gap: 12px;
+        gap: 10px;
         margin-top: 4px;
-        max-width: 540px;
+        max-width: 510px;
     }
 
     .slider_section .boxs .box {
-        min-height: 100px;
-        padding: 14px 8px;
-        border-radius: 14px;
+        min-height: 92px;
+        padding: 11px 7px;
+        border-radius: 13px;
     }
 
     .slider_section .boxs .box .icon-i {
-        margin-bottom: 6px;
+        margin-bottom: 5px;
     }
 
     .slider_section .boxs .box i {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     .slider_section .boxs .box .name {
-        font-size: 12px;
-        line-height: 1.7;
+        font-size: 11px;
+        line-height: 1.65;
     }
 
     .slider_section .hero-form {
