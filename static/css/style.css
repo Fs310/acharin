@@ -1019,6 +1019,8 @@ minmax(0, 3fr);gap: 30px;align-items: start;}
 
 .news_section .news-content .card{min-height: 420px;background: rgba(255, 255, 255, 0.9);backdrop-filter: blur(18px);border: 1px solid #e2e8f0;overflow: hidden;text-align: center;display: flex;flex-direction: column;transition: .3s;position: relative;border-radius: 10px;min-width: 0;flex: 1 1 0;width: auto;flex-shrink: 1;}
 
+.news_section .news-content .card > a{display: flex;flex-direction: column;height: 100%;flex: 1;}
+
 .news_section .card:hover{transform: translateY(-8px);box-shadow: 0 15px 40px rgba(100, 120, 166, 0.12);border-color: #bac4da;}
 
 .news_section .card .card-head{overflow: hidden;}
