@@ -529,3 +529,65 @@
         margin-top: 32px;
     }
 }
+
+/* =========================================================
+   News / Magazine — Bootstrap LG 992–1199.98px
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .main.news_section {
+        padding: 55px 16px 45px;
+    }
+
+    .news_section .news-titer {
+        margin-bottom: 42px;
+    }
+
+    .news_section .news-titer .heading_2 {
+        font-size: 32px;
+        margin-bottom: 13px;
+    }
+
+    .news_section .news-titer p {
+        font-size: 14px;
+    }
+
+    .news_section .news-content {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        padding-top: 6px;
+    }
+
+    .news_section .news-content .card {
+        min-width: 0;
+        min-height: 390px;
+        border-radius: 10px;
+    }
+
+    .news_section .card .card-body {
+        padding: 16px;
+    }
+
+    .news_section .card .card-body .titer-txt {
+        margin-top: 8px;
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    .news_section .card .card-body .card-text {
+        margin: 12px 0 18px;
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .news_section .card .card-foot {
+        padding: 16px 16px 0;
+    }
+
+    .news_section .card .card-foot p {
+        font-size: 11px;
+    }
+
+    .news_section .btn-box {
+        margin-top: 34px;
+    }
+}
