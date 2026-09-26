@@ -7,8 +7,7 @@
     <section class="main slider_section" aria-labelledby="hero-title">
         <img class="hero-img" src="{% static 'img/hero.png' %}" alt="تعمیرکار در حال تعمیر لوازم خانگی" loading="eager"
              fetchpriority="high" decoding="async">
-        <img class="hero2-img" src="{% static 'img/hero2.png' %}" alt="" loading="lazy" decoding="async"
-             aria-hidden="true">
+
         <div class="container-fluid">
             <div class="hero-wrapper">
                 <div class="hero-content">
@@ -42,6 +41,7 @@
                         <p>اطلاعات خود را وارد کنید؛ کارشناسان ما در کوتاه‌ترین زمان با شما تماس می‌گیرند.</p>
                         <label for="client-name">نام و نام خانوادگی
                             <input id="client-name" type="text" name="Cname" autocomplete="name" value="
+
                                     {% if form_user %}{{ form_user.instance.first_name }} {{ form_user.instance.last_name }}{% endif %}"
                                    placeholder="نام و نام خانوادگی" required>
                         </label>
@@ -174,7 +174,8 @@
                                 <p class="card-text">{{ itm.msg }}</p>
                             </div>
                             <div class="card-footer">
-                                <time class="date_text" datetime="{{ itm.created_at|date:'Y-m-d' }}">{{ itm.created_at.date|to_jalali:"%Y/%m/%d"  }} </time>
+                                <time class="date_text"
+                                      datetime="{{ itm.created_at|date:'Y-m-d' }}">{{ itm.created_at.date|to_jalali:"%Y/%m/%d" }} </time>
 
                             </div>
                         </article>
