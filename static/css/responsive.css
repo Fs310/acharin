@@ -750,33 +750,50 @@
         gap: 12px;
     }
 
+    .slider_section .heading_2 {
+        position: relative;
+        z-index: 3;
+        padding: 10px 12px 8px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.24);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
     .slider_section .heading_2 h1 {
         max-width: 420px;
+        margin-inline: auto;
         font-size: 2.05rem;
         line-height: 1.4;
-        text-shadow: 0 2px 5px rgba(255, 255, 255, 0.45);
+        color: var(--brand-navy);
+        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
     }
 
     .slider_section .heading_2 .hero-badge {
         position: relative;
-        z-index: 3;
+        z-index: 5;
+        display: inline-flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        align-items: center;
         padding: 6px 12px;
         font-size: 11px;
-        background: rgba(255, 255, 255, 0.92);
-        color: var(--brand-navy);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 0 4px 12px rgba(14, 46, 101, 0.08);
+        background: rgba(255, 255, 255, 0.96) !important;
+        color: var(--brand-navy) !important;
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        box-shadow: 0 5px 16px rgba(14, 46, 101, 0.14);
     }
 
     .slider_section .heading_2 .note {
         display: inline-block;
-        margin-top: 10px;
-        padding: 2px 9px;
+        margin-top: 8px;
+        padding: 3px 10px;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.68);
+        background: rgba(255, 255, 255, 0.88);
         font-size: 13px;
-        line-height: 1.7;
+        line-height: 1.65;
         color: #1e293b;
+        box-shadow: 0 3px 10px rgba(14, 46, 101, 0.08);
     }
 
     .slider_section .detail-box .boxs {
@@ -834,9 +851,15 @@
 
     .slider_section .hero-form label {
         gap: 0;
-        margin-bottom: 7px;
+        margin-bottom: 6px;
         font-size: 0;
         line-height: 0;
+    }
+
+    .slider_section .hero-form label input,
+    .slider_section .hero-form label select,
+    .slider_section .hero-form label textarea {
+        font-size: 13px;
     }
 
     .slider_section .hero-form .btn-box {
