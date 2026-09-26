@@ -657,3 +657,53 @@
         height: 50px;
     }
 }
+
+/* =========================================================
+   Footer — Bootstrap LG 992–1199.98px
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .footer_section {
+        padding: 58px 20px 18px;
+    }
+
+    .footer_section .footer-grid {
+        grid-template-columns: 1.2fr 1fr 1fr 1.15fr;
+        gap: 28px;
+    }
+
+    .footer_section .footer-titer h4 {
+        margin-bottom: 18px;
+    }
+
+    .footer_section p,
+    .footer_section a {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .footer_section ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer_section .footer-titer.information .icons {
+        row-gap: 8px;
+    }
+
+    .footer_section .footer-titer.information .icon {
+        gap: 8px;
+        font-size: 22px;
+    }
+
+    .footer_section .footer-bottom {
+        margin-top: 26px;
+        padding-top: 18px;
+    }
+
+    .footer_section .social-box {
+        padding-top: 12px;
+    }
+
+    .footer_section .social-box .box {
+        gap: 14px;
+    }
+}
