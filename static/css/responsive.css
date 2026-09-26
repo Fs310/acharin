@@ -435,3 +435,97 @@
         margin-top: 34px;
     }
 }
+
+/* =========================================================
+   Clients / Reviews — Bootstrap LG 992–1199.98px
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .main.client_section {
+        padding: 50px 16px 42px;
+    }
+
+    .client_section .client-title {
+        margin-bottom: 40px;
+    }
+
+    .client_section .client-title .heading_2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .client_section .client-title p {
+        font-size: 14px;
+    }
+
+    .client_section .client-content {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 14px;
+        padding-top: 6px;
+        margin-left: 0;
+        overflow: visible;
+    }
+
+    .client_section .card {
+        min-width: 0;
+        min-height: 300px;
+        padding: 16px 11px;
+        border-radius: 16px;
+    }
+
+    .client_section .quote-icon {
+        right: 13px;
+        top: 46px;
+        font-size: 23px;
+    }
+
+    .client_section .card .card-head {
+        gap: 11px;
+        margin-bottom: 11px;
+    }
+
+    .client_section .icon-client {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .client_section .user-info h3 {
+        font-size: 15px;
+    }
+
+    .client_section .rating {
+        gap: 5px;
+        margin-bottom: 11px;
+    }
+
+    .client_section .rating .stars {
+        gap: 2px;
+    }
+
+    .client_section .rating .stars i {
+        font-size: 14px;
+    }
+
+    .client_section .rating .score {
+        font-size: 11px;
+    }
+
+    .client_section .card-text {
+        margin-top: 9px;
+        margin-bottom: 13px;
+        font-size: 11px;
+        line-height: 1.85;
+    }
+
+    .client_section .card-footer {
+        padding-top: 11px;
+    }
+
+    .client_section .card-footer .date_text {
+        font-size: 10px;
+    }
+
+    .client_section .btn-box {
+        margin-top: 32px;
+    }
+}
