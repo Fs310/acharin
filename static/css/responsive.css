@@ -293,12 +293,7 @@
     .slider_section .hero-form .btn-box {
         margin-top: 7px;
     }
-}
 
-/* =========================================================
-   About section — Bootstrap LG 992–1199.98px
-   ========================================================= */
-@media (min-width: 992px) and (max-width: 1199.98px) {
     .main.about_section {
         padding: 46px 16px;
     }
