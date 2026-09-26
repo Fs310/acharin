@@ -725,12 +725,7 @@
     }
 
     .slider_section .hero-wrapper .hero-content {
-        order: 2;
         padding-bottom: 0;
-    }
-
-    .slider_section .hero-form {
-        order: 1;
     }
 
     .slider_section .hero-content .detail-box {
@@ -743,11 +738,11 @@
         z-index: 3;
         width: 100%;
         max-width: 410px;
-        padding: 0;
-        border-radius: 0;
-        background: transparent;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+        padding: 10px 12px 8px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.68);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 
     .slider_section .heading_2 h1 {
@@ -768,7 +763,7 @@
         align-items: center;
         padding: 6px 12px;
         font-size: 11px;
-        background: rgba(255, 255, 255, 0.94) !important;
+        background: rgba(255, 255, 255, 0.96) !important;
         color: var(--brand-navy) !important;
         border: 1px solid rgba(255, 255, 255, 0.95);
         box-shadow: 0 5px 16px rgba(14, 46, 101, 0.14);
@@ -777,8 +772,8 @@
     .slider_section .heading_2 .note {
         display: inline-block;
         margin-top: 7px;
-        padding: 2px 8px;
-        border-radius: 8px;
+        padding: 3px 9px;
+        border-radius: 10px;
         background: rgba(255, 255, 255, 0.82);
         font-size: 12px;
         line-height: 1.65;
@@ -812,8 +807,8 @@
     }
 
     .slider_section .hero-form {
-        flex: 0 0 280px;
-        max-width: 280px;
+        flex: 0 0 290px;
+        max-width: 290px;
         padding: 12px;
         border-radius: 16px;
     }
