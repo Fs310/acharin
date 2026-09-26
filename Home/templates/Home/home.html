@@ -174,8 +174,8 @@
                                 <p class="card-text">{{ itm.msg }}</p>
                             </div>
                             <div class="card-footer">
-                                <time class="date_text"
-                                      datetime="{{ itm.created_at|date:'Y-m-d' }}">{{ itm.created_at.date }}</time>
+                                <time class="date_text" datetime="{{ itm.created_at|date:'Y-m-d' }}">{{ itm.created_at.date|to_jalali:"%Y/%m/%d"  }} </time>
+
                             </div>
                         </article>
                     {% endfor %}

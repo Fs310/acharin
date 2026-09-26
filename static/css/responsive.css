@@ -105,6 +105,7 @@
     .slider_section .hero-form label {
         margin-bottom: 10px;
     }
+
     .main.about_section {
         padding: 50px 20px;
     }
@@ -170,4 +171,5 @@
     .about_section .stat-title {
         font-size: 12px;
     }
+
 }
