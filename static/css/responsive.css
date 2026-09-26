@@ -874,4 +874,90 @@
         height: 46px;
         font-size: 15px;
     }
+
+
+    .main.about_section {
+        padding: 42px 16px;
+    }
+
+    .about_section .about-wrapper {
+        grid-template-columns: minmax(300px, .95fr) minmax(220px, 1.05fr);
+        grid-template-areas:
+            "image content"
+            "image about"
+            "state state";
+        gap: 0 24px;
+        max-width: 730px;
+        padding: 28px 26px 24px;
+        border-radius: 20px;
+    }
+
+    .about_section .about-wrapper .about-img,
+    .about_section .about-img img {
+        height: 390px;
+        min-height: 390px;
+        border-radius: 16px;
+    }
+
+    .about_section .about-wrapper .about-content {
+        padding-top: 2px;
+        max-width: 100%;
+    }
+
+    .about_section .about-content .heading_2 {
+        margin-bottom: 7px;
+        font-size: 30px;
+        line-height: 1.35;
+    }
+
+    .about_section .about-content .lead {
+        margin-bottom: 9px;
+        padding-right: 10px;
+        border-right-width: 3px;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .about_section .about-content .txt {
+        padding-inline: 0 4px;
+        font-size: 13px;
+        line-height: 1.95;
+    }
+
+    .about_section .txt_about2 {
+        padding-top: 2px;
+    }
+
+    .about_section ol li {
+        margin: 7px 0;
+        padding-right: 31px;
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .about_section ol li::before {
+        width: 22px;
+        height: 22px;
+        top: 2px;
+        font-size: 10px;
+    }
+
+    .about_section .about-stats {
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .about_section .stat-box {
+        min-height: 92px;
+        padding: 10px 8px;
+        border-radius: 13px;
+    }
+
+    .about_section .stat-number {
+        font-size: 24px;
+    }
+
+    .about_section .stat-title {
+        font-size: 11px;
+    }
 }
