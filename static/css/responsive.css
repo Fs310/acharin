@@ -559,7 +559,6 @@
         border-radius: 10px;
     }
 
-
     .news_section .card .card-body {
         padding: 16px;
     }
@@ -1399,7 +1398,9 @@
         justify-content: flex-start;
         gap: 18px;
         min-height: 0;
-        width: 100%;
+        width: calc(100% - 24px);
+        margin-left: 0;
+        margin-right: auto;
     }
 
     .slider_section .hero-wrapper .hero-content {
