@@ -2756,4 +2756,122 @@
     .order_section .action-btn i {
         font-size: 10px;
     }
+
+    .footer_section {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 34px 10px 14px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .footer_section .footer-grid {
+        display: grid;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 7px;
+        justify-items: stretch;
+        align-items: start;
+        box-sizing: border-box;
+    }
+
+    .footer_section .footer-titer {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .footer_section .footer-titer h4 {
+        width: 100%;
+        margin-bottom: 12px;
+        font-size: 10px;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .footer_section .footer-titer h4::after {
+        bottom: -6px;
+        width: 24px;
+        height: 2px;
+    }
+
+    .footer_section p,
+    .footer_section a {
+        max-width: 100%;
+        font-size: 7.5px;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .footer_section ul {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer_section ul li {
+        margin-bottom: 5px;
+        min-width: 0;
+    }
+
+    .footer_section .footer-titer.information .icons {
+        width: 100%;
+        row-gap: 5px;
+    }
+
+    .footer_section .footer-titer.information .icon {
+        width: 100%;
+        min-width: 0;
+        gap: 3px;
+        font-size: 11px;
+    }
+
+    .footer_section .footer-titer.information .icon i {
+        font-size: 11px;
+        flex: 0 0 auto;
+    }
+
+    .footer_section .social-box {
+        width: 100%;
+        min-width: 0;
+        padding-top: 6px;
+    }
+
+    .footer_section .social-box h4 {
+        font-size: 9px;
+        margin-bottom: 7px;
+    }
+
+    .footer_section .social-box .box {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .footer_section .social-box .box a {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+        flex: 0 0 22px;
+    }
+
+    .footer_section .footer-bottom {
+        width: 100%;
+        max-width: 350px;
+        margin: 16px auto 0;
+        padding-top: 10px;
+        box-sizing: border-box;
+    }
+
+    .footer_section .footer-bottom p {
+        width: 100%;
+        font-size: 7px;
+        line-height: 1.8;
+        text-align: center;
+    }
 }
