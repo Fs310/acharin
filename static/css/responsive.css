@@ -1989,8 +1989,8 @@
     }
 
     .main.order_section {
-        padding: 46px 14px 40px;
-        min-height: 500px;
+        padding: 32px 14px 26px;
+        min-height: 0;
     }
 
     .order_section .heading_2 {
@@ -2011,7 +2011,7 @@
     }
 
     .order_section .box-process {
-        padding: 36px 0 30px;
+        padding: 28px 0 20px;
     }
 
     .order_section .box-process::before {
@@ -2040,8 +2040,8 @@
     }
 
     .order_section .btn-box {
-        gap: 10px;
-        margin-top: 8px;
+        gap: 9px;
+        margin-top: 4px;
     }
 
     .order_section .cta-text {
@@ -2968,7 +2968,7 @@
     .main.order_section {
         width: 100%;
         min-width: 0;
-        padding: 34px 10px 30px;
+        padding: 28px 10px 24px;
         overflow: hidden;
     }
 
@@ -3008,7 +3008,7 @@
 
     .order_section .box-process {
         width: 100%;
-        padding: 34px 0 28px;
+        padding: 24px 0 18px;
         box-sizing: border-box;
     }
 
@@ -3048,8 +3048,8 @@
 
     .order_section .btn-box {
         width: 100%;
-        gap: 10px;
-        margin-top: 4px;
+        gap: 8px;
+        margin-top: 2px;
     }
 
     .order_section .cta-text {
