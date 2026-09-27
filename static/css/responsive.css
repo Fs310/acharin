@@ -1736,11 +1736,11 @@
     }
 
     .service_section .btn-box a {
-        width: 140px !important;
-        max-width: 140px !important;
+        width: 160px !important;
+        max-width: 160px !important;
         height: 42px !important;
         padding: 0 14px !important;
-        font-size: 11px !important;
+        font-size: 13px !important;
         border-radius: 9px !important;
         box-sizing: border-box !important;
     }
@@ -1860,13 +1860,13 @@
     }
 
     .client_section .btn-box a {
-        width: 170px;
-        max-width: 170px;
-        height: 42px;
-        padding: 0 14px;
-        font-size: 11px;
-        border-radius: 9px;
-        box-sizing: border-box;
+        width: 170px !important;
+        max-width: 170px !important;
+        height: 42px !important;
+        padding: 0 14px !important;
+        font-size: 13px !important;
+        border-radius: 9px !important;
+        box-sizing: border-box !important;
     }
 
     .main.news_section {
@@ -2001,13 +2001,13 @@
     }
 
     .news_section .btn-box a {
-        width: 170px;
-        max-width: 170px;
-        height: 42px;
-        padding: 0 14px;
-        font-size: 11px;
-        border-radius: 9px;
-        box-sizing: border-box;
+        width: 170px !important;
+        max-width: 170px !important;
+        height: 42px !important;
+        padding: 0 14px !important;
+        font-size: 13px !important;
+        border-radius: 9px !important;
+        box-sizing: border-box !important;
     }
 
     .main.order_section {
@@ -2032,13 +2032,13 @@
     }
 
     .order_section .box-process {
-        padding: 28px 0 20px;
+        padding: 33px 0 20px;
     }
 
     .order_section .box-process::before {
         top: 57px;
         left: 10%;
-        width: 80%;
+        width: 78%;
         height: 2px;
     }
 
@@ -2062,27 +2062,26 @@
 
     .order_section .btn-box {
         gap: 9px;
-        margin-top: 4px;
     }
 
     .order_section .cta-text {
-        margin-bottom: 10px;
-        font-size: 11px;
-        line-height: 1.8;
+        margin-bottom: 10px !important;
+        font-size: 11px !important;
+        line-height: 1.8 !important;
     }
 
     .order_section .action-btn {
-        gap: 8px;
-        flex-wrap: nowrap;
-        justify-content: center;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
     }
 
     .order_section .form-btn,
     .order_section .tel-btn {
-        width: 150px;
-        height: 40px;
-        font-size: 11px;
-        border-radius: 8px;
+        width: 150px !important;
+        height: 40px !important;
+        font-size: 11px !important;
+        border-radius: 8px !important;
     }
 
     .order_section .form-btn i,
@@ -2461,10 +2460,7 @@
     }
 
     .about_section .txt_about2 {
-        grid-area: about;
-        width: 100%;
-        min-width: 0;
-        padding: 0;
+        display: none;
     }
 
     .about_section ol {
@@ -2618,7 +2614,7 @@
 
     .service_section .btn-box a {
         width: 160px !important;
-        max-width: 160px!important;
+        max-width: 160px !important;
         height: 38px !important;
         margin: 0 auto !important;
         padding: 0 12px !important;
@@ -2981,8 +2977,8 @@
         box-sizing: border-box !important;
     }
 
-   .main.order_section {
-        min-height: 0!important;
+    .main.order_section {
+        min-height: 0 !important;
         overflow: hidden;
     }
 
@@ -3022,7 +3018,7 @@
 
     .order_section .box-process {
         width: 100%;
-        padding: 24px 0 18px;
+        padding: 33px 0 18px;
         box-sizing: border-box;
     }
 
@@ -3063,7 +3059,7 @@
     .order_section .btn-box {
         width: 100%;
         gap: 8px;
-        margin-top: 2px;
+
     }
 
     .order_section .cta-text {
@@ -3075,20 +3071,20 @@
     }
 
     .order_section .action-btn {
-        width: 100%;
-        gap: 8px;
-        flex-wrap: nowrap;
-        justify-content: center;
+        width: 100% !important;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
     }
 
     .order_section .action-btn .form-btn,
     .order_section .action-btn .tel-btn {
-        width: calc(50% - 4px);
-        max-width: 170px;
-        height: 40px;
-        font-size: 10px;
-        border-radius: 8px;
-        box-sizing: border-box;
+        width: calc(50% - 4px) !important;
+        max-width: 170px !important;
+        height: 40px !important;
+        font-size: 10px !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
     }
 
     .order_section .action-btn i {
@@ -3187,7 +3183,7 @@
     }
 
     .footer_section .social-box .box {
-        gap: 4px;
+        gap: 8px;
         flex-wrap: wrap;
     }
 
