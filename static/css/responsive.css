@@ -1401,7 +1401,7 @@
         width: min(500px, calc(100% - 20px));
         margin-left: 0;
         margin-right: auto;
-        transform: translateX(-125px);
+        transform: translateX(-62px);
     }
 
     .slider_section .hero-wrapper .hero-content {
