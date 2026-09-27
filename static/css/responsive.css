@@ -1775,10 +1775,14 @@
 
     .client_section .card {
         min-width: 190px;
-        min-height: 300px;
+        width: 190px;
+        min-height: 200px;
+        height: 200px;
+        max-height: 200px;
         padding: 15px 12px;
         border-radius: 14px;
         scroll-snap-align: start;
+        box-sizing: border-box;
     }
 
     .client_section .quote-icon {
@@ -1824,7 +1828,11 @@
         margin-top: 8px;
         margin-bottom: 11px;
         font-size: 11px;
-        line-height: 1.9;
+        line-height: 1.8;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
     }
 
     .client_section .card-footer {
@@ -2877,7 +2885,9 @@
         flex: 0 0 160px;
         width: 160px;
         min-width: 160px;
-        min-height: 230px;
+        min-height: 180px;
+        height: 180px;
+        max-height: 180px;
         padding: 12px 9px;
         border-radius: 12px;
         scroll-snap-align: start;
@@ -2926,7 +2936,7 @@
     .client_section .card-text {
         margin: 6px 0 8px;
         font-size: 9px;
-        line-height: 1.8;
+        line-height: 1.7;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
