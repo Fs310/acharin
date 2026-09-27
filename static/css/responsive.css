@@ -1082,7 +1082,7 @@
 
     .client_section .card {
         min-width: 210px;
-        min-height: 300px;
+        min-height: 230px;
         padding: 17px 13px;
         border-radius: 16px;
         scroll-snap-align: start;
@@ -2736,7 +2736,7 @@
         flex: 0 0 160px;
         width: 160px;
         min-width: 160px;
-        min-height: 220px;
+        min-height: 230px;
         padding: 12px 9px;
         border-radius: 12px;
         scroll-snap-align: start;
