@@ -1889,8 +1889,8 @@
     .news_section .news-content .card {
         position: relative;
         min-width: 190px;
-        min-height: 230px;
-        height: 230px;
+        min-height: 200px;
+        height: 200px;
         border-radius: 12px;
         scroll-snap-align: start;
         overflow: hidden;
@@ -2697,8 +2697,8 @@
         flex: 0 0 160px;
         width: 160px;
         min-width: 160px;
-        min-height: 210px;
-        height: 210px;
+        min-height: 180px;
+        height: 180px;
         margin: 0;
         scroll-snap-align: start;
         box-sizing: border-box;
