@@ -1725,4 +1725,109 @@
         font-size: 13px;
         padding: 10px 22px;
     }
+
+    .main.client_section {
+        padding: 46px 14px 40px;
+    }
+
+    .client_section .client-title {
+        margin-bottom: 28px;
+    }
+
+    .client_section .client-title .heading_2 {
+        font-size: 28px;
+        margin-bottom: 9px;
+        line-height: 1.4;
+    }
+
+    .client_section .client-title p {
+        font-size: 12px;
+    }
+
+    .client_section .client-content {
+        grid-template-columns: repeat(5, minmax(190px, 1fr));
+        gap: 12px;
+        padding-top: 4px;
+        margin-inline: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .client_section .client-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .client_section .card {
+        min-width: 190px;
+        min-height: 300px;
+        padding: 15px 12px;
+        border-radius: 14px;
+        scroll-snap-align: start;
+    }
+
+    .client_section .quote-icon {
+        right: 11px;
+        top: 42px;
+        font-size: 20px;
+    }
+
+    .client_section .card .card-head {
+        gap: 8px;
+        margin-bottom: 9px;
+    }
+
+    .client_section .icon-client {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .client_section .user-info h3 {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .client_section .rating {
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .client_section .rating .stars {
+        gap: 2px;
+    }
+
+    .client_section .rating .stars i {
+        font-size: 13px;
+    }
+
+    .client_section .rating .score {
+        font-size: 10px;
+    }
+
+    .client_section .card-text {
+        margin-top: 8px;
+        margin-bottom: 11px;
+        font-size: 11px;
+        line-height: 1.9;
+    }
+
+    .client_section .card-footer {
+        padding-top: 10px;
+    }
+
+    .client_section .card-footer .date_text {
+        font-size: 9px;
+    }
+
+    .client_section .btn-box {
+        margin-top: 28px;
+    }
+
+    .client_section .btn-box a {
+        font-size: 13px;
+        padding: 10px 22px;
+    }
 }
