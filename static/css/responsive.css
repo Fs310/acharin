@@ -2187,15 +2187,19 @@
 
     .slider_section .heading_2 h1 {
         width: 100%;
-        margin: 6px auto 0;
-        font-size: 1.65rem;
+        max-width: 330px;
+        margin: 7px auto 0;
+        font-size: 1.58rem;
         line-height: 1.5;
-        background: linear-gradient(90deg, var(--brand-navy), #FFFFFF);
+        text-align: center;
+        font-weight: 800;
+        background: linear-gradient(90deg, #0E2E65 0%, #EF641B 52%, #0E2E65 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         color: transparent;
-
+        -webkit-text-stroke: 0.25px rgba(255, 255, 255, .15);
+        text-shadow: 0 2px 7px rgba(7, 28, 63, .18);
     }
 
     .slider_section .heading_2 h1 .h1_titer2 {
