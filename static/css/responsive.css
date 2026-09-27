@@ -1948,8 +1948,8 @@
 
     .order_section .box-process::before {
         top: 57px;
-        left: 5%;
-        width: 90%;
+        left: 10%;
+        width: 80%;
         height: 2px;
     }
 
