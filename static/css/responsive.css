@@ -2085,3 +2085,179 @@
         font-size: 8px;
     }
 }
+
+
+@media (max-width: 575.98px) {
+    .header_section .container-fluid {
+        padding-inline: 10px;
+    }
+
+    .header_section {
+        padding: 5px 0;
+    }
+
+    .navbar-brand {
+        width: 104px;
+    }
+
+    .navbar-toggler {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+    }
+
+    .navbar-toggler span {
+        width: 25px;
+        height: 3px;
+        margin: 4px auto;
+    }
+
+    .slider_section {
+        padding: 20px 10px 28px;
+        min-height: 0;
+    }
+
+    .slider_section .hero-img {
+        width: 100%;
+        height: 100%;
+        object-position: 64% center;
+        object-fit: cover;
+    }
+
+    .slider_section .hero-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 14px;
+        min-height: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .slider_section .hero-wrapper .hero-content {
+        width: 100%;
+        flex: none;
+        padding-bottom: 0;
+        justify-content: center;
+    }
+
+    .slider_section .hero-content .detail-box {
+        width: min(100%, 350px);
+        max-width: 350px;
+        align-items: center;
+        gap: 10px;
+        margin-inline: auto;
+    }
+
+    .slider_section .detail-box .heading_2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .slider_section .heading_2 .hero-badge {
+        padding: 5px 11px;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .slider_section .heading_2 h1 {
+        width: 100%;
+        max-width: 350px;
+        margin: 6px auto 0;
+        font-size: 1.65rem;
+        line-height: 1.5;
+    }
+
+    .slider_section .heading_2 h1 .h1_titer2 {
+        display: block;
+    }
+
+    .slider_section .heading_2 .note {
+        margin-top: 7px;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .slider_section .detail-box .boxs {
+        width: 100%;
+        max-width: 350px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 1px;
+    }
+
+    .slider_section .boxs .box {
+        min-height: 62px;
+        padding: 6px 4px;
+        border-radius: 10px;
+    }
+
+    .slider_section .boxs .box .icon-i {
+        margin-bottom: 2px;
+    }
+
+    .slider_section .boxs .box i {
+        font-size: 16px;
+    }
+
+    .slider_section .boxs .box .name {
+        font-size: 8px;
+        line-height: 1.45;
+    }
+
+    .slider_section .hero-form {
+        box-sizing: border-box;
+        width: min(100%, 350px);
+        max-width: 350px;
+        flex: none;
+        margin: 0 auto;
+        padding: 14px;
+        border-radius: 15px;
+    }
+
+    .slider_section .hero-form h2 {
+        font-size: 18px;
+    }
+
+    .slider_section .hero-form p {
+        margin: 5px 0 10px;
+        font-size: 10px;
+        line-height: 1.65;
+    }
+
+    .slider_section .hero-form label {
+        margin-bottom: 6px;
+    }
+
+    .slider_section .hero-form input,
+    .slider_section .hero-form select {
+        width: 100%;
+        height: 38px;
+        font-size: 12px;
+        box-sizing: border-box;
+    }
+
+    .slider_section .hero-form textarea {
+        width: 100%;
+        min-height: 72px;
+        font-size: 12px;
+        line-height: 1.65;
+        box-sizing: border-box;
+    }
+
+    .slider_section .hero-form input::placeholder,
+    .slider_section .hero-form textarea::placeholder {
+        font-size: 11px;
+    }
+
+    .slider_section .hero-form .btn-box {
+        margin-top: 4px;
+    }
+
+    .slider_section .hero-form .btn-box button {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+    }
+}
