@@ -1533,4 +1533,109 @@
         height: 42px;
         font-size: 14px;
     }
+
+    .main.about_section {
+        padding: 42px 14px;
+    }
+
+    .about_section .about-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "image"
+            "content"
+            "about"
+            "state";
+        gap: 24px;
+        max-width: 560px;
+        padding: 24px 20px 22px;
+        border-radius: 18px;
+    }
+
+    .about_section .about-wrapper .about-img {
+        width: 100%;
+        height: 300px;
+        min-height: 300px;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .about_section .about-img img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .about_section .about-wrapper .about-content {
+        width: 100%;
+        max-width: none;
+        padding-top: 0;
+    }
+
+    .about_section .about-content .heading_2 {
+        margin-bottom: 7px;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+    .about_section .about-content .lead {
+        margin-bottom: 10px;
+        padding-right: 10px;
+        border-right-width: 3px;
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .about_section .about-content .txt {
+        padding-inline: 0;
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .about_section .txt_about2 {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .about_section ol {
+        margin: 0;
+        padding-right: 0;
+    }
+
+    .about_section ol li {
+        margin: 8px 0;
+        padding-right: 30px;
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .about_section ol li::before {
+        width: 22px;
+        height: 22px;
+        top: 2px;
+        font-size: 10px;
+    }
+
+    .about_section .about-stats {
+        width: 100%;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 0;
+    }
+
+    .about_section .stat-box {
+        min-height: 78px;
+        padding: 9px 6px;
+        border-radius: 11px;
+    }
+
+    .about_section .stat-number {
+        font-size: 20px;
+    }
+
+    .about_section .stat-title {
+        font-size: 10px;
+        line-height: 1.6;
+    }
 }
