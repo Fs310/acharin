@@ -1718,9 +1718,11 @@
     }
 
     .service_section .card .card-body .card-text {
-        margin: 9px 0 14px;
-        font-size: 12px;
-        line-height: 1.8;
+        display: none;
+    }
+
+    .service_section .card .card-body .read-more {
+        margin-top: 12px;
     }
 
     .service_section .card .card-body .read-more {
@@ -2525,9 +2527,11 @@
     }
 
     .service_section .card .card-body .card-text {
-        margin: 6px 0 9px;
-        font-size: 10px;
-        line-height: 1.8;
+        display: none;
+    }
+
+    .service_section .card .card-body .read-more {
+        margin-top: 12px;
     }
 
     .service_section .card .card-body .read-more {
