@@ -1446,9 +1446,9 @@
         margin: 7px auto 0;
         font-size: 2rem;
         line-height: 1.45;
-        background: linear-gradient(90deg, var(--brand-navy), #FFFFFF);
+        background: linear-gradient(180deg, var(--brand-navy), #FFFFFF, var(--brand-navy));
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: #1e3e6b7d;
         background-clip: text;
         color: transparent;
     }
@@ -1688,7 +1688,7 @@
 
     .service_section .service-content .card {
         min-width: 190px;
-        min-height: 300px;
+        min-height: 280px;
         padding: 20px 12px 16px;
         border-radius: 14px;
         scroll-snap-align: start;
@@ -1706,8 +1706,9 @@
     }
 
     .service_section .card .card-body {
-        padding-top: 8px;
-        height: 178px;
+        height: 148px;
+        padding-bottom: 10px;
+        justify-content: space-between;
     }
 
     .service_section .card .card-title {
@@ -1774,15 +1775,15 @@
     }
 
     .client_section .card {
-        min-width: 190px;
-        width: 190px;
-        min-height: 200px;
-        height: 200px;
-        max-height: 200px;
+        min-width: 180px;
+        width: 180px;
+        min-height: 230px;
+        max-height: 240px;
         padding: 15px 12px;
         border-radius: 14px;
         scroll-snap-align: start;
         box-sizing: border-box;
+        justify-content: space-between;
     }
 
     .client_section .quote-icon {
@@ -1794,6 +1795,12 @@
     .client_section .card .card-head {
         gap: 8px;
         margin-bottom: 9px;
+    }
+
+    .client_section .card .card-body {
+        justify-content: space-between;
+        min-height: 110px;
+        max-height: 110px;
     }
 
     .client_section .icon-client {
@@ -1836,7 +1843,7 @@
     }
 
     .client_section .card-footer {
-        padding-top: 10px;
+        padding-top: 5px;
     }
 
     .client_section .card-footer .date_text {
@@ -1927,7 +1934,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform .35s ease;
+        transition: transform .32s ease;
     }
 
     .news_section .card .card-body,
@@ -1989,7 +1996,6 @@
     }
 
     .main.order_section {
-        padding: 32px 14px 26px;
         min-height: 0;
     }
 
@@ -2246,7 +2252,7 @@
         line-height: 1.5;
         text-align: center;
         font-weight: 800;
-        background: linear-gradient(90deg, var(--brand-navy), #FFFFFF);
+        background: linear-gradient(270deg, #FFFFFF, var(--brand-navy));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -2548,7 +2554,7 @@
         flex: 0 0 160px;
         width: 160px;
         min-width: 160px;
-        min-height: 250px;
+        min-height: 220px;
         padding: 14px 9px 12px;
         border-radius: 12px;
         scroll-snap-align: start;
@@ -2567,8 +2573,9 @@
     }
 
     .service_section .card .card-body {
-        height: auto;
-        padding-top: 5px;
+        height: 128px;
+        padding-bottom: 7px;
+        justify-content: space-between;
     }
 
     .service_section .card .card-title {
@@ -2603,6 +2610,135 @@
         border-radius: 8px;
         box-sizing: border-box;
     }
+
+    .main.client_section {
+        padding: 34px 10px 30px;
+        overflow: hidden;
+    }
+
+    .client_section .client-title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .client_section .client-title .heading_2 {
+        margin-bottom: 7px;
+        font-size: 24px;
+        line-height: 1.45;
+    }
+
+    .client_section .client-title p {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .client_section .client-content {
+        grid-template-columns: repeat(5, minmax(160px, 1fr));
+        gap: 10px;
+        padding-top: 3px;
+        margin-inline: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .client_section .client-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .client_section .card {
+        flex: 0 0 160px;
+        width: 160px;
+        min-width: 160px;
+        min-height: 190px;
+        max-height: 210px;
+        padding: 12px 9px;
+        border-radius: 12px;
+        scroll-snap-align: start;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .client_section .quote-icon {
+        right: 8px;
+        top: 34px;
+        font-size: 16px;
+    }
+
+    .client_section .card .card-head {
+        gap: 6px;
+        margin-bottom: 7px;
+    }
+
+    .client_section .card .card-body {
+        justify-content: space-between;
+        min-height: 100px;
+        max-height: 100px;
+    }
+
+
+    .client_section .icon-client {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .client_section .user-info h3 {
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+    .client_section .rating {
+        gap: 4px;
+        margin-bottom: 7px;
+    }
+
+    .client_section .rating .stars {
+        gap: 1px;
+    }
+
+    .client_section .rating .stars i {
+        font-size: 10px;
+    }
+
+    .client_section .rating .score {
+        font-size: 8px;
+    }
+
+    .client_section .card-text {
+        margin: 6px 0 8px;
+        font-size: 9px;
+        line-height: 1.7;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .client_section .card-footer {
+        padding-top: 3px;
+    }
+
+    .client_section .card-footer .date_text {
+        font-size: 8px;
+    }
+
+    .client_section .btn-box {
+        margin-top: 18px;
+    }
+
+    .client_section .btn-box a {
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto;
+        padding: 9px 16px;
+        font-size: 11px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
 
     .main.news_section {
         width: 100%;
@@ -2685,13 +2821,6 @@
         height: 100px;
         min-height: 100px;
         overflow: hidden;
-    }
-
-    .news_section .card .card-head .card-img-top {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     .news_section .card .card-body {
@@ -2835,140 +2964,9 @@
         box-sizing: border-box;
     }
 
-    .main.client_section {
-        padding: 34px 10px 30px;
-        overflow: hidden;
-    }
-
-    .client_section .client-wrapper {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    .client_section .client-title {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .client_section .client-title .heading_2 {
-        margin-bottom: 7px;
-        font-size: 24px;
-        line-height: 1.45;
-    }
-
-    .client_section .client-title p {
-        font-size: 10px;
-        line-height: 1.8;
-    }
-
-    .client_section .client-content {
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        gap: 9px;
-        padding: 4px 2px 8px;
-        margin: 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        box-sizing: border-box;
-    }
-
-    .client_section .client-content::-webkit-scrollbar {
-        display: none;
-    }
-
-    .client_section .card {
-        flex: 0 0 160px;
-        width: 160px;
-        min-width: 160px;
-        min-height: 180px;
-        height: 180px;
-        max-height: 180px;
-        padding: 12px 9px;
-        border-radius: 12px;
-        scroll-snap-align: start;
-        box-sizing: border-box;
-    }
-
-    .client_section .quote-icon {
-        right: 8px;
-        top: 34px;
-        font-size: 16px;
-    }
-
-    .client_section .card .card-head {
-        gap: 6px;
-        margin-bottom: 7px;
-    }
-
-    .client_section .icon-client {
-        width: 28px;
-        height: 28px;
-        font-size: 12px;
-    }
-
-    .client_section .user-info h3 {
-        font-size: 11px;
-        line-height: 1.55;
-    }
-
-    .client_section .rating {
-        gap: 4px;
-        margin-bottom: 7px;
-    }
-
-    .client_section .rating .stars {
-        gap: 1px;
-    }
-
-    .client_section .rating .stars i {
-        font-size: 10px;
-    }
-
-    .client_section .rating .score {
-        font-size: 8px;
-    }
-
-    .client_section .card-text {
-        margin: 6px 0 8px;
-        font-size: 9px;
-        line-height: 1.7;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-    }
-
-    .client_section .card-footer {
-        padding-top: 7px;
-    }
-
-    .client_section .card-footer .date_text {
-        font-size: 8px;
-    }
-
-    .client_section .btn-box {
-        margin-top: 18px;
-    }
-
-    .client_section .btn-box a {
-        width: 100%;
-        max-width: 220px;
-        margin: 0 auto;
-        padding: 9px 16px;
-        font-size: 11px;
-        border-radius: 8px;
-        box-sizing: border-box;
-    }
 
     .main.order_section {
-        width: 100%;
-        min-width: 0;
-        padding: 28px 10px 24px;
+        min-height: 0;
         overflow: hidden;
     }
 
