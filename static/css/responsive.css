@@ -1853,10 +1853,12 @@
     }
 
     .news_section .news-content {
-        grid-template-columns: repeat(4, minmax(190px, 1fr));
-        gap: 12px;
-        padding-top: 4px;
-        margin-inline: auto;
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        gap: 9px;
+        padding: 4px 2px 8px;
+        margin: 0;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
@@ -1864,6 +1866,7 @@
         scrollbar-width: none;
         min-height: 0;
         height: auto;
+        box-sizing: border-box;
     }
 
     .news_section .news-content::-webkit-scrollbar {
