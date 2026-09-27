@@ -2640,4 +2640,120 @@
         border-radius: 8px;
         box-sizing: border-box;
     }
+
+    .main.order_section {
+        width: 100%;
+        min-width: 0;
+        padding: 34px 10px 30px;
+        overflow: hidden;
+    }
+
+    .order_section .container-fluid {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .order_section .order-wrapper {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .order_section .heading_2 {
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .order_section .heading_2 h2 {
+        margin-bottom: 7px;
+        font-size: 24px;
+        line-height: 1.45;
+    }
+
+    .order_section .heading_2 p {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        font-size: 10px;
+        line-height: 1.85;
+    }
+
+    .order_section .box-process {
+        width: 100%;
+        padding: 34px 0 28px;
+        box-sizing: border-box;
+    }
+
+    .order_section .box-process::before {
+        top: 55px;
+        left: 10%;
+        width: 80%;
+        height: 2px;
+    }
+
+    .order_section .box-line {
+        width: 100%;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .order_section .detail-box {
+        min-width: 0;
+    }
+
+    .order_section .circle {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    .order_section .detail-box h3 {
+        max-width: 62px;
+        margin: 0;
+        font-size: 9px;
+        line-height: 1.7;
+        white-space: normal;
+    }
+
+    .order_section .btn-box {
+        width: 100%;
+        gap: 10px;
+        margin-top: 4px;
+    }
+
+    .order_section .cta-text {
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto;
+        font-size: 10px;
+        line-height: 1.85;
+    }
+
+    .order_section .action-btn {
+        width: 100%;
+        gap: 8px;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .order_section .action-btn .form-btn,
+    .order_section .action-btn .tel-btn {
+        width: calc(50% - 4px);
+        max-width: 170px;
+        height: 40px;
+        font-size: 10px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .order_section .action-btn i {
+        font-size: 10px;
+    }
 }
