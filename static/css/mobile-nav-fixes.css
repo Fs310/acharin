@@ -1,0 +1,59 @@
+/* =========================================================
+   MOBILE NAV — final visual cleanup
+   992px and below
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+    /* No default/automatic active highlight */
+    .header_section .nav-coll .nav-link.active {
+        color: inherit !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        font-weight: 600 !important;
+    }
+
+    /* Keep the mobile CTA compact and calm */
+    .header_section .nav-coll .mobile-nav-footer a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 46px;
+        min-height: 46px;
+        padding: 0 16px !important;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 600 !important;
+        box-shadow: none !important;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header_section .nav-coll .mobile-nav-footer a {
+        height: 46px;
+        min-height: 46px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .header_section .nav-coll .mobile-nav-footer a {
+        height: 40px;
+        min-height: 40px;
+        padding-inline: 12px !important;
+        border-radius: 9px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header_section .nav-coll .mobile-nav-footer a {
+        height: 38px;
+        min-height: 38px;
+        padding-inline: 10px !important;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+}
