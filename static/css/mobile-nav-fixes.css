@@ -32,7 +32,7 @@
     .header_section .nav-coll {
         position: absolute;
         top: calc(100% + 8px);
-        right: 0;
+        right: -16px;
         left: auto;
         z-index: 1001;
         display: block !important;
@@ -110,13 +110,15 @@
         font-weight: 600;
         line-height: 1.5;
         box-sizing: border-box;
-        transition: color .2s ease, background .2s ease;
+        border-right: 3px solid transparent;
+        transition: color .2s ease, background .2s ease, border-color .2s ease;
     }
 
     .header_section .nav-coll .nav-link:hover,
     .header_section .nav-coll .nav-link:focus {
         color: var(--brand-navy) !important;
         background: #f5f7fb !important;
+        border-right-color: var(--brand-orange);
         box-shadow: none !important;
     }
 
@@ -193,6 +195,7 @@
 @media (max-width: 767.98px) {
     .header_section .nav-coll {
         top: calc(100% + 6px);
+        right: -14px;
         width: 220px;
         padding: 8px;
         border-radius: 14px;
@@ -222,6 +225,7 @@
 @media (max-width: 575.98px) {
     .header_section .nav-coll {
         top: calc(100% + 5px);
+        right: -10px;
         width: 190px;
         padding: 7px;
         border-radius: 12px;
