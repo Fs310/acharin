@@ -51,15 +51,34 @@
         box-sizing: border-box;
     }
 
+    /* Open/close animation: panel feels attached to the right side */
     .header_section .nav-coll.collapse:not(.show) {
-        display: none !important;
+        display: block !important;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(18px);
+        pointer-events: none;
+    }
+
+    .header_section .nav-coll.collapse.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
     }
 
     .header_section .nav-coll.collapsing {
         display: block !important;
         height: auto !important;
         overflow: hidden;
-        transition: none;
+        visibility: visible !important;
+        opacity: 1;
+        transform: translateX(18px);
+        pointer-events: none;
+    }
+
+    .header_section .nav-coll {
+        transition: opacity .22s ease, transform .22s ease, visibility 0s linear 0s;
     }
 
     .header_section .nav-coll .navbar-nav {
