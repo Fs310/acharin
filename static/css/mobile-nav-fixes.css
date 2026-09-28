@@ -46,7 +46,7 @@
         opacity: 1;
         backdrop-filter: none;
         border: 1px solid #e4ebf3;
-        border-radius: 0 0 16px 16px;
+        border-radius: 0 0 0 16px;
         box-shadow: 0 14px 34px rgba(14, 46, 101, .13);
         box-sizing: border-box;
     }
@@ -176,7 +176,7 @@
     .header_section .nav-coll {
         width: 250px;
         padding: 12px;
-        border-radius: 0 0 17px 17px;
+        border-radius: 0 0 0 17px;
     }
 
     .header_section .nav-coll .nav-link {
@@ -198,7 +198,7 @@
         right: -14px;
         width: 220px;
         padding: 8px;
-        border-radius: 0 0 14px 14px;
+        border-radius: 0 0 0 14px;
     }
 
     .header_section .nav-coll .nav-link {
@@ -228,7 +228,7 @@
         right: -10px;
         width: 190px;
         padding: 7px;
-        border-radius: 0 0 12px 12px;
+        border-radius: 0 0 0 12px;
     }
 
     .header_section .nav-coll .nav-link {
