@@ -1,5 +1,5 @@
 /* =========================================================
-   MOBILE NAV — compact vertical panel
+   MOBILE NAV — compact vertical side panel
    992px and below
    ========================================================= */
 
@@ -28,20 +28,24 @@
         background: var(--brand-orange);
     }
 
-    /* Vertical menu panel */
+    /* Vertical side panel */
     .header_section .nav-coll {
         position: absolute;
         top: calc(100% + 8px);
-        inset-inline: 0;
+        right: 0;
+        left: auto;
         z-index: 1001;
         display: block !important;
-        width: 100%;
+        width: min(340px, calc(100vw - 32px));
+        max-height: calc(100vh - 90px);
         margin: 0;
         padding: 10px;
-        background: rgba(255, 255, 255, .98);
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #ffffff;
         border: 1px solid #e4ebf3;
         border-radius: 16px;
-        box-shadow: 0 12px 28px rgba(14, 46, 101, .09);
+        box-shadow: 0 14px 34px rgba(14, 46, 101, .13);
         box-sizing: border-box;
     }
 
@@ -63,7 +67,7 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 2px;
+        gap: 1px;
     }
 
     .header_section .nav-coll .nav-item {
@@ -75,14 +79,15 @@
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        min-height: 44px;
-        padding: 9px 14px;
+        min-height: 42px;
+        padding: 8px 13px;
         border-radius: 9px;
         color: #111827 !important;
         background: transparent !important;
         box-shadow: none !important;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 600;
+        line-height: 1.5;
         box-sizing: border-box;
         transition: color .2s ease, background .2s ease;
     }
@@ -90,11 +95,11 @@
     .header_section .nav-coll .nav-link:hover,
     .header_section .nav-coll .nav-link:focus {
         color: var(--brand-navy) !important;
-        background: rgba(14, 46, 101, .045) !important;
+        background: #f5f7fb !important;
         box-shadow: none !important;
     }
 
-    /* No default/automatic active highlight */
+    /* No default active highlight */
     .header_section .nav-coll .nav-link.active,
     .header_section .nav-coll .nav-link[aria-current="page"] {
         color: #111827 !important;
@@ -103,9 +108,9 @@
         font-weight: 600 !important;
     }
 
-    /* Compact CTA inside the panel */
+    /* Divider + compact CTA */
     .header_section .nav-coll .mobile-nav-footer {
-        margin-top: 8px;
+        margin-top: 7px;
         padding-top: 9px;
         border-top: 1px solid #edf2f7;
     }
@@ -126,7 +131,7 @@
         box-sizing: border-box;
     }
 
-    /* Keep dropdowns usable inside the vertical menu */
+    /* Dropdowns remain inside the panel */
     .header_section .nav-coll .dropdown-menu {
         position: static !important;
         width: 100%;
@@ -140,19 +145,20 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .header_section .nav-coll {
+        width: min(360px, calc(100vw - 32px));
         padding: 12px;
         border-radius: 17px;
     }
 
     .header_section .nav-coll .nav-link {
-        min-height: 46px;
-        padding-inline: 16px;
-        font-size: 15px;
+        min-height: 44px;
+        padding-inline: 15px;
+        font-size: 14px;
     }
 
     .header_section .nav-coll .mobile-nav-footer a {
-        height: 44px;
-        min-height: 44px;
+        height: 43px;
+        min-height: 43px;
         font-size: 13px;
     }
 }
@@ -160,12 +166,13 @@
 @media (max-width: 767.98px) {
     .header_section .nav-coll {
         top: calc(100% + 6px);
+        width: min(300px, calc(100vw - 24px));
         padding: 8px;
         border-radius: 14px;
     }
 
     .header_section .nav-coll .nav-link {
-        min-height: 40px;
+        min-height: 39px;
         padding: 7px 11px;
         border-radius: 8px;
         font-size: 13px;
@@ -177,9 +184,9 @@
     }
 
     .header_section .nav-coll .mobile-nav-footer a {
-        height: 38px;
-        min-height: 38px;
-        padding-inline: 10px !important;
+        height: 39px;
+        min-height: 39px;
+        padding-inline: 11px !important;
         border-radius: 8px;
         font-size: 11px;
     }
@@ -188,12 +195,13 @@
 @media (max-width: 575.98px) {
     .header_section .nav-coll {
         top: calc(100% + 5px);
+        width: min(270px, calc(100vw - 20px));
         padding: 7px;
         border-radius: 12px;
     }
 
     .header_section .nav-coll .nav-link {
-        min-height: 37px;
+        min-height: 36px;
         padding: 6px 9px;
         font-size: 12px;
     }
