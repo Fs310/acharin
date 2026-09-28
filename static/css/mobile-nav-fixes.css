@@ -36,13 +36,13 @@
         left: auto;
         z-index: 1001;
         display: block !important;
-        width: 280px;
+        width: 250px;
         max-height: calc(100vh - 90px);
         margin: 0;
         padding: 10px;
         overflow-y: auto;
         overflow-x: hidden;
-        background: #ffffff !important;
+        background: #f2f8fe99 !important;
         opacity: 1;
         backdrop-filter: none;
         border: 1px solid #e4ebf3;
@@ -110,11 +110,17 @@
         font-weight: 600 !important;
     }
 
-    /* Divider + compact CTA */
+    /* Account separator + compact CTA */
+    .header_section .nav-coll .navbar-nav .nav-item:last-child {
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid rgba(14, 46, 101, .12);
+    }
+
     .header_section .nav-coll .mobile-nav-footer {
         margin-top: 7px;
-        padding-top: 9px;
-        border-top: 1px solid #edf2f7;
+        padding-top: 0;
+        border-top: 0;
     }
 
     .header_section .nav-coll .mobile-nav-footer a {
@@ -147,7 +153,7 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .header_section .nav-coll {
-        width: 280px;
+        width: 250px;
         padding: 12px;
         border-radius: 17px;
     }
@@ -168,7 +174,7 @@
 @media (max-width: 767.98px) {
     .header_section .nav-coll {
         top: calc(100% + 6px);
-        width: 245px;
+        width: 220px;
         padding: 8px;
         border-radius: 14px;
     }
@@ -197,7 +203,7 @@
 @media (max-width: 575.98px) {
     .header_section .nav-coll {
         top: calc(100% + 5px);
-        width: 215px;
+        width: 190px;
         padding: 7px;
         border-radius: 12px;
     }
