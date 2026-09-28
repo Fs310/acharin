@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap-icons.min.css" %}'>
     <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
     <link href='{% static "css/responsive.css" %}' rel="stylesheet">
+    <link href='{% static "css/mobile-nav-fixes.css" %}' rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>{% block title %}آچارین | تعمیر لوازم خانگی در مشهد{% endblock %}</title>
 </head>
@@ -36,8 +37,7 @@
                 </button>
                 <div class="collapse navbar-collapse nav-coll justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                                href="{% url 'home:homes' %}">خانه</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home:homes' %}">خانه</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'home:services' %}">خدمات</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'home:new' %}">مجله خبری</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'home:about' %}">درباره ما</a></li>
@@ -47,31 +47,21 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                    aria-expanded="false" aria-label="منوی ادمین">کاربر (ادمین)</a>
                                 <ul class="dropdown-menu">
-
                                     <li class="admin-menu-item">
                                         <button type="button" class="dropdown-item admin-menu-toggle"
                                                 aria-expanded="false">مدیریت سایت <i class="bi bi-chevron-left"
                                                                                      aria-hidden="true"></i></button>
                                         <ul class="admin-submenu">
-                                            <li><a class="dropdown-item"
-                                                   href="{% url 'home:management_list' 'services' %}">خدمات</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'services' %}">خدمات</a></li>
                                             <li><a class="dropdown-item" href="{% url 'home:management_list' 'articles' %}">مقالات</a></li>
-                                            <li><a class="dropdown-item"
-                                                   href="{% url 'home:management_list' 'reviews' %}">نظرات</a></li>
-                                            <li><a class="dropdown-item"
-                                                   href="{% url 'home:management_list' 'service-requests' %}">درخواست‌های
-                                                تعمیر</a></li>
-                                            <li><a class="dropdown-item"
-                                                   href="{% url 'home:management_list' 'clients' %}">مشتریان</a></li>
-                                            <li><a class="dropdown-item"
-                                                   href="{% url 'home:management_list' 'factors' %}">فاکتورها</a></li>
-                                            <li><a class="dropdown-item"
-                                                   href="{% url 'home:management_list' 'parts' %}">قطعات</a></li>
-
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'reviews' %}">نظرات</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'service-requests' %}">درخواست‌های تعمیر</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'clients' %}">مشتریان</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'factors' %}">فاکتورها</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:management_list' 'parts' %}">قطعات</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="dropdown-item" href="{% url 'admin:index' %}">پنل
-                                        مدیریت</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'admin:index' %}">پنل مدیریت</a></li>
                                     <li><a class="dropdown-item" href="{% url 'accounts:logout_user' %}">خروج</a></li>
                                 </ul>
                             </li>
@@ -80,20 +70,15 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                    aria-expanded="false" aria-label="منوی کاربری">کاربر ({{ user.username }})</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">اطلاعات شخصی</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="{% url 'accounts:history' %}">تاریخچه
-                                        فاکتورها</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">اطلاعات شخصی</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'accounts:history' %}">تاریخچه فاکتورها</a></li>
                                     <li><a class="dropdown-item" href="{% url 'accounts:logout_user' %}">خروج</a></li>
                                 </ul>
                             </li>
                         {% else %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}"
-                                                    aria-label="ورود یا ایجاد حساب کاربری">ورود / ایجاد حساب کاربری</a>
-                            </li>
+                                                    aria-label="ورود یا ایجاد حساب کاربری">ورود / ایجاد حساب کاربری</a></li>
                         {% endif %}
-
-
                     </ul>
                     <div class="mobile-nav-footer d-lg-none">
                         <a class="btn btn-warning w-100 text-white py-3" href="{% url 'home:homes' %}#request-form"
@@ -118,16 +103,12 @@
                 <h4>اطلاعات تماس</h4>
                 <address class="icons">
                     <div class="icon"><i class="bi bi-phone" aria-hidden="true"></i><a href="tel:09123456789"
-                                                                                       aria-label="تماس با شماره 09123456789">09123456789</a>
-                    </div>
+                                                                                       aria-label="تماس با شماره 09123456789">09123456789</a></div>
                     <div class="icon"><i class="bi bi-telephone" aria-hidden="true"></i><a href="tel:05131234567"
-                                                                                           aria-label="تماس با شماره 05131234567">0513-1234567</a>
-                    </div>
+                                                                                           aria-label="تماس با شماره 05131234567">0513-1234567</a></div>
                     <div class="icon"><i class="bi bi-pin-map" aria-hidden="true"></i><a href="https://maps.google.com/"
-                                                                                         target="_blank"
-                                                                                         rel="noopener noreferrer"
-                                                                                         aria-label="نمایش آدرس روی نقشه">مشهد
-                        - بلوار جانباز</a></div>
+                                                                                         target="_blank" rel="noopener noreferrer"
+                                                                                         aria-label="نمایش آدرس روی نقشه">مشهد - بلوار جانباز</a></div>
                     <div class="icon"><i class="bi bi-envelope-paper" aria-hidden="true"></i><a
                             href="mailto:info@example.com" aria-label="ارسال ایمیل">info@example.com</a></div>
                 </address>
@@ -157,8 +138,7 @@
                 <p>ارائه خدمات تخصصی تعمیر لوازم خانگی در خراسان رضوی با اعزام سریع تعمیرکار و ضمانت خدمات.</p>
                 <div class="social-box">
                     <div class="box">
-                        <a href="#" aria-label="اینستاگرام آچارین"><i class="bi bi-instagram"
-                                                                      aria-hidden="true"></i></a>
+                        <a href="#" aria-label="اینستاگرام آچارین"><i class="bi bi-instagram" aria-hidden="true"></i></a>
                         <a href="#" aria-label="تلگرام آچارین"><i class="bi bi-telegram" aria-hidden="true"></i></a>
                         <a href="#" aria-label="واتساپ آچارین"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
                         <a href="#" aria-label="گوگل"><i class="bi bi-google" aria-hidden="true"></i></a>
