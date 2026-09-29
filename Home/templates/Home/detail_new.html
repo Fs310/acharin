@@ -59,7 +59,12 @@
                     </div>
                 </header>
 
-                    {% if new.sub_summary %}
+
+
+                    <div class="article-text">
+                        {{ new.sub_description|linebreaks }}
+                    </div>
+                                    {% if new.sub_summary %}
                         <div class="article-alert">
                             <i class="bi bi-lightbulb" aria-hidden="true"></i>
                             <div>
@@ -68,10 +73,6 @@
                             </div>
                         </div>
                     {% endif %}
-
-                    <div class="article-text">
-                        {{ new.sub_description|linebreaks }}
-                    </div>
                 </div>
             </article>
         </div>
