@@ -5781,6 +5781,204 @@
 }
 
 /* =========================================================
+   BLOG DETAIL — XS
+   Up to 575.98px
+   Single-column mobile article
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+    .blog-detail {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 8px 30px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .blog-detail > .container-fluid {
+        width: 100% !important;
+        max-width: 360px !important;
+        padding: 0 !important;
+        margin-inline: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .site-breadcrumb {
+        width: 100% !important;
+        margin: 0 2px 9px !important;
+        padding: 0 !important;
+        font-size: 8px !important;
+        line-height: 1.7 !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .new-grid {
+        width: 100% !important;
+        max-width: 360px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .new-content {
+        order: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .new-sidebar {
+        order: 2 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .article-body {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .article-image {
+        width: 100% !important;
+        aspect-ratio: 16 / 7.5 !important;
+    }
+
+    .blog-detail .article-header {
+        margin: 11px 10px 8px !important;
+    }
+
+    .blog-detail .article-header h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 5px !important;
+        font-size: 18px !important;
+        line-height: 1.45 !important;
+    }
+
+    .blog-detail .article-meta {
+        gap: 7px !important;
+        font-size: 8px !important;
+        line-height: 1.6 !important;
+    }
+
+    .blog-detail .article-text {
+        padding: 0 10px 10px !important;
+        font-size: 10px !important;
+        line-height: 1.95 !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .article-text.article-intro {
+        padding-top: 4px !important;
+    }
+
+    .blog-detail .article-text p {
+        margin: 0 0 7px !important;
+    }
+
+    .blog-detail .article-alert {
+        width: auto !important;
+        gap: 7px !important;
+        margin: 0 8px !important;
+        padding: 9px 10px !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .article-alert > i {
+        font-size: 18px !important;
+    }
+
+    .blog-detail .article-alert h2 {
+        margin: 0 0 2px !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+    .blog-detail .article-alert p {
+        font-size: 8px !important;
+        line-height: 1.7 !important;
+    }
+
+    .blog-detail .sidebar-box {
+        width: 100% !important;
+        margin: 0 0 8px !important;
+        padding: 11px 9px !important;
+        border-radius: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .sidebar-box h2 {
+        margin: 0 0 8px !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+
+    .blog-detail .related-box {
+        padding: 10px 8px !important;
+    }
+
+    .blog-detail .related-title {
+        gap: 6px !important;
+        margin-bottom: 7px !important;
+        padding-bottom: 7px !important;
+    }
+
+    .blog-detail .related-title > i {
+        width: 24px !important;
+        height: 24px !important;
+        flex-basis: 24px !important;
+        border-radius: 7px !important;
+        font-size: 11px !important;
+    }
+
+    .blog-detail .related-title h2 {
+        font-size: 11px !important;
+    }
+
+    .blog-detail .related-list {
+        gap: 4px !important;
+    }
+
+    .blog-detail .related-item {
+        min-height: 32px !important;
+        padding: 5px 6px !important;
+        border-radius: 7px !important;
+    }
+
+    .blog-detail .related-item-title {
+        padding-right: 3px !important;
+        font-size: 8px !important;
+        line-height: 1.6 !important;
+    }
+
+    .blog-detail .related-item > i {
+        font-size: 8px !important;
+    }
+
+    .blog-detail .article-list li + li {
+        margin-top: 1px !important;
+    }
+
+    .blog-detail .article-list a {
+        padding: 4px 5px !important;
+        font-size: 8.5px !important;
+        line-height: 1.65 !important;
+    }
+
+    .blog-detail .article-list li::before {
+        width: 4px !important;
+        height: 4px !important;
+    }
+}
+
+/* =========================================================
    MOBILE NAVIGATION — unified visual treatment
    992px and below
    ========================================================= */
