@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (width >= 992) return 8;
         if (width >= 768) return 6;
-        if (width >= 576) return 4;
+        if (width >= 576) return 6;
+        if (width < 576) return 4;
         return 4;
     };
 
