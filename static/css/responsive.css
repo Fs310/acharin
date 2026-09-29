@@ -4408,11 +4408,6 @@
     .service-cta .cta-image {
         display: none !important;
     }
-}
-
-
-
-@media (max-width: 575.98px) {
 .service-detail{width:100%!important;max-width:100%!important;padding:14px 10px 0!important;box-sizing:border-box!important;overflow:hidden!important}
 .service-detail>.container-fluid{width:100%!important;max-width:100%!important;padding:0!important;margin:0!important}
 .features-row{width:100%!important;max-width:360px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;margin:10px auto 18px!important}
@@ -4427,7 +4422,7 @@
 .service-body .service-gallery{width:100%!important;height:210px!important;min-height:210px!important;max-width:none!important;max-height:210px!important}
 .service-body .service-gallery .main-image{width:100%!important;height:210px!important;min-height:210px!important;object-fit:cover!important;object-position:center!important}
 .service-body .service-content{width:100%!important;min-width:0!important;padding:18px 14px 16px!important;box-sizing:border-box!important}
-.service-body .service-content h1{margin:0 0 10px!important;font-size:22px!important;line-height:1.45!important;text-align:center!important}
+.service-body .service-content h1{margin:0 0 10px!important;font-size:22px!important;line-height:1.45!important }
 .service-body .service-content .service-description{margin-bottom:13px!important}
 .service-body .service-content .service-description p{font-size:11px!important;line-height:1.9!important;text-align:right!important}
 .service-body .service-content h2{margin:0 0 9px!important;font-size:16px!important;line-height:1.5!important}
