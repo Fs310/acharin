@@ -1069,6 +1069,163 @@
         border-radius: 11px !important;
     }
 
+    /* =========================================================
+       BLOG DETAIL — LG 992px
+       992–1199.98px
+       Compact desktop article layout
+       ========================================================= */
+
+    .blog-detail {
+        padding: 0 18px 45px !important;
+    }
+
+    .blog-detail > .container-fluid {
+        max-width: 920px !important;
+        margin-inline: auto !important;
+    }
+
+    .blog-detail .site-breadcrumb {
+        margin-bottom: 4px !important;
+        font-size: 11px !important;
+    }
+
+    .new-grid {
+        grid-template-columns: 235px minmax(0, 1fr) !important;
+        gap: 18px !important;
+        max-width: 920px !important;
+    }
+
+    .new-sidebar {
+        width: 235px !important;
+    }
+
+    .sidebar-box {
+        padding: 15px 12px !important;
+        margin: 16px 0 14px !important;
+        border-radius: 13px !important;
+    }
+
+    .sidebar-box h2 {
+        margin-bottom: 14px !important;
+        font-size: 16px !important;
+    }
+
+    .related-box {
+        padding: 14px !important;
+    }
+
+    .related-title {
+        gap: 8px !important;
+        margin-bottom: 11px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .related-title > i {
+        width: 30px !important;
+        height: 30px !important;
+        flex-basis: 30px !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+    }
+
+    .related-title h2 {
+        font-size: 14px !important;
+    }
+
+    .related-list {
+        gap: 6px !important;
+    }
+
+    .related-item {
+        min-height: 40px !important;
+        padding: 7px 9px !important;
+        border-radius: 8px !important;
+    }
+
+    .related-item-title {
+        font-size: 10.5px !important;
+        line-height: 1.7 !important;
+    }
+
+    .related-item > i {
+        font-size: 11px !important;
+    }
+
+    .article-list li + li {
+        margin-top: 2px !important;
+    }
+
+    .article-list a {
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+        line-height: 1.7 !important;
+    }
+
+    .article-list li::before {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    .article-header {
+        margin: 17px 16px 14px !important;
+    }
+
+    .article-header h1 {
+        max-width: 620px !important;
+        margin-bottom: 9px !important;
+        font-size: 28px !important;
+        line-height: 1.45 !important;
+    }
+
+    .article-meta {
+        gap: 14px !important;
+        font-size: 10px !important;
+    }
+
+    .article-body {
+        border-radius: 14px !important;
+        margin-top: 18px !important;
+    }
+
+    .article-image {
+        aspect-ratio: 16 / 7.2 !important;
+    }
+
+    .article-text {
+        padding: 0 22px 14px !important;
+        font-size: 13px !important;
+        line-height: 2 !important;
+    }
+
+    .article-text.article-intro {
+        padding-top: 14px !important;
+    }
+
+    .article-text p {
+        margin-bottom: 8px !important;
+    }
+
+    .article-alert {
+        gap: 10px !important;
+        margin: 0 18px !important;
+        padding: 13px 15px !important;
+        border-radius: 10px !important;
+    }
+
+    .article-alert > i {
+        font-size: 23px !important;
+    }
+
+    .article-alert h2 {
+        margin-bottom: 4px !important;
+        font-size: 14px !important;
+    }
+
+    .article-alert p {
+        font-size: 11px !important;
+        line-height: 1.8 !important;
+    }
+
 }
 
 /* =========================================================
