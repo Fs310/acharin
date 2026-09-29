@@ -6936,6 +6936,8 @@
 
     .about-page .about-benefits {
         grid-area: benefits !important;
+        grid-column: 1 !important;
+        grid-row: 2 !important;
         width: 100% !important;
         max-width: none !important;
         min-width: 0 !important;
@@ -6972,6 +6974,8 @@
 
     .about-page .about-image {
         grid-area: image !important;
+        grid-column: 2 !important;
+        grid-row: 2 !important;
         order: initial !important;
         width: 100% !important;
         max-width: none !important;
