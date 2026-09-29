@@ -7215,3 +7215,241 @@
         box-sizing: border-box !important;
     }
 }
+
+
+/* =========================================================
+   ABOUT PAGE — XL 1200px
+   1200–1399.98px
+   Priority: visual balance + image harmony
+   ========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .about-features {
+        width: 100% !important;
+        max-width: 1160px !important;
+        margin: 0 auto 50px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-features .features-row {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        margin: 0 !important;
+    }
+
+    .about-features .feature-box {
+        min-width: 0 !important;
+        min-height: 132px !important;
+        padding: 18px 12px !important;
+        border-radius: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-features .feature-icon {
+        width: 44px !important;
+        height: 44px !important;
+        flex-basis: 44px !important;
+        border-radius: 12px !important;
+        font-size: 21px !important;
+    }
+
+    .about-features .feature-box h3 {
+        margin: 10px 0 5px !important;
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+    }
+
+    .about-features .feature-box p {
+        font-size: 11px !important;
+        line-height: 1.75 !important;
+    }
+
+
+    /* =========================
+       ABOUT CONTENT WRAPPER
+    ========================= */
+
+    .about-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 24px 62px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-container {
+        width: 100% !important;
+        max-width: 1160px !important;
+        margin-inline: auto !important;
+    }
+
+
+    /* =========================
+       MAIN SECTION
+    ========================= */
+
+    .about-page .about-main {
+        width: 100% !important;
+        grid-template-columns:
+            minmax(0, 1.02fr)
+            minmax(0, .98fr) !important;
+        gap: 52px !important;
+        align-items: start !important;
+    }
+
+    .about-page .about-content {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding-left: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .about-header {
+        margin-bottom: 20px !important;
+    }
+
+    .about-page .about-header h1 {
+        margin: 0 0 15px !important;
+        font-size: 34px !important;
+        line-height: 1.45 !important;
+    }
+
+    .about-page .about-header p {
+        margin: 0 0 11px !important;
+        font-size: 13.5px !important;
+        line-height: 2 !important;
+    }
+
+    .about-page .about-benefits {
+        margin-top: 22px !important;
+    }
+
+    .about-page .about-benefits li {
+        padding-right: 37px !important;
+        margin-bottom: 10px !important;
+        font-size: 12.5px !important;
+        line-height: 1.8 !important;
+    }
+
+    .about-page .about-benefits li::before {
+        width: 24px !important;
+        height: 24px !important;
+        top: 1px !important;
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       IMAGE
+       Deliberately smaller than
+       the whole content column
+    ========================= */
+
+    .about-page .about-image {
+        width: 100% !important;
+        max-width: 510px !important;
+        justify-self: center !important;
+        margin: 42px auto 0 !important;
+        border-radius: 18px !important;
+        overflow: hidden !important;
+    }
+
+    .about-page .about-image img {
+        display: block !important;
+        width: 100% !important;
+        aspect-ratio: 3 / 2 !important;
+        height: auto !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+
+    /* =========================
+       TRUST CARDS
+    ========================= */
+
+    .about-page .about-trust {
+        width: 100% !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        margin-top: 46px !important;
+        border-radius: 16px !important;
+    }
+
+    .about-page .trust-card {
+        min-width: 0 !important;
+        min-height: 108px !important;
+        gap: 14px !important;
+        padding: 17px 18px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .trust-icon {
+        width: 46px !important;
+        height: 46px !important;
+        flex-basis: 46px !important;
+        border-radius: 13px !important;
+        font-size: 21px !important;
+    }
+
+    .about-page .trust-card h2 {
+        margin-bottom: 5px !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    .about-page .trust-card p {
+        font-size: 10.5px !important;
+        line-height: 1.8 !important;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .about-page + .service-cta {
+        width: 100% !important;
+        max-width: 1160px !important;
+        margin-inline: auto !important;
+        padding-top: 22px !important;
+        border-radius: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page + .service-cta .cta-image img {
+        width: 255px !important;
+        height: 255px !important;
+    }
+
+    .about-page + .service-cta .cta-content {
+        max-width: 570px !important;
+    }
+
+    .about-page + .service-cta .cta-content .cta-title {
+        font-size: 24px !important;
+        line-height: 1.5 !important;
+    }
+
+    .about-page + .service-cta .cta-content .cta-text {
+        font-size: 13px !important;
+        line-height: 1.8 !important;
+        margin: 7px auto 18px !important;
+    }
+
+    .about-page + .service-cta .btn-box {
+        gap: 14px !important;
+    }
+
+    .about-page + .service-cta .btn-box .form-btn,
+    .about-page + .service-cta .btn-box .tel-btn {
+        width: 200px !important;
+        height: 47px !important;
+        border-radius: 10px !important;
+    }
+}
