@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const fetchNextPage = async (page, width) => {
-        const response = await fetch(`?page=${page}&width=${width}`, {
+    const fetchNextPage = async (page) => {
+        const response = await fetch(`?page=${page}`, {
             headers: { "X-Requested-With": "XMLHttpRequest" }
         });
 
@@ -145,8 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // اگر کارت مخفی کافی نبود، برای تکمیل batch همان کلیک صفحه بعد را می‌گیریم.
             while (remaining > 0 && hasNext) {
-                const width = window.innerWidth;
-                const result = await fetchNextPage(nextPage, width);
+                const result = await fetchNextPage(nextPage);
 
                 const visibleCount = Math.min(remaining, result.cards.length);
 
