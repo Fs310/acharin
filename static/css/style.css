@@ -3164,16 +3164,17 @@ minmax(0, 3fr);
 ========================= */
 
 .article-text {
-    padding: 16px 30px;
+    padding: 0 30px 16px;
     color: #334155;
     font-size: 15px;
     line-height: 2.1;
 }
-
+.article-text.article-intro {
+    padding-top: 16px;
+}
 .article-text p {
     margin: 0 0 10px;
 }
-.article-text p:first-child,
 .article-text p:last-child{
     font-weight: 600;
 }
@@ -3204,7 +3205,7 @@ minmax(0, 3fr);
     border: 1px solid rgba(239, 100, 27, .12);
 
     gap: 12px;
-    margin: 0 24px 20px;
+    margin: 0 24px;
     padding: 16px 19px;
     border-radius: 11px;
 }

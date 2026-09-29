@@ -5,100 +5,103 @@
 {% block title %}{{ new.sub_titer }} | آچارین{% endblock %}
 
 {% block body %}
-<section class="blog-detail">
-    <div class="container-fluid">
-        <nav class="site-breadcrumb" aria-label="مسیر صفحه">
-            <a href="{% url 'home:homes' %}">خانه</a>
-            <a href="{% url 'home:new' %}">مقالات</a>
-            <span aria-current="page">{{ new.sub_titer }}</span>
-        </nav>
+    <section class="blog-detail">
+        <div class="container-fluid">
+            <nav class="site-breadcrumb" aria-label="مسیر صفحه">
+                <a href="{% url 'home:homes' %}">خانه</a>
+                <a href="{% url 'home:new' %}">مقالات</a>
+                <span aria-current="page">{{ new.sub_titer }}</span>
+            </nav>
 
-        <div class="new-grid">
-            <aside class="new-sidebar">
-                <div class="sidebar-box related-box">
-                    <div class="related-title">
-                        <i class="bi bi-journal-text" aria-hidden="true"></i>
-                        <h2>مقالات مرتبط</h2>
-                    </div>
-                    <div class="related-list">
-                        {% for item in related_articles %}
-                            <a href="{% url 'home:detail_new' item.slug %}" class="related-item">
-                                <span class="related-item-title">{{ item.sub_titer }}</span>
-                                <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                            </a>
-                        {% empty %}
-                            <p class="related-empty">مقاله مرتبطی وجود ندارد.</p>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="sidebar-box">
-                    <h2>فهرست مقالات</h2>
-                    <ul class="article-list">
-                        {% for itm in all_articles %}
-                            <li><a href="{% url 'home:detail_new' itm.slug %}">{{ itm.sub_titer }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </aside>
-
-            <article class="new-content">
-                <div class="article-body">
-
-                    {% if first_line %}
-                        <div class="article-text article-intro">
-                            {{ first_line|linebreaks }}
+            <div class="new-grid">
+                <aside class="new-sidebar">
+                    <div class="sidebar-box related-box">
+                        <div class="related-title">
+                            <i class="bi bi-journal-text" aria-hidden="true"></i>
+                            <h2>مقالات مرتبط</h2>
                         </div>
-                    {% endif %}
-
-                    {% if new.sub_img %}
-                        <figure class="article-image">
-                            <img src="{% if new.sub_img_thumb %}{{ new.sub_img_thumb.url }}{% elif new.sub_img.name|slice:":4" == "http" %}{{ new.sub_img.name }}{% else %}{{ new.sub_img.url }}{% endif %}" alt="{{ new.sub_titer }}" fetchpriority="high" decoding="async">
-                        </figure>
-                    {% endif %}
-
-                    <header class="article-header">
-                        <h1>{{ new.sub_titer }}</h1>
-                        <div class="article-meta">
-                            <span><i class="bi bi-person" aria-hidden="true"></i> تیم آچارین</span>
-                            <span><i class="bi bi-calendar3" aria-hidden="true"></i> {{ new.sub_update_date|to_jalali:"%Y/%m/%d" }}</span>
-                            <span><i class="bi bi-clock" aria-hidden="true"></i> {{ new.reading_time }} دقیقه</span>
+                        <div class="related-list">
+                            {% for item in related_articles %}
+                                <a href="{% url 'home:detail_new' item.slug %}" class="related-item">
+                                    <span class="related-item-title">{{ item.sub_titer }}</span>
+                                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                                </a>
+                            {% empty %}
+                                <p class="related-empty">مقاله مرتبطی وجود ندارد.</p>
+                            {% endfor %}
                         </div>
-                    </header>
+                    </div>
 
-                    {% if new.sub_summary %}
-                        <div class="article-alert">
-                            <i class="bi bi-lightbulb" aria-hidden="true"></i>
-                            <div>
-                                <h2>نکته مهم</h2>
-                                <p>{{ new.sub_summary }}</p>
+                    <div class="sidebar-box">
+                        <h2>فهرست مقالات</h2>
+                        <ul class="article-list">
+                            {% for itm in all_articles %}
+                                <li><a href="{% url 'home:detail_new' itm.slug %}">{{ itm.sub_titer }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+
+                <article class="new-content">
+                    <div class="article-body">
+                        {% if new.sub_img %}
+                            <figure class="article-image">
+                                <img src="
+                                        {% if new.sub_img_thumb %}{{ new.sub_img_thumb.url }}{% elif new.sub_img.name|slice:":4" == "http" %}{{ new.sub_img.name }}{% else %}{{ new.sub_img.url }}{% endif %}"
+                                     alt="{{ new.sub_titer }}" fetchpriority="high" decoding="async">
+                            </figure>
+                        {% endif %}
+
+                        <header class="article-header">
+                            <h1>{{ new.sub_titer }}</h1>
+                            <div class="article-meta">
+                                <span><i class="bi bi-person" aria-hidden="true"></i> تیم آچارین</span>
+                                <span><i class="bi bi-calendar3"
+                                         aria-hidden="true"></i> {{ new.sub_update_date|to_jalali:"%Y/%m/%d" }}</span>
+                                <span><i class="bi bi-clock" aria-hidden="true"></i> {{ new.reading_time }} دقیقه</span>
                             </div>
-                        </div>
-                    {% endif %}
+                        </header>
+                        {% if first_line %}
+                            <div class="article-text article-intro">
+                                {{ first_line|linebreaks }}
+                            </div>
+                        {% endif %}
+                        {% if new.sub_summary %}
+                            <div class="article-alert">
+                                <i class="bi bi-lightbulb" aria-hidden="true"></i>
+                                <div>
+                                    <h2>نکته مهم</h2>
+                                    <p>{{ new.sub_summary }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
 
-                    {% if remaining_description %}
-                        <div class="article-text">
-                            {{ remaining_description|linebreaks }}
-                        </div>
-                    {% endif %}
+                        {% if remaining_description %}
+                            <div class="article-text">
+                                {{ remaining_description|linebreaks }}
+                            </div>
+                        {% endif %}
 
-                </div>
-            </article>
+                    </div>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="blog-cta" aria-labelledby="cta-title">
-    <div class="cta-image">
-        <img src="{% static 'img/order.png' %}" alt="کارشناس آچارین برای ثبت درخواست تعمیر" loading="lazy" decoding="async" width="290" height="290">
-    </div>
-    <div class="cta-content">
-        <h2 class="cta-title" id="cta-title">خدمات مورد نظر خود را پیدا نکردید؟</h2>
-        <p class="cta-text">با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.</p>
-        <div class="btn-box">
-            <a href="tel:09353593735" class="tel-btn" aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">۰۹۳۵۳۵۹۳۷۳۵ <i class="bi bi-telephone-fill" aria-hidden="true"></i></a>
-            <a class="form-btn" href="{% url 'home:homes' %}#request-form" aria-label="ثبت درخواست تعمیر"><i class="bi bi-chat-right-text-fill" aria-hidden="true"></i> ثبت درخواست تعمیر</a>
+    <section class="blog-cta" aria-labelledby="cta-title">
+        <div class="cta-image">
+            <img src="{% static 'img/order.png' %}" alt="کارشناس آچارین برای ثبت درخواست تعمیر" loading="lazy"
+                 decoding="async" width="290" height="290">
         </div>
-    </div>
-</section>
+        <div class="cta-content">
+            <h2 class="cta-title" id="cta-title">خدمات مورد نظر خود را پیدا نکردید؟</h2>
+            <p class="cta-text">با ما تماس بگیرید تا در سریع‌ترین زمان با شما ارتباط بگیریم.</p>
+            <div class="btn-box">
+                <a href="tel:09353593735" class="tel-btn" aria-label="تماس با شماره ۰۹۳۵۳۵۹۳۷۳۵">۰۹۳۵۳۵۹۳۷۳۵ <i
+                        class="bi bi-telephone-fill" aria-hidden="true"></i></a>
+                <a class="form-btn" href="{% url 'home:homes' %}#request-form" aria-label="ثبت درخواست تعمیر"><i
+                        class="bi bi-chat-right-text-fill" aria-hidden="true"></i> ثبت درخواست تعمیر</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}
