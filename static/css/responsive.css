@@ -6801,7 +6801,7 @@
 /* =========================================================
    ABOUT PAGE — SM 576px
    576–767.98px
-   Priority: visual balance + image harmony
+   Match 768px layout
    ========================================================= */
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -6866,6 +6866,7 @@
         width: 100% !important;
         max-width: 560px !important;
         margin-inline: auto !important;
+        box-sizing: border-box !important;
     }
 
     .about-page .site-breadcrumb {
@@ -6877,32 +6878,42 @@
 
 
     /* =========================
-       MAIN ABOUT — TWO BALANCED COLUMNS
+       MAIN ABOUT
+       Same structure as 768px:
+       header full width
+       image + benefits below in 2 columns
     ========================= */
 
     .about-page .about-main {
         width: 100% !important;
         display: grid !important;
-        grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr) !important;
-        gap: 22px !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        grid-template-areas:
+            "header header"
+            "benefits image" !important;
+        gap: 18px 22px !important;
         align-items: start !important;
         box-sizing: border-box !important;
     }
 
     .about-page .about-content {
+        display: contents !important;
         width: 100% !important;
         min-width: 0 !important;
         padding: 0 !important;
-        box-sizing: border-box !important;
     }
 
 
     /* =========================
-       TEXT
+       HEADER — FULL WIDTH
     ========================= */
 
     .about-page .about-header {
-        margin-bottom: 16px !important;
+        grid-area: header !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 0 2px !important;
+        box-sizing: border-box !important;
     }
 
     .about-page .about-header h1 {
@@ -6920,13 +6931,16 @@
 
 
     /* =========================
-       BENEFITS
-       Remains naturally below intro
-       in the right-hand column
+       BENEFITS — RIGHT COLUMN
     ========================= */
 
     .about-page .about-benefits {
-        margin-top: 15px !important;
+        grid-area: benefits !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
 
     .about-page .about-benefits ol {
@@ -6953,15 +6967,17 @@
 
 
     /* =========================
-       IMAGE — MATCH THE CONTENT COLUMN
+       IMAGE — LEFT COLUMN
     ========================= */
 
     .about-page .about-image {
+        grid-area: image !important;
+        order: initial !important;
         width: 100% !important;
-        max-width: 100% !important;
-        margin: 3px 0 0 !important;
-        align-self: start !important;
+        max-width: none !important;
         justify-self: stretch !important;
+        align-self: start !important;
+        margin: 0 !important;
         border-radius: 15px !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
@@ -6984,7 +7000,6 @@
 
     .about-page .about-trust {
         width: 100% !important;
-        display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         margin-top: 31px !important;
         border-radius: 15px !important;
@@ -7034,10 +7049,8 @@
     ========================= */
 
     .about-page + .service-cta {
-        width: 100% !important;
         padding: 18px 14px 0 !important;
         border-radius: 17px !important;
-        box-sizing: border-box !important;
     }
 
     .about-page + .service-cta .cta-image img {
