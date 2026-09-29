@@ -5325,6 +5325,183 @@
 .service-detail .service-cta .btn-box .form-btn,.service-detail .service-cta .btn-box .tel-btn{width:100%!important;max-width:200px!important;height:38px!important;border-radius:8px!important;font-size:10px!important;box-sizing:border-box!important}
 }
 
+
+
+    /* =========================================================
+       BLOG DETAIL — SM 576px
+       576–767.98px
+       Single-column article layout
+       ========================================================= */
+
+    .blog-detail {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 12px 38px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .blog-detail > .container-fluid {
+        width: 100% !important;
+        max-width: 620px !important;
+        padding-inline: 0 !important;
+        margin-inline: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .site-breadcrumb {
+        margin: 0 4px 10px !important;
+        padding: 0 !important;
+        font-size: 10px !important;
+    }
+
+    .blog-detail .new-grid {
+        width: 100% !important;
+        max-width: 620px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+        margin: 0 auto !important;
+    }
+
+    .blog-detail .new-content {
+        order: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .blog-detail .new-sidebar {
+        order: 2 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .blog-detail .article-body {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 14px !important;
+    }
+
+    .blog-detail .article-image {
+        width: 100% !important;
+        aspect-ratio: 16 / 7.5 !important;
+    }
+
+    .blog-detail .article-header {
+        margin: 16px 18px 12px !important;
+    }
+
+    .blog-detail .article-header h1 {
+        max-width: 100% !important;
+        margin-bottom: 7px !important;
+        font-size: 24px !important;
+        line-height: 1.5 !important;
+    }
+
+    .blog-detail .article-meta {
+        gap: 10px !important;
+        font-size: 9.5px !important;
+    }
+
+    .blog-detail .article-text {
+        padding: 0 18px 13px !important;
+        font-size: 12px !important;
+        line-height: 2 !important;
+    }
+
+    .blog-detail .article-text.article-intro {
+        padding-top: 5px !important;
+    }
+
+    .blog-detail .article-text p {
+        margin-bottom: 8px !important;
+    }
+
+    .blog-detail .article-alert {
+        gap: 9px !important;
+        margin: 0 14px !important;
+        padding: 12px 13px !important;
+        border-radius: 9px !important;
+    }
+
+    .blog-detail .article-alert > i {
+        font-size: 22px !important;
+    }
+
+    .blog-detail .article-alert h2 {
+        margin-bottom: 3px !important;
+        font-size: 13px !important;
+    }
+
+    .blog-detail .article-alert p {
+        font-size: 10px !important;
+        line-height: 1.75 !important;
+    }
+
+    .blog-detail .sidebar-box {
+        width: 100% !important;
+        padding: 15px 13px !important;
+        margin: 0 0 12px !important;
+        border-radius: 13px !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-detail .related-box {
+        padding: 14px 13px !important;
+    }
+
+    .blog-detail .sidebar-box h2 {
+        margin-bottom: 12px !important;
+        font-size: 16px !important;
+    }
+
+    .blog-detail .related-title {
+        gap: 8px !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .blog-detail .related-title > i {
+        width: 30px !important;
+        height: 30px !important;
+        flex-basis: 30px !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+    }
+
+    .blog-detail .related-title h2 {
+        font-size: 14px !important;
+    }
+
+    .blog-detail .related-list {
+        gap: 5px !important;
+    }
+
+    .blog-detail .related-item {
+        min-height: 40px !important;
+        padding: 7px 9px !important;
+        border-radius: 8px !important;
+    }
+
+    .blog-detail .related-item-title {
+        font-size: 10px !important;
+        line-height: 1.65 !important;
+    }
+
+    .blog-detail .related-item > i {
+        font-size: 10px !important;
+    }
+
+    .blog-detail .article-list li + li {
+        margin-top: 2px !important;
+    }
+
+    .blog-detail .article-list a {
+        padding: 5px 8px !important;
+        font-size: 10.5px !important;
+        line-height: 1.7 !important;
+    }
+
 /* =========================================================
    BLOG PAGE — XS
    Existing XS breakpoint — up to 575.98px
