@@ -692,6 +692,120 @@
     }
 
     /* =========================================================
+       SERVICE DETAIL — LG 992px
+       992–1199.98px
+       ========================================================= */
+
+    .service-detail {
+        padding: 24px 20px 0 !important;
+    }
+
+    .features-row {
+        gap: 16px !important;
+        margin: 24px 20px 28px !important;
+    }
+
+    .feature-box {
+        padding: 20px 14px !important;
+        border-radius: 14px !important;
+    }
+
+    .feature-icon {
+        width: 44px !important;
+        height: 44px !important;
+        flex-basis: 44px !important;
+        font-size: 22px !important;
+    }
+
+    .feature-box h3 {
+        margin: 10px 0 7px !important;
+        font-size: 17px !important;
+    }
+
+    .feature-box p {
+        font-size: 13px !important;
+        line-height: 1.75 !important;
+    }
+
+    .service-detail .service-link {
+        margin: 0 28px 22px !important;
+    }
+
+    .service-detail .service-link .link a,
+    .service-detail .service-link .link span {
+        font-size: 11px !important;
+    }
+
+    .service-detail .service-link .link a + a::before,
+    .service-detail .service-link .link a + span::before {
+        margin-inline: 8px !important;
+    }
+
+    .service-body {
+        margin: 0 20px 50px !important;
+        border-radius: 15px !important;
+    }
+
+    .service-body .service-gallery {
+        min-height: 360px !important;
+        max-height: 500px !important;
+    }
+
+    .service-body .service-gallery .main-image {
+        min-height: 360px !important;
+    }
+
+    .service-body .service-content {
+        padding: 28px !important;
+    }
+
+    .service-body .service-content h1 {
+        margin-bottom: 14px !important;
+        font-size: 29px !important;
+        line-height: 1.45 !important;
+    }
+
+    .service-body .service-content .service-description {
+        margin-bottom: 18px !important;
+    }
+
+    .service-body .service-content .service-description p {
+        font-size: 13px !important;
+        line-height: 1.95 !important;
+    }
+
+    .service-body .service-content h2 {
+        margin-bottom: 11px !important;
+        font-size: 18px !important;
+    }
+
+    .service-body .service-content h2 + li,
+    .service-body .service-content h2 ~ li {
+        min-height: 42px !important;
+        margin-bottom: 7px !important;
+        padding: 7px 40px 7px 12px !important;
+        border-radius: 10px !important;
+        font-size: 12px !important;
+        line-height: 1.7 !important;
+    }
+
+    .service-body .service-content h2 + li::before,
+    .service-body .service-content h2 ~ li::before {
+        right: 11px !important;
+        width: 21px !important;
+        height: 21px !important;
+        font-size: 11px !important;
+    }
+
+    .service-body .service-meta {
+        padding-top: 18px !important;
+    }
+
+    .service-body .service-meta small {
+        font-size: 10px !important;
+    }
+
+    /* =========================================================
        SERVICE PAGE — LG 992px
        992–1199.98px
        ========================================================= */
