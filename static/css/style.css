@@ -442,35 +442,35 @@ a, a:hover, a:focus{text-decoration: none;}
 .service-detail .service-link .link a + a::before,
 .service-detail .service-link .link a + span::before{content: "‹";margin-inline: 10px;color: var(--brand-orange);}
 
-.service-body{display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);align-items: stretch;margin: 0 30px 70px;background: #fff;border: 1px solid #e5eaf0;border-radius: 16px;overflow: hidden;box-shadow: 0 8px 30px rgba(15, 23, 42, .03);}
+.service-body{display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);align-items: stretch;margin: 0 30px 55px;background: #fff;border: 1px solid #e5eaf0;border-radius: 16px;overflow: hidden;box-shadow: 0 8px 30px rgba(15, 23, 42, .03);}
 
-.service-body .service-gallery{width: 100%;height: 100%;min-height: 420px;max-width: 800px;max-height: 600px;}
+.service-body .service-gallery{width: 100%;height: 100%;min-height: 380px;max-width: 760px;max-height: 520px;}
 
-.service-body .service-gallery .main-image{display: block;width: 100%;height: 100%;object-fit: cover;object-position: center;min-height: 420px;}
+.service-body .service-gallery .main-image{display: block;width: 100%;height: 100%;object-fit: cover;object-position: center;min-height: 380px;}
 
-.service-body .service-content{display: flex;flex-direction: column;padding: 40px;min-width: 0;}
+.service-body .service-content{display: flex;flex-direction: column;padding: 32px;min-width: 0;}
 
-.service-body .service-content h1{margin: 0 0 20px;font-size: 34px;line-height: 1.5;font-weight: 800;color: #0f172a;}
+.service-body .service-content h1{margin: 0 0 16px;font-size: 30px;line-height: 1.45;font-weight: 800;color: #0f172a;}
 
-.service-body .service-content .service-description{margin-bottom: 25px;}
+.service-body .service-content .service-description{margin-bottom: 20px;}
 
-.service-body .service-content .service-description p{margin: 0;color: #64748b;font-size: 15px;line-height: 2.1;}
+.service-body .service-content .service-description p{margin: 0;color: #64748b;font-size: 14px;line-height: 1.95;}
 
-.service-body .service-content h2{margin: 0 0 15px;font-size: 20px;line-height: 1.6;font-weight: 800;color: #0f172a;}
+.service-body .service-content h2{margin: 0 0 12px;font-size: 19px;line-height: 1.55;font-weight: 800;color: #0f172a;}
 
 /* خدمات شامل سرویس */
 .service-body .service-content h2 + li,
-.service-body .service-content h2 ~ li{position: relative;display: flex;align-items: center;min-height: 48px;margin: 0 0 10px;padding: 10px 48px 10px 16px;box-sizing: border-box;list-style: none;background: #f8fafc;border: 1px solid #e8edf3;border-radius: 12px;color: #334155;font-size: 14px;line-height: 1.8;transition: .25s ease;}
+.service-body .service-content h2 ~ li{position: relative;display: flex;align-items: center;min-height: 44px;margin: 0 0 8px;padding: 8px 44px 8px 14px;box-sizing: border-box;list-style: none;background: #f8fafc;border: 1px solid #e8edf3;border-radius: 11px;color: #334155;font-size: 13px;line-height: 1.75;transition: .25s ease;}
 
 .service-body .service-content h2 + li::before,
-.service-body .service-content h2 ~ li::before{content: "✓";position: absolute;right: 14px;top: 50%;transform: translateY(-50%);display: flex;align-items: center;justify-content: center;width: 24px;height: 24px;border-radius: 50%;background: rgba(239, 100, 27, .1);color: var(--brand-orange);font-size: 13px;font-weight: 800;}
+.service-body .service-content h2 ~ li::before{content: "✓";position: absolute;right: 12px;top: 50%;transform: translateY(-50%);display: flex;align-items: center;justify-content: center;width: 22px;height: 22px;border-radius: 50%;background: rgba(239, 100, 27, .1);color: var(--brand-orange);font-size: 12px;font-weight: 800;}
 
 .service-body .service-content h2 + li:hover,
 .service-body .service-content h2 ~ li:hover{border-color: rgba(14, 46, 101, .18);background: #fff;transform: translateX(-3px);box-shadow: 0 6px 18px rgba(15, 23, 42, .05);}
 
-.service-body .service-meta{margin-top: auto;padding-top: 30px;}
+.service-body .service-meta{margin-top: auto;padding-top: 22px;}
 
-.service-body .service-meta small{display: block;color: #94a3b8;font-size: 12px;}
+.service-body .service-meta small{display: block;color: #94a3b8;font-size: 11px;}
 
 /*--------------------------------------------------------------------------*/
 .detail_page{min-height: clamp(72vh, 75vh, 86vh);padding: 60px 30px;background: #d1e3ff;}
