@@ -2549,9 +2549,10 @@
         left: 0 !important;
         z-index: 2 !important;
         width: 100% !important;
-        min-height: 0 !important;
+        height: 58px !important;
+        min-height: 58px !important;
         margin: 0 !important;
-        padding: 9px 10px !important;
+        padding: 8px 10px !important;
         box-sizing: border-box !important;
         background: rgba(255,255,255,.94) !important;
         color: #1e293b !important;
@@ -2560,6 +2561,7 @@
         font-weight: 700 !important;
         text-align: center !important;
         display: -webkit-box !important;
+        align-items: center !important;
         overflow: hidden !important;
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
@@ -5147,9 +5149,10 @@
         left: 0 !important;
         z-index: 2 !important;
         width: 100% !important;
-        min-height: 0 !important;
+        height: 46px !important;
+        min-height: 46px !important;
         margin: 0 !important;
-        padding: 8px 8px !important;
+        padding: 7px 8px !important;
         box-sizing: border-box !important;
         background: rgba(255,255,255,.94) !important;
         color: #1e293b !important;
