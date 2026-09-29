@@ -8804,3 +8804,118 @@
         box-sizing: border-box !important;
     }
 }
+
+
+/* =========================================================
+   LOGIN PAGE — XL 1200px
+   1200–1399.98px
+   Priority: visual balance + image harmony
+   ========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    /* =========================
+       LOGIN SECTION
+    ========================= */
+
+    .login-section {
+        padding: 24px 24px 60px !important;
+        box-sizing: border-box !important;
+    }
+
+    .login-section .auth-breadcrumb,
+    .login-section .site-breadcrumb {
+        width: 100% !important;
+        max-width: 860px !important;
+        margin: 14px auto 24px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       LOGIN CONTAINER
+    ========================= */
+
+    .login-container {
+        width: min(860px, 100%) !important;
+        max-width: 860px !important;
+        min-height: 455px !important;
+        margin-inline: auto !important;
+        display: flex !important;
+        border-radius: 20px !important;
+        box-shadow: 0 12px 32px rgba(15, 23, 42, .075) !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================
+       FORM SIDE
+    ========================= */
+
+    .login-form-box {
+        width: 53% !important;
+        min-width: 0 !important;
+        padding: 38px 42px !important;
+        box-sizing: border-box !important;
+    }
+
+    .login-form-box h1 {
+        margin-bottom: 7px !important;
+        font-size: 28px !important;
+        line-height: 1.5 !important;
+    }
+
+    .login-form-box p {
+        margin-bottom: 19px !important;
+        font-size: 11.5px !important;
+        line-height: 1.85 !important;
+    }
+
+    .login-form-box form {
+        width: 100% !important;
+    }
+
+    .login-form-box input {
+        height: 44px !important;
+        margin-bottom: 13px !important;
+        padding-inline: 13px !important;
+        border-radius: 9px !important;
+        font-size: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .login-form-box button {
+        width: 100% !important;
+        height: 46px !important;
+        border-radius: 10px !important;
+        font-size: 14px !important;
+    }
+
+    .login-form-box > .login-link {
+        margin-top: 17px !important;
+    }
+
+    .login-form-box .login-link {
+        font-size: 10.5px !important;
+        line-height: 1.8 !important;
+    }
+
+    .login-form-box .login-link a,
+    .login-form-box form .login-link a {
+        font-size: 10.5px !important;
+    }
+
+
+    /* =========================
+       IMAGE SIDE
+    ========================= */
+
+    .login-banner {
+        width: 47% !important;
+        min-width: 0 !important;
+        min-height: 455px !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+}
