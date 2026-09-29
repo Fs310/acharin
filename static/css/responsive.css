@@ -1481,8 +1481,8 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .service-hero {
-        min-height: 245px !important;
-        padding: 22px 24px !important;
+        min-height: 235px !important;
+        padding: 20px 24px !important;
     }
 
     .service-hero .hero-img {
@@ -1490,26 +1490,26 @@
     }
 
     .service-hero .service-hero-content {
-        min-height: 195px !important;
+        min-height: 185px !important;
         justify-content: flex-end !important;
     }
 
     .service-hero .service-hero-content .service-hero-text {
-        width: 54% !important;
-        max-width: 440px !important;
+        width: 56% !important;
+        max-width: 455px !important;
         margin-inline-start: 0 !important;
         margin-inline-end: auto !important;
         text-align: right !important;
     }
 
     .service-hero .service-hero-text h1 {
-        margin: 8px 0 !important;
-        font-size: 2.15rem !important;
-        line-height: 1.45 !important;
+        margin: 7px 0 !important;
+        font-size: 2.05rem !important;
+        line-height: 1.4 !important;
     }
 
     .service-hero .service-hero-text p {
-        font-size: 14px !important;
+        font-size: 13px !important;
         line-height: 1.8 !important;
     }
 
@@ -1518,17 +1518,17 @@
     }
 
     .services-grid-section {
-        padding: 0 24px 46px !important;
+        padding: 0 22px 44px !important;
     }
 
     .services-grid-section .section-title {
-        margin-bottom: 30px !important;
+        margin-bottom: 28px !important;
     }
 
     .services-grid-section .section-title h2 {
         margin-bottom: 6px !important;
         font-size: 28px !important;
-        line-height: 1.5 !important;
+        line-height: 1.45 !important;
     }
 
     .services-grid-section .section-title p {
@@ -1537,104 +1537,112 @@
     }
 
     .services-grid-section .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 18px !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 14px !important;
         max-width: 720px !important;
         margin-top: 4px !important;
     }
 
     .services-grid-section .services-grid .service-card {
-        min-height: 300px !important;
-        padding: 22px 18px !important;
-        border-radius: 16px !important;
+        min-width: 0 !important;
+        min-height: 275px !important;
+        padding: 18px 13px !important;
+        border-radius: 15px !important;
     }
 
     .services-grid-section .service-card .img-box {
-        width: 94px !important;
-        height: 94px !important;
+        width: 82px !important;
+        height: 82px !important;
     }
 
     .services-grid-section .img-box .icon-normal,
     .services-grid-section .img-box .icon-hover {
-        width: 62px !important;
-        height: 62px !important;
+        width: 56px !important;
+        height: 56px !important;
     }
 
     .services-grid-section .service-card .card-body {
-        padding-top: 12px !important;
+        padding-top: 9px !important;
     }
 
     .services-grid-section .card-body .card-title {
-        min-height: 52px !important;
-        margin-bottom: 8px !important;
-        font-size: 18px !important;
-        line-height: 1.55 !important;
+        min-height: 46px !important;
+        margin: 3px 0 6px !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
     }
 
     .services-grid-section .card-body .card-text {
-        margin: 10px 0 18px !important;
-        font-size: 13px !important;
-        line-height: 1.85 !important;
+        margin: 8px 0 12px !important;
+        font-size: 11px !important;
+        line-height: 1.8 !important;
     }
 
     .services-grid-section .card-body .read-more {
-        font-size: 13px !important;
+        font-size: 11px !important;
     }
 
     #load-more-btn {
-        min-width: 190px !important;
+        min-width: 180px !important;
+        height: 42px !important;
+        font-size: 12px !important;
     }
 
     .service-cta {
-        flex-direction: column !important;
+        flex-direction: row !important;
+        align-items: center !important;
         justify-content: center !important;
-        padding: 28px 24px 0 !important;
-        border-radius: 20px !important;
-        gap: 4px !important;
+        gap: 24px !important;
+        padding: 20px 28px 0 !important;
+        border-radius: 18px !important;
         overflow: hidden !important;
     }
 
     .service-cta .cta-image {
         order: 1 !important;
-        width: 100% !important;
+        flex: 0 0 185px !important;
+        width: 185px !important;
         display: flex !important;
         justify-content: center !important;
         align-items: flex-end !important;
     }
 
     .service-cta .cta-image img {
-        width: 220px !important;
+        width: 185px !important;
         max-width: 100% !important;
     }
 
     .service-cta .cta-content {
         order: 2 !important;
-        width: 100% !important;
-        max-width: 620px !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: 470px !important;
+        min-width: 0 !important;
+        text-align: center !important;
     }
 
     .service-cta .cta-content .cta-title {
-        font-size: 23px !important;
-        line-height: 1.5 !important;
+        font-size: 20px !important;
+        line-height: 1.45 !important;
     }
 
     .service-cta .cta-content .cta-text {
-        font-size: 13px !important;
-        margin: 8px auto 18px !important;
-        line-height: 1.8 !important;
+        font-size: 12px !important;
+        margin: 6px auto 14px !important;
+        line-height: 1.75 !important;
     }
 
     .service-cta .cta-content .btn-box {
-        gap: 12px !important;
+        gap: 10px !important;
         flex-wrap: nowrap !important;
     }
 
     .service-cta .btn-box .form-btn,
     .service-cta .btn-box .tel-btn {
-        width: 190px !important;
-        height: 46px !important;
-        border-radius: 10px !important;
-        font-size: 13px !important;
+        width: 175px !important;
+        height: 42px !important;
+        border-radius: 9px !important;
+        font-size: 11px !important;
     }
 }
 
