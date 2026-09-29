@@ -723,15 +723,19 @@
     }
 
     .slider_section {
-        padding: 32px 16px 42px;
-        min-height: 570px;
+        padding: 32px 16px 42px !important;
+        min-height: 0;
     }
 
     .slider_section .hero-img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        object-position: 62% center;
+        object-position: 85% 35%;
+        z-index: 0;
         object-fit: cover;
+        display: block;
     }
 
     .slider_section .hero-wrapper {
@@ -759,15 +763,14 @@
 
     .slider_section .detail-box .heading_2 {
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     .slider_section .heading_2 h1 {
-        max-width: 620px;
-        margin-inline: auto;
-        font-size: 2.35rem;
+        max-width: 310px;
+        margin: 9px auto 0 0;
+        font-size: 2rem;
         line-height: 1.45;
-        text-shadow: 1px 1px 1px #FFFFFFB7;
     }
 
     .slider_section .heading_2 h1 .h1_titer2 {
@@ -779,17 +782,17 @@
         z-index: 3;
         padding: 7px 15px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, .72);
+        background: rgba(255, 255, 255, .82);
         backdrop-filter: blur(6px);
         font-size: 12px;
         box-shadow: 0 6px 18px rgba(14, 46, 101, .08);
-        margin-bottom: 0;
+
     }
 
     .slider_section .heading_2 .note {
         font-size: 15px;
         line-height: 1.8;
-        margin-top: 14px;
+        margin-top: 10px;
     }
 
     .slider_section .detail-box .boxs {
@@ -821,7 +824,7 @@
 
     .slider_section .hero-form {
         width: 100%;
-        max-width: 300px;
+        max-width: 36%;
         flex: 0 0 auto;
         margin-inline: auto;
         padding: 20px;
@@ -1406,7 +1409,7 @@
         justify-content: flex-start;
         gap: 18px;
         min-height: 0;
-        width: 75%;
+        width: 100%;
         margin: 0 auto 0 0;
         padding: 0;
     }
@@ -1420,14 +1423,14 @@
     .slider_section .hero-content .detail-box {
         width: 100%;
         max-width: 520px;
-        align-items: center;
+        align-items: flex-end;
         gap: 12px;
-        margin-inline: auto;
+        margin: auto auto auto 10px;
     }
 
     .slider_section .detail-box .heading_2 {
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     .slider_section .heading_2 .hero-badge {
@@ -1494,7 +1497,7 @@
         width: 100%;
         max-width: 370px;
         flex: none;
-        margin-inline: auto;
+        margin: auto auto auto 10px;
         padding: 17px;
         border-radius: 16px;
     }
@@ -2227,7 +2230,7 @@
         justify-content: flex-start;
         gap: 14px;
         min-height: 0;
-        width: 75%;
+        width: 100%;
         margin: 0 auto 0 0;
         padding: 0;
     }
@@ -2241,9 +2244,9 @@
     .slider_section .hero-content .detail-box {
         width: 100%;
         max-width: 330px;
-        align-items: center;
+        align-items: flex-end;
         gap: 10px;
-        margin-inline: auto;
+        margin: auto auto auto 5px;
     }
 
     .slider_section .detail-box .heading_2 {
@@ -2255,7 +2258,7 @@
         padding: 5px 11px;
         font-size: 10px;
         line-height: 1.5;
-        background: rgba(224, 224, 250, 0.68);
+        background: rgba(224, 224, 250, 0.82);
     }
 
     .slider_section .heading_2 h1 {
@@ -2264,14 +2267,12 @@
         margin: 7px auto 0;
         font-size: 1.58rem;
         line-height: 1.5;
-        text-align: center;
         font-weight: 800;
-        background: linear-gradient(270deg, #FFFFFF, var(--brand-navy));
+        background: linear-gradient(180deg, var(--brand-navy), #FFFFFF);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         color: transparent;
-        text-shadow: 0 2px 7px rgba(7, 28, 63, .18);
     }
 
     .slider_section .heading_2 h1 .h1_titer2 {
@@ -2279,9 +2280,8 @@
     }
 
     .slider_section .heading_2 .note {
-        font-size: 14px;
-        line-height: 1.8;
-        /*color: #d1e3ff;*/
+        font-size: 12px;
+        line-height: 1.6;
     }
 
     .slider_section .detail-box .boxs {
@@ -2316,7 +2316,7 @@
         width: 100%;
         max-width: 330px;
         flex: none;
-        margin: 0 auto;
+        margin: auto auto auto 5px;
         padding: 14px;
         border-radius: 15px;
     }
@@ -2742,13 +2742,14 @@
     }
 
     .client_section .btn-box a {
-        width: 100%;
-        max-width: 220px;
-        margin: 0 auto;
-        padding: 9px 16px;
-        font-size: 11px;
-        border-radius: 8px;
-        box-sizing: border-box;
+        width: 160px !important;
+        max-width: 160px !important;
+        height: 38px !important;
+        margin: 0 auto !important;
+        padding: 0 12px !important;
+        font-size: 12px !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
     }
 
 
