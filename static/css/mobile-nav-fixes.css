@@ -42,7 +42,7 @@
         padding: 10px;
         overflow-y: auto;
         overflow-x: hidden;
-        background: #f7fbfe !important;
+        background: var(--brand-navy) !important;
         opacity: 1;
         backdrop-filter: none;
         border: 1px solid #e4ebf3;
@@ -103,7 +103,7 @@
         min-height: 42px;
         padding: 8px 13px;
         border-radius: 9px;
-        color: #111827 !important;
+        color: #ffffff !important;
         background: transparent !important;
         box-shadow: none !important;
         font-size: 14px;
@@ -116,8 +116,8 @@
 
     .header_section .nav-coll .nav-link:hover,
     .header_section .nav-coll .nav-link:focus {
-        color: var(--brand-navy) !important;
-        background: #f5f7fb !important;
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, .08) !important;
         border-right-color: var(--brand-orange);
         box-shadow: none !important;
     }
@@ -125,7 +125,7 @@
     /* No default active highlight */
     .header_section .nav-coll .nav-link.active,
     .header_section .nav-coll .nav-link[aria-current="page"] {
-        color: #111827 !important;
+        color: #ffffff !important;
         background: transparent !important;
         box-shadow: none !important;
         font-weight: 600 !important;
