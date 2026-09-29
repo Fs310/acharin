@@ -109,10 +109,17 @@ def detail_new(request, slug):
     related_articles = Sub_news.objects.exclude(pk=new_detail.pk)[:5]
     all_articles = Sub_news.objects.exclude(pk=new_detail.pk)[:10]
 
+    description = new_detail.sub_description or ""
+    lines = description.splitlines()
+    first_line = lines[0] if lines else ""
+    remaining_description = "\n".join(lines[1:]) if len(lines) > 1 else ""
+
     return render(request, 'Home/detail_new.html', {
         'new': new_detail,
         'related_articles': related_articles,
         'all_articles': all_articles,
+        'first_line': first_line,
+        'remaining_description': remaining_description,
     })
 
 
