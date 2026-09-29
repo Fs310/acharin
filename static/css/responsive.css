@@ -7641,3 +7641,229 @@
         box-sizing: border-box !important;
     }
 }
+
+
+/* =========================================================
+   CONTACT PAGE — XL 1200px
+   1200–1399.98px
+   Priority: visual balance + compact contact layout
+   ========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .contact-hero {
+        min-height: 170px !important;
+        padding: 24px 28px !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-hero-content {
+        max-width: 1140px !important;
+    }
+
+    .contact-hero-text {
+        max-width: 560px !important;
+    }
+
+    .contact-hero-text h1 {
+        margin-bottom: 8px !important;
+        font-size: 34px !important;
+        line-height: 1.45 !important;
+    }
+
+    .contact-hero-text p {
+        font-size: 14px !important;
+        line-height: 1.85 !important;
+    }
+
+
+    /* =========================
+       BREADCRUMB
+    ========================= */
+
+    .contact-page + * {
+        box-sizing: border-box !important;
+    }
+
+    .site-breadcrumb {
+        margin: 17px 28px 25px !important;
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       MAIN CONTACT
+    ========================= */
+
+    .contact-page {
+        width: 100% !important;
+        padding: 0 24px 52px !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-wrapper {
+        width: 100% !important;
+        max-width: 1040px !important;
+        margin-inline: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        align-items: stretch !important;
+    }
+
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .contact-form,
+    .contact-info {
+        min-width: 0 !important;
+        padding: 24px !important;
+        border-radius: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-card-header {
+        margin-bottom: 20px !important;
+    }
+
+    .contact-card-header h2 {
+        margin-bottom: 6px !important;
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+    }
+
+    .contact-card-header p {
+        font-size: 11px !important;
+        line-height: 1.8 !important;
+    }
+
+
+    /* =========================
+       FORM
+    ========================= */
+
+    .contact-form form {
+        gap: 13px !important;
+    }
+
+    .form-group {
+        gap: 6px !important;
+    }
+
+    .form-group label {
+        font-size: 11px !important;
+    }
+
+    .contact-form input {
+        height: 43px !important;
+        padding-inline: 12px !important;
+        border-radius: 9px !important;
+        font-size: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-form textarea {
+        min-height: 112px !important;
+        padding: 10px 12px !important;
+        border-radius: 9px !important;
+        font-size: 12px !important;
+        line-height: 1.8 !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-form button {
+        height: 40px !important;
+        border-radius: 10px !important;
+        font-size: 13px !important;
+    }
+
+
+    /* =========================
+       CONTACT INFO
+    ========================= */
+
+    .info-list {
+        gap: 10px !important;
+    }
+
+    .info-box {
+        min-height: 67px !important;
+        gap: 12px !important;
+        padding: 10px 12px !important;
+        border-radius: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .info-icon {
+        width: 40px !important;
+        height: 40px !important;
+        flex-basis: 40px !important;
+        border-radius: 10px !important;
+        font-size: 17px !important;
+    }
+
+    .info-content {
+        gap: 2px !important;
+    }
+
+    .info-content strong {
+        font-size: 12px !important;
+    }
+
+    .info-content span {
+        font-size: 11px !important;
+        line-height: 1.7 !important;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .contact-page + .service-cta {
+        width: 100% !important;
+        max-width: 1140px !important;
+        margin-inline: auto !important;
+        border-radius: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-page + .service-cta .cta-image img {
+        width: 240px !important;
+        height: 240px !important;
+    }
+
+    .contact-page + .service-cta .cta-content {
+        max-width: 560px !important;
+    }
+
+    .contact-page + .service-cta .cta-content h2,
+    .contact-page + .service-cta .cta-title {
+        font-size: 23px !important;
+        line-height: 1.5 !important;
+    }
+
+    .contact-page + .service-cta .cta-content p,
+    .contact-page + .service-cta .cta-text {
+        font-size: 12px !important;
+        line-height: 1.8 !important;
+        margin: 7px auto 16px !important;
+    }
+
+    .contact-page + .service-cta .btn-box {
+        gap: 12px !important;
+    }
+
+    .contact-page + .service-cta .btn-box .form-btn,
+    .contact-page + .service-cta .btn-box .tel-btn {
+        width: 190px !important;
+        height: 45px !important;
+        border-radius: 10px !important;
+    }
+}
