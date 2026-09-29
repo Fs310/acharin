@@ -6941,3 +6941,277 @@
         font-size: 10px !important;
     }
 }
+
+
+/* =========================================================
+   ABOUT PAGE — XS
+   Up to 575.98px
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .about-features {
+        width: 100% !important;
+        margin-bottom: 28px !important;
+        padding-inline: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-features .features-row {
+        width: 100% !important;
+        max-width: 360px !important;
+        margin-inline: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-features .feature-box {
+        min-width: 0 !important;
+        min-height: 105px !important;
+        padding: 12px 6px !important;
+        border-radius: 11px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-features .feature-icon {
+        width: 36px !important;
+        height: 36px !important;
+        flex-basis: 36px !important;
+        border-radius: 10px !important;
+        font-size: 17px !important;
+    }
+
+    .about-features .feature-box h3 {
+        margin: 7px 0 3px !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+
+    .about-features .feature-box p {
+        font-size: 8.5px !important;
+        line-height: 1.65 !important;
+    }
+
+
+    /* =========================
+       ABOUT PAGE
+    ========================= */
+
+    .about-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 10px 32px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .about-container {
+        width: 100% !important;
+        max-width: 360px !important;
+        margin-inline: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .site-breadcrumb {
+        margin: 0 2px 16px !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+        line-height: 1.7 !important;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .about-page .about-main {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+        align-items: stretch !important;
+    }
+
+    .about-page .about-content {
+        order: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding-left: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .about-image {
+        order: 2 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .about-image img {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 2 !important;
+        object-fit: cover !important;
+    }
+
+
+    /* =========================
+       HEADER / TEXT
+    ========================= */
+
+    .about-page .about-header {
+        margin-bottom: 14px !important;
+    }
+
+    .about-page .about-header h1 {
+        margin-bottom: 8px !important;
+        font-size: 23px !important;
+        line-height: 1.45 !important;
+    }
+
+    .about-page .about-header p {
+        margin-bottom: 7px !important;
+        font-size: 10.5px !important;
+        line-height: 1.9 !important;
+        text-align: justify !important;
+    }
+
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .about-page .about-benefits {
+        margin-top: 12px !important;
+    }
+
+    .about-page .about-benefits li {
+        padding-right: 28px !important;
+        margin-bottom: 6px !important;
+        font-size: 10px !important;
+        line-height: 1.75 !important;
+    }
+
+    .about-page .about-benefits li::before {
+        width: 20px !important;
+        height: 20px !important;
+        top: 1px !important;
+        font-size: 8.5px !important;
+    }
+
+
+    /* =========================
+       TRUST CARDS
+    ========================= */
+
+    .about-page .about-trust {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        margin-top: 24px !important;
+        border-radius: 11px !important;
+    }
+
+    .about-page .trust-card,
+    .about-page .trust-card:first-child,
+    .about-page .trust-card:last-child {
+        width: 100% !important;
+        min-height: 76px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        padding: 10px 12px !important;
+        text-align: right !important;
+        border-left: none !important;
+        border-bottom: 1px solid #e5ebf2 !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .trust-card:last-child {
+        border-bottom: none !important;
+    }
+
+    .about-page .trust-icon {
+        width: 36px !important;
+        height: 36px !important;
+        flex-basis: 36px !important;
+        border-radius: 10px !important;
+        font-size: 17px !important;
+    }
+
+    .about-page .trust-card h2 {
+        margin: 0 0 2px !important;
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+    }
+
+    .about-page .trust-card p {
+        font-size: 8.5px !important;
+        line-height: 1.65 !important;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .about-page + .service-cta {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        padding: 22px 10px 18px !important;
+        border-radius: 14px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .about-page + .service-cta .cta-image {
+        display: none !important;
+    }
+
+    .about-page + .service-cta .cta-content {
+        width: 100% !important;
+        max-width: 320px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page + .service-cta .cta-content .cta-title {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+
+    .about-page + .service-cta .cta-content .cta-text {
+        margin: 5px auto 10px !important;
+        font-size: 9.5px !important;
+        line-height: 1.75 !important;
+    }
+
+    .about-page + .service-cta .btn-box {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    .about-page + .service-cta .btn-box .form-btn,
+    .about-page + .service-cta .btn-box .tel-btn {
+        width: 100% !important;
+        max-width: 190px !important;
+        height: 36px !important;
+        border-radius: 8px !important;
+        font-size: 9.5px !important;
+        box-sizing: border-box !important;
+    }
+}
