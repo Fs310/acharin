@@ -3834,3 +3834,234 @@
         font-size: 10px !important;
     }
 }
+
+
+/* =========================================================
+   SERVICE PAGE — XS 390px
+   Existing XS breakpoint — up to 575.98px
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+    .service-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 190px !important;
+        padding: 14px 12px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .service-hero .hero-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 18% center !important;
+    }
+
+    .service-hero .container-fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .service-hero .service-hero-content {
+        width: 100% !important;
+        min-height: 162px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+
+    .service-hero .service-hero-content .service-hero-text {
+        width: 58% !important;
+        max-width: 235px !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        text-align: right !important;
+    }
+
+    .service-hero .service-hero-text h1 {
+        margin: 4px 0 7px !important;
+        font-size: 1.5rem !important;
+        line-height: 1.45 !important;
+        text-shadow: 0 2px 8px rgba(255,255,255,.75) !important;
+    }
+
+    .service-hero .service-hero-text p {
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+    }
+
+    .service-link {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 4px 0 !important;
+        padding: 0 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .service-link .link a,
+    .service-link .link span {
+        font-size: 10px !important;
+        padding-left: 5px !important;
+    }
+
+    .service-link .link a + a::before,
+    .service-link .link a + span::before {
+        margin-inline: 5px !important;
+    }
+
+    .services-grid-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 12px 34px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .services-grid-section .section-title {
+        width: 100% !important;
+        margin: 0 auto 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .services-grid-section .section-title h2 {
+        margin-bottom: 4px !important;
+        font-size: 23px !important;
+        line-height: 1.45 !important;
+    }
+
+    .services-grid-section .section-title p {
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+    }
+
+    .services-grid-section .services-grid {
+        width: 100% !important;
+        max-width: 330px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .services-grid-section .services-grid .service-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 245px !important;
+        padding: 16px 14px !important;
+        border-radius: 14px !important;
+        box-sizing: border-box !important;
+    }
+
+    .services-grid-section .service-card .img-box {
+        width: 76px !important;
+        height: 76px !important;
+    }
+
+    .services-grid-section .img-box .icon-normal,
+    .services-grid-section .img-box .icon-hover {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    .services-grid-section .service-card .card-body {
+        padding-top: 7px !important;
+    }
+
+    .services-grid-section .card-body .card-title {
+        min-height: 0 !important;
+        margin: 3px 0 5px !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+
+    .services-grid-section .card-body .card-text {
+        max-width: 270px !important;
+        margin: 7px auto 12px !important;
+        font-size: 11px !important;
+        line-height: 1.8 !important;
+        text-align: center !important;
+        -webkit-line-clamp: 2 !important;
+    }
+
+    .services-grid-section .card-body .read-more {
+        font-size: 11px !important;
+    }
+
+    #load-more-btn {
+        min-width: 170px !important;
+        width: auto !important;
+        height: 40px !important;
+        font-size: 11px !important;
+        border-radius: 8px !important;
+    }
+
+    .service-cta {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        padding: 18px 12px 0 !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .service-cta .cta-content {
+        order: 1 !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    .service-cta .cta-content .cta-title {
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+    }
+
+    .service-cta .cta-content .cta-text {
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+        margin: 6px auto 13px !important;
+    }
+
+    .service-cta .cta-content .btn-box {
+        width: 100% !important;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+    }
+
+    .service-cta .btn-box .form-btn,
+    .service-cta .btn-box .tel-btn {
+        width: calc(50% - 4px) !important;
+        max-width: 165px !important;
+        height: 39px !important;
+        padding-inline: 8px !important;
+        border-radius: 8px !important;
+        font-size: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .service-cta .cta-image {
+        order: 2 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+    }
+
+    .service-cta .cta-image img {
+        width: 175px !important;
+        max-width: 100% !important;
+        margin-top: 2px !important;
+    }
+}
