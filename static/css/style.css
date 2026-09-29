@@ -2303,7 +2303,7 @@ input, textarea, select, button{direction: rtl !important;text-align: right !imp
     }
 
     .article-image {
-        aspect-ratio: 16 / 8.8;
+        aspect-ratio: 16 / 7.5;
     }
 
     .article-text {
