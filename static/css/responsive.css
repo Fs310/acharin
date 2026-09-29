@@ -690,6 +690,133 @@
     .footer_section .social-box .box {
         gap: 14px !important;
     }
+
+    /* =========================================================
+       SERVICE PAGE — LG 992px
+       992–1199.98px
+       ========================================================= */
+
+    .service-hero {
+        min-height: 240px !important;
+        padding: 24px !important;
+    }
+
+    .service-hero .service-hero-content {
+        min-height: 192px !important;
+    }
+
+    .service-hero .service-hero-content .service-hero-text {
+        max-width: 620px !important;
+    }
+
+    .service-hero .service-hero-text h1 {
+        margin: 8px auto !important;
+        font-size: 2.6rem !important;
+        line-height: 1.35 !important;
+    }
+
+    .service-hero .service-hero-text p {
+        font-size: 15px !important;
+        line-height: 1.8 !important;
+    }
+
+    .service-link {
+        margin: 5px 24px !important;
+    }
+
+    .services-grid-section {
+        padding: 0 24px 52px !important;
+    }
+
+    .services-grid-section .section-title {
+        margin-bottom: 36px !important;
+    }
+
+    .services-grid-section .section-title h2 {
+        margin-bottom: 7px !important;
+        font-size: 30px !important;
+        line-height: 1.5 !important;
+    }
+
+    .services-grid-section .section-title p {
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+    }
+
+    .services-grid-section .services-grid {
+        gap: 18px !important;
+        margin-top: 6px !important;
+    }
+
+    .services-grid-section .services-grid .service-card {
+        min-height: 300px !important;
+        padding: 22px 16px !important;
+        border-radius: 16px !important;
+    }
+
+    .services-grid-section .service-card .img-box {
+        width: 96px !important;
+        height: 96px !important;
+    }
+
+    .services-grid-section .img-box .icon-normal,
+    .services-grid-section .img-box .icon-hover {
+        width: 62px !important;
+        height: 62px !important;
+    }
+
+    .services-grid-section .service-card .card-body {
+        padding-top: 12px !important;
+    }
+
+    .services-grid-section .card-body .card-title {
+        min-height: 54px !important;
+        margin-bottom: 7px !important;
+        font-size: 18px !important;
+        line-height: 1.55 !important;
+    }
+
+    .services-grid-section .card-body .card-text {
+        margin: 10px 0 18px !important;
+        font-size: 13px !important;
+        line-height: 1.8 !important;
+    }
+
+    .services-grid-section .card-body .read-more {
+        font-size: 12px !important;
+    }
+
+    .service-cta {
+        padding: 26px 36px 0 !important;
+        border-radius: 22px !important;
+    }
+
+    .service-cta .cta-image img {
+        width: 260px !important;
+    }
+
+    .service-cta .cta-content .cta-title {
+        font-size: 24px !important;
+        line-height: 1.5 !important;
+    }
+
+    .service-cta .cta-content .cta-text {
+        font-size: 14px !important;
+        margin: 8px auto 20px !important;
+        line-height: 1.8 !important;
+    }
+
+    .service-cta .cta-content .btn-box {
+        gap: 16px !important;
+    }
+
+    .service-cta .btn-box .form-btn,
+    .service-cta .btn-box .tel-btn {
+        width: 200px !important;
+        height: 48px !important;
+        border-radius: 11px !important;
+    }
+
 }
 
 /* =========================================================
