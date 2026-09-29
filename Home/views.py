@@ -71,8 +71,7 @@ def detail_service(request, id):
 
 
 def new(request):
-    # ترتیب ثابت برای جلوگیری از جابه‌جایی یا تکرار مقاله بین صفحات Pagination
-    sub_news = Sub_news.objects.all().order_by('-sub_update_date', '-id')
+    sub_news = Sub_news.objects.all()
 
     width = int(request.GET.get("width", 1920))
 
