@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let nextPage = Number(button.dataset.page);
     let hasNext = Boolean(button.dataset.page);
 
-    // تعداد کارت قابل‌نمایش در هر مرحله، بر اساس breakpoint.
+    // تعداد آیتمی که در هر کلیک اضافه می‌شود، متناسب با breakpoint.
     const getBatchSize = () => {
         const width = window.innerWidth;
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             '<i class="bi bi-chevron-down" aria-hidden="true"></i>';
     };
 
-    // صفحه اول: فقط اندازه‌ی مناسب همین breakpoint دیده شود.
+    // صفحه اول: تعداد اولیه بر اساس breakpoint.
     const prepareInitialCards = () => {
         const cards = getCards();
         const batchSize = getBatchSize();
@@ -64,17 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    const revealHiddenCards = () => {
+    const revealHiddenCards = (count) => {
         const hiddenCards = getHiddenCards();
-        if (!hiddenCards.length) return 0;
+        const cardsToShow = hiddenCards.slice(0, count);
 
-        const batchSize = getBatchSize();
+        cardsToShow.forEach((card, index) => {
+            showCard(card, index, true);
+        });
 
-        hiddenCards
-            .slice(0, batchSize)
-            .forEach((card, index) => showCard(card, index, true));
-
-        return hiddenCards.slice(0, batchSize).length;
+        return cardsToShow.length;
     };
 
     const updateAfterResize = () => {
@@ -82,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const target = getBatchSize();
         const visibleCount = cards.filter((card) => !card.hidden).length;
 
-        // با بزرگ‌تر شدن viewport، کارت‌های پنهان همان داده‌ها را آشکار کن.
+        // در بزرگ‌تر شدن viewport، کارت‌های موجود را تا batch فعلی آشکار کن.
         if (target > visibleCount) {
             cards
                 .filter((card) => card.hidden)
@@ -102,6 +100,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const fetchNextPage = async (page, width) => {
+        const response = await fetch(`?page=${page}&width=${width}`, {
+            headers: { "X-Requested-With": "XMLHttpRequest" }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const temp = document.createElement("div");
+        temp.innerHTML = data.html;
+
+        const newCards = [...temp.children];
+        newCards.forEach((card) => container.appendChild(card));
+
+        return {
+            cards: newCards,
+            hasNext: Boolean(data.has_next)
+        };
+    };
+
     prepareInitialCards();
     syncButton();
     window.addEventListener("resize", updateAfterResize);
@@ -116,64 +136,47 @@ document.addEventListener("DOMContentLoaded", () => {
             '<span>در حال بارگذاری...</span>';
 
         try {
-            // اول کارت‌های مخفیِ همین صفحه را نشان بده.
-            const revealed = revealHiddenCards();
-
-            if (revealed > 0) {
-                syncButton();
-                loading = false;
-                return;
-            }
-
-            // وقتی کارت‌های فعلی تمام شدند، صفحه‌ی بعد را بگیر.
-            if (!hasNext) {
-                button.remove();
-                loading = false;
-                return;
-            }
-
-            const width = window.innerWidth;
-            const response = await fetch(`?page=${nextPage}&width=${width}`, {
-                headers: { "X-Requested-With": "XMLHttpRequest" }
-            });
-
-            if (!response.ok) {
-                throw new Error(`Server Error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            const temp = document.createElement("div");
-            temp.innerHTML = data.html;
-
-            const newCards = [...temp.children];
-
-            newCards.forEach((card) => container.appendChild(card));
-
-            // از صفحه‌ی جدید فقط batch مناسب breakpoint نمایش بده.
             const batchSize = getBatchSize();
-            newCards.forEach((card, index) => {
-                if (index < batchSize) {
+            let remaining = batchSize;
+
+            // هر کلیک همیشه به اندازه batch فعلی کارت اضافه می‌کند.
+            // ابتدا از کارت‌های مخفی همین صفحه استفاده می‌شود.
+            remaining -= revealHiddenCards(remaining);
+
+            // اگر کارت مخفی کافی نبود، برای تکمیل batch همان کلیک صفحه بعد را می‌گیریم.
+            while (remaining > 0 && hasNext) {
+                const width = window.innerWidth;
+                const result = await fetchNextPage(nextPage, width);
+
+                const visibleCount = Math.min(remaining, result.cards.length);
+
+                result.cards.slice(0, visibleCount).forEach((card, index) => {
                     showCard(card, index, true);
-                } else {
+                });
+
+                result.cards.slice(visibleCount).forEach((card) => {
                     hideCard(card);
+                });
+
+                remaining -= visibleCount;
+                hasNext = result.hasNext;
+
+                if (hasNext) {
+                    nextPage += 1;
+                    button.dataset.page = String(nextPage);
+                } else {
+                    delete button.dataset.page;
                 }
-            });
 
-            hasNext = Boolean(data.has_next);
-
-            if (hasNext) {
-                nextPage += 1;
-                button.dataset.page = String(nextPage);
-            } else {
-                delete button.dataset.page;
+                // اگر صفحه بعد چیزی برای نمایش نداشت، حلقه تمام می‌شود.
+                if (!result.cards.length) break;
             }
 
             syncButton();
         } catch (error) {
             console.error("Load More Error:", error);
             button.disabled = false;
-            button.innerHTML =
-                '<span>تلاش مجدد</span><i class="bi bi-arrow-repeat" aria-hidden="true"></i>';
+            updateButtonText();
         } finally {
             loading = false;
         }
