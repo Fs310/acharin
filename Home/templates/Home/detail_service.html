@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load jalali_tags %}
 {% block title %}{{ service.title }} | آچارین{% endblock %}
 {% block body %}
     <section class="service-detail">
@@ -43,7 +44,7 @@
                     {% for item in service.service_items.all %}
                         <li>{{ item.title }}</li>
                     {% endfor %}
-                    <div class="service-meta"><small>آخرین بروزرسانی: {{ service.update_date.date }}</small></div>
+                    <div class="service-meta"><small>آخرین بروزرسانی: {{ service.update_date|to_jalali }}</small></div>
                 </div>
             </article>
         </div>
