@@ -5376,6 +5376,10 @@
         order: 2 !important;
         width: 100% !important;
         min-width: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        align-items: start !important;
     }
 
     .blog-detail .article-body {
