@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const getCards = () =>
         Array.from(
-            container.querySelectorAll(".service-card, .news-card, .article-card, .card")
+            container.querySelectorAll(".service-card, .blog-card, .news-card, .article-card, .card")
         );
 
     const showCard = (card, index = 0, animate = false) => {
