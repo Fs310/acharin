@@ -365,7 +365,7 @@ a, a:hover, a:focus{text-decoration: none;}
 
 .services-grid-section .card-title .mobile-break{display: inline;}
 
-.services-grid-section .card-body .card-text{margin: 15px 0 25px;line-height: 1.9;color: #64748b;font-size: 14px;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-align: right;}
+.services-grid-section .card-body .card-text{margin: 15px 0 25px;line-height: 1.9;color: #64748b;font-size: 14px;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;text-align: right;}
 
 .services-grid-section .service-card > a{display: flex;flex-direction: column;height: 100%;text-decoration: none;color: inherit;cursor: pointer;}
 
