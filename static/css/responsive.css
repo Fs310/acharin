@@ -9306,7 +9306,7 @@
     ========================= */
 
     .login-form-box {
-        order: 1 !important;
+        order: 2 !important;
         width: 100% !important;
         min-width: 0 !important;
         padding: 24px 18px 20px !important;
@@ -9372,7 +9372,7 @@
     ========================= */
 
     .login-banner {
-        order: 2 !important;
+        order: 1 !important;
         width: 100% !important;
         min-width: 0 !important;
         height: 210px !important;
