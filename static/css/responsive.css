@@ -5002,6 +5002,283 @@
 }
 
 /* =========================================================
+   BLOG PAGE — XS
+   Existing XS breakpoint — up to 575.98px
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+    .blog-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 190px !important;
+        padding: 14px 12px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .blog-hero .hero-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 18% center !important;
+    }
+
+    .blog-hero .container-fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: 0 !important;
+        margin: 0 !important;
+    }
+
+    .blog-hero .blog-hero-content {
+        width: 100% !important;
+        min-height: 162px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+    }
+
+    .blog-hero .blog-hero-content .blog-hero-text {
+        width: 58% !important;
+        max-width: 235px !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        text-align: right !important;
+    }
+
+    .blog-hero .blog-hero-content .blog-hero-text h1 {
+        margin: 4px 0 6px !important;
+        font-size: 1.45rem !important;
+        line-height: 1.45 !important;
+        text-shadow: 0 2px 8px rgba(255,255,255,.78) !important;
+    }
+
+    .blog-hero .blog-hero-content .blog-hero-text p {
+        width: max-content !important;
+        max-width: none !important;
+        margin: 0 0 0 auto !important;
+        font-size: 9px !important;
+        line-height: 1.5 !important;
+        white-space: nowrap !important;
+        text-shadow: 0 1px 4px rgba(255,255,255,.78) !important;
+    }
+
+    .blog-grid-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 12px 34px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .blog-section-heading {
+        width: 100% !important;
+        margin: 0 auto 18px !important;
+    }
+
+    .blog-section-heading h2 {
+        margin-bottom: 4px !important;
+        font-size: 23px !important;
+        line-height: 1.45 !important;
+    }
+
+    .blog-section-heading p {
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+    }
+
+    .blog-grid {
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* کارت موبایل: تصویر کامل + نوار عنوان پایین */
+    .blog-card {
+        position: relative !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 175px !important;
+        border-radius: 13px !important;
+        overflow: hidden !important;
+        isolation: isolate !important;
+    }
+
+    .blog-card-image {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        aspect-ratio: auto !important;
+    }
+
+    .blog-card-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .blog-content {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 1 !important;
+        display: block !important;
+        padding: 0 !important;
+    }
+
+    .blog-content > a {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+    }
+
+    .blog-content h3 {
+        position: absolute !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 8px 8px !important;
+        box-sizing: border-box !important;
+        background: rgba(255,255,255,.94) !important;
+        color: #1e293b !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        display: -webkit-box !important;
+        overflow: hidden !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        transition: opacity .22s ease, transform .22s ease !important;
+    }
+
+    .blog-summary,
+    .blog-meta {
+        display: none !important;
+    }
+
+    .blog-content > a > span {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 3 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 8px !important;
+        box-sizing: border-box !important;
+        background: rgba(14,46,101,.78) !important;
+        color: #fff !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(7px) !important;
+        transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
+    }
+
+    .blog-content > a > span::after {
+        content: "←" !important;
+        margin-inline-start: 5px !important;
+        color: #fff !important;
+    }
+
+    .blog-content > a > i {
+        display: none !important;
+    }
+
+    .blog-card:hover .blog-content > a > span,
+    .blog-card:focus-within .blog-content > a > span,
+    .blog-card:active .blog-content > a > span {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+
+    .blog-card:hover .blog-content h3,
+    .blog-card:focus-within .blog-content h3 {
+        opacity: 0 !important;
+        transform: translateY(7px) !important;
+    }
+
+    .blog-card:hover .blog-card-image img,
+    .blog-card:focus-within .blog-card-image img {
+        transform: scale(1.04) !important;
+    }
+
+    .load-more-box {
+        margin-top: 24px !important;
+    }
+
+    #load-more-btn {
+        min-width: 165px !important;
+        height: 38px !important;
+        font-size: 11px !important;
+        border-radius: 8px !important;
+    }
+
+    .blog-cta {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 18px 12px 12px !important;
+        border-radius: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .blog-cta .cta-image {
+        display: none !important;
+    }
+
+    .blog-cta .cta-content {
+        width: 100% !important;
+        max-width: 350px !important;
+        text-align: center !important;
+    }
+
+    .blog-cta .cta-content .cta-title {
+        font-size: 17px !important;
+        line-height: 1.5 !important;
+    }
+
+    .blog-cta .cta-content .cta-text {
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+        margin: 6px auto 11px !important;
+    }
+
+    .blog-cta .btn-box {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    .blog-cta .btn-box .form-btn,
+    .blog-cta .btn-box .tel-btn {
+        width: 100% !important;
+        max-width: 200px !important;
+        height: 38px !important;
+        border-radius: 8px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* =========================================================
    MOBILE NAVIGATION — unified visual treatment
    992px and below
    ========================================================= */
