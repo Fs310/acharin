@@ -1761,6 +1761,187 @@
 }
 
 /* =========================================================
+   SERVICE DETAIL — MD 768px
+   768–991.98px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .service-detail {
+        padding: 22px 16px 0 !important;
+    }
+
+    .features-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        margin: 20px 8px 24px !important;
+    }
+
+    .feature-box {
+        min-width: 0 !important;
+        padding: 18px 10px !important;
+        border-radius: 13px !important;
+    }
+
+    .feature-icon {
+        width: 42px !important;
+        height: 42px !important;
+        flex-basis: 42px !important;
+        font-size: 21px !important;
+        border-radius: 12px !important;
+    }
+
+    .feature-box h3 {
+        margin: 9px 0 6px !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    .feature-box p {
+        font-size: 11px !important;
+        line-height: 1.7 !important;
+    }
+
+    .service-detail .service-link {
+        margin: 0 18px 18px !important;
+    }
+
+    .service-detail .service-link .link a,
+    .service-detail .service-link .link span {
+        font-size: 10px !important;
+    }
+
+    .service-detail .service-link .link a + a::before,
+    .service-detail .service-link .link a + span::before {
+        margin-inline: 7px !important;
+    }
+
+    .service-body {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        margin: 0 8px 42px !important;
+        border-radius: 14px !important;
+    }
+
+    .service-body .service-gallery {
+        min-width: 0 !important;
+        min-height: 330px !important;
+        max-height: 460px !important;
+    }
+
+    .service-body .service-gallery .main-image {
+        min-height: 330px !important;
+    }
+
+    .service-body .service-content {
+        min-width: 0 !important;
+        padding: 24px !important;
+    }
+
+    .service-body .service-content h1 {
+        margin-bottom: 12px !important;
+        font-size: 26px !important;
+        line-height: 1.45 !important;
+    }
+
+    .service-body .service-content .service-description {
+        margin-bottom: 15px !important;
+    }
+
+    .service-body .service-content .service-description p {
+        font-size: 12px !important;
+        line-height: 1.9 !important;
+    }
+
+    .service-body .service-content h2 {
+        margin-bottom: 10px !important;
+        font-size: 17px !important;
+        line-height: 1.5 !important;
+    }
+
+    .service-body .service-content h2 + li,
+    .service-body .service-content h2 ~ li {
+        min-height: 40px !important;
+        margin-bottom: 6px !important;
+        padding: 7px 38px 7px 10px !important;
+        border-radius: 9px !important;
+        font-size: 11px !important;
+        line-height: 1.65 !important;
+    }
+
+    .service-body .service-content h2 + li::before,
+    .service-body .service-content h2 ~ li::before {
+        right: 10px !important;
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 10px !important;
+    }
+
+    .service-body .service-meta {
+        padding-top: 15px !important;
+    }
+
+    .service-body .service-meta small {
+        font-size: 9px !important;
+    }
+
+    .service-cta {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 16px !important;
+        padding: 18px 20px 0 !important;
+        border-radius: 18px !important;
+        overflow: hidden !important;
+    }
+
+    .service-cta .cta-image {
+        order: 1 !important;
+        flex: 0 0 165px !important;
+        width: 165px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+    }
+
+    .service-cta .cta-image img {
+        width: 165px !important;
+        max-width: 100% !important;
+    }
+
+    .service-cta .cta-content {
+        order: 2 !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: 410px !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .service-cta .cta-content .cta-title {
+        font-size: 19px !important;
+        line-height: 1.45 !important;
+    }
+
+    .service-cta .cta-content .cta-text {
+        font-size: 11px !important;
+        line-height: 1.75 !important;
+        margin: 5px auto 12px !important;
+    }
+
+    .service-cta .cta-content .btn-box {
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .service-cta .btn-box .form-btn,
+    .service-cta .btn-box .tel-btn {
+        width: 165px !important;
+        height: 40px !important;
+        border-radius: 8px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* =========================================================
    SM — Bootstrap 576px breakpoint
    Home hero/header only — 576–767.98px
    Column-based layout
