@@ -51,7 +51,6 @@
     .slider_section .heading_2 .hero-badge {
         font-size: 13px;
         padding: 7px 15px 12px;
-        background: rgb(115 134 167 / 60%);
     }
 
     .slider_section .heading_2 .note {
@@ -782,11 +781,7 @@
         z-index: 3;
         padding: 7px 15px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, .82);
-        backdrop-filter: blur(6px);
         font-size: 12px;
-        box-shadow: 0 6px 18px rgba(14, 46, 101, .08);
-
     }
 
     .slider_section .heading_2 .note {
@@ -1439,9 +1434,6 @@
         padding: 6px 13px;
         font-size: 11px;
         line-height: 1.5;
-        background: rgba(255, 255, 255, .82);
-        backdrop-filter: blur(6px);
-        box-shadow: 0 5px 14px rgba(14, 46, 101, .08);
     }
 
     .slider_section .heading_2 h1 {
@@ -2258,7 +2250,7 @@
         padding: 5px 11px;
         font-size: 10px;
         line-height: 1.5;
-        background: rgba(224, 224, 250, 0.82);
+        margin-top: 10px;
     }
 
     .slider_section .heading_2 h1 {
@@ -2268,7 +2260,7 @@
         font-size: 1.58rem;
         line-height: 1.5;
         font-weight: 800;
-        background: linear-gradient(180deg, var(--brand-navy), #FFFFFF);
+        background: linear-gradient(105deg, var(--brand-navy), #FFFFFF);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
