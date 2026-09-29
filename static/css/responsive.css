@@ -2464,15 +2464,6 @@
     .footer_section .footer-bottom p {
         font-size: 8px !important;
     }
-}
-
-
-/* =========================================================
-   SERVICE PAGE — SM 576px
-   576–767.98px
-   ========================================================= */
-
-@media (min-width: 576px) and (max-width: 767.98px) {
     .service-hero {
         width: 100% !important;
         min-height: 205px !important;
@@ -2506,8 +2497,8 @@
     .service-hero .service-hero-content .service-hero-text {
         width: 48% !important;
         max-width: 310px !important;
-        margin-left: 0 !important;
-        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
         text-align: right !important;
         box-sizing: border-box !important;
     }
