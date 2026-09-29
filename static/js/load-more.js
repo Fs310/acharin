@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const isArticles = container.id === "articles-container";
     let loading = false;
     let nextPage = Number(button.dataset.page);
+    let hasNext = Boolean(button.dataset.page);
 
-    // تعداد آیتم‌هایی که در بارگذاری اولیه، متناسب با عرض صفحه نمایش داده می‌شوند.
-    const getInitialVisibleCount = () => {
+    // تعداد کارت قابل‌نمایش در هر مرحله، بر اساس breakpoint.
+    const getBatchSize = () => {
         const width = window.innerWidth;
 
-        if (width >= 1200) return 8;
         if (width >= 992) return 8;
         if (width >= 768) return 6;
         if (width >= 576) return 4;
@@ -22,11 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const getCards = () =>
-        Array.from(container.querySelectorAll(".service-card, .news-card, .article-card, .card"));
+        Array.from(
+            container.querySelectorAll(".service-card, .news-card, .article-card, .card")
+        );
 
-    const showCard = (card) => {
+    const showCard = (card, index = 0, animate = false) => {
         card.hidden = false;
         card.style.removeProperty("display");
+
+        if (animate) {
+            card.classList.add("fade-card");
+            card.style.animationDelay = `${index * 100}ms`;
+        }
     };
 
     const hideCard = (card) => {
@@ -37,55 +44,66 @@ document.addEventListener("DOMContentLoaded", () => {
     const getHiddenCards = () =>
         getCards().filter((card) => card.hidden);
 
-    // روی هر کارت موجود، وضعیت اولیه را اعمال می‌کنیم.
-    const applyInitialVisibility = () => {
+    const updateButtonText = () => {
+        button.innerHTML =
+            `<span>${isArticles ? "نمایش مقالات بیشتر" : "نمایش خدمات بیشتر"}</span>` +
+            '<i class="bi bi-chevron-down" aria-hidden="true"></i>';
+    };
+
+    // صفحه اول: فقط اندازه‌ی مناسب همین breakpoint دیده شود.
+    const prepareInitialCards = () => {
         const cards = getCards();
-        const visibleCount = Math.min(getInitialVisibleCount(), cards.length);
+        const batchSize = getBatchSize();
 
         cards.forEach((card, index) => {
-            if (index < visibleCount) {
+            if (index < batchSize) {
                 showCard(card);
             } else {
                 hideCard(card);
             }
         });
-
-        if (hiddenCount > 0) {
-            button.disabled = false;
-        }
     };
 
-    let hiddenCount = 0;
+    const revealHiddenCards = () => {
+        const hiddenCards = getHiddenCards();
+        if (!hiddenCards.length) return 0;
 
-    const refreshHiddenCount = () => {
-        hiddenCount = getHiddenCards().length;
-    };
+        const batchSize = getBatchSize();
 
-    const updateButtonText = () => {
-        button.innerHTML = `<span>${isArticles ? "نمایش مقالات بیشتر" : "نمایش خدمات بیشتر"}</span><i class="bi bi-chevron-down" aria-hidden="true"></i>`;
+        hiddenCards
+            .slice(0, batchSize)
+            .forEach((card, index) => showCard(card, index, true));
+
+        return hiddenCards.slice(0, batchSize).length;
     };
 
     const updateAfterResize = () => {
         const cards = getCards();
-        const targetVisible = getInitialVisibleCount();
-        const currentlyVisible = cards.filter((card) => !card.hidden).length;
+        const target = getBatchSize();
+        const visibleCount = cards.filter((card) => !card.hidden).length;
 
-        // بزرگ‌تر شدن viewport، کارت‌های پنهان همان صفحه را خودکار آشکار می‌کند.
-        if (targetVisible > currentlyVisible) {
+        // با بزرگ‌تر شدن viewport، کارت‌های پنهان همان داده‌ها را آشکار کن.
+        if (target > visibleCount) {
             cards
                 .filter((card) => card.hidden)
-                .slice(0, targetVisible - currentlyVisible)
-                .forEach(showCard);
+                .slice(0, target - visibleCount)
+                .forEach((card, index) => showCard(card, index, true));
         }
-
-        refreshHiddenCount();
     };
 
-    // فقط کارت‌های همان صفحه را کنترل می‌کنیم؛ داده‌ی سرور دست‌نخورده می‌ماند.
-    applyInitialVisibility();
-    refreshHiddenCount();
-    updateButtonText();
+    const syncButton = () => {
+        const hasHidden = getHiddenCards().length > 0;
 
+        if (hasHidden || hasNext) {
+            button.disabled = false;
+            updateButtonText();
+        } else {
+            button.remove();
+        }
+    };
+
+    prepareInitialCards();
+    syncButton();
     window.addEventListener("resize", updateAfterResize);
 
     button.addEventListener("click", async () => {
@@ -93,36 +111,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         loading = true;
         button.disabled = true;
-        button.innerHTML = '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span><span>در حال بارگذاری...</span>';
+        button.innerHTML =
+            '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span>' +
+            '<span>در حال بارگذاری...</span>';
 
         try {
-            refreshHiddenCount();
+            // اول کارت‌های مخفیِ همین صفحه را نشان بده.
+            const revealed = revealHiddenCards();
 
-            // ابتدا کارت‌های باقی‌مانده‌ی همین صفحه را نمایش بده.
-            if (hiddenCount > 0) {
-                const visibleTarget = getInitialVisibleCount();
-                const hiddenCards = getHiddenCards();
-
-                hiddenCards
-                    .slice(0, visibleTarget)
-                    .forEach((card, index) => {
-                        showCard(card);
-                        card.classList.add("fade-card");
-                        card.style.animationDelay = `${index * 100}ms`;
-                    });
-
-                refreshHiddenCount();
-
-                // هنوز کارت‌های مخفی یا صفحه‌ی بعد وجود دارد.
-                if (hiddenCount > 0 || button.dataset.page) {
-                    button.disabled = false;
-                    updateButtonText();
-                    loading = false;
-                    return;
-                }
+            if (revealed > 0) {
+                syncButton();
+                loading = false;
+                return;
             }
 
-            // وقتی کارت‌های فعلی تمام شدند، صفحه‌ی بعد از سرور دریافت می‌شود.
+            // وقتی کارت‌های فعلی تمام شدند، صفحه‌ی بعد را بگیر.
+            if (!hasNext) {
+                button.remove();
+                loading = false;
+                return;
+            }
+
             const width = window.innerWidth;
             const response = await fetch(`?page=${nextPage}&width=${width}`, {
                 headers: { "X-Requested-With": "XMLHttpRequest" }
@@ -136,26 +145,35 @@ document.addEventListener("DOMContentLoaded", () => {
             const temp = document.createElement("div");
             temp.innerHTML = data.html;
 
-            [...temp.children].forEach((card, index) => {
-                card.classList.add("fade-card");
-                card.style.animationDelay = `${index * 100}ms`;
-                container.appendChild(card);
+            const newCards = [...temp.children];
+
+            newCards.forEach((card) => container.appendChild(card));
+
+            // از صفحه‌ی جدید فقط batch مناسب breakpoint نمایش بده.
+            const batchSize = getBatchSize();
+            newCards.forEach((card, index) => {
+                if (index < batchSize) {
+                    showCard(card, index, true);
+                } else {
+                    hideCard(card);
+                }
             });
 
-            refreshHiddenCount();
+            hasNext = Boolean(data.has_next);
 
-            if (data.has_next) {
+            if (hasNext) {
                 nextPage += 1;
                 button.dataset.page = String(nextPage);
-                button.disabled = false;
-                updateButtonText();
             } else {
-                button.remove();
+                delete button.dataset.page;
             }
+
+            syncButton();
         } catch (error) {
             console.error("Load More Error:", error);
             button.disabled = false;
-            button.innerHTML = '<span>تلاش مجدد</span><i class="bi bi-arrow-repeat" aria-hidden="true"></i>';
+            button.innerHTML =
+                '<span>تلاش مجدد</span><i class="bi bi-arrow-repeat" aria-hidden="true"></i>';
         } finally {
             loading = false;
         }
