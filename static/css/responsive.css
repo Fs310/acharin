@@ -6302,36 +6302,45 @@
         margin-inline: auto !important;
     }
 
-    .about-page .site-breadcrumb {
-        margin: 18px 6px 30px !important;
-        padding: 0 !important;
-        font-size: 11px !important;
+    .about-page + .service-cta {
+        padding-top: 24px !important;
+        border-radius: 20px !important;
+    }
+
+    /* =========================
+       BREADCRUMB
+    ========================= */
+
+    .about-page ~ .service-cta {
+        margin-top: 0 !important;
     }
 
     /* =========================
        FEATURES
+       .about-features is outside .about-page
     ========================= */
 
-    .about-page .about-features {
-        margin-bottom: 46px !important;
+    .about-features {
+        width: 100% !important;
+        margin-bottom: 38px !important;
     }
 
-    .about-page .features-row {
+    .about-features .features-row {
         display: grid !important;
         grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
         gap: 12px !important;
         width: 100% !important;
     }
 
-    .about-page .feature-box {
+    .about-features .feature-box {
         min-width: 0 !important;
-        min-height: 128px !important;
-        padding: 17px 10px !important;
+        min-height: 125px !important;
+        padding: 16px 10px !important;
         border-radius: 15px !important;
         box-sizing: border-box !important;
     }
 
-    .about-page .feature-icon {
+    .about-features .feature-icon {
         width: 42px !important;
         height: 42px !important;
         flex-basis: 42px !important;
@@ -6339,13 +6348,13 @@
         border-radius: 12px !important;
     }
 
-    .about-page .feature-box h3 {
+    .about-features .feature-box h3 {
         margin: 9px 0 5px !important;
         font-size: 15px !important;
         line-height: 1.6 !important;
     }
 
-    .about-page .feature-box p {
+    .about-features .feature-box p {
         font-size: 10.5px !important;
         line-height: 1.75 !important;
     }
@@ -6356,8 +6365,8 @@
 
     .about-page .about-main {
         grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr) !important;
-        gap: 38px !important;
-        align-items: center !important;
+        gap: 36px !important;
+        align-items: start !important;
     }
 
     .about-page .about-content {
@@ -6366,29 +6375,29 @@
     }
 
     .about-page .about-header {
-        margin-bottom: 18px !important;
+        margin-bottom: 17px !important;
     }
 
     .about-page .about-header h1 {
-        margin-bottom: 13px !important;
-        font-size: 31px !important;
+        margin-bottom: 12px !important;
+        font-size: 30px !important;
         line-height: 1.45 !important;
     }
 
     .about-page .about-header p {
         margin-bottom: 9px !important;
-        font-size: 13px !important;
-        line-height: 2 !important;
+        font-size: 12.5px !important;
+        line-height: 1.95 !important;
     }
 
     .about-page .about-benefits {
-        margin-top: 20px !important;
+        margin-top: 18px !important;
     }
 
     .about-page .about-benefits li {
-        padding-right: 35px !important;
-        margin-bottom: 9px !important;
-        font-size: 12px !important;
+        padding-right: 34px !important;
+        margin-bottom: 8px !important;
+        font-size: 11.5px !important;
         line-height: 1.8 !important;
     }
 
@@ -6400,11 +6409,12 @@
     }
 
     /* =========================
-       ABOUT IMAGE
+       IMAGE
     ========================= */
 
     .about-page .about-image {
         width: 100% !important;
+        margin-top: 24px !important;
         border-radius: 15px !important;
     }
 
@@ -6420,69 +6430,65 @@
 
     .about-page .about-trust {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        margin-top: 40px !important;
+        margin-top: 38px !important;
     }
 
     .about-page .trust-card {
         min-width: 0 !important;
-        min-height: 105px !important;
-        gap: 11px !important;
-        padding: 15px 13px !important;
+        min-height: 100px !important;
+        gap: 10px !important;
+        padding: 14px 12px !important;
         box-sizing: border-box !important;
     }
 
     .about-page .trust-icon {
-        width: 43px !important;
-        height: 43px !important;
-        flex-basis: 43px !important;
-        font-size: 20px !important;
+        width: 42px !important;
+        height: 42px !important;
+        flex-basis: 42px !important;
+        font-size: 19px !important;
         border-radius: 12px !important;
     }
 
     .about-page .trust-card h2 {
-        margin-bottom: 5px !important;
-        font-size: 14px !important;
+        margin-bottom: 4px !important;
+        font-size: 13.5px !important;
         line-height: 1.55 !important;
     }
 
     .about-page .trust-card p {
         font-size: 10px !important;
-        line-height: 1.8 !important;
+        line-height: 1.75 !important;
     }
 
     /* =========================
        CTA
     ========================= */
 
-    .about-page + .service-cta {
-        padding-top: 24px !important;
-        border-radius: 20px !important;
-    }
-
     .about-page + .service-cta .cta-image img {
-        width: 250px !important;
-        height: 250px !important;
+        width: 240px !important;
+        height: 240px !important;
     }
 
     .about-page + .service-cta .cta-content .cta-title {
-        font-size: 23px !important;
+        font-size: 22px !important;
         line-height: 1.5 !important;
     }
 
     .about-page + .service-cta .cta-content .cta-text {
-        font-size: 13px !important;
+        font-size: 12px !important;
         line-height: 1.8 !important;
-        margin: 7px auto 18px !important;
+        margin: 7px auto 16px !important;
     }
 
     .about-page + .service-cta .btn-box {
-        gap: 14px !important;
+        gap: 12px !important;
     }
 
     .about-page + .service-cta .btn-box .form-btn,
     .about-page + .service-cta .btn-box .tel-btn {
-        width: 195px !important;
-        height: 46px !important;
+        width: 190px !important;
+        height: 45px !important;
         border-radius: 10px !important;
     }
 }
+
