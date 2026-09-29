@@ -5327,6 +5327,8 @@
 
 
 
+
+@media (min-width: 576px) and (max-width: 767.98px) {
     /* =========================================================
        BLOG DETAIL — SM 576px
        576–767.98px
@@ -5501,6 +5503,8 @@
         font-size: 10.5px !important;
         line-height: 1.7 !important;
     }
+
+}
 
 /* =========================================================
    BLOG PAGE — XS
