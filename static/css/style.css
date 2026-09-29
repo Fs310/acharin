@@ -2190,3 +2190,164 @@ input, textarea, select, button{direction: rtl !important;text-align: right !imp
 .admin-menu-toggle{padding-inline:14px}
 .admin-submenu .dropdown-item{padding-inline:28px}
 }
+
+/* =========================================================
+   BLOG DETAIL — DESKTOP COMPACT
+   1200px and above
+   ========================================================= */
+
+@media (min-width: 1200px) {
+    .blog-detail {
+        padding: 0 24px 55px;
+    }
+
+    .blog-detail > .container-fluid {
+        width: 100%;
+        max-width: 1160px;
+        margin-inline: auto;
+    }
+
+    .new-grid {
+        grid-template-columns: 270px minmax(0, 1fr);
+        gap: 26px;
+        max-width: 1120px;
+        margin-inline: auto;
+    }
+
+    .sidebar-box {
+        padding: 20px 16px;
+        margin: 20px 0 16px;
+        border-radius: 14px;
+    }
+
+    .sidebar-box h2 {
+        margin-bottom: 16px;
+        font-size: 17px;
+    }
+
+    .related-box {
+        padding: 17px;
+    }
+
+    .related-title {
+        gap: 8px;
+        margin-bottom: 13px;
+        padding-bottom: 11px;
+    }
+
+    .related-title > i {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+        border-radius: 9px;
+        font-size: 14px;
+    }
+
+    .related-title h2 {
+        font-size: 15px;
+    }
+
+    .related-list {
+        gap: 6px;
+    }
+
+    .related-item {
+        min-height: 46px;
+        padding: 8px 10px;
+        border-radius: 9px;
+    }
+
+    .related-item-title {
+        padding-right: 5px;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .related-item > i {
+        font-size: 12px;
+    }
+
+    .article-list li + li {
+        margin-top: 4px;
+    }
+
+    .article-list li::before {
+        width: 6px;
+        height: 6px;
+    }
+
+    .article-list a {
+        padding: 6px 9px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .article-header {
+        margin: 18px 0 20px;
+    }
+
+    .article-header h1 {
+        max-width: 820px;
+        margin-bottom: 13px;
+        font-size: 32px;
+        line-height: 1.45;
+    }
+
+    .article-meta {
+        gap: 20px;
+        font-size: 11px;
+    }
+
+    .article-body {
+        border-radius: 16px;
+    }
+
+    .article-image {
+        aspect-ratio: 16 / 8.8;
+    }
+
+    .article-text {
+        padding: 26px 30px 34px;
+        font-size: 14px;
+        line-height: 2.05;
+    }
+
+    .article-text p {
+        margin-bottom: 15px;
+    }
+
+    .article-text h2,
+    .article-text h3 {
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
+
+    .article-text h2 {
+        font-size: 22px;
+    }
+
+    .article-text h3 {
+        font-size: 18px;
+    }
+
+    .article-alert {
+        gap: 12px;
+        margin: 20px 24px 0;
+        padding: 16px 19px;
+        border-radius: 11px;
+    }
+
+    .article-alert > i {
+        font-size: 26px;
+    }
+
+    .article-alert h2 {
+        margin-bottom: 6px;
+        font-size: 16px;
+    }
+
+    .article-alert p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+}
