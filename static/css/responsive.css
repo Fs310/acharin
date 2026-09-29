@@ -7183,11 +7183,15 @@
     }
 
     .about-page .about-content {
-        order: 1 !important;
+        display: contents !important;
         width: 100% !important;
         min-width: 0 !important;
-        padding-left: 0 !important;
-        box-sizing: border-box !important;
+        padding: 0 !important;
+    }
+
+    .about-page .about-header {
+        order: 1 !important;
+        width: 100% !important;
     }
 
     .about-page .about-image {
@@ -7196,6 +7200,11 @@
         margin: 0 !important;
         border-radius: 12px !important;
         box-sizing: border-box !important;
+    }
+
+    .about-page .about-benefits {
+        order: 3 !important;
+        width: 100% !important;
     }
 
     .about-page .about-image img {
