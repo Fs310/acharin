@@ -45,7 +45,7 @@
         background: var(--brand-navy) !important;
         opacity: 1;
         backdrop-filter: none;
-        border: 1px solid #e4ebf3;
+        border: none;
         border-radius: 0 0 0 16px;
         box-shadow: 0 14px 34px rgba(14, 46, 101, .13);
         box-sizing: border-box;
