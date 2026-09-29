@@ -6282,3 +6282,207 @@
         font-size: 11px !important;
     }
 }
+
+
+/* =========================================================
+   ABOUT PAGE — LG 992px
+   992–1199.98px
+   ========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .about-page {
+        padding: 0 24px 58px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-container {
+        width: 100% !important;
+        max-width: 1150px !important;
+        margin-inline: auto !important;
+    }
+
+    .about-page .site-breadcrumb {
+        margin: 18px 6px 30px !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .about-page .about-features {
+        margin-bottom: 46px !important;
+    }
+
+    .about-page .features-row {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .about-page .feature-box {
+        min-width: 0 !important;
+        min-height: 128px !important;
+        padding: 17px 10px !important;
+        border-radius: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .feature-icon {
+        width: 42px !important;
+        height: 42px !important;
+        flex-basis: 42px !important;
+        font-size: 20px !important;
+        border-radius: 12px !important;
+    }
+
+    .about-page .feature-box h3 {
+        margin: 9px 0 5px !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .about-page .feature-box p {
+        font-size: 10.5px !important;
+        line-height: 1.75 !important;
+    }
+
+    /* =========================
+       MAIN ABOUT CONTENT
+    ========================= */
+
+    .about-page .about-main {
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr) !important;
+        gap: 38px !important;
+        align-items: center !important;
+    }
+
+    .about-page .about-content {
+        min-width: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .about-page .about-header {
+        margin-bottom: 18px !important;
+    }
+
+    .about-page .about-header h1 {
+        margin-bottom: 13px !important;
+        font-size: 31px !important;
+        line-height: 1.45 !important;
+    }
+
+    .about-page .about-header p {
+        margin-bottom: 9px !important;
+        font-size: 13px !important;
+        line-height: 2 !important;
+    }
+
+    .about-page .about-benefits {
+        margin-top: 20px !important;
+    }
+
+    .about-page .about-benefits li {
+        padding-right: 35px !important;
+        margin-bottom: 9px !important;
+        font-size: 12px !important;
+        line-height: 1.8 !important;
+    }
+
+    .about-page .about-benefits li::before {
+        width: 23px !important;
+        height: 23px !important;
+        top: 1px !important;
+        font-size: 11px !important;
+    }
+
+    /* =========================
+       ABOUT IMAGE
+    ========================= */
+
+    .about-page .about-image {
+        width: 100% !important;
+        border-radius: 15px !important;
+    }
+
+    .about-page .about-image img {
+        width: 100% !important;
+        aspect-ratio: 3 / 2 !important;
+        object-fit: cover !important;
+    }
+
+    /* =========================
+       TRUST
+    ========================= */
+
+    .about-page .about-trust {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        margin-top: 40px !important;
+    }
+
+    .about-page .trust-card {
+        min-width: 0 !important;
+        min-height: 105px !important;
+        gap: 11px !important;
+        padding: 15px 13px !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-page .trust-icon {
+        width: 43px !important;
+        height: 43px !important;
+        flex-basis: 43px !important;
+        font-size: 20px !important;
+        border-radius: 12px !important;
+    }
+
+    .about-page .trust-card h2 {
+        margin-bottom: 5px !important;
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+    }
+
+    .about-page .trust-card p {
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .about-page + .service-cta {
+        padding-top: 24px !important;
+        border-radius: 20px !important;
+    }
+
+    .about-page + .service-cta .cta-image img {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    .about-page + .service-cta .cta-content .cta-title {
+        font-size: 23px !important;
+        line-height: 1.5 !important;
+    }
+
+    .about-page + .service-cta .cta-content .cta-text {
+        font-size: 13px !important;
+        line-height: 1.8 !important;
+        margin: 7px auto 18px !important;
+    }
+
+    .about-page + .service-cta .btn-box {
+        gap: 14px !important;
+    }
+
+    .about-page + .service-cta .btn-box .form-btn,
+    .about-page + .service-cta .btn-box .tel-btn {
+        width: 195px !important;
+        height: 46px !important;
+        border-radius: 10px !important;
+    }
+}
