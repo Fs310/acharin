@@ -35,32 +35,26 @@
                 </div>
 
                 <nav class="profile-menu" aria-label="منوی حساب کاربری">
-
                     <a href="{% url 'accounts:profile' %}" class="active">
                         <i class="bi bi-person" aria-hidden="true"></i>
                         اطلاعات حساب کاربری
                     </a>
-
                     <a href="{% url 'accounts:history' %}">
                         <i class="bi bi-clipboard-check" aria-hidden="true"></i>
                         سفارش‌های من
                     </a>
-
                     <a href="#address">
                         <i class="bi bi-geo-alt" aria-hidden="true"></i>
                         آدرس من
                     </a>
-
                     <a href="{% url 'accounts:change_password' %}">
                         <i class="bi bi-lock" aria-hidden="true"></i>
                         تغییر رمز عبور
                     </a>
-
                     <a href="{% url 'accounts:logout_user' %}" class="logout">
                         <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
                         خروج از حساب
                     </a>
-
                 </nav>
 
             </aside>
@@ -71,7 +65,6 @@
                     {% csrf_token %}
 
                     <section class="profile-card" aria-labelledby="account-info-title">
-
                         <header class="profile-card-header">
                             <div>
                                 <h2 id="account-info-title">اطلاعات حساب کاربری</h2>
@@ -81,7 +74,6 @@
                         </header>
 
                         <div class="profile-fields">
-
                             <div class="profile-field">
                                 <label for="username">نام کاربری</label>
                                 <input readonly type="text" id="username" name="username" value="{{ form_user.instance.username }}">
@@ -89,17 +81,14 @@
                                     <small class="field-error">{{ form.username.errors.0 }}</small>
                                 {% endif %}
                             </div>
-
                             <div class="profile-field">
                                 <label for="firstname">نام</label>
                                 <input type="text" id="firstname" name="first_name" value="{{ form_user.instance.first_name }}">
                             </div>
-
                             <div class="profile-field">
                                 <label for="lastname">نام خانوادگی</label>
                                 <input type="text" id="lastname" name="last_name" value="{{ form_user.instance.last_name }}">
                             </div>
-
                             <div class="profile-field">
                                 <label for="tel">شماره تماس</label>
                                 <input type="tel" id="tel" name="tel" value="{{ form_profile.instance.tel|default_if_none:'' }}">
@@ -107,7 +96,6 @@
                                     <small class="field-error">{{ error }}</small>
                                 {% endfor %}
                             </div>
-
                             <div class="profile-field">
                                 <label for="email">ایمیل</label>
                                 <input type="email" id="email" name="email" value="{{ form_user.instance.email }}">
@@ -115,7 +103,6 @@
                                     <small class="field-error">{{ form.email.errors.0 }}</small>
                                 {% endif %}
                             </div>
-
                             <div class="profile-field">
                                 <label for="date_birthday">تاریخ تولد</label>
                                 {% if profiles.date_birthday %}
@@ -124,13 +111,10 @@
                                     <input type="date" id="date_birthday" name="date_birthday" value="">
                                 {% endif %}
                             </div>
-
                         </div>
-
                     </section>
 
                     <section class="profile-card" id="address" aria-labelledby="address-title">
-
                         <header class="profile-card-header">
                             <div>
                                 <h2 id="address-title">اطلاعات آدرس</h2>
@@ -140,51 +124,27 @@
                         </header>
 
                         <div class="profile-fields address-fields">
-
                             <div class="profile-field">
                                 <label for="city">شهر</label>
-                                <input
-                                    type="text"
-                                    id="city"
-                                    name="city"
-                                    value="{{ form_profile.instance.city|default_if_none:'' }}"
-                                    placeholder="مثلاً مشهد"
-                                    autocomplete="address-level2"
-                                >
+                                <input type="text" id="city" name="city" value="{{ form_profile.instance.city|default_if_none:'' }}" placeholder="مثلاً مشهد" autocomplete="address-level2">
                                 {% for error in form_profile.city.errors %}
                                     <small class="field-error">{{ error }}</small>
                                 {% endfor %}
                             </div>
-
                             <div class="profile-field">
                                 <label for="village">روستا <span class="optional-field">(اختیاری)</span></label>
-                                <input
-                                    type="text"
-                                    id="village"
-                                    name="village"
-                                    value="{{ form_profile.instance.village|default_if_none:'' }}"
-                                    placeholder="در صورت سکونت در روستا"
-                                    autocomplete="address-line2"
-                                >
+                                <input type="text" id="village" name="village" value="{{ form_profile.instance.village|default_if_none:'' }}" placeholder="در صورت سکونت در روستا" autocomplete="address-line2">
                                 {% for error in form_profile.village.errors %}
                                     <small class="field-error">{{ error }}</small>
                                 {% endfor %}
                             </div>
-
                             <div class="profile-field full-width">
                                 <label for="address-input">آدرس کامل محل خدمت</label>
-                                <textarea
-                                    id="address-input"
-                                    name="address"
-                                    rows="5"
-                                    placeholder="خیابان، کوچه، پلاک، واحد و سایر جزئیات..."
-                                    autocomplete="street-address"
-                                >{{ form_profile.instance.address|default_if_none:'' }}</textarea>
+                                <textarea id="address-input" name="address" rows="5" placeholder="خیابان، کوچه، پلاک، واحد و سایر جزئیات..." autocomplete="street-address">{{ form_profile.instance.address|default_if_none:'' }}</textarea>
                                 {% for error in form_profile.address.errors %}
                                     <small class="field-error">{{ error }}</small>
                                 {% endfor %}
                             </div>
-
                         </div>
 
                         <div class="profile-actions">
@@ -193,13 +153,10 @@
                                 ذخیره تغییرات
                             </button>
                         </div>
-
                     </section>
-
                 </form>
 
                 <section class="profile-card profile-orders" id="orders" aria-labelledby="orders-title">
-
                     <header class="profile-card-header">
                         <div>
                             <h2 id="orders-title">سفارش‌های اخیر</h2>
@@ -209,9 +166,7 @@
                     </header>
 
                     <div class="orders-table-wrapper">
-
                         <table class="orders-table">
-
                             <thead>
                             <tr>
                                 <th>شماره فاکتور</th>
@@ -220,78 +175,47 @@
                                 <th>عملیات</th>
                             </tr>
                             </thead>
-
                             <tbody>
-
                             {% for list in list_order|slice:":3" %}
-
                                 <tr>
-
+                                    <td><span class="invoice-number">#{{ list.id }}</span></td>
+                                    <td>{{ list.date_created.date }}</td>
+                                    <td>{{ list.total_with_tax|intcomma }} تومان</td>
                                     <td>
-                                        <span class="invoice-number">#{{ list.id }}</span>
-                                    </td>
-
-                                    <td>
-                                        {{ list.date_created.date }}
-                                    </td>
-
-                                    <td>
-                                        {{ list.total_with_tax|intcomma }}
-                                       تومان
-                                    </td>
-
-                                    <td>
-
                                         <div class="order-actions">
-
-                                            <a href="{% url 'accounts:detail_history' list.id %}" class="order-detail">
-                                                جزئیات
-                                            </a>
-
+                                            <a href="{% url 'accounts:detail_history' list.id %}" class="order-detail">جزئیات</a>
                                         </div>
-
                                     </td>
-
                                 </tr>
-
                             {% empty %}
-
                                 <tr>
                                     <td colspan="4" class="orders-empty">
                                         <i class="bi bi-inbox" aria-hidden="true"></i>
                                         <span>هنوز سفارشی ثبت نکرده‌اید.</span>
                                     </td>
                                 </tr>
-
                             {% endfor %}
-
                             </tbody>
-
                         </table>
-
                     </div>
 
                     {% if list_order|length > 3 %}
-
                         <div class="orders-footer">
                             <a href="{% url 'accounts:history' %}" class="orders-more">
                                 مشاهده همه سفارش‌ها
                                 <i class="bi bi-arrow-left" aria-hidden="true"></i>
                             </a>
                         </div>
-
                     {% endif %}
-
                 </section>
 
             </main>
-
         </div>
-
     </div>
 </section>
 
 <style>
+/* Profile breadcrumb tuning for desktop breakpoints */
 @media (min-width: 1200px) and (max-width: 1399.98px) {
     .profile-section {
         padding-top: 18px !important;
@@ -307,6 +231,25 @@
     .profile-section .site-breadcrumb a,
     .profile-section .site-breadcrumb span {
         font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .profile-section {
+        padding-top: 12px !important;
+    }
+
+    .profile-section .site-breadcrumb {
+        margin-top: 0 !important;
+        margin-bottom: 14px !important;
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 11px !important;
         font-weight: 500 !important;
     }
 }
