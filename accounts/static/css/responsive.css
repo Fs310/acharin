@@ -27,13 +27,10 @@
         width: 75px;
     }
 
-
     .feature_section {
         transform: none;
         padding: 90px 0;
     }
-
-
 }
 
 @media (max-width: 767px) {
@@ -70,7 +67,6 @@
         margin-bottom: 45px;
     }
 
-
     .professional_section .img-box {
         display: none;
     }
@@ -85,6 +81,62 @@
         top: 25px;
     }
 
+    /* Profile page */
+    .profile-section {
+        padding: 14px 18px 45px !important;
+    }
+
+    .profile-section .site-breadcrumb {
+        margin: 0 0 10px !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 11px !important;
+        font-weight: 500 !important;
+    }
+
+    .profile-section .profile-page-header {
+        margin-bottom: 16px !important;
+    }
+}
+
+/* Tablet / larger mobile: after the two top rows, show account and address cards side-by-side. */
+@media (min-width: 576px) and (max-width: 767px) {
+    .profile-section .profile-form {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 14px !important;
+        align-items: start !important;
+    }
+
+    .profile-section .profile-form > .profile-card {
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .profile-section .profile-form > .profile-card .profile-fields {
+        grid-template-columns: 1fr !important;
+    }
+
+    .profile-section .profile-form > .profile-card .profile-field.full-width {
+        grid-column: 1 !important;
+    }
+
+    .profile-section .profile-form > .profile-card .profile-card-header h2 {
+        font-size: 15px !important;
+    }
+
+    .profile-section .profile-form > .profile-card .profile-card-header p {
+        font-size: 10px !important;
+    }
+
+    .profile-section .profile-orders {
+        margin-top: 14px !important;
+    }
 }
 
 @media (max-width: 576px) {}
@@ -99,5 +151,4 @@
     .container {
         max-width: 1170px;
     }
-
 }
