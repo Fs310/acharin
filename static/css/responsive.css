@@ -10878,23 +10878,141 @@
 
 /* =========================================================
    CHANGE PASSWORD — XS
-   Breadcrumb alignment only
    Up to 575.98px
+   Banner first, form second
    ========================================================= */
 @media (max-width: 575.98px) {
+    .chang-pass-section {
+        width: 100% !important;
+        padding: 16px 12px 34px !important;
+        box-sizing: border-box !important;
+    }
+
     .chang-pass-section .change_pass-breadcrumb {
         width: 100% !important;
         max-width: 360px !important;
-        margin: 0 auto 10px !important;
+        margin: 10px auto 14px !important;
         padding: 0 !important;
         font-size: 9px !important;
-        line-height: 1.6 !important;
+        line-height: 1.7 !important;
         box-sizing: border-box !important;
     }
 
     .chang-pass-section .change_pass-breadcrumb > * {
         font-size: 9px !important;
         font-weight: 500 !important;
+        line-height: 1.7 !important;
+    }
+
+    .chang-pass-container {
+        width: 100% !important;
+        max-width: 360px !important;
+        min-height: 0 !important;
+        flex-direction: column !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+    }
+
+    .chang-pass-banner {
+        order: 1 !important;
+        width: 100% !important;
+        min-height: 245px !important;
+        height: 245px !important;
+    }
+
+    .chang-pass-banner .banner-top {
+        margin-top: 17px !important;
+        padding-inline: 20px !important;
+    }
+
+    .chang-pass-banner h2 {
+        margin-bottom: 3px !important;
+        font-size: 17px !important;
+        line-height: 1.5 !important;
+    }
+
+    .chang-pass-banner p {
+        font-size: 8.5px !important;
+        line-height: 1.7 !important;
+    }
+
+    .chang-pass-stats {
+        top: 32% !important;
+        left: 5% !important;
+        width: 90% !important;
+        gap: 1px !important;
+    }
+
+    .chang-pass-stats .stat-box {
+        padding: 2px 4px !important;
+        gap: 4px !important;
+    }
+
+    .chang-pass-stats .chang-pass-icon {
+        flex-basis: 27px !important;
+        width: 27px !important;
+        height: 27px !important;
+        font-size: 14px !important;
+    }
+
+    .chang-pass-stats .stat-title {
+        font-size: 9px !important;
         line-height: 1.6 !important;
+    }
+
+    .chang-pass-form-box {
+        order: 2 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 24px 18px 21px !important;
+        box-sizing: border-box !important;
+    }
+
+    .chang-pass-form-box .feature-icon {
+        width: 46px !important;
+        height: 46px !important;
+        flex-basis: 46px !important;
+        font-size: 24px !important;
+    }
+
+    .chang-pass-form-box h1 {
+        margin-bottom: 5px !important;
+        font-size: 21px !important;
+        line-height: 1.5 !important;
+    }
+
+    .chang-pass-form-box p {
+        margin-bottom: 15px !important;
+        font-size: 9.5px !important;
+        line-height: 1.8 !important;
+    }
+
+    .chang-pass-form-box label {
+        margin-bottom: 4px !important;
+        font-size: 9.5px !important;
+    }
+
+    .chang-pass-form-box input {
+        height: 39px !important;
+        padding-inline: 10px !important;
+        margin-bottom: 10px !important;
+        border-radius: 8px !important;
+        font-size: 10.5px !important;
+    }
+
+    .chang-pass-form-box button {
+        height: 40px !important;
+        border-radius: 8px !important;
+        font-size: 11.5px !important;
+    }
+
+    .chang-pass-form-box > .chang-pass-link {
+        margin-top: 11px !important;
+    }
+
+    .chang-pass-form-box .chang-pass-link,
+    .chang-pass-form-box .chang-pass-link a {
+        font-size: 9.5px !important;
+        line-height: 1.7 !important;
     }
 }
