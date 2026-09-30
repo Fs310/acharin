@@ -10695,3 +10695,117 @@
         line-height: 1.6 !important;
     }
 }
+
+
+/* =========================================================
+   PROFILE PAGE — MD 768px
+   768–991.98px
+   1st row: user card + account menu
+   Following rows: account info + address full width
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .profile-section {
+        padding: 8px 18px 42px !important;
+    }
+
+    .profile-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .profile-section .site-breadcrumb {
+        margin: 0 0 10px !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        line-height: 1.6 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+
+    .profile-page-header {
+        margin-bottom: 16px !important;
+    }
+
+    .profile-layout {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 14px !important;
+        align-items: start !important;
+    }
+
+    /* Flatten the semantic wrappers so the desired visual order can be controlled. */
+    .profile-sidebar,
+    .profile-content,
+    .profile-form {
+        display: contents !important;
+    }
+
+    /* Row 1 */
+    .profile-user-card {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        padding: 22px 16px !important;
+    }
+
+    .profile-menu {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .profile-menu a {
+        min-height: 48px !important;
+        padding-inline: 14px !important;
+        font-size: 11px !important;
+    }
+
+    .profile-menu a i {
+        font-size: 16px !important;
+    }
+
+    /* Rows 2 and 3 — full width */
+    .profile-form > .profile-card {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .profile-form > .profile-card:first-child {
+        grid-row: 2 !important;
+    }
+
+    .profile-form > .profile-card:nth-child(2) {
+        grid-row: 3 !important;
+        margin-top: 14px !important;
+    }
+
+    /* Keep the fields inside each full-width card comfortably readable. */
+    .profile-form > .profile-card .profile-fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .profile-form > .profile-card .profile-field.full-width {
+        grid-column: 1 / -1 !important;
+    }
+
+    .profile-orders {
+        grid-column: 1 / -1 !important;
+        grid-row: 4 !important;
+        width: 100% !important;
+        margin: 14px 0 0 !important;
+        min-width: 0 !important;
+    }
+}
