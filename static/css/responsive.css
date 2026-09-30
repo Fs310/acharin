@@ -9740,3 +9740,476 @@
     .orders-footer { padding: 13px 15px !important; }
     .orders-more { font-size: 10px !important; }
 }
+
+
+/* =========================================================
+   PASSWORD RESET — XL 1200px
+   1200–1399.98px
+   ========================================================= */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .repass-section {
+        padding: 34px 24px 64px !important;
+    }
+
+    .repass-container {
+        width: min(820px, 100%) !important;
+        max-width: 900px !important;
+        min-height: 560px !important;
+    }
+
+    .repass-form-box {
+        width: 52% !important;
+        padding: 0 42px !important;
+    }
+
+    .repass-form-box h1 {
+        font-size: 27px !important;
+    }
+
+    .repass-banner {
+        width: 48% !important;
+        min-height: 560px !important;
+    }
+
+    .repass-banner .banner-top {
+        margin-top: 23px !important;
+        padding-inline: 30px !important;
+    }
+
+    .repass-banner h2 {
+        font-size: 23px !important;
+    }
+
+    .repass-stats {
+        top: 30% !important;
+    }
+}
+
+
+/* =========================================================
+   PASSWORD RESET — LG 992px
+   992–1199.98px
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .repass-section {
+        padding: 30px 18px 56px !important;
+    }
+
+    .repass-container {
+        width: min(820px, 100%) !important;
+        max-width: 900px !important;
+        min-height: 520px !important;
+    }
+
+    .repass-form-box {
+        width: 53% !important;
+        padding: 0 36px !important;
+    }
+
+    .repass-form-box .feature-icon {
+        width: 52px !important;
+        height: 52px !important;
+        flex-basis: 52px !important;
+        font-size: 29px !important;
+    }
+
+    .repass-form-box h1 {
+        font-size: 25px !important;
+        line-height: 1.55 !important;
+    }
+
+    .repass-form-box p {
+        margin-bottom: 18px !important;
+        font-size: 11px !important;
+    }
+
+    .repass-form-box label {
+        font-size: 12px !important;
+    }
+
+    .repass-form-box input {
+        height: 43px !important;
+        margin-bottom: 13px !important;
+        font-size: 12px !important;
+    }
+
+    .repass-form-box button {
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+
+    .repass-banner {
+        width: 47% !important;
+        min-height: 520px !important;
+    }
+
+    .repass-banner .banner-top {
+        margin-top: 22px !important;
+        padding-inline: 26px !important;
+    }
+
+    .repass-banner h2 {
+        font-size: 21px !important;
+    }
+
+    .repass-banner p {
+        font-size: 10px !important;
+    }
+
+    .repass-stats {
+        top: 30% !important;
+        left: 4% !important;
+        width: 91% !important;
+    }
+
+    .repass-stats .repass-icon {
+        flex-basis: 31px !important;
+        width: 31px !important;
+        height: 31px !important;
+        font-size: 17px !important;
+    }
+
+    .repass-stats .stat-title {
+        font-size: 11px !important;
+    }
+}
+
+
+/* =========================================================
+   PASSWORD RESET — MD 768px
+   768–991.98px
+   Two-column compact layout
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .repass-section {
+        padding: 26px 18px 48px !important;
+    }
+
+    .repass-container {
+        width: min(740px, 100%) !important;
+        min-height: 450px !important;
+        border-radius: 17px !important;
+    }
+
+    .repass-form-box {
+        width: 55% !important;
+        padding: 0 27px !important;
+    }
+
+    .repass-form-box .feature-icon {
+        width: 48px !important;
+        height: 48px !important;
+        flex-basis: 48px !important;
+        font-size: 26px !important;
+    }
+
+    .repass-form-box h1 {
+        font-size: 22px !important;
+        line-height: 1.55 !important;
+    }
+
+    .repass-form-box p {
+        margin-bottom: 15px !important;
+        font-size: 10px !important;
+        line-height: 1.8 !important;
+    }
+
+    .repass-form-box label {
+        margin-bottom: 4px !important;
+        font-size: 11px !important;
+    }
+
+    .repass-form-box input {
+        height: 40px !important;
+        margin-bottom: 11px !important;
+        padding-inline: 11px !important;
+        border-radius: 8px !important;
+        font-size: 11px !important;
+    }
+
+    .repass-form-box button {
+        height: 41px !important;
+        border-radius: 8px !important;
+        font-size: 12px !important;
+    }
+
+    .repass-form-box > .repass-link {
+        margin-top: 14px !important;
+    }
+
+    .repass-form-box .repass-link,
+    .repass-form-box .repass-link a {
+        font-size: 10px !important;
+    }
+
+    .repass-banner {
+        width: 45% !important;
+        min-height: 450px !important;
+    }
+
+    .repass-banner .banner-top {
+        margin-top: 20px !important;
+        padding-inline: 20px !important;
+    }
+
+    .repass-banner h2 {
+        font-size: 19px !important;
+    }
+
+    .repass-banner p {
+        font-size: 9px !important;
+        line-height: 1.75 !important;
+    }
+
+    .repass-stats {
+        top: 31% !important;
+        left: 4% !important;
+        width: 92% !important;
+        gap: 2px !important;
+    }
+
+    .repass-stats .stat-box {
+        padding: 3px 5px !important;
+    }
+
+    .repass-stats .repass-icon {
+        flex-basis: 28px !important;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 15px !important;
+    }
+
+    .repass-stats .stat-title {
+        font-size: 9.5px !important;
+    }
+}
+
+
+/* =========================================================
+   PASSWORD RESET — SM 576px
+   576–767.98px
+   Single-column mobile layout
+   ========================================================= */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .repass-section {
+        padding: 22px 16px 42px !important;
+    }
+
+    .repass-container {
+        width: min(620px, 100%) !important;
+        min-height: 0 !important;
+        flex-direction: column !important;
+        border-radius: 16px !important;
+    }
+
+    .repass-form-box {
+        order: 1 !important;
+        width: 100% !important;
+        padding: 30px 30px 26px !important;
+    }
+
+    .repass-form-box .feature-icon {
+        width: 50px !important;
+        height: 50px !important;
+        flex-basis: 50px !important;
+        font-size: 27px !important;
+    }
+
+    .repass-form-box h1 {
+        font-size: 23px !important;
+        line-height: 1.55 !important;
+    }
+
+    .repass-form-box p {
+        font-size: 10.5px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .repass-form-box label {
+        font-size: 11px !important;
+    }
+
+    .repass-form-box input {
+        height: 42px !important;
+        margin-bottom: 12px !important;
+        font-size: 11px !important;
+    }
+
+    .repass-form-box button {
+        height: 43px !important;
+        font-size: 13px !important;
+    }
+
+    .repass-form-box > .repass-link {
+        margin-top: 14px !important;
+    }
+
+    .repass-form-box .repass-link,
+    .repass-form-box .repass-link a {
+        font-size: 10px !important;
+    }
+
+    .repass-banner {
+        order: 2 !important;
+        width: 100% !important;
+        min-height: 300px !important;
+        height: 300px !important;
+    }
+
+    .repass-banner .banner-top {
+        margin-top: 20px !important;
+        padding-inline: 28px !important;
+    }
+
+    .repass-banner h2 {
+        font-size: 20px !important;
+    }
+
+    .repass-banner p {
+        font-size: 10px !important;
+    }
+
+    .repass-stats {
+        top: 32% !important;
+        left: 5% !important;
+        width: 90% !important;
+    }
+
+    .repass-stats .stat-title {
+        font-size: 10px !important;
+    }
+}
+
+
+/* =========================================================
+   PASSWORD RESET — XS
+   Up to 575.98px
+   ========================================================= */
+@media (max-width: 575.98px) {
+    .repass-section {
+        width: 100% !important;
+        padding: 16px 12px 34px !important;
+        box-sizing: border-box !important;
+    }
+
+    .repass-section .auth-breadcrumb {
+        width: 100% !important;
+        margin: 10px auto 16px !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+        line-height: 1.7 !important;
+        box-sizing: border-box !important;
+    }
+
+    .repass-container {
+        width: 100% !important;
+        max-width: 360px !important;
+        min-height: 0 !important;
+        flex-direction: column !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+    }
+
+    .repass-form-box {
+        order: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 24px 18px 21px !important;
+        box-sizing: border-box !important;
+    }
+
+    .repass-form-box .feature-icon {
+        width: 46px !important;
+        height: 46px !important;
+        flex-basis: 46px !important;
+        font-size: 24px !important;
+    }
+
+    .repass-form-box h1 {
+        margin-bottom: 5px !important;
+        font-size: 21px !important;
+        line-height: 1.5 !important;
+    }
+
+    .repass-form-box p {
+        margin-bottom: 15px !important;
+        font-size: 9.5px !important;
+        line-height: 1.8 !important;
+    }
+
+    .repass-form-box label {
+        margin-bottom: 4px !important;
+        font-size: 9.5px !important;
+    }
+
+    .repass-form-box input {
+        height: 39px !important;
+        padding-inline: 10px !important;
+        margin-bottom: 10px !important;
+        border-radius: 8px !important;
+        font-size: 10.5px !important;
+    }
+
+    .repass-form-box button {
+        height: 40px !important;
+        border-radius: 8px !important;
+        font-size: 11.5px !important;
+    }
+
+    .repass-form-box > .repass-link {
+        margin-top: 11px !important;
+    }
+
+    .repass-form-box .repass-link,
+    .repass-form-box .repass-link a {
+        font-size: 9.5px !important;
+        line-height: 1.7 !important;
+    }
+
+    .repass-banner {
+        order: 2 !important;
+        width: 100% !important;
+        height: 245px !important;
+        min-height: 245px !important;
+    }
+
+    .repass-banner .banner-top {
+        margin-top: 17px !important;
+        padding-inline: 20px !important;
+    }
+
+    .repass-banner h2 {
+        margin-bottom: 3px !important;
+        font-size: 17px !important;
+        line-height: 1.5 !important;
+    }
+
+    .repass-banner p {
+        font-size: 8.5px !important;
+        line-height: 1.7 !important;
+    }
+
+    .repass-stats {
+        top: 32% !important;
+        left: 5% !important;
+        width: 90% !important;
+        gap: 1px !important;
+    }
+
+    .repass-stats .stat-box {
+        padding: 2px 4px !important;
+        gap: 4px !important;
+    }
+
+    .repass-stats .repass-icon {
+        flex-basis: 27px !important;
+        width: 27px !important;
+        height: 27px !important;
+        font-size: 14px !important;
+    }
+
+    .repass-stats .stat-title {
+        font-size: 9px !important;
+        line-height: 1.6 !important;
+    }
+}
