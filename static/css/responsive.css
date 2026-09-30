@@ -9568,17 +9568,28 @@
    Single-column layout
    ========================================================= */
 @media (min-width: 768px) and (max-width: 991.98px) {
+
     .profile-section {
         padding: 30px 18px 48px !important;
+    }
+
+    .profile-section .site-breadcrumb {
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 11px !important;
+        font-weight: 500 !important;
     }
 
     .profile-page-header {
         margin-bottom: 20px !important;
     }
 
-    .profile-page-header h1 {
-        font-size: 26px !important;
-    }
 
     .profile-layout {
         display: grid;
@@ -9632,12 +9643,25 @@
    576–767.98px
    ========================================================= */
 @media (min-width: 576px) and (max-width: 767.98px) {
+.profile-section .site-breadcrumb {
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 10px !important;
+        font-weight: 500 !important;
+    }
+
     .profile-section {
         padding: 24px 16px 42px !important;
     }
 
     .profile-page-header {
-        margin-bottom: 18px !important;
+        margin-bottom: 14px !important;
     }
 
     .profile-page-header h1 {
@@ -9751,6 +9775,19 @@
    Up to 575.98px
    ========================================================= */
 @media (max-width: 575.98px) {
+
+    .profile-section .site-breadcrumb {
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 11px !important;
+        font-weight: 500 !important;
+    }
     .profile-section {
         width: 100% !important;
         padding: 18px 12px 34px !important;
@@ -10776,34 +10813,5 @@
 
     .chang-pass-stats .stat-title {
         font-size: 10px !important;
-    }
-}
-
-
-
-/* =========================================================
-   PROFILE PAGE — 576px BREADCRUMB FINAL TUNING
-   576–767.98px
-   ========================================================= */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .profile-section {
-        padding-top: 6px !important;
-    }
-
-    .profile-section .site-breadcrumb {
-        margin: 0 0 8px !important;
-        padding: 0 !important;
-        font-size: 11px !important;
-        line-height: 1.5 !important;
-    }
-
-    .profile-section .site-breadcrumb a,
-    .profile-section .site-breadcrumb span {
-        font-size: 11px !important;
-        font-weight: 500 !important;
-    }
-
-    .profile-section .profile-page-header {
-        margin-bottom: 14px !important;
     }
 }
