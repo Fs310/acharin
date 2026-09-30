@@ -10066,6 +10066,7 @@
         height: 52px !important;
         flex-basis: 52px !important;
         font-size: 29px !important;
+        border-radius: 50% !important;
     }
 
     .repass-form-box h1 {
@@ -10156,6 +10157,7 @@
         height: 48px !important;
         flex-basis: 48px !important;
         font-size: 26px !important;
+        border-radius: 50% !important;
     }
 
     .repass-form-box h1 {
@@ -10253,13 +10255,11 @@
     .repass-container {
         width: min(620px, 100%) !important;
         min-height: 0 !important;
-        flex-direction: column !important;
         border-radius: 16px !important;
     }
 
     .repass-form-box {
-        order: 2 !important;
-        width: 100% !important;
+        width: 55% !important;
         padding: 30px 30px 26px !important;
     }
 
@@ -10268,6 +10268,7 @@
         height: 50px !important;
         flex-basis: 50px !important;
         font-size: 27px !important;
+        border-radius: 50% !important;
     }
 
     .repass-form-box h1 {
@@ -10305,10 +10306,8 @@
     }
 
     .repass-banner {
-        order: 1 !important;
-        width: 100% !important;
+        width: 45% !important;
         min-height: 300px !important;
-        height: 300px !important;
     }
 
     .repass-banner .banner-top {
@@ -10328,10 +10327,28 @@
         top: 32% !important;
         left: 5% !important;
         width: 90% !important;
+        gap: 0 !important;
     }
 
     .repass-stats .stat-title {
         font-size: 10px !important;
+    }
+
+    .repass-stats .stat-box {
+        padding: 2px !important;
+        gap: 4px !important;
+    }
+
+    .repass-stats .repass-icon {
+        flex-basis: 26px !important;
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 14px !important;
+    }
+
+    .repass-stats .stat-title {
+        font-size: 9px !important;
+        line-height: 1.6 !important;
     }
 }
 
@@ -10356,6 +10373,12 @@
         box-sizing: border-box !important;
     }
 
+    .repass-section .auth-breadcrumb > * {
+        font-size: 9px !important;
+        font-weight: 500 !important;
+        line-height: 1.7 !important;
+    }
+
     .repass-container {
         width: 100% !important;
         max-width: 360px !important;
@@ -10378,6 +10401,7 @@
         height: 46px !important;
         flex-basis: 46px !important;
         font-size: 24px !important;
+                border-radius: 50% !important;
     }
 
     .repass-form-box h1 {
@@ -10398,7 +10422,7 @@
     }
 
     .repass-form-box input {
-        height: 39px !important;
+        height: 38px !important;
         padding-inline: 10px !important;
         margin-bottom: 10px !important;
         border-radius: 8px !important;
@@ -10406,7 +10430,7 @@
     }
 
     .repass-form-box button {
-        height: 40px !important;
+        height: 39px !important;
         border-radius: 8px !important;
         font-size: 11.5px !important;
     }
@@ -10424,10 +10448,13 @@
     .repass-banner {
         order: 1 !important;
         width: 100% !important;
-        height: 245px !important;
-        min-height: 245px !important;
+        min-height: 235px !important;
+        height: 235px !important;
     }
-
+    .repass-banner-image img {
+        width: 70%;
+        transform: rotateY(180deg) translateY(10px);
+    }
     .repass-banner .banner-top {
         margin-top: 17px !important;
         padding-inline: 20px !important;
@@ -10445,27 +10472,27 @@
     }
 
     .repass-stats {
-        top: 32% !important;
+        top: 38% !important;
         left: 5% !important;
         width: 90% !important;
-        gap: 1px !important;
+        gap: 0 !important;
     }
 
     .repass-stats .stat-box {
-        padding: 2px 4px !important;
-        gap: 4px !important;
+        padding: 2px !important;
+        gap: 2px !important;
     }
 
     .repass-stats .repass-icon {
-        flex-basis: 27px !important;
-        width: 27px !important;
-        height: 27px !important;
+        flex-basis: 25px !important;
+        width: 25px !important;
+        height: 25px !important;
         font-size: 14px !important;
     }
 
     .repass-stats .stat-title {
         font-size: 9px !important;
-        line-height: 1.6 !important;
+        line-height: 1.5 !important;
     }
 }
 
@@ -10946,11 +10973,11 @@
         top: 40% !important;
         left: 4% !important;
         width: 90% !important;
-        gap: 1px !important;
+        gap: 0 !important;
     }
 
     .chang-pass-stats .stat-box {
-        padding: 2px 4px !important;
+        padding: 2px !important;
         gap: 2px !important;
     }
 
