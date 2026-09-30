@@ -10908,3 +10908,31 @@
 }
 
 
+
+
+/* =========================================================
+   PROFILE PAGE — 576px BREADCRUMB FINAL TUNING
+   576–767.98px
+   ========================================================= */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .profile-section {
+        padding-top: 6px !important;
+    }
+
+    .profile-section .site-breadcrumb {
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+    .profile-section .site-breadcrumb a,
+    .profile-section .site-breadcrumb span {
+        font-size: 11px !important;
+        font-weight: 500 !important;
+    }
+
+    .profile-section .profile-page-header {
+        margin-bottom: 14px !important;
+    }
+}
